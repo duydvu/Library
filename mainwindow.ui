@@ -121,7 +121,7 @@
    <widget class="QLabel" name="AccountLabel">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>370</x>
       <y>10</y>
       <width>231</width>
       <height>31</height>
@@ -137,11 +137,22 @@
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
     </property>
    </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>220</y>
+      <width>69</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
    <zorder>AccountLabel</zorder>
    <zorder>FindBooksButton</zorder>
    <zorder>SignInButton</zorder>
    <zorder>SignUpButton</zorder>
    <zorder>FindBooksEdit</zorder>
+   <zorder>comboBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
