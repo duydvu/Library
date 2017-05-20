@@ -25,12 +25,13 @@ HEADERS  += mainwindow.h \
     signin.h \
     book.h \
     signup.h \
-    ui_mainwindow.h \
-    data.h
+    data.h \
+    ui_mainwindow.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     signin.ui \
-    signup.ui
+    signup.ui \
+    mainwindow.ui
 
 RESOURCES += \
     data.qrc

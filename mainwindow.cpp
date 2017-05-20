@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->AccountComboBox->hide();
     loadBooksFile();
     loadAccountFile();
 }
@@ -125,6 +126,7 @@ void MainWindow::getAccount()
 {
     ui->SignInButton->hide();
     ui->SignUpButton->hide();
+    ui->AccountComboBox->show();
     ui->AccountLabel->setText("Xin chào!  " + LogInAcc.getAcc());
     delete s;
 }
@@ -167,4 +169,16 @@ void MainWindow::createAccount()
     delete xmlWriter;
     xmlFile.close();
     delete su;
+}
+
+void MainWindow::on_AccountComboBox_currentIndexChanged(const QString &arg1)
+{
+    if(arg1=="Đăng xuất")
+    {
+        LogInAcc.clear();
+        ui->SignInButton->show();
+        ui->SignUpButton->show();
+        ui->AccountComboBox->hide();
+        ui->AccountLabel->clear();
+    }
 }

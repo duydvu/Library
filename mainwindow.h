@@ -32,6 +32,8 @@ private slots:
 
     void on_SignUpButton_clicked();
 
+    void on_AccountComboBox_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
     SignIn* s;
