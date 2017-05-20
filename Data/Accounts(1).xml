@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Accounts>
+
+    <account>
+        <name>admin</name>
+        <password>61646d696e</password>
+    </account>
+
+</Accounts>

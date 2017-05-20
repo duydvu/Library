@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\mainwindow.o
+./debug\account.o
+./debug\signin.o
+./debug\book.o
+./debug\signup.o
+./debug\data.o
+./debug\qrc_data.o
+./debug\moc_mainwindow.o
+./debug\moc_signin.o
+./debug\moc_signup.o
+);

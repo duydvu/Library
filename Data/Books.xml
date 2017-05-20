@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+
+	<book>
+		<name>A brief history of time</name>
+		<author>Stephen Hawking</author>
+	</book>
+	
+	<book>
+		<name>The Handmaid's Tale</name>
+		<author>Margaret Atwood</author>
+	</book>
+	
+	<book>
+		<name>Thirteen Reasons Why</name>
+		<author>Jay Asher</author>
+	</book>
+	
+	<book>
+		<name>The 5 Love Languages: The Secret to Love that Lasts</name>
+		<author>Gary Chapman</author>
+	</book>
+	
+	<book>
+		<name>Algorithms to Live By: The Computer Science of Human Decisions</name>
+		<author>Brian Christian</author>
+	</book>
+	
+</Library>
