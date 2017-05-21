@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -7,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->AccountComboBox->hide();
+
     loadBooksFile();
     loadAccountFile();
 }
@@ -113,7 +115,94 @@ void MainWindow::loadAccountFile()
 
 void MainWindow::on_FindBooksButton_clicked()
 {
-
+    QString word=ui->FindBooksEdit->text();
+    if(word.length()==0)
+        return;
+    int table[word.length()+1];
+    int pos=1, cnd=0;
+    table[0]=-1;
+    while(pos<word.length())
+    {
+        if(compare(word[pos], word[cnd]))
+        {
+            table[pos]=table[cnd];
+            pos++;
+            cnd++;
+        }
+        else
+        {
+            table[pos]=cnd;
+            cnd=table[cnd];
+            while(cnd>=0 && !compare(word[pos], word[cnd]))
+                cnd=table[cnd];
+            pos++;
+            cnd++;
+        }
+    }
+    table[pos]=cnd;
+    QLinkedList<Book>::iterator it=books.begin();
+    int cnt=0;
+    ui->BooksTable->clearContents();
+    for(;it!=books.end();it++)
+    {
+        QString name=(*it).getName(), author=(*it).getAuthor();
+        int m=0, i=0;
+        while(m+i<name.length())
+        {
+            if(compare(word[i], name[m+i]))
+            {
+                i++;
+                if(i==word.length())
+                {
+                    ui->BooksTable->insertRow(cnt);
+                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(name));
+                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(author));
+                    cnt++;
+                }
+            }
+            else
+            {
+                if(table[i]>-1)
+                {
+                    m+=i-table[i];
+                    i=table[i];
+                }
+                else
+                {
+                    m+=i+1;
+                    i=0;
+                }
+            }
+        }
+        m=0, i=0;
+        while(m+i<author.length())
+        {
+            if(compare(word[i], author[m+i]))
+            {
+                i++;
+                if(i==word.length())
+                {
+                    ui->BooksTable->insertRow(cnt);
+                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(name));
+                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(author));
+                    cnt++;
+                }
+            }
+            else
+            {
+                if(table[i]>-1)
+                {
+                    m+=i-table[i];
+                    i=table[i];
+                }
+                else
+                {
+                    m+=i+1;
+                    i=0;
+                }
+            }
+        }
+    }
 }
 
 void MainWindow::on_SignInButton_clicked()

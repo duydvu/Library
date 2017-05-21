@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,6 +37,7 @@ public:
     QPushButton *SignUpButton;
     QLabel *AccountLabel;
     QComboBox *AccountComboBox;
+    QTableWidget *BooksTable;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -56,7 +58,7 @@ public:
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background-color: #ddd;\n"
+"	background-color: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "}\n"
@@ -86,7 +88,7 @@ public:
         FindBooksButton->setStyleSheet(QLatin1String("#FindBooksButton{\n"
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
-"	background-color: #ddd;\n"
+"	background-color: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
@@ -103,7 +105,7 @@ public:
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background-color: #ddd;\n"
+"	background-color: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "}\n"
@@ -126,7 +128,7 @@ public:
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #ddd;\n"
+"	background: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "	padding-left: 5px\n"
@@ -184,10 +186,24 @@ public:
         FindBooksButton->raise();
         AccountComboBox->raise();
         SignUpButton->raise();
+        BooksTable = new QTableWidget(centralWidget);
+        if (BooksTable->columnCount() < 2)
+            BooksTable->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        __qtablewidgetitem1->setTextAlignment(Qt::AlignCenter);
+        BooksTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        BooksTable->setObjectName(QStringLiteral("BooksTable"));
+        BooksTable->setGeometry(QRect(80, 170, 511, 331));
+        BooksTable->setSortingEnabled(true);
+        BooksTable->setColumnCount(2);
+        BooksTable->horizontalHeader()->setCascadingSectionResizes(false);
+        BooksTable->verticalHeader()->setCascadingSectionResizes(false);
         MainWindow->setCentralWidget(centralWidget);
         MainBar->raise();
         SignInButton->raise();
-        AccountComboBox->raise();
+        BooksTable->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -217,6 +233,10 @@ public:
          << QApplication::translate("MainWindow", "Xem th\303\264ng b\303\241o", 0)
          << QApplication::translate("MainWindow", "\304\220\304\203ng xu\341\272\245t", 0)
         );
+        QTableWidgetItem *___qtablewidgetitem = BooksTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "T\341\273\261a s\303\241ch", 0));
+        QTableWidgetItem *___qtablewidgetitem1 = BooksTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", 0));
     } // retranslateUi
 
 };

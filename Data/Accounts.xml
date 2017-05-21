@@ -24,4 +24,8 @@
         <name>abc</name>
         <password>646566</password>
     </account>
+    <account>
+        <name>ahihi</name>
+        <password>6a696a69</password>
+    </account>
 </Accounts>

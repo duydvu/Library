@@ -38,7 +38,7 @@
 	border-width: 0px;
 	border-radius: 5px;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background-color: #ddd;
+	background-color: #eee;
 	color: #222;
 	outline: none;
 }
@@ -109,7 +109,7 @@
       <string notr="true">#FindBooksButton{
 	border-width: 0px;
 	border-radius: 5px;
-	background-color: #ddd;
+	background-color: #eee;
 	color: #222;
 	outline: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
@@ -140,7 +140,7 @@
 	border-width: 0px;
 	border-radius: 5px;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background-color: #ddd;
+	background-color: #eee;
 	color: #222;
 	outline: none;
 }
@@ -191,7 +191,7 @@ background: none;</string>
 	border-width: 0px;
 	border-radius: 5px;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #ddd;
+	background: #eee;
 	color: #222;
 	outline: none;
 	padding-left: 5px
@@ -271,9 +271,44 @@ QComboBox QAbstractItemView
     <zorder>AccountComboBox</zorder>
     <zorder>SignUpButton</zorder>
    </widget>
+   <widget class="QTableWidget" name="BooksTable">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>170</y>
+      <width>511</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="columnCount">
+     <number>2</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <column>
+     <property name="text">
+      <string>Tựa sách</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Tác giả</string>
+     </property>
+     <property name="textAlignment">
+      <set>AlignCenter</set>
+     </property>
+    </column>
+   </widget>
    <zorder>MainBar</zorder>
    <zorder>SignInButton</zorder>
-   <zorder>AccountComboBox</zorder>
+   <zorder>BooksTable</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>

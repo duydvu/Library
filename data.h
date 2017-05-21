@@ -13,6 +13,7 @@
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;
 extern Account LogInAcc;
+extern bool compare(QChar a, QChar b);
 
 #endif
 
