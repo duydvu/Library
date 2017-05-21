@@ -17,13 +17,13 @@ CXXFLAGS      = -pipe -fno-keep-inline-dllexport -O2 -std=gnu++0x -frtti -Wall -
 INCPATH       = -I. -IE:\Qt\Qt5.6.2\5.6\mingw49_32\include -IE:\Qt\Qt5.6.2\5.6\mingw49_32\include\QtWidgets -IE:\Qt\Qt5.6.2\5.6\mingw49_32\include\QtGui -IE:\Qt\Qt5.6.2\5.6\mingw49_32\include\QtANGLE -IE:\Qt\Qt5.6.2\5.6\mingw49_32\include\QtCore -Irelease -I. -IE:\Qt\Qt5.6.2\5.6\mingw49_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-s -Wl,-subsystem,windows -mthreads
-LIBS        =        -lmingw32 -LE:\Qt\Qt5.6.2\5.6\mingw49_32\lib E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libqtmain.a -lshell32 -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Widgets.a E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Gui.a E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Core.a 
+LIBS        =        -lmingw32 -LE:\Qt\Qt5.6.2\5.6\mingw49_32\lib E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libqtmain.a -lshell32 -LC:\utils\my_sql\my_sql\lib -LC:\utils\postgresql\pgsql\lib E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Widgets.a E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Gui.a E:\Qt\Qt5.6.2\5.6\mingw49_32\lib\libQt5Core.a release\Library_resource_res.o 
 QMAKE         = E:\Qt\Qt5.6.2\5.6\mingw49_32\bin\qmake.exe
 IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = release\Library_resource_res.o
 COPY          = copy /y
 SED           = $(QMAKE) -install sed
 COPY_FILE     = copy /y
@@ -88,8 +88,11 @@ DESTDIR_TARGET = release\Library.exe
 first: all
 all: Makefile.Release  $(DESTDIR_TARGET)
 
-$(DESTDIR_TARGET): ui_signin.h ui_signup.h ui_mainwindow.h $(OBJECTS) 
+$(DESTDIR_TARGET): ui_signin.h ui_signup.h ui_mainwindow.h $(OBJECTS) release/Library_resource_res.o
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) object_script.Library.Release  $(LIBS)
+
+release/Library_resource_res.o: Library_resource.rc
+	windres -i Library_resource.rc -o release\Library_resource_res.o --include-dir=. $(DEFINES)
 
 qmake: FORCE
 	@$(QMAKE) -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" -o Makefile.Release Library.pro
@@ -101,6 +104,7 @@ dist:
 
 clean: compiler_clean 
 	-$(DEL_FILE) release\main.o release\mainwindow.o release\account.o release\signin.o release\book.o release\signup.o release\data.o release\qrc_data.o release\moc_mainwindow.o release\moc_signin.o release\moc_signup.o
+	-$(DEL_FILE) release\Library_resource_res.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -795,13 +799,8 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qframe.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QComboBox \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
@@ -812,6 +811,14 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qframe.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QFrame \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
@@ -825,9 +832,7 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QStatusBar \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QComboBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qcombobox.h
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
 release/account.o: account.cpp account.h \

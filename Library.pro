@@ -35,3 +35,6 @@ FORMS    += \
 
 RESOURCES += \
     data.qrc
+
+RC_ICONS = Libpro.ico
+

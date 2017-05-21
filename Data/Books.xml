@@ -21,9 +21,63 @@
 		<author>Gary Chapman</author>
 	</book>
 	
-	<book>
+        <book>
 		<name>Algorithms to Live By: The Computer Science of Human Decisions</name>
 		<author>Brian Christian</author>
 	</book>
+
+<book>
+        <name>Astrophysics for People in a Hurry</name>
+        <author>Neil deGrasse Tyson</author>
+</book>
+<book>
+        <name>The Lord of the Rings</name>
+        <author>J. R. R. Tolkien</author>
+</book>
+<book>
+        <name>A Tale of Two Cities</name>
+        <author>Charles Dickens</author>
+</book>
+<book>
+        <name>The Hobbit</name>
+        <author>J. R. R. Tolkien</author>
+</book>
+<book>
+        <name>The Da Vinci Code</name>
+        <author>Dan Brown</author>
+</book>
+<book>
+        <name>The Alchemist</name>
+        <author>Paulo Coelho</author>
+</book>
+
+<book>
+        <name>Harry Potter and the Philosopher's Stone</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Harry Potter and the Chamber of Secrets</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Harry Potter and the Prisoner of Azkaban</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Harry Potter and the Goblet of Fire</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Harry Potter and the Order of the Phoenix</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Harry Potter and the Half-Blood Prince</name>
+        <author>J.K. Rowling</author>
+</book>
+<book>
+        <name>Twilight</name>
+        <author>Stephenie Meyer</author>
+</book>
 	
 </Library>

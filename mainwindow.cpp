@@ -19,9 +19,11 @@ MainWindow::~MainWindow()
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
    QMainWindow::resizeEvent(event);
-   ui->SignUpButton->setGeometry(QRect(this->size().width()-109, 10, 101, 31));
-   ui->SignInButton->setGeometry(QRect(this->size().width()-219, 10, 101, 31));
-   ui->AccountLabel->setGeometry(QRect(this->size().width()-239, 10, 231, 31));
+   ui->MainBar->setGeometry(QRect(0,0,this->size().width(),101));
+   ui->SignUpButton->setGeometry(QRect(this->size().width()-110, 20, 101, 31));
+   ui->SignInButton->setGeometry(QRect(this->size().width()-219, 20, 101, 31));
+   ui->AccountLabel->setGeometry(QRect(this->size().width()-239, 20, 231, 31));
+   ui->AccountComboBox->setGeometry(QRect(this->size().width()-170, 60, 161, 31));
 }
 
 
@@ -153,6 +155,7 @@ void MainWindow::createAccount()
         return;
     }
     QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(&xmlFile);
+    xmlWriter->setAutoFormatting(true);
     xmlWriter->writeStartDocument();
     xmlWriter->writeStartElement("Accounts");
 

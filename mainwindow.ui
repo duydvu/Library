@@ -20,43 +20,11 @@
    <string notr="true">background-color: rgb(255,255,255)</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="FindBooksButton">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>130</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="whatsThis">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#FindBooksButton{
-	border-width: 0px;
-	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
-	background-color: #ddd;
-	color: #222;
-	outline: none;
-}
-#FindBooksButton:hover{
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
-}</string>
-    </property>
-    <property name="text">
-     <string>Tìm</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="SignInButton">
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>10</y>
+      <y>20</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -69,7 +37,7 @@
 {
 	border-width: 0px;
 	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
 	background-color: #ddd;
 	color: #222;
 	outline: none;
@@ -83,24 +51,95 @@
      <string>Đăng nhập</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="SignUpButton">
+   <widget class="QFrame" name="MainBar">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>10</y>
-      <width>101</width>
-      <height>31</height>
+      <x>0</x>
+      <y>0</y>
+      <width>721</width>
+      <height>101</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
     <property name="styleSheet">
-     <string notr="true">#SignUpButton 
+     <string notr="true">background: #00BCFF;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="FindBooksEdit">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>411</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#FindBooksEdit {
+	border: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	background: white;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="FindBooksButton">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>20</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#FindBooksButton{
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #ddd;
+	color: #222;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+#FindBooksButton:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+     </property>
+     <property name="text">
+      <string>Tìm sách</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SignUpButton">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>20</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#SignUpButton 
 {
 	border-width: 0px;
 	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
 	background-color: #ddd;
 	color: #222;
 	outline: none;
@@ -109,86 +148,131 @@
 {
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
 }</string>
-    </property>
-    <property name="text">
-     <string>Đăng ký</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="FindBooksEdit">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>130</y>
-      <width>291</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="AccountLabel">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>10</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="AccountComboBox">
-    <property name="geometry">
-     <rect>
-      <x>548</x>
-      <y>50</y>
-      <width>161</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#AccountComboBox 
+     </property>
+     <property name="text">
+      <string>Đăng ký</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AccountLabel">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>20</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 63 12pt &quot;Myriad Pro Light&quot;;
+background: none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="AccountComboBox">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>60</y>
+       <width>161</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#AccountComboBox 
 {
 	border-width: 0px;
 	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
 	background: #ddd;
 	color: #222;
 	outline: none;
 	padding-left: 5px
 }
-#AccountComboBox:hover 
+#AccountComboBox:editable {
+    background: white;
+}
+#AccountComboBox:!editable, #AccountComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+#AccountComboBox:!editable:on, #AccountComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+	outline: none;
+}
+
+#AccountComboBox:on {
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+#AccountComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 25px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; 
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#AccountComboBox::down-arrow {
+    image: url(images/drop_down.png);
+}
+
+#AccountComboBox::down-arrow:on { 
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QAbstractItemView
 {
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+    border: 2px solid darkgray;
+    color: black;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);
+	background: white;
 }</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>Trang cá nhân</string>
      </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Xem thông báo</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Đăng xuất</string>
-     </property>
-    </item>
+     <item>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Trang cá nhân</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Xem thông báo</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Đăng xuất</string>
+      </property>
+     </item>
+    </widget>
+    <zorder>AccountLabel</zorder>
+    <zorder>FindBooksEdit</zorder>
+    <zorder>FindBooksButton</zorder>
+    <zorder>AccountComboBox</zorder>
+    <zorder>SignUpButton</zorder>
    </widget>
-   <zorder>AccountLabel</zorder>
-   <zorder>FindBooksButton</zorder>
+   <zorder>MainBar</zorder>
    <zorder>SignInButton</zorder>
-   <zorder>SignUpButton</zorder>
-   <zorder>FindBooksEdit</zorder>
    <zorder>AccountComboBox</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
