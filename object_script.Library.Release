@@ -6,6 +6,8 @@ INPUT(
 ./release\book.o
 ./release\signup.o
 ./release\data.o
+./release\user.o
+./release\role.o
 ./release\qrc_data.o
 ./release\moc_mainwindow.o
 ./release\moc_signin.o

@@ -7,8 +7,16 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    MainWindow::setWindowState(Qt::WindowMaximized);
     ui->AccountComboBox->hide();
-
+    ui->BooksTable->setColumnCount(3);
+    ui->BooksTable->setHorizontalHeaderItem(0, new QTableWidgetItem("#"));
+    ui->BooksTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Tựa sách"));
+    ui->BooksTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Tác giả"));
+    ui->BooksTable->setColumnWidth(0, ui->BooksTable->width()/100*5);
+    ui->BooksTable->setColumnWidth(1, ui->BooksTable->width()/100*70);
+    ui->BooksTable->horizontalHeader()->setStretchLastSection(true);
+    ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
     loadBooksFile();
     loadAccountFile();
 }
@@ -113,6 +121,61 @@ void MainWindow::loadAccountFile()
     xmlFile.close();
 }
 
+void MainWindow::loadUserFile()
+{
+    QFile xmlFile(":/Data/Users.xml");
+    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open Users.xml to load data",
+        QMessageBox::Ok);
+        return;
+    }
+
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(&xmlFile);
+    User a;
+
+    while(!xmlReader->atEnd() && !xmlReader->hasError())
+    {
+        xmlReader->readNext();
+        if(xmlReader->isStartElement())
+        {
+            if(xmlReader->name() == "name")
+            {
+                a.setName(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "sex")
+            {
+                a.setSex(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "Dob")
+            {
+                //a.setDateofBirth(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "cmnd")
+            {
+                a.setCMND(xmlReader->readElementText());
+                users.append(a);
+                a.clear();
+            }
+        }
+    }
+
+    if(xmlReader->hasError()) {
+        QMessageBox::critical(this,
+        "Users.xml Parse Error",xmlReader->errorString(),
+        QMessageBox::Ok);
+        return;
+    }
+
+    xmlReader->clear();
+    delete xmlReader;
+    xmlFile.close();
+}
+
 void MainWindow::on_FindBooksButton_clicked()
 {
     QString word=ui->FindBooksEdit->text();
@@ -142,7 +205,7 @@ void MainWindow::on_FindBooksButton_clicked()
     table[pos]=cnd;
     QLinkedList<Book>::iterator it=books.begin();
     int cnt=0;
-    ui->BooksTable->clearContents();
+    ui->BooksTable->setRowCount(0);
     for(;it!=books.end();it++)
     {
         QString name=(*it).getName(), author=(*it).getAuthor();
@@ -155,8 +218,9 @@ void MainWindow::on_FindBooksButton_clicked()
                 if(i==word.length())
                 {
                     ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(author));
+                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
+                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
+                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
                     cnt++;
                 }
             }
@@ -183,8 +247,9 @@ void MainWindow::on_FindBooksButton_clicked()
                 if(i==word.length())
                 {
                     ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(author));
+                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
+                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
+                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
                     cnt++;
                 }
             }
@@ -210,7 +275,7 @@ void MainWindow::on_SignInButton_clicked()
     s=new SignIn;
     s->setWindowTitle("Đăng nhập");
     connect(s,SIGNAL(accepted()),this,SLOT(getAccount()));
-    s->show();
+    s->exec();
 }
 
 void MainWindow::getAccount()
@@ -228,7 +293,7 @@ void MainWindow::on_SignUpButton_clicked()
     su=new SignUp;
     su->setWindowTitle("Đăng ký");
     connect(su,SIGNAL(accepted()),this,SLOT(createAccount()));
-    su->show();
+    su->exec();
 }
 
 void MainWindow::createAccount()

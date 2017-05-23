@@ -3,6 +3,7 @@
 
 #include "account.h"
 #include "book.h"
+#include "user.h"
 #include <QLinkedList>
 #include <QDialog>
 #include <QFile>
@@ -12,8 +13,10 @@
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;
+extern QLinkedList<User> users;
 extern Account LogInAcc;
-extern bool compare(QChar a, QChar b);
+
+bool compare(QChar a, QChar b);
 
 #endif
 

@@ -55,16 +55,24 @@ public:
         SignInButton->setCursor(QCursor(Qt::PointingHandCursor));
         SignInButton->setStyleSheet(QLatin1String("#SignInButton \n"
 "{\n"
-"	border-width: 0px;\n"
+"	border: 1px solid darkgray;\n"
 "	border-radius: 5px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background-color: #eee;\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #eee, stop: 0.4 #ddd,\n"
+"                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "}\n"
 "#SignInButton:hover \n"
 "{\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
+"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"}\n"
+"#SignInButton:pressed \n"
+"{\n"
+"	padding-top: 2px;\n"
 "}"));
         MainBar = new QFrame(centralWidget);
         MainBar->setObjectName(QStringLiteral("MainBar"));
@@ -125,45 +133,36 @@ public:
         AccountComboBox->setCursor(QCursor(Qt::PointingHandCursor));
         AccountComboBox->setStyleSheet(QLatin1String("#AccountComboBox \n"
 "{\n"
-"	border-width: 0px;\n"
-"	border-radius: 5px;\n"
+"	border: 1px solid darkgray;\n"
+"	border-radius: 10px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
-"	padding-left: 5px\n"
-"}\n"
-"#AccountComboBox:editable {\n"
-"    background: white;\n"
+"	padding-left: 10px;\n"
 "}\n"
 "#AccountComboBox:!editable, #AccountComboBox::drop-down:editable {\n"
 "     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,\n"
-"                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);\n"
+"                                stop: 0 #eee, stop: 0.4 #ddd,\n"
+"                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);\n"
 "}\n"
 "#AccountComboBox:!editable:on, #AccountComboBox::drop-down:editable:on {\n"
 "    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,\n"
-"                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);\n"
+"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
+"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
 "	outline: none;\n"
 "}\n"
 "\n"
 "#AccountComboBox:on {\n"
 "    padding-top: 3px;\n"
-"    padding-left: 4px;\n"
+"    padding-left: 20px;\n"
 "}\n"
 "\n"
 "#AccountComboBox::drop-down {\n"
-"    subcontrol-origin:"
-                        " padding;\n"
+"    subcontrol-origin: padding;\n"
 "    subcontrol-position: top right;\n"
-"    width: 25px;\n"
-"\n"
-"    border-left-width: 1px;\n"
-"    border-left-color: darkgray;\n"
-"    border-left-style: solid; \n"
-"    border-top-right-radius: 3px;\n"
-"    border-bottom-right-radius: 3px;\n"
+"    width: 30px;\n"
+"   	border-"
+                        "left: 2px solid darkgray;\n"
 "}\n"
 "#AccountComboBox::down-arrow {\n"
 "    image: url(images/drop_down.png);\n"
@@ -171,15 +170,16 @@ public:
 "\n"
 "#AccountComboBox::down-arrow:on { \n"
 "    top: 1px;\n"
-"    left: 1px;\n"
 "}\n"
 "\n"
 "QComboBox QAbstractItemView\n"
 "{\n"
-"    border: 2px solid darkgray;\n"
+"    border: 1px solid darkgray;\n"
 "    color: black;\n"
-"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #333);\n"
+"    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #555);\n"
 "	background: white;\n"
+"	outline: none;\n"
+"	padding-left: 10px;\n"
 "}"));
         AccountLabel->raise();
         FindBooksEdit->raise();
@@ -187,18 +187,41 @@ public:
         AccountComboBox->raise();
         SignUpButton->raise();
         BooksTable = new QTableWidget(centralWidget);
-        if (BooksTable->columnCount() < 2)
-            BooksTable->setColumnCount(2);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        BooksTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        __qtablewidgetitem1->setTextAlignment(Qt::AlignCenter);
-        BooksTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         BooksTable->setObjectName(QStringLiteral("BooksTable"));
-        BooksTable->setGeometry(QRect(80, 170, 511, 331));
-        BooksTable->setSortingEnabled(true);
-        BooksTable->setColumnCount(2);
+        BooksTable->setGeometry(QRect(30, 150, 661, 371));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(BooksTable->sizePolicy().hasHeightForWidth());
+        BooksTable->setSizePolicy(sizePolicy);
+        BooksTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
+        BooksTable->setStyleSheet(QLatin1String("QWidget {\n"
+"    background-color: #333333;\n"
+"    color: #fffff8;\n"
+"}\n"
+"\n"
+"QHeaderView::section {\n"
+"    background-color: #646464;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #fffff8;\n"
+"    font-size: 12pt;\n"
+"	height: 30px;\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}"));
+        BooksTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        BooksTable->setSortingEnabled(false);
+        BooksTable->setColumnCount(0);
         BooksTable->horizontalHeader()->setCascadingSectionResizes(false);
+        BooksTable->verticalHeader()->setVisible(false);
         BooksTable->verticalHeader()->setCascadingSectionResizes(false);
         MainWindow->setCentralWidget(centralWidget);
         MainBar->raise();
@@ -207,8 +230,14 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+        QWidget::setTabOrder(FindBooksEdit, FindBooksButton);
+        QWidget::setTabOrder(FindBooksButton, SignInButton);
+        QWidget::setTabOrder(SignInButton, SignUpButton);
+        QWidget::setTabOrder(SignUpButton, BooksTable);
+        QWidget::setTabOrder(BooksTable, AccountComboBox);
 
         retranslateUi(MainWindow);
+        QObject::connect(FindBooksEdit, SIGNAL(returnPressed()), FindBooksButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -233,10 +262,6 @@ public:
          << QApplication::translate("MainWindow", "Xem th\303\264ng b\303\241o", 0)
          << QApplication::translate("MainWindow", "\304\220\304\203ng xu\341\272\245t", 0)
         );
-        QTableWidgetItem *___qtablewidgetitem = BooksTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "T\341\273\261a s\303\241ch", 0));
-        QTableWidgetItem *___qtablewidgetitem1 = BooksTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", 0));
     } // retranslateUi
 
 };

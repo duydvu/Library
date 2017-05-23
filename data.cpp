@@ -2,6 +2,7 @@
 
 QLinkedList<Account> accounts;
 QLinkedList<Book> books;
+QLinkedList<User> users;
 Account LogInAcc;
 
 bool compare(QChar a, QChar b)

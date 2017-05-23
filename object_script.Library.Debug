@@ -6,6 +6,8 @@ INPUT(
 ./debug\book.o
 ./debug\signup.o
 ./debug\data.o
+./debug\user.o
+./debug\role.o
 ./debug\qrc_data.o
 ./debug\moc_mainwindow.o
 ./debug\moc_signin.o

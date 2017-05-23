@@ -40,6 +40,7 @@ private:
     SignUp* su;
     void loadBooksFile();
     void loadAccountFile();
+    void loadUserFile();
 };
 
 #endif // MAINWINDOW_H

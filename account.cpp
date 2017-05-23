@@ -45,3 +45,23 @@ QString Account::encrypt(QString psw)
     QCryptographicHash::hash(p, QCryptographicHash::Md5);
     return p.toHex();
 }
+
+void Account::setID(QString id)
+{
+    this->ID=id;
+}
+
+QString Account::getID()
+{
+    return this->ID;
+}
+
+void Account::setActive(bool TF)
+{
+    this->active=TF;
+}
+
+bool Account::getActive()
+{
+    return this->active;
+}

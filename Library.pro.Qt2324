@@ -19,8 +19,7 @@ SOURCES += main.cpp\
     book.cpp \
     signup.cpp \
     data.cpp \
-    user.cpp \
-    role.cpp
+    user.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
