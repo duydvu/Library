@@ -188,7 +188,7 @@ public:
         SignUpButton->raise();
         BooksTable = new QTableWidget(centralWidget);
         BooksTable->setObjectName(QStringLiteral("BooksTable"));
-        BooksTable->setGeometry(QRect(30, 150, 661, 371));
+        BooksTable->setGeometry(QRect(30, 130, 661, 391));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -227,14 +227,14 @@ public:
         MainBar->raise();
         SignInButton->raise();
         BooksTable->raise();
+        BooksTable->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
         QWidget::setTabOrder(FindBooksEdit, FindBooksButton);
         QWidget::setTabOrder(FindBooksButton, SignInButton);
         QWidget::setTabOrder(SignInButton, SignUpButton);
-        QWidget::setTabOrder(SignUpButton, BooksTable);
-        QWidget::setTabOrder(BooksTable, AccountComboBox);
+        QWidget::setTabOrder(SignUpButton, AccountComboBox);
 
         retranslateUi(MainWindow);
         QObject::connect(FindBooksEdit, SIGNAL(returnPressed()), FindBooksButton, SLOT(click()));

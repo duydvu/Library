@@ -275,9 +275,9 @@ QComboBox QAbstractItemView
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>150</y>
+      <y>130</y>
       <width>661</width>
-      <height>371</height>
+      <height>391</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -335,6 +335,7 @@ QTableWidget QTableCornerButton::section {
    <zorder>MainBar</zorder>
    <zorder>SignInButton</zorder>
    <zorder>BooksTable</zorder>
+   <zorder>BooksTable</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
@@ -344,7 +345,6 @@ QTableWidget QTableCornerButton::section {
   <tabstop>FindBooksButton</tabstop>
   <tabstop>SignInButton</tabstop>
   <tabstop>SignUpButton</tabstop>
-  <tabstop>BooksTable</tabstop>
   <tabstop>AccountComboBox</tabstop>
  </tabstops>
  <resources/>

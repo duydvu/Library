@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "signin.h"
 #include "signup.h"
-#include "book.h"
+#include "PersonalInfo.h"
 
 namespace Ui {
 class MainWindow;
@@ -34,10 +34,13 @@ private slots:
 
     void on_AccountComboBox_currentIndexChanged(const QString &arg1);
 
+    void createUser();
+
 private:
     Ui::MainWindow *ui;
     SignIn* s;
     SignUp* su;
+    personalinfo* pi;
     void loadBooksFile();
     void loadAccountFile();
     void loadUserFile();

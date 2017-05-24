@@ -11,8 +11,9 @@ public:
     QString getName();
     void setSex(QString);
     QString getSex();
-    void setDateofBirth(QDate);
-    QDate getDateofBirth();
+    QString setDateofBirthtoQString(QDate);
+    void setDateofBirth(QString);
+    QString getDateofBirth();
     void setID(QString);
     QString getID();
     void setCMND(QString);
@@ -22,7 +23,7 @@ public:
 private:
     QString Name;
     QString sex;
-    QDate DateofBirth;
+    QString DateofBirth;
     QString ID;
     QString CMND;
 };

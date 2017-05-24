@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Users>
-	
+    <user>
+        <name>dfg</name>
+        <sex>nữ</sex>
+        <Dob>01.01.1998</Dob>
+        <cmnd>321</cmnd>
+    </user>
+    <user>
+        <name>Vud</name>
+        <sex>nam</sex>
+        <Dob>01.01.1998</Dob>
+        <cmnd>456</cmnd>
+    </user>
 </Users>

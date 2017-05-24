@@ -25,12 +25,19 @@ QString User::getSex()
  return this->sex;
 }
 
-void User::setDateofBirth(QDate time)
+QString User::setDateofBirthtoQString(QDate time)
+{
+    QString s;
+    s=time.toString("dd.MM.yyyy");
+    return s;
+}
+
+void User::setDateofBirth(QString time)
 {
     this->DateofBirth=time;
 }
 
-QDate User::getDateofBirth()
+QString User::getDateofBirth()
 {
     return this->DateofBirth;
 }
@@ -59,7 +66,7 @@ void User::clear()
 {
     this->Name="";
     this->sex="";
-    //this->DateofBirth="";
+    this->DateofBirth="";
     this->ID="";
     this->CMND="";
 }

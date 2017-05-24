@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     signup.cpp \
     data.cpp \
     user.cpp \
-    role.cpp
+    role.cpp \
+    PersonalInfo.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -30,12 +31,14 @@ HEADERS  += mainwindow.h \
     data.h \
     ui_mainwindow.h \
     user.h \
-    role.h
+    role.h \
+    PersonalInfo.h
 
 FORMS    += \
     signin.ui \
     signup.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    PersonalInfo.ui
 
 RESOURCES += \
     data.qrc
