@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>560</height>
+    <width>721</width>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,37 +20,11 @@
    <string notr="true">background-color: rgb(255,255,255)</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="FindBooksButton">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>130</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#FindBooksButton{
-	border-width: 0px;
-	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
-	background-color: #ddd;
-	color: #222;
-	outline: none;
-}
-#FindBooksButton:hover{
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
-}</string>
-    </property>
-    <property name="text">
-     <string>Tìm</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="SignInButton">
     <property name="geometry">
      <rect>
       <x>500</x>
-      <y>10</y>
+      <y>20</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -61,41 +35,120 @@
     <property name="styleSheet">
      <string notr="true">#SignInButton 
 {
-	border-width: 0px;
+	border: 1px solid darkgray;
 	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
-	background-color: #ddd;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #eee, stop: 0.4 #ddd,
+                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);
 	color: #222;
 	outline: none;
 }
 #SignInButton:hover 
 {
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+}
+#SignInButton:pressed 
+{
+	padding-top: 2px;
 }</string>
     </property>
     <property name="text">
      <string>Đăng nhập</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="SignUpButton">
+   <widget class="QFrame" name="MainBar">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>10</y>
-      <width>101</width>
-      <height>31</height>
+      <x>0</x>
+      <y>0</y>
+      <width>721</width>
+      <height>101</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
     <property name="styleSheet">
-     <string notr="true">#SignUpButton 
+     <string notr="true">background: #00BCFF;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="FindBooksEdit">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>411</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#FindBooksEdit {
+	border: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	background: white;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="FindBooksButton">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>20</y>
+       <width>91</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="whatsThis">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#FindBooksButton{
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #eee;
+	color: #222;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+#FindBooksButton:hover{
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+}</string>
+     </property>
+     <property name="text">
+      <string>Tìm sách</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="SignUpButton">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>20</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#SignUpButton 
 {
 	border-width: 0px;
 	border-radius: 5px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
-	background-color: #ddd;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background-color: #eee;
 	color: #222;
 	outline: none;
 }
@@ -103,49 +156,169 @@
 {
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
 }</string>
-    </property>
-    <property name="text">
-     <string>Đăng ký</string>
-    </property>
+     </property>
+     <property name="text">
+      <string>Đăng ký</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="AccountLabel">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>20</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 63 12pt &quot;Myriad Pro Light&quot;;
+background: none;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <zorder>AccountLabel</zorder>
+    <zorder>FindBooksEdit</zorder>
+    <zorder>FindBooksButton</zorder>
+    <zorder>SignUpButton</zorder>
    </widget>
-   <widget class="QLineEdit" name="FindBooksEdit">
+   <widget class="QTableWidget" name="BooksTable">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>20</x>
       <y>130</y>
-      <width>291</width>
-      <height>31</height>
+      <width>481</width>
+      <height>391</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QLabel" name="AccountLabel">
-    <property name="geometry">
-     <rect>
-      <x>480</x>
-      <y>10</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
+     <string notr="true">QWidget {
+    background-color: #333333;
+    color: #fffff8;
+}
+
+QHeaderView::section {
+    background-color: #646464;
+    padding: 4px;
+    border: 1px solid #fffff8;
+    font-size: 12pt;
+	height: 30px;
+}
+
+QTableWidget {
+    gridline-color: #fffff8;
+    font-size: 12pt;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #646464;
+    border: 1px solid #fffff8;
+}</string>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="sortingEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="columnCount">
+     <number>0</number>
+    </property>
+    <attribute name="horizontalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+   <widget class="QLabel" name="quantity">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>500</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="alignment">
-     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </widget>
+   <widget class="QLabel" name="quantity_2">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>500</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Số lượng</string>
     </property>
    </widget>
-   <zorder>AccountLabel</zorder>
-   <zorder>FindBooksButton</zorder>
+   <widget class="QTextBrowser" name="intro">
+    <property name="geometry">
+     <rect>
+      <x>515</x>
+      <y>130</y>
+      <width>191</width>
+      <height>361</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>MainBar</zorder>
    <zorder>SignInButton</zorder>
-   <zorder>SignUpButton</zorder>
-   <zorder>FindBooksEdit</zorder>
+   <zorder>BooksTable</zorder>
+   <zorder>quantity</zorder>
+   <zorder>quantity_2</zorder>
+   <zorder>intro</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>FindBooksEdit</tabstop>
+  <tabstop>FindBooksButton</tabstop>
+  <tabstop>SignInButton</tabstop>
+  <tabstop>SignUpButton</tabstop>
+ </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>FindBooksEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>FindBooksButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>41</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>43</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

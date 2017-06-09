@@ -6,110 +6,250 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>481</width>
+    <height>364</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QLineEdit" name="AccountEdit">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>40</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-width: 0px;
-border-radius: 12px;
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,5,0">
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,2,2,2,0">
+       <property name="spacing">
+        <number>30</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="AccountEdit">
+         <property name="styleSheet">
+          <string notr="true">border-width: 0px;
+border-radius: 16px;
 background-color: white;
 padding-left: 12px;
-font-size: 14px;</string>
-   </property>
-   <property name="placeholderText">
-    <string>Tên tài khoản</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="PasswordEdit">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>100</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-width: 0px;
-border-radius: 12px;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+         </property>
+         <property name="placeholderText">
+          <string>Tên tài khoản</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="PasswordEdit">
+         <property name="styleSheet">
+          <string notr="true">border-width: 0px;
+border-radius: 16px;
 background-color: white;
 padding-left: 12px;
-font-size: 14px</string>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
-   </property>
-   <property name="placeholderText">
-    <string>Mật khẩu</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="LogInButton">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>160</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">#LogInButton 
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+         </property>
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+         <property name="placeholderText">
+          <string>Mật khẩu</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="RoleComboBox">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#RoleComboBox 
+{
+	border: 1px solid darkgray;
+	border-radius: 16px;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	color: #222;
+	outline: none;
+	padding-left: 20px;
+	font-weight: bold;
+}
+#RoleComboBox:!editable, #RoleComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #eee, stop: 0.4 #ddd,
+                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);
+}
+#RoleComboBox:!editable:on, #RoleComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+	outline: none;
+}
+
+#RoleComboBox:on {
+    padding-top: 3px;
+    padding-left: 20px;
+}
+
+#RoleComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+   	border-left: 2px solid darkgray;
+}
+#RoleComboBox::down-arrow {
+    image: url(images/drop_down.png);
+}
+
+#RoleComboBox::down-arrow:on { 
+    top: 1px;
+}
+
+QComboBox QAbstractItemView
+{
+    border: 1px solid darkgray;
+    color: black;
+    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #555);
+	background: white;
+	outline: none;
+	padding-left: 20px;
+}</string>
+         </property>
+         <item>
+          <property name="text">
+           <string>Vai trò...</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Độc giả</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Thủ thư</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Admin</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="LogInButton">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#LogInButton 
 {
 	border-width: 0px;
-	border-radius: 10px;
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
-	background-color: #03FF9B;
-	color: white;
+	border-radius: 16px;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: #00ff80;
+	color: #555;
 	outline: none;
+	font-weight: bold;
 }
 #LogInButton:hover 
 {
-	background-color: #01E58A;
+	background-color: #66ffb2;
+	color: #000;
 }</string>
-   </property>
-   <property name="text">
-    <string>Đăng nhập</string>
-   </property>
-   <property name="default">
-    <bool>false</bool>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLabel" name="ResultLabel">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>220</y>
-     <width>341</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">text-align: center;
+         </property>
+         <property name="text">
+          <string>Đăng nhập</string>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="ResultLabel">
+         <property name="styleSheet">
+          <string notr="true">text-align: center;
 font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

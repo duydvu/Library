@@ -8,6 +8,8 @@ class Book
 private:
     QString name;
     QString author;
+    int quantity;
+    QString intro;
 public:
     Book();
     Book(QString name, QString author);
@@ -15,6 +17,10 @@ public:
     void setName(QString name);
     QString getAuthor();
     void setAuthor(QString author);
+    int getQuantity();
+    void setQuantity(int quantity);
+    QString getIntro();
+    void setIntro(QString intro);
     void clear();
 };
 

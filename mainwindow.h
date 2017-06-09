@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include "signin.h"
 #include "signup.h"
-#include "book.h"
+#include "PersonalInfo.h"
 
 namespace Ui {
 class MainWindow;
@@ -32,12 +32,30 @@ private slots:
 
     void on_SignUpButton_clicked();
 
+    void createUser();
+
+    void on_BooksTable_cellClicked(int row, int column);
+
 private:
     Ui::MainWindow *ui;
     SignIn* s;
     SignUp* su;
+    personalinfo* pi;
+
+
+
     void loadBooksFile();
     void loadAccountFile();
+    void loadUserFile();
+    void loadTempAccountFile();
+    void loadTempUserFile();
+
+    void closeEvent (QCloseEvent *event);
+    void saveBooksFile();
+    void saveAccountFile();
+    void saveUserFile();
+    void saveTempAccountFile();
+    void saveTempUserFile();
 };
 
 #endif // MAINWINDOW_H

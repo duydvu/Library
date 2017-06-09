@@ -18,19 +18,33 @@ SOURCES += main.cpp\
     signin.cpp \
     book.cpp \
     signup.cpp \
-    data.cpp
+    data.cpp \
+    user.cpp \
+    PersonalInfo.cpp \
+    admin.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
     signin.h \
     book.h \
     signup.h \
+    data.h \
     ui_mainwindow.h \
-    data.h
+    user.h \
+    PersonalInfo.h \
+    admin.h
 
-FORMS    += mainwindow.ui \
+FORMS    += \
     signin.ui \
-    signup.ui
+    signup.ui \
+    mainwindow.ui \
+    PersonalInfo.ui \
+    admin.ui
 
 RESOURCES += \
     data.qrc
+
+RC_ICONS = Libpro.ico
+
+DISTFILES +=
+

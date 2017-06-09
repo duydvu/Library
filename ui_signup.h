@@ -14,9 +14,11 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 
 QT_BEGIN_NAMESPACE
 
@@ -26,15 +28,19 @@ public:
     QPushButton *SignUpButton;
     QLineEdit *NameEdit;
     QLineEdit *PasswordEdit;
+    QGroupBox *role;
+    QRadioButton *reader;
+    QRadioButton *librarian;
+    QLineEdit *lineEdit;
 
     void setupUi(QDialog *SignUp)
     {
         if (SignUp->objectName().isEmpty())
             SignUp->setObjectName(QStringLiteral("SignUp"));
-        SignUp->resize(400, 300);
+        SignUp->resize(408, 370);
         SignUpButton = new QPushButton(SignUp);
         SignUpButton->setObjectName(QStringLiteral("SignUpButton"));
-        SignUpButton->setGeometry(QRect(140, 140, 131, 31));
+        SignUpButton->setGeometry(QRect(130, 300, 131, 31));
         SignUpButton->setStyleSheet(QLatin1String("#SignUpButton{\n"
 "	font: 63 12pt \"Myriad Pro Light\";\n"
 "	border-radius: 5px;\n"
@@ -63,6 +69,20 @@ public:
 "font-size: 14px;\n"
 "font: 63 12pt \"Myriad Pro Light\";"));
         PasswordEdit->setEchoMode(QLineEdit::Password);
+        role = new QGroupBox(SignUp);
+        role->setObjectName(QStringLiteral("role"));
+        role->setGeometry(QRect(50, 210, 311, 51));
+        reader = new QRadioButton(role);
+        reader->setObjectName(QStringLiteral("reader"));
+        reader->setGeometry(QRect(50, 20, 82, 17));
+        reader->setAutoExclusive(true);
+        librarian = new QRadioButton(role);
+        librarian->setObjectName(QStringLiteral("librarian"));
+        librarian->setGeometry(QRect(160, 20, 82, 17));
+        librarian->setAutoExclusive(true);
+        lineEdit = new QLineEdit(SignUp);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(90, 140, 231, 31));
         QWidget::setTabOrder(NameEdit, PasswordEdit);
         QWidget::setTabOrder(PasswordEdit, SignUpButton);
 
@@ -77,6 +97,10 @@ public:
         SignUpButton->setText(QApplication::translate("SignUp", "\304\220\304\203ng k\303\275", 0));
         NameEdit->setPlaceholderText(QApplication::translate("SignUp", "T\303\252n \304\221\304\203ng nh\341\272\255p", 0));
         PasswordEdit->setPlaceholderText(QApplication::translate("SignUp", "M\341\272\255t kh\341\272\251u", 0));
+        role->setTitle(QApplication::translate("SignUp", "\304\220\304\203ng k\303\275 v\341\273\233i vai tr\303\262", 0));
+        reader->setText(QApplication::translate("SignUp", "\304\220\341\273\231c gi\341\272\243", 0));
+        librarian->setText(QApplication::translate("SignUp", "Th\341\273\247 th\306\260", 0));
+        lineEdit->setPlaceholderText(QApplication::translate("SignUp", "Nh\341\272\255p l\341\272\241i m\341\272\255t kh\341\272\251u", 0));
     } // retranslateUi
 
 };

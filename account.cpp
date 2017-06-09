@@ -32,10 +32,43 @@ void Account::setPsw(QString psw)
     this->psw = psw;
 }
 
+void Account::setRole(QString role)
+{
+    this->role=role;
+}
+
+QString Account::getRole()
+{
+    return this->role;
+}
+
+void Account::setID(QString id)
+{
+    this->id=id;
+}
+
+QString Account::getID()
+{
+    return this->id;
+}
+
+void Account::setActive(bool TF)
+{
+    this->active=TF;
+}
+
+bool Account::getActive()
+{
+    return this->active;
+}
+
 void Account::clear()
 {
     this->acc="";
     this->psw="";
+    this->role="";
+    this->id="";
+    this->active=false;
 }
 
 QString Account::encrypt(QString psw)

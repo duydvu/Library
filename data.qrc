@@ -1,6 +1,9 @@
 <RCC>
     <qresource prefix="/">
-        <file>Data/Books.xml</file>
         <file>Data/Accounts.xml</file>
+        <file>Data/Books.xml</file>
+        <file>Data/Users.xml</file>
+        <file>Data/TempAccounts.xml</file>
+        <file>Data/TempUsers.xml</file>
     </qresource>
 </RCC>

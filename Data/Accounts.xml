@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><Accounts><account><name>admin</name><password>61646d696e</password></account><account><name>duyisking</name><password>636f6d656f766572</password></account><account><name>vuducduy</name><password>313233343536</password></account><account><name>duy</name><password>64757969736b696e67</password></account><account><name>admin</name><password>6d696e6164</password></account></Accounts>
+<?xml version="1.0" encoding="UTF-8"?>
+<Accounts>
+    <account>
+        <name>admin</name>
+        <password>61646d696e</password>
+        <role>A</role>
+        <id>0</id>
+        <active>F</active>
+    </account>
+</Accounts>

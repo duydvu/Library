@@ -1,29 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Library>
+    <book>
+        <name>A brief history of time</name>
+        <author>Stephen Hawking</author>
+        <quantity>20</quantity>
+        <intro>In the ten years since its publication in 1988, Stephen Hawking's classic work has become a landmark volume in scientific writing, with more than nine million copies in forty languages sold worldwide. That edition was on the cutting edge of what was then known about the origins and nature of the universe. But the intervening years have seen extraordinary advances in the technology of observing both the micro- and the macrocosmic worlds. These observations have confirmed many of Professor Hawking's theoretical predictions in the first edition of his book, including the recent discoveries of the Cosmic Background Explorer satellite (COBE), which probed back in time to within 300,000 years of the universe's beginning and revealed wrinkles in the fabric of space-time that he had projected. Eager to bring to his original text the new knowledge revealed by these observations, as well as his own recent research, Professor Hawking has prepared a new introduction to the book, written an entirely new chapter on wormholes and time travel, and updated the chapters throughout. </intro>
+    </book>
+    <book>
+        <name>The Handmaid's Tale</name>
+        <author>Margaret Atwood</author>
+        <quantity>30</quantity>
+        <intro>Offred is a Handmaid in the Republic of Gilead. She may leave the home of the Commander and his wife once a day to walk to food markets whose signs are now pictures instead of words because women are no longer allowed to read. She must lie on her back once a month and pray that the Commander makes her pregnant, because in an age of declining births, Offred and the other Handmaids are valued only if their ovaries are viable. Offred can remember the years before, when she lived and made love with her husband, Luke; when she played with and protected her daughter; when she had a job, money of her own, and access to knowledge. But all of that is gone now... </intro>
+    </book>
+    <book>
+        <name>Thirteen Reasons Why</name>
+        <author>Jay Asher</author>
+        <quantity>10</quantity>
+        <intro>Clay Jensen returns home from school to find a strange package with his name on it lying on his porch. Inside he discovers several cassette tapes recorded by Hannah Baker–his classmate and crush–who committed suicide two weeks earlier. Hannah’s voice tells him that there are thirteen reasons why she decided to end her life. Clay is one of them. If he listens, he’ll find out why.
 
-	<book>
-		<name>A brief history of time</name>
-		<author>Stephen Hawking</author>
-	</book>
-	
-	<book>
-		<name>The Handmaid's Tale</name>
-		<author>Margaret Atwood</author>
-	</book>
-	
-	<book>
-		<name>Thirteen Reasons Why</name>
-		<author>Jay Asher</author>
-	</book>
-	
-	<book>
-		<name>The 5 Love Languages: The Secret to Love that Lasts</name>
-		<author>Gary Chapman</author>
-	</book>
-	
-	<book>
-		<name>Algorithms to Live By: The Computer Science of Human Decisions</name>
-		<author>Brian Christian</author>
-	</book>
-	
+Clay spends the night crisscrossing his town with Hannah as his guide. He becomes a firsthand witness to Hannah’s pain, and as he follows Hannah’s recorded words throughout his town, what he discovers changes his life forever. </intro>
+    </book>
+    <book>
+        <name>The 5 Love Languages: The Secret to Love that Lasts</name>
+        <author>Gary Chapman</author>
+        <quantity>1</quantity>
+        <intro>Falling in love is easy. Staying in love—that’s the challenge! How can you keep your relationship fresh and growing amid the demands, conflicts, and just plain boredom of everyday life?
+
+In the #1 New York Times bestseller The 5 Love Languages, you’ll discover the secret that has transformed millions of relationships worldwide. Whether your relationship is flourishing or failing, Dr. Gary Chapman’s proven approach to showing and receiving love will help you experience deeper and richer levels of intimacy with your partner—starting today.
+
+The 5 Love Languages is as practical as it is insightful. Updated to reflect the complexities of relationships today, this new edition reveals intrinsic truths and applies relevant, actionable wisdom in ways that work.</intro>
+    </book>
+    <book>
+        <name>Algorithms to Live By: The Computer Science of Human Decisions</name>
+        <author>Brian Christian</author>
+        <quantity>40</quantity>
+        <intro>A fascinating exploration of how insights from computer algorithms can be applied to our everyday lives, helping to solve common decision-making problems and illuminate the workings of the human mind
+
+All our lives are constrained by limited space and time, limits that give rise to a particular set of problems. What should we do, or leave undone, in a day or a lifetime? How much messiness should we accept? What balance of new activities and familiar favorites is the most fulfilling? These may seem like uniquely human quandaries, but they are not: computers, too, face the same constraints, so computer scientists have been grappling with their version of such issues for decades. And the solutions they've found have much to teach us.
+
+In a dazzlingly interdisciplinary work, acclaimed author Brian Christian and cognitive scientist Tom Griffiths show how the algorithms used by computers can also untangle very human questions. They explain how to have better hunches and when to leave things to chance, how to deal with overwhelming choices and how best to connect with others. From finding a spouse to finding a parking spot, from organizing one's inbox to understanding the workings of memory, Algorithms to Live By transforms the wisdom of computer science into strategies for human living.</intro>
+    </book>
+    <book>
+        <name>Astrophysics for People in a Hurry</name>
+        <author>Neil deGrasse Tyson</author>
+        <quantity>10</quantity>
+        <intro>What is the nature of space and time? How do we fit within the universe? How does the universe fit within us? There’s no better guide through these mind-expanding questions than acclaimed astrophysicist and best-selling author Neil deGrasse Tyson.
+
+But today, few of us have time to contemplate the cosmos. So Tyson brings the universe down to Earth succinctly and clearly, with sparkling wit, in tasty chapters consumable anytime and anywhere in your busy day.
+
+While you wait for your morning coffee to brew, for the bus, the train, or a plane to arrive, Astrophysics for People in a Hurry will reveal just what you need to be fluent and ready for the next cosmic headlines: from the Big Bang to black holes, from quarks to quantum mechanics, and from the search for planets to the search for life in the universe.</intro>
+    </book>
+    <book>
+        <name>The Lord of the Rings</name>
+        <author>J. R. R. Tolkien</author>
+        <quantity>5</quantity>
+        <intro>A fantastic starter set for new Tolkien fans or readers interested in rediscovering the magic of Middle-earth, this three-volume box set features paperback editions of the complete trilogy -- The Fellowship of the Ring, The Two Towers, and The Return of the King -- each with art from the New Line Productions feature film on the cover.
+        J.R.R. Tolkien's The Lord of the Rings trilogy is a genuine masterpiece. The most widely read and influential fantasy epic of all time, it is also quite simply one of the most memorable and beloved tales ever told. Originally published in 1954, The Lord of the Rings set the framework upon which all epic/quest fantasy since has been built. Through the urgings of the enigmatic wizard Gandalf, young hobbit Frodo Baggins embarks on an urgent, incredibly treacherous journey to destroy the One Ring. This ring -- created and then lost by the Dark Lord, Sauron, centuries earlier -- is a weapon of evil, one that Sauron desperately wants returned to him. With the power of the ring once again his own, the Dark Lord will unleash his wrath upon all of Middle-earth. The only way to prevent this horrible fate from becoming reality is to return the Ring to Mordor, the only place it can be destroyed. Unfortunately for our heroes, Mordor is also Sauron's lair. The Lord of the Rings trilogy is essential reading not only for fans of fantasy but for lovers of classic literature as well...</intro>
+    </book>
+    <book>
+        <name>A Tale of Two Cities</name>
+        <author>Charles Dickens</author>
+        <quantity>3</quantity>
+        <intro>After eighteen years as a political prisoner in the Bastille, the ageing Doctor Manette is finally released and reunited with his daughter in England. There the lives of two very different men, Charles Darnay, an exiled French aristocrat, and Sydney Carton, a disreputable but brilliant English lawyer, become enmeshed through their love for Lucie Manette. From the tranquil roads of London, they are drawn against their will to the vengeful, bloodstained streets of Paris at the height of the Reign of Terror, and they soon fall under the lethal shadow of La Guillotine.
+
+This edition uses the text as it appeared in its serial publication in 1859 to convey the full scope of Dickens's vision, and includes the original illustrations by H. K. Browne ('Phiz'). Richard Maxwell's introduction discusses the intricate interweaving of epic drama with personal tragedy.</intro>
+    </book>
+    <book>
+        <name>The Hobbit</name>
+        <author>J. R. R. Tolkien</author>
+        <quantity>3</quantity>
+        <intro>In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.
+
+Written for J.R.R. Tolkien’s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent. The text in this 372-page paperback edition is based on that first published in Great Britain by Collins Modern Classics (1998), and includes a note on the text by Douglas A. Anderson (2001). Unforgettable!</intro>
+    </book>
+    <book>
+        <name>The Da Vinci Code</name>
+        <author>Dan Brown</author>
+        <quantity>5</quantity>
+        <intro>An ingenious code hidden in the works of Leonardo da Vinci. A desperate race through the cathedrals and castles of Europe. An astonishing truth concealed for centuries . . . unveiled at last.
+
+While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call in the dead of the night. The elderly curator of the Louvre has been murdered inside the museum, his body covered in baffling symbols. As Langdon and gifted French cryptologist Sophie Neveu sort through the bizarre riddles, they are stunned to discover a trail of clues hidden in the works of Leonardo da Vinci—clues visible for all to see and yet ingeniously disguised by the painter.
+
+Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.</intro>
+    </book>
+    <book>
+        <name>The Alchemist</name>
+        <author>Paulo Coelho</author>
+        <quantity>10</quantity>
+        <intro>Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.</intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Philosopher's Stone</name>
+        <author>J.K. Rowling</author>
+        <quantity>6</quantity>
+        <intro>Purchase includes a free trial membership in the publisher's book club where you can select from more than a million books without charge. Chapters: Harry Potter and the Philosopher's Stone. Source: Wikipedia. Free updates online. Not illustrated. Excerpt: Harry Potter and the Philosopher's Stone is the first novel in the Harry Potter series written by J. K. Rowling and featuring Harry Potter, a young wizard. It describes how Harry discovers he is a wizard, makes close friends, and a few enemies at the Hogwarts School of Witchcraft and Wizardry, and with the help of his friends thwarts an attempted comeback by the evil wizard Voldemort, who killed Harry's parents and tried to kill Harry when he was one year old. The book was published on 30 June 1997 by Bloomsbury in London, and in the United States under the title Harry Potter and the Sorcerer's Stone by Scholastic Corporation in 1998. It won most of the UK book awards that were judged by children, and other awards in the USA. The book reached the top of the New York Times list of best-selling fiction in August 1999, and stayed near the top of that list for much of 1999 and 2000. It has been translated into several other languages and has been made into a feature-length film of the same name. Most reviews were very favourable, commenting on Rowling's imagination, humour, simple, direct style and clever plot construction, although a few complained that the final chapters looked rushed. The writing has been compared to that of Jane Austen, one of Rowling's favourite authors, of Roald Dahl, whose works dominated children's stories before the appearance of Harry Potter, and of the Ancient Greek story-teller Homer. While some commentators thought the book looked backwards to Victorian and Edwardian boarding school stories, others thought it placed the genre firmly in the modern world by featuring contemporary ethical and social issues</intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Chamber of Secrets</name>
+        <author>J.K. Rowling</author>
+        <quantity>20</quantity>
+        <intro>The Dursleys were so mean and hideous that summer that all Harry Potter wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he's packing his bags, Harry receives a warning from a strange, impish creature named Dobby who says that if Harry Potter returns to Hogwarts, disaster will strike.
+
+And strike it does. For in Harry's second year at Hogwarts, fresh torments and horrors arise, including an outrageously stuck-up new professor, Gilderoy Lockhart, a spirit named Moaning Myrtle who haunts the girls' bathroom, and the unwanted attentions of Ron Weasley's younger sister, Ginny. But each of these seem minor annoyances when the real trouble begins, and someone, or something, starts turning Hogwarts students to stone. Could it be Draco Malfoy, a more poisonous rival than ever? Could it possibly be Hagrid, whose mysterious past is finally told? Or could it be the one everyone at Hogwarts most suspects: Harry Potter himself? </intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Prisoner of Azkaban</name>
+        <author>J.K. Rowling</author>
+        <quantity>9</quantity>
+        <intro>Harry Potter is lucky to reach the age of thirteen, since he has already survived the murderous attacks of the feared Dark Lord on more than one occasion. But his hopes for a quiet term concentrating on Quidditch are dashed when a maniacal mass-murderer escapes from Azkaban, pursued by the soul-sucking Dementors who guard the prison. It's assumed that Hogwarts is the safest place for Harry to be. But is it a coincidence that he can feel eyes watching him in the dark, and should he be taking Professor Trelawney's ghoulish predictions seriously?</intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Goblet of Fire</name>
+        <author>J.K. Rowling</author>
+        <quantity>0</quantity>
+        <intro>Harry Potter is midway through both his training as a wizard and his coming of age. Harry wants to get away from the pernicious Dursleys and go to the International Quidditch Cup with Hermione, Ron, and the Weasleys. He wants to dream about Cho Chang, his crush (and maybe do more than dream). He wants to find out about the mysterious event that supposed to take place at Hogwarts this year, an event involving two other rival schools of magic, and a competition that hasn't happened for hundreds of years. He wants to be a normal, fourteen-year-old wizard. But unfortunately for Harry Potter, he's not normal - even by wizarding standards.
+        And in his case, different can be deadly.</intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Order of the Phoenix</name>
+        <author>J.K. Rowling</author>
+        <quantity>0</quantity>
+        <intro>Harry Potter is due to start his fifth year at Hogwarts School of Witchcraft and Wizardry. His best friends Ron and Hermione have been very secretive all summer and he is desperate to get back to school and find out what has been going on. However, what Harry discovers is far more devastating than he could ever have expected...
+
+Suspense, secrets and thrilling action from the pen of J.K. Rowling ensure an electrifying adventure that is impossible to put down. </intro>
+    </book>
+    <book>
+        <name>Harry Potter and the Half-Blood Prince</name>
+        <author>J.K. Rowling</author>
+        <quantity>10</quantity>
+        <intro>The war against Voldemort is not going well: even Muggle governments are noticing. Ron scans the obituary pages of The Daily Prophet looking for familiar names. Dumbledore is absent from Hogwarts for long stretches of time, and the Order of the Phoenix has already suffered losses. And yet... As in all wars, life goes on. Sixth-year students learn to Apparate, and lose a few eyebrows in the process. The Weasley twins expand their business. Teenagers flirt and fight and fall in love. Classes are never straightforward, though Harry receives some extraordinary help from the mysterious Half-Blood Prince. So it's the home front that takes center stage in the multilayered sixth installment of the story of Harry Potter. Harry struggles to uncover the identity of the Half-Blood Prince, the past owner of a potions textbook he now possesses that is filled with ingenious, potentially deadly, spells. But Harry's life is suddenly changed forever when someone close to him is heinously murdered right before his eyes. With Dumbledore's guidance, he seeks out the full, complex story of the boy who became Lord Voldemort, and thereby attempts to find what may be his only vulnerability.</intro>
+    </book>
+    <book>
+        <name>Twilight</name>
+        <author>Stephenie Meyer</author>
+        <quantity>5</quantity>
+        <intro>About three things I was absolutely positive.
+
+First, Edward was a vampire.
+
+Second, there was a part of him—and I didn't know how dominant that part might be—that thirsted for my blood.
+
+And third, I was unconditionally and irrevocably in love with him.
+
+In the first book of the Twilight Saga, internationally bestselling author Stephenie Meyer introduces Bella Swan and Edward Cullen, a pair of star-crossed lovers whose forbidden relationship ripens against the backdrop of small-town suspicion and a mysterious coven of vampires. This is a love story with bite.</intro>
+    </book>
 </Library>
