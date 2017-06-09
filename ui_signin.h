@@ -32,11 +32,13 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
+    QSpacerItem *verticalSpacer_2;
     QLineEdit *AccountEdit;
     QLineEdit *PasswordEdit;
     QComboBox *RoleComboBox;
     QPushButton *LogInButton;
     QLabel *ResultLabel;
+    QSpacerItem *verticalSpacer;
     QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QDialog *SignIn)
@@ -53,8 +55,14 @@ public:
         horizontalLayout->addItem(horizontalSpacer);
 
         verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(40);
+        verticalLayout->setSpacing(30);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
+        verticalLayout->setContentsMargins(20, 0, 20, 0);
+        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
+
         AccountEdit = new QLineEdit(SignIn);
         AccountEdit->setObjectName(QStringLiteral("AccountEdit"));
         AccountEdit->setStyleSheet(QLatin1String("border-width: 0px;\n"
@@ -163,7 +171,15 @@ public:
 
         verticalLayout->addWidget(ResultLabel);
 
-        verticalLayout->setStretch(2, 1);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
+        verticalLayout->setStretch(1, 2);
+        verticalLayout->setStretch(2, 2);
+        verticalLayout->setStretch(3, 2);
+        verticalLayout->setStretch(4, 2);
+        verticalLayout->setStretch(5, 2);
 
         horizontalLayout->addLayout(verticalLayout);
 

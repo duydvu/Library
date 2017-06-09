@@ -3,29 +3,8 @@
     <account>
         <name>admin</name>
         <password>61646d696e</password>
-    </account>
-    <account>
-        <name>duyisking</name>
-        <password>636f6d656f766572</password>
-    </account>
-    <account>
-        <name>vuducduy</name>
-        <password>313233343536</password>
-    </account>
-    <account>
-        <name>duy</name>
-        <password>64757969736b696e67</password>
-    </account>
-    <account>
-        <name>admin</name>
-        <password>6d696e6164</password>
-    </account>
-    <account>
-        <name>abc</name>
-        <password>646566</password>
-    </account>
-    <account>
-        <name>ahihi</name>
-        <password>6a696a69</password>
+        <role>A</role>
+        <id>0</id>
+        <active>F</active>
     </account>
 </Accounts>

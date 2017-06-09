@@ -10,13 +10,17 @@
 #include <QDir>
 #include <qxmlstream.h>
 #include <QMessageBox>
+#include <QCloseEvent>
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;
 extern QLinkedList<User> users;
+extern QLinkedList<Account> temp_accounts;
+extern QLinkedList<User> temp_users;
 extern Account LogInAcc;
 
-bool compare(QChar a, QChar b);
+bool compare(QChar, QChar);
+QString ToString(QDate);
 
 #endif
 

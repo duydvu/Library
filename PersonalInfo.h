@@ -17,8 +17,7 @@ public:
     User getUser();
 private slots:
 
-
-    void on_pushButton_clicked();
+    void on_Done_clicked();
 
 private:
     Ui::personalinfo *ui;

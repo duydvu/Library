@@ -12,6 +12,8 @@ public:
     void setAcc(QString acc);
     QString getPsw();
     void setPsw(QString psw);
+    QString getRole();
+    void setRole(QString role);
     QString getID();
     void setID(QString id);
     void setActive(bool TF);
@@ -21,7 +23,8 @@ public:
 private:
     QString acc;
     QString psw;
-    QString ID;
+    QString role;
+    QString id;
     bool active;
 };
 

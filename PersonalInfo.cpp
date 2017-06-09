@@ -1,5 +1,7 @@
 #include "PersonalInfo.h"
 #include "ui_PersonalInfo.h"
+#include "user.h"
+#include "data.h"
 
 personalinfo::personalinfo(QWidget *parent) :
     QDialog(parent),
@@ -16,18 +18,21 @@ personalinfo::~personalinfo()
 User personalinfo::getUser()
 {
     User a;
-    QString sex,b;
-    if(ui->male->isChecked()) sex="nam";
-    else if (ui->female->isChecked()) sex="nữ";
+    QString sex,b,c="";
+    if(ui->male->isChecked()) sex="male";
+    else if (ui->female->isChecked()) sex="female";
     a.setName(ui->name->text());
     a.setSex(sex);
-    b=a.setDateofBirthtoQString(ui->dateEdit->date());
-    a.setDateofBirth(b);
-    a.setCMND(ui->CMND->text());
+    a.setDateofBirth(ToString(ui->dateOfBirth->date()));
+    a.setAddress(ui->address->text());
+    a.setEmail(ui->email->text());
+    QString id = QString::number(users.size());
+    a.setID(id);
+    a.setDoP(ToString(QDate::currentDate()));
     return a;
 }
 
-void personalinfo::on_pushButton_clicked()
+void personalinfo::on_Done_clicked()
 {
     this->accept();
 }

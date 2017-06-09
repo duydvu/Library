@@ -32,28 +32,24 @@ void Account::setPsw(QString psw)
     this->psw = psw;
 }
 
-void Account::clear()
+void Account::setRole(QString role)
 {
-    this->acc="";
-    this->psw="";
+    this->role=role;
 }
 
-QString Account::encrypt(QString psw)
+QString Account::getRole()
 {
-    QByteArray p;
-    p.append(psw);
-    QCryptographicHash::hash(p, QCryptographicHash::Md5);
-    return p.toHex();
+    return this->role;
 }
 
 void Account::setID(QString id)
 {
-    this->ID=id;
+    this->id=id;
 }
 
 QString Account::getID()
 {
-    return this->ID;
+    return this->id;
 }
 
 void Account::setActive(bool TF)
@@ -64,4 +60,21 @@ void Account::setActive(bool TF)
 bool Account::getActive()
 {
     return this->active;
+}
+
+void Account::clear()
+{
+    this->acc="";
+    this->psw="";
+    this->role="";
+    this->id="";
+    this->active=false;
+}
+
+QString Account::encrypt(QString psw)
+{
+    QByteArray p;
+    p.append(psw);
+    QCryptographicHash::hash(p, QCryptographicHash::Md5);
+    return p.toHex();
 }

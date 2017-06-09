@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->AccountComboBox->hide();
     ui->BooksTable->setColumnCount(3);
     ui->BooksTable->setHorizontalHeaderItem(0, new QTableWidgetItem("#"));
     ui->BooksTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Tựa sách"));
@@ -20,6 +19,8 @@ MainWindow::MainWindow(QWidget *parent) :
     loadBooksFile();
     loadAccountFile();
     loadUserFile();
+    loadTempAccountFile();
+    loadTempUserFile();
 }
 
 MainWindow::~MainWindow()
@@ -34,20 +35,19 @@ void MainWindow::resizeEvent(QResizeEvent* event)
    ui->SignUpButton->setGeometry(QRect(this->size().width()-110, 20, 101, 31));
    ui->SignInButton->setGeometry(QRect(this->size().width()-219, 20, 101, 31));
    ui->AccountLabel->setGeometry(QRect(this->size().width()-239, 20, 231, 31));
-   ui->AccountComboBox->setGeometry(QRect(this->size().width()-170, 60, 161, 31));
 }
 
 
 void MainWindow::loadBooksFile()
 {
-    QFile xmlFile(":/Data/Books.xml");
-    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    QFile* xmlFile = new QFile(":/Data/Books.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Books.xml to load data",
         QMessageBox::Ok);
         return;
     }
-    QXmlStreamReader* xmlReader = new QXmlStreamReader(&xmlFile);
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
     Book b;
     while(!xmlReader->atEnd() && !xmlReader->hasError())
     {
@@ -61,6 +61,14 @@ void MainWindow::loadBooksFile()
             if(xmlReader->name() == "author")
             {
                 b.setAuthor(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "quantity")
+            {
+                b.setQuantity(xmlReader->readElementText().toInt());
+            }
+            if(xmlReader->name() == "intro")
+            {
+                b.setIntro(xmlReader->readElementText());
                 books.append(b);
                 b.clear();
             }
@@ -76,20 +84,21 @@ void MainWindow::loadBooksFile()
 
     xmlReader->clear();
     delete xmlReader;
-    xmlFile.close();
+    xmlFile->close();
+    delete xmlFile;
 }
 
 void MainWindow::loadAccountFile()
 {
-    QFile xmlFile(":/Data/Accounts.xml");
-    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    QFile* xmlFile = new QFile(":/Data/Accounts.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Accounts.xml to load data",
         QMessageBox::Ok);
         return;
     }
 
-    QXmlStreamReader* xmlReader = new QXmlStreamReader(&xmlFile);
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
     Account a;
 
     while(!xmlReader->atEnd() && !xmlReader->hasError())
@@ -104,6 +113,21 @@ void MainWindow::loadAccountFile()
             if(xmlReader->name() == "password")
             {
                 a.setPsw(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "role")
+            {
+                a.setRole(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "active")
+            {
+                QString b=xmlReader->readElementText();
+                if(b=="T")
+                    a.setActive(true);
+                else a.setActive(false);
                 accounts.append(a);
                 a.clear();
             }
@@ -119,20 +143,80 @@ void MainWindow::loadAccountFile()
 
     xmlReader->clear();
     delete xmlReader;
-    xmlFile.close();
+    xmlFile->close();
+    delete xmlFile;
+}
+
+void MainWindow::loadTempAccountFile()
+{
+    QFile* xmlFile = new QFile(":/Data/TempAccounts.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open TempAccounts.xml to load data",
+        QMessageBox::Ok);
+        return;
+    }
+
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
+    Account a;
+
+    while(!xmlReader->atEnd() && !xmlReader->hasError())
+    {
+        xmlReader->readNext();
+        if(xmlReader->isStartElement())
+        {
+            if(xmlReader->name() == "name")
+            {
+                a.setAcc(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "password")
+            {
+                a.setPsw(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "role")
+            {
+                a.setRole(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "active")
+            {
+                QString b=xmlReader->readElementText();
+                if(b=="T")
+                    a.setActive(true);
+                else a.setActive(false);
+                temp_accounts.append(a);
+                a.clear();
+            }
+        }
+    }
+
+    if(xmlReader->hasError()) {
+        QMessageBox::critical(this,
+        "TempAccounts.xml Parse Error",xmlReader->errorString(),
+        QMessageBox::Ok);
+        return;
+    }
+
+    xmlReader->clear();
+    delete xmlReader;
+    xmlFile->close();
+    delete xmlFile;
 }
 
 void MainWindow::loadUserFile()
 {
-    QFile xmlFile(":/Data/Users.xml");
-    if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    QFile* xmlFile = new QFile(":/Data/Users.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Users.xml to load data",
         QMessageBox::Ok);
         return;
     }
 
-    QXmlStreamReader* xmlReader = new QXmlStreamReader(&xmlFile);
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
     User a;
 
     while(!xmlReader->atEnd() && !xmlReader->hasError())
@@ -144,17 +228,29 @@ void MainWindow::loadUserFile()
             {
                 a.setName(xmlReader->readElementText());
             }
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "DoB")
+            {
+                a.setDateofBirth(xmlReader->readElementText());
+            }
             if(xmlReader->name() == "sex")
             {
                 a.setSex(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "Dob")
+            if(xmlReader->name() == "address")
             {
-                a.setDateofBirth(xmlReader->readElementText());
+                a.setAddress(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "cmnd")
+            if(xmlReader->name() == "email")
             {
-                a.setCMND(xmlReader->readElementText());
+                a.setEmail(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "DoP")
+            {
+                a.setDoP(xmlReader->readElementText());
                 users.append(a);
                 a.clear();
             }
@@ -170,7 +266,72 @@ void MainWindow::loadUserFile()
 
     xmlReader->clear();
     delete xmlReader;
-    xmlFile.close();
+    xmlFile->close();
+    delete xmlFile;
+}
+
+void MainWindow::loadTempUserFile()
+{
+    QFile* xmlFile = new QFile(":/Data/TempUsers.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open TempUsers.xml to load data",
+        QMessageBox::Ok);
+        return;
+    }
+
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
+    User a;
+
+    while(!xmlReader->atEnd() && !xmlReader->hasError())
+    {
+        xmlReader->readNext();
+        if(xmlReader->isStartElement())
+        {
+            if(xmlReader->name() == "name")
+            {
+                a.setName(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "DoB")
+            {
+                a.setDateofBirth(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "sex")
+            {
+                a.setSex(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "address")
+            {
+                a.setAddress(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "email")
+            {
+                a.setEmail(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "DoP")
+            {
+                a.setDoP(xmlReader->readElementText());
+                temp_users.append(a);
+                a.clear();
+            }
+        }
+    }
+
+    if(xmlReader->hasError()) {
+        QMessageBox::critical(this,
+        "TempUsers.xml Parse Error",xmlReader->errorString(),
+        QMessageBox::Ok);
+        return;
+    }
+
+    xmlReader->clear();
+    delete xmlReader;
+    xmlFile->close();
+    delete xmlFile;
 }
 
 void MainWindow::on_FindBooksButton_clicked()
@@ -290,7 +451,6 @@ void MainWindow::getAccount()
 {
     ui->SignInButton->hide();
     ui->SignUpButton->hide();
-    ui->AccountComboBox->show();
     ui->AccountLabel->setText("Xin chào!  " + LogInAcc.getAcc());
     delete s;
 }
@@ -306,17 +466,76 @@ void MainWindow::on_SignUpButton_clicked()
 
 void MainWindow::createAccount()
 {
-    accounts.append(su->getAccount());
+    temp_accounts.append(su->getAccount());
+    delete su;
 
-    QFile xmlFile(QDir::currentPath() + "/Data/Accounts.xml");
+    // Fill user information
+    pi=new personalinfo;
+    pi->setWindowTitle("Thông tin người dùng");
+    connect(pi,SIGNAL(accepted()),this,SLOT(createUser()));
+    pi->exec();
+}
 
-    if (!xmlFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+void MainWindow::createUser()
+{
+    temp_users.append(pi->getUser());
+    delete pi;
+}
+
+
+void MainWindow::closeEvent (QCloseEvent *event)
+{
+    saveBooksFile();
+    saveAccountFile();
+    saveUserFile();
+    saveTempAccountFile();
+    saveTempUserFile();
+    event->accept();
+}
+void MainWindow::saveUserFile()
+{
+    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Users.xml");
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open Users.xml to write data",
+        QMessageBox::Ok);
+        return;
+    }
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartDocument();
+    xmlWriter->writeStartElement("Users");
+
+    QLinkedList<User>::iterator it=users.begin();
+    for(;it!=users.end();it++)
+    {
+        xmlWriter->writeStartElement("user");
+        xmlWriter->writeTextElement("name", (*it).getName());
+        xmlWriter->writeTextElement("id", (*it).getID());
+        xmlWriter->writeTextElement("DoB", (*it).getDateofBirth());
+        xmlWriter->writeTextElement("sex", (*it).getSex());
+        xmlWriter->writeTextElement("address", (*it).getAddress());
+        xmlWriter->writeTextElement("email", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeEndElement();
+    }
+    xmlWriter->writeEndElement();
+
+    delete xmlWriter;
+    xmlFile->close();
+    delete xmlFile;
+}
+void MainWindow::saveAccountFile()
+{
+    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Accounts.xml");
+
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Accounts.xml to write data",
         QMessageBox::Ok);
         return;
     }
-    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(&xmlFile);
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
     xmlWriter->setAutoFormatting(true);
     xmlWriter->writeStartDocument();
     xmlWriter->writeStartElement("Accounts");
@@ -327,64 +546,131 @@ void MainWindow::createAccount()
         xmlWriter->writeStartElement("account");
         xmlWriter->writeTextElement("name", (*it).getAcc());
         xmlWriter->writeTextElement("password", (*it).getPsw());
+        xmlWriter->writeTextElement("role", (*it).getRole());
+        xmlWriter->writeTextElement("id", (*it).getID());
+        if((*it).getActive())
+            xmlWriter->writeTextElement("active", "T");
+        else xmlWriter->writeTextElement("active", "F");
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
 
     delete xmlWriter;
-    xmlFile.close();
-    delete su;
+    xmlFile->close();
+    delete xmlFile;
 }
-
-void MainWindow::createUser()
+void MainWindow::saveBooksFile()
 {
-    users.append(pi->getUser());
+    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Books.xml");
 
-    QFile xmlFile(QDir::currentPath() + "/Data/Users.xml");
-    qDebug()<<QDir::currentPath();
-    if (!xmlFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
-        "Couldn't open Users.xml to write data",
+        "Couldn't open Books.xml to write data",
         QMessageBox::Ok);
         return;
     }
-    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(&xmlFile);
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
     xmlWriter->setAutoFormatting(true);
     xmlWriter->writeStartDocument();
-    xmlWriter->writeStartElement("Users");
+    xmlWriter->writeStartElement("Library");
 
-    QLinkedList<User>::iterator it=users.begin();
-    for(;it!=users.end();it++)
+    QLinkedList<Book>::iterator it=books.begin();
+    for(;it!=books.end();it++)
     {
-        xmlWriter->writeStartElement("user");
+        xmlWriter->writeStartElement("book");
         xmlWriter->writeTextElement("name", (*it).getName());
-        xmlWriter->writeTextElement("sex", (*it).getSex());
-        xmlWriter->writeTextElement("Dob", (*it).getDateofBirth());
-        xmlWriter->writeTextElement("cmnd", (*it).getCMND());
+        xmlWriter->writeTextElement("author", (*it).getAuthor());
+        xmlWriter->writeTextElement("quantity", QString::number((*it).getQuantity()));
+        xmlWriter->writeTextElement("intro", (*it).getIntro());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
 
     delete xmlWriter;
-    xmlFile.close();
-    delete pi;
+    xmlFile->close();
+    delete xmlFile;
+}
+void MainWindow::saveTempAccountFile()
+{
+    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempAccounts.xml");
+
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open TempAccounts.xml to write data",
+        QMessageBox::Ok);
+        return;
+    }
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartDocument();
+    xmlWriter->writeStartElement("TempAccounts");
+
+    QLinkedList<Account>::iterator it=temp_accounts.begin();
+    for(;it!=temp_accounts.end();it++)
+    {
+        xmlWriter->writeStartElement("account");
+        xmlWriter->writeTextElement("name", (*it).getAcc());
+        xmlWriter->writeTextElement("password", (*it).getPsw());
+        xmlWriter->writeTextElement("role", (*it).getRole());
+        xmlWriter->writeTextElement("id", (*it).getID());
+        if((*it).getActive())
+            xmlWriter->writeTextElement("active", "T");
+        else xmlWriter->writeTextElement("active", "F");
+        xmlWriter->writeEndElement();
+    }
+    xmlWriter->writeEndElement();
+
+    delete xmlWriter;
+    xmlFile->close();
+    delete xmlFile;
+}
+void MainWindow::saveTempUserFile()
+{
+    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempUsers.xml");
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open TempUsers.xml to write data",
+        QMessageBox::Ok);
+        return;
+    }
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartDocument();
+    xmlWriter->writeStartElement("TempUsers");
+
+    QLinkedList<User>::iterator it=temp_users.begin();
+    for(;it!=temp_users.end();it++)
+    {
+        xmlWriter->writeStartElement("user");
+        xmlWriter->writeTextElement("name", (*it).getName());
+        xmlWriter->writeTextElement("id", (*it).getID());
+        xmlWriter->writeTextElement("DoB", (*it).getDateofBirth());
+        xmlWriter->writeTextElement("sex", (*it).getSex());
+        xmlWriter->writeTextElement("address", (*it).getAddress());
+        xmlWriter->writeTextElement("email", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeEndElement();
+    }
+    xmlWriter->writeEndElement();
+
+    delete xmlWriter;
+    xmlFile->close();
+    delete xmlFile;
 }
 
-void MainWindow::on_AccountComboBox_currentIndexChanged(const QString &arg1)
+
+void MainWindow::on_BooksTable_cellClicked(int row, int column)
 {
-    if(arg1=="Đăng xuất")
+    column++;
+    QString s = ui->BooksTable->item(row,1)->text();
+    QLinkedList<Book>::iterator it=books.begin();
+    for(;it!=books.end();it++)
     {
-        LogInAcc.clear();
-        ui->SignInButton->show();
-        ui->SignUpButton->show();
-        ui->AccountComboBox->hide();
-        ui->AccountLabel->clear();
-    }
-    if (arg1=="Trang cá nhân")
-    {
-        pi=new personalinfo;
-        pi->setWindowTitle("Thông tin cá nhân");
-        connect(pi,SIGNAL(accepted()),this,SLOT(createUser()));
-        pi->exec();
+
+        if(s==(*it).getName())
+        {
+            ui->intro->setText((*it).getIntro());
+            ui->quantity->setText(QString::number((*it).getQuantity()));
+        }
     }
 }

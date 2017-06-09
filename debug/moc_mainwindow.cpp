@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[13];
-    char stringdata0[199];
+    QByteArrayData data[14];
+    char stringdata0[192];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,17 +39,18 @@ QT_MOC_LITERAL(6, 71, 23), // "on_SignInButton_clicked"
 QT_MOC_LITERAL(7, 95, 10), // "getAccount"
 QT_MOC_LITERAL(8, 106, 13), // "createAccount"
 QT_MOC_LITERAL(9, 120, 23), // "on_SignUpButton_clicked"
-QT_MOC_LITERAL(10, 144, 38), // "on_AccountComboBox_currentInd..."
-QT_MOC_LITERAL(11, 183, 4), // "arg1"
-QT_MOC_LITERAL(12, 188, 10) // "createUser"
+QT_MOC_LITERAL(10, 144, 10), // "createUser"
+QT_MOC_LITERAL(11, 155, 25), // "on_BooksTable_cellClicked"
+QT_MOC_LITERAL(12, 181, 3), // "row"
+QT_MOC_LITERAL(13, 185, 6) // "column"
 
     },
     "MainWindow\0resizeEvent\0\0QResizeEvent*\0"
     "event\0on_FindBooksButton_clicked\0"
     "on_SignInButton_clicked\0getAccount\0"
     "createAccount\0on_SignUpButton_clicked\0"
-    "on_AccountComboBox_currentIndexChanged\0"
-    "arg1\0createUser"
+    "createUser\0on_BooksTable_cellClicked\0"
+    "row\0column"
 };
 #undef QT_MOC_LITERAL
 
@@ -73,8 +74,8 @@ static const uint qt_meta_data_MainWindow[] = {
        7,    0,   59,    2, 0x08 /* Private */,
        8,    0,   60,    2, 0x08 /* Private */,
        9,    0,   61,    2, 0x08 /* Private */,
-      10,    1,   62,    2, 0x08 /* Private */,
-      12,    0,   65,    2, 0x08 /* Private */,
+      10,    0,   62,    2, 0x08 /* Private */,
+      11,    2,   63,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -83,8 +84,8 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   11,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   12,   13,
 
        0        // eod
 };
@@ -101,8 +102,8 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->getAccount(); break;
         case 4: _t->createAccount(); break;
         case 5: _t->on_SignUpButton_clicked(); break;
-        case 6: _t->on_AccountComboBox_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 7: _t->createUser(); break;
+        case 6: _t->createUser(); break;
+        case 7: _t->on_BooksTable_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }

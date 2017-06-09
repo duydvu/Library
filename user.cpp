@@ -25,13 +25,6 @@ QString User::getSex()
  return this->sex;
 }
 
-QString User::setDateofBirthtoQString(QDate time)
-{
-    QString s;
-    s=time.toString("dd.MM.yyyy");
-    return s;
-}
-
 void User::setDateofBirth(QString time)
 {
     this->DateofBirth=time;
@@ -52,21 +45,43 @@ QString User::getID()
     return this->ID;
 }
 
-void User::setCMND(QString CMND)
+void User::setAddress(QString address)
 {
-  this->CMND=CMND;
+  this->address=address;
 }
 
-QString User::getCMND()
+QString User::getAddress()
 {
-    return this->CMND;
+    return this->address;
+}
+
+void User::setEmail(QString email)
+{
+  this->email=email;
+}
+
+QString User::getEmail()
+{
+    return this->email;
+}
+
+void User::setDoP(QString DoP)
+{
+  this->DateofParticipation=DoP;
+}
+
+QString User::getDoP()
+{
+    return this->DateofParticipation;
 }
 
 void User::clear()
 {
     this->Name="";
+    this->ID="";
     this->sex="";
     this->DateofBirth="";
-    this->ID="";
-    this->CMND="";
+    this->address="";
+    this->email="";
+    this->DateofParticipation="";
 }

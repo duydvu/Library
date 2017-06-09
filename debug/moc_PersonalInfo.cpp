@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_personalinfo_t {
     QByteArrayData data[3];
-    char stringdata0[36];
+    char stringdata0[30];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,11 +30,11 @@ struct qt_meta_stringdata_personalinfo_t {
 static const qt_meta_stringdata_personalinfo_t qt_meta_stringdata_personalinfo = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "personalinfo"
-QT_MOC_LITERAL(1, 13, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(2, 35, 0) // ""
+QT_MOC_LITERAL(1, 13, 15), // "on_Done_clicked"
+QT_MOC_LITERAL(2, 29, 0) // ""
 
     },
-    "personalinfo\0on_pushButton_clicked\0"
+    "personalinfo\0on_Done_clicked\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +66,7 @@ void personalinfo::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         personalinfo *_t = static_cast<personalinfo *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_clicked(); break;
+        case 0: _t->on_Done_clicked(); break;
         default: ;
         }
     }

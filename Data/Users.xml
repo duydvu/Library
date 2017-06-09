@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Users>
     <user>
-        <name>dfg</name>
-        <sex>nữ</sex>
-        <Dob>01.01.1998</Dob>
-        <cmnd>321</cmnd>
-    </user>
-    <user>
-        <name>Vud</name>
-        <sex>nam</sex>
-        <Dob>01.01.1998</Dob>
-        <cmnd>456</cmnd>
+        <name>admin</name>
+        <id>0</id>
+        <DoB>01.01.1990</DoB>
+        <sex>male</sex>
+        <address>Mars</address>
+        <email>notreal@gmail.com</email>
+        <DoP>notreal@gmail.com</DoP>
     </user>
 </Users>

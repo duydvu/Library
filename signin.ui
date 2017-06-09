@@ -30,10 +30,38 @@
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1,0,0">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,2,2,2,0">
        <property name="spacing">
-        <number>40</number>
+        <number>30</number>
        </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item>
         <widget class="QLineEdit" name="AccountEdit">
          <property name="styleSheet">
@@ -190,6 +218,19 @@ font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </item>

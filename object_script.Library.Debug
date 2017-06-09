@@ -7,11 +7,12 @@ INPUT(
 ./debug\signup.o
 ./debug\data.o
 ./debug\user.o
-./debug\role.o
 ./debug\PersonalInfo.o
+./debug\admin.o
 ./debug\qrc_data.o
 ./debug\moc_mainwindow.o
 ./debug\moc_signin.o
 ./debug\moc_signup.o
 ./debug\moc_PersonalInfo.o
+./debug\moc_admin.o
 );

@@ -31,8 +31,30 @@ void Book::setAuthor(QString author)
     this->author=author;
 }
 
+int Book::getQuantity()
+{
+    return quantity;
+}
+
+void Book::setQuantity(int quantity)
+{
+    this->quantity=quantity;
+}
+
+void Book::setIntro(QString intro)
+{
+    this->intro=intro;
+}
+
+QString Book::getIntro()
+{
+    return intro;
+}
+
 void Book::clear()
 {
     this->author="";
     this->name="";
+    this->quantity=0;
+    this->intro="";
 }

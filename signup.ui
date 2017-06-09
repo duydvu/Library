@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>408</width>
+    <height>370</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QPushButton" name="SignUpButton">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>140</y>
+     <x>130</x>
+     <y>300</y>
      <width>131</width>
      <height>31</height>
     </rect>
@@ -82,6 +82,64 @@ font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
    </property>
    <property name="placeholderText">
     <string>Mật khẩu</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="role">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>210</y>
+     <width>311</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Đăng ký với vai trò</string>
+   </property>
+   <widget class="QRadioButton" name="reader">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>20</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Độc giả</string>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="librarian">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>20</y>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Thủ thư</string>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>140</y>
+     <width>231</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Nhập lại mật khẩu</string>
    </property>
   </widget>
  </widget>

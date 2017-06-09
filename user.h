@@ -11,21 +11,26 @@ public:
     QString getName();
     void setSex(QString);
     QString getSex();
-    QString setDateofBirthtoQString(QDate);
     void setDateofBirth(QString);
     QString getDateofBirth();
     void setID(QString);
     QString getID();
-    void setCMND(QString);
-    QString getCMND();
+    void setAddress(QString);
+    QString getAddress();
+    void setEmail(QString);
+    QString getEmail();
+    void setDoP(QString);
+    QString getDoP();
     void clear();
 
 private:
     QString Name;
-    QString sex;
-    QString DateofBirth;
     QString ID;
-    QString CMND;
+    QString DateofBirth;
+    QString sex;
+    QString address;
+    QString email;
+    QString DateofParticipation;
 };
 
 #endif // USER_H
