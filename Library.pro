@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     data.cpp \
     user.cpp \
     PersonalInfo.cpp \
-    admin.cpp
+    admin.cpp \
+    reader.cpp \
+    librarian.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -32,14 +34,18 @@ HEADERS  += mainwindow.h \
     ui_mainwindow.h \
     user.h \
     PersonalInfo.h \
-    admin.h
+    admin.h \
+    reader.h \
+    librarian.h
 
 FORMS    += \
     signin.ui \
     signup.ui \
     mainwindow.ui \
     PersonalInfo.ui \
-    admin.ui
+    admin.ui \
+    reader.ui \
+    librarian.ui
 
 RESOURCES += \
     data.qrc

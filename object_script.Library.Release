@@ -9,10 +9,14 @@ INPUT(
 ./release\user.o
 ./release\PersonalInfo.o
 ./release\admin.o
+./release\reader.o
+./release\librarian.o
 ./release\qrc_data.o
 ./release\moc_mainwindow.o
 ./release\moc_signin.o
 ./release\moc_signup.o
 ./release\moc_PersonalInfo.o
 ./release\moc_admin.o
+./release\moc_reader.o
+./release\moc_librarian.o
 );

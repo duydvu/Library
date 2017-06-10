@@ -17,7 +17,6 @@ void SignUp::on_SignUpButton_clicked()
 {
     QString acc=ui->NameEdit->text();
     QLinkedList<Account>::iterator it=accounts.begin();
-    bool check=true;
     for(;it!=accounts.end();it++)
     {
         if(acc==(*it).getAcc()){
@@ -25,12 +24,24 @@ void SignUp::on_SignUpButton_clicked()
             "Tên tài khoản này đã có sẵn hoặc chứa ký tự không hợp lệ.\n"
             "Bạn hãy vui lòng nhập lại.",
             QMessageBox::Ok);
-            check=false;
-            break;
+            return;
         }
     }
-    if(check)
-        this->accept();
+    if( !(ui->librarian->isChecked()) && !(ui->reader->isChecked()) )
+    {
+        QMessageBox::information(this,"Bạn chưa chọn vai trò của tài khoản",
+        "Bạn hãy chọn 1 trong 2 vai trò cho tài khoản của mình!",
+        QMessageBox::Ok);
+        return;
+    }
+    if(ui->ReenterPassword->text()!=ui->PasswordEdit->text())
+    {
+        QMessageBox::information(this,"Mật khẩu lần 2 không khớp",
+        "Bạn hãy nhập lại mật khẩu của mình thật chính xác!",
+        QMessageBox::Ok);
+        return;
+    }
+    this->accept();
 }
 
 Account SignUp::getAccount()

@@ -30,7 +30,7 @@
       </spacer>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,2,2,2,0">
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,2,2,2,0">
        <property name="spacing">
         <number>30</number>
        </property>
@@ -91,85 +91,6 @@ font: 15pt &quot;Myriad Pro Cond&quot;;</string>
          <property name="placeholderText">
           <string>Mật khẩu</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="RoleComboBox">
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">#RoleComboBox 
-{
-	border: 1px solid darkgray;
-	border-radius: 16px;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	color: #222;
-	outline: none;
-	padding-left: 20px;
-	font-weight: bold;
-}
-#RoleComboBox:!editable, #RoleComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #eee, stop: 0.4 #ddd,
-                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);
-}
-#RoleComboBox:!editable:on, #RoleComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
-	outline: none;
-}
-
-#RoleComboBox:on {
-    padding-top: 3px;
-    padding-left: 20px;
-}
-
-#RoleComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 30px;
-   	border-left: 2px solid darkgray;
-}
-#RoleComboBox::down-arrow {
-    image: url(images/drop_down.png);
-}
-
-#RoleComboBox::down-arrow:on { 
-    top: 1px;
-}
-
-QComboBox QAbstractItemView
-{
-    border: 1px solid darkgray;
-    color: black;
-    selection-background-color: QLinearGradient( x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #111, stop: 1 #555);
-	background: white;
-	outline: none;
-	padding-left: 20px;
-}</string>
-         </property>
-         <item>
-          <property name="text">
-           <string>Vai trò...</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Độc giả</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Thủ thư</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Admin</string>
-          </property>
-         </item>
         </widget>
        </item>
        <item>

@@ -443,16 +443,33 @@ void MainWindow::on_SignInButton_clicked()
 {
     s=new SignIn;
     s->setWindowTitle("Đăng nhập");
-    connect(s,SIGNAL(accepted()),this,SLOT(getAccount()));
+    connect(s,SIGNAL(accepted()),this,SLOT(logIn()));
     s->exec();
 }
 
-void MainWindow::getAccount()
+void MainWindow::logIn()
 {
-    ui->SignInButton->hide();
-    ui->SignUpButton->hide();
-    ui->AccountLabel->setText("Xin chào!  " + LogInAcc.getAcc());
     delete s;
+    this->hide();
+    QString role=LogInAcc.getRole();
+    if(role=="A")
+    {
+        ad=new Admin;
+        ad->setWindowTitle("Libpro");
+        ad->show();
+    }
+    else if(role=="L")
+    {
+        li=new librarian;
+        li->setWindowTitle("Libpro");
+        li->show();
+    }
+    else if(role=="R")
+    {
+        re=new reader;
+        re->setWindowTitle("Libpro");
+        re->show();
+    }
 }
 
 

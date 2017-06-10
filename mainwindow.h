@@ -5,6 +5,9 @@
 #include "signin.h"
 #include "signup.h"
 #include "PersonalInfo.h"
+#include "admin.h"
+#include "librarian.h"
+#include "reader.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,7 +29,7 @@ private slots:
 
     void on_SignInButton_clicked();
 
-    void getAccount();
+    void logIn();
 
     void createAccount();
 
@@ -41,7 +44,9 @@ private:
     SignIn* s;
     SignUp* su;
     personalinfo* pi;
-
+    Admin* ad;
+    librarian* li;
+    reader* re;
 
 
     void loadBooksFile();

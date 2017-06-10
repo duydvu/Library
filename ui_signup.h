@@ -31,7 +31,7 @@ public:
     QGroupBox *role;
     QRadioButton *reader;
     QRadioButton *librarian;
-    QLineEdit *lineEdit;
+    QLineEdit *ReenterPassword;
 
     void setupUi(QDialog *SignUp)
     {
@@ -80,9 +80,10 @@ public:
         librarian->setObjectName(QStringLiteral("librarian"));
         librarian->setGeometry(QRect(160, 20, 82, 17));
         librarian->setAutoExclusive(true);
-        lineEdit = new QLineEdit(SignUp);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(90, 140, 231, 31));
+        ReenterPassword = new QLineEdit(SignUp);
+        ReenterPassword->setObjectName(QStringLiteral("ReenterPassword"));
+        ReenterPassword->setGeometry(QRect(90, 140, 231, 31));
+        ReenterPassword->setEchoMode(QLineEdit::Password);
         QWidget::setTabOrder(NameEdit, PasswordEdit);
         QWidget::setTabOrder(PasswordEdit, SignUpButton);
 
@@ -100,7 +101,7 @@ public:
         role->setTitle(QApplication::translate("SignUp", "\304\220\304\203ng k\303\275 v\341\273\233i vai tr\303\262", 0));
         reader->setText(QApplication::translate("SignUp", "\304\220\341\273\231c gi\341\272\243", 0));
         librarian->setText(QApplication::translate("SignUp", "Th\341\273\247 th\306\260", 0));
-        lineEdit->setPlaceholderText(QApplication::translate("SignUp", "Nh\341\272\255p l\341\272\241i m\341\272\255t kh\341\272\251u", 0));
+        ReenterPassword->setPlaceholderText(QApplication::translate("SignUp", "Nh\341\272\255p l\341\272\241i m\341\272\255t kh\341\272\251u", 0));
     } // retranslateUi
 
 };
