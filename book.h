@@ -10,6 +10,8 @@ private:
     QString author;
     int quantity;
     QString intro;
+    QString publisher;
+    QString id;
 public:
     Book();
     Book(QString name, QString author);
@@ -21,6 +23,10 @@ public:
     void setQuantity(int quantity);
     QString getIntro();
     void setIntro(QString intro);
+    QString getPublisher();
+    void setPublisher(QString publisher);
+    QString getID();
+    void setID(QString id);
     void clear();
 };
 

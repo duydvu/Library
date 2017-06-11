@@ -2,6 +2,7 @@
 #define ADMIN_H
 
 #include <QMainWindow>
+#include "data.h"
 
 namespace Ui {
 class Admin;
@@ -15,8 +16,13 @@ public:
     explicit Admin(QWidget *parent = 0);
     ~Admin();
 
+signals:
+    void closed();
+
 private:
     Ui::Admin *ui;
+
+    void closeEvent (QCloseEvent *event);
 };
 
 #endif // ADMIN_H

@@ -8,6 +8,7 @@ personalinfo::personalinfo(QWidget *parent) :
     ui(new Ui::personalinfo)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 personalinfo::~personalinfo()

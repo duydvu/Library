@@ -31,6 +31,8 @@ private slots:
 
     void logIn();
 
+    void logOut();
+
     void createAccount();
 
     void on_SignUpButton_clicked();
@@ -50,17 +52,17 @@ private:
 
 
     void loadBooksFile();
-    void loadAccountFile();
-    void loadUserFile();
-    void loadTempAccountFile();
-    void loadTempUserFile();
+    void loadAccountsFile();
+    void loadUsersFile();
+    void loadTempAccountsFile();
+    void loadTempUsersFile();
 
     void closeEvent (QCloseEvent *event);
     void saveBooksFile();
-    void saveAccountFile();
-    void saveUserFile();
-    void saveTempAccountFile();
-    void saveTempUserFile();
+    void saveAccountsFile();
+    void saveUsersFile();
+    void saveTempAccountsFile();
+    void saveTempUsersFile();
 };
 
 #endif // MAINWINDOW_H

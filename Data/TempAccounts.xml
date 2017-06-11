@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TempAccounts>
     <account>
-        <name>adm</name>
-        <password>6c6b6577</password>
+        <name>ad</name>
+        <password>6164</password>
         <role>R</role>
         <id></id>
         <active>T</active>

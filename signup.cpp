@@ -6,6 +6,7 @@ SignUp::SignUp(QWidget *parent) :
     ui(new Ui::SignUp)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 SignUp::~SignUp()

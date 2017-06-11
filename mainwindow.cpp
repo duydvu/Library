@@ -17,10 +17,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->BooksTable->horizontalHeader()->setStretchLastSection(true);
     ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
     loadBooksFile();
-    loadAccountFile();
-    loadUserFile();
-    loadTempAccountFile();
-    loadTempUserFile();
+    loadAccountsFile();
+    loadUsersFile();
+    loadTempAccountsFile();
+    loadTempUsersFile();
 }
 
 MainWindow::~MainWindow()
@@ -69,6 +69,14 @@ void MainWindow::loadBooksFile()
             if(xmlReader->name() == "intro")
             {
                 b.setIntro(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "publisher")
+            {
+                b.setPublisher(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                b.setID(xmlReader->readElementText());
                 books.append(b);
                 b.clear();
             }
@@ -88,7 +96,7 @@ void MainWindow::loadBooksFile()
     delete xmlFile;
 }
 
-void MainWindow::loadAccountFile()
+void MainWindow::loadAccountsFile()
 {
     QFile* xmlFile = new QFile(":/Data/Accounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -147,7 +155,7 @@ void MainWindow::loadAccountFile()
     delete xmlFile;
 }
 
-void MainWindow::loadTempAccountFile()
+void MainWindow::loadTempAccountsFile()
 {
     QFile* xmlFile = new QFile(":/Data/TempAccounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -206,7 +214,7 @@ void MainWindow::loadTempAccountFile()
     delete xmlFile;
 }
 
-void MainWindow::loadUserFile()
+void MainWindow::loadUsersFile()
 {
     QFile* xmlFile = new QFile(":/Data/Users.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -270,7 +278,7 @@ void MainWindow::loadUserFile()
     delete xmlFile;
 }
 
-void MainWindow::loadTempUserFile()
+void MainWindow::loadTempUsersFile()
 {
     QFile* xmlFile = new QFile(":/Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -442,6 +450,9 @@ void MainWindow::on_FindBooksButton_clicked()
 void MainWindow::on_SignInButton_clicked()
 {
     s=new SignIn;
+    ad=new Admin;
+    li = new librarian;
+    re = new reader;
     s->setWindowTitle("Đăng nhập");
     connect(s,SIGNAL(accepted()),this,SLOT(logIn()));
     s->exec();
@@ -449,29 +460,30 @@ void MainWindow::on_SignInButton_clicked()
 
 void MainWindow::logIn()
 {
-    delete s;
     this->hide();
     QString role=LogInAcc.getRole();
     if(role=="A")
     {
-        ad=new Admin;
-        ad->setWindowTitle("Libpro");
+        connect(ad,SIGNAL(closed()),this,SLOT(logOut()));
         ad->show();
     }
     else if(role=="L")
     {
-        li=new librarian;
-        li->setWindowTitle("Libpro");
+        connect(li,SIGNAL(closed()),this,SLOT(logOut()));
         li->show();
     }
     else if(role=="R")
     {
-        re=new reader;
-        re->setWindowTitle("Libpro");
+        connect(re,SIGNAL(closed()),this,SLOT(logOut()));
         re->show();
     }
 }
 
+void MainWindow::logOut()
+{
+    LogInAcc.clear();
+    this->show();
+}
 
 void MainWindow::on_SignUpButton_clicked()
 {
@@ -484,7 +496,6 @@ void MainWindow::on_SignUpButton_clicked()
 void MainWindow::createAccount()
 {
     temp_accounts.append(su->getAccount());
-    delete su;
 
     // Fill user information
     pi=new personalinfo;
@@ -496,20 +507,19 @@ void MainWindow::createAccount()
 void MainWindow::createUser()
 {
     temp_users.append(pi->getUser());
-    delete pi;
 }
 
 
 void MainWindow::closeEvent (QCloseEvent *event)
 {
     saveBooksFile();
-    saveAccountFile();
-    saveUserFile();
-    saveTempAccountFile();
-    saveTempUserFile();
+    saveAccountsFile();
+    saveUsersFile();
+    saveTempAccountsFile();
+    saveTempUsersFile();
     event->accept();
 }
-void MainWindow::saveUserFile()
+void MainWindow::saveUsersFile()
 {
     QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Users.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -533,7 +543,7 @@ void MainWindow::saveUserFile()
         xmlWriter->writeTextElement("sex", (*it).getSex());
         xmlWriter->writeTextElement("address", (*it).getAddress());
         xmlWriter->writeTextElement("email", (*it).getEmail());
-        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getDoP());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -542,7 +552,7 @@ void MainWindow::saveUserFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveAccountFile()
+void MainWindow::saveAccountsFile()
 {
     QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Accounts.xml");
 
@@ -599,6 +609,8 @@ void MainWindow::saveBooksFile()
         xmlWriter->writeTextElement("author", (*it).getAuthor());
         xmlWriter->writeTextElement("quantity", QString::number((*it).getQuantity()));
         xmlWriter->writeTextElement("intro", (*it).getIntro());
+        xmlWriter->writeTextElement("publisher", (*it).getPublisher());
+        xmlWriter->writeTextElement("id", (*it).getID());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -607,7 +619,7 @@ void MainWindow::saveBooksFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveTempAccountFile()
+void MainWindow::saveTempAccountsFile()
 {
     QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempAccounts.xml");
 
@@ -641,7 +653,7 @@ void MainWindow::saveTempAccountFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveTempUserFile()
+void MainWindow::saveTempUsersFile()
 {
     QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
@@ -665,7 +677,7 @@ void MainWindow::saveTempUserFile()
         xmlWriter->writeTextElement("sex", (*it).getSex());
         xmlWriter->writeTextElement("address", (*it).getAddress());
         xmlWriter->writeTextElement("email", (*it).getEmail());
-        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getDoP());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();

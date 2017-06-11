@@ -11,6 +11,7 @@
 #include <qxmlstream.h>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QIcon>
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;

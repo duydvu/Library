@@ -7,6 +7,7 @@ SignIn::SignIn(QWidget *parent) :
     ui(new Ui::SignIn)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 SignIn::~SignIn()
@@ -23,18 +24,14 @@ void SignIn::on_LogInButton_clicked()
     {
         if((*it).getAcc() == acc)
             if(Account::encrypt(psw) == (*it).getPsw())
-                break;
+            {
+                LogInAcc=*it;
+                this->accept();
+                return;
+            }
     }
-    if(it!=accounts.end())
-    {
-        LogInAcc=*it;
-        this->accept();
-    }
-    else
-    {
-        ui->ResultLabel->clear();
-        ui->ResultLabel->setText("Oops! Bạn nhập sai mất rồi!");
-    }
+    ui->ResultLabel->clear();
+    ui->ResultLabel->setText("Tài khoản hoặc mật khẩu không chính xác");
 }
 
 

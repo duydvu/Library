@@ -1,7 +1,6 @@
 #ifndef USER_H
 #define USER_H
 #include<QString>
-#include "account.h"
 #include <QDate>
 class User
 {
