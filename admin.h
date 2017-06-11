@@ -19,6 +19,9 @@ public:
 signals:
     void closed();
 
+private slots:
+    void on_searchButton_clicked();
+
 private:
     Ui::Admin *ui;
 

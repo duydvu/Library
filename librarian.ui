@@ -27,7 +27,7 @@
      <item row="1" column="0">
       <widget class="QTabWidget" name="fyfu11212">
        <property name="currentIndex">
-        <number>5</number>
+        <number>4</number>
        </property>
        <widget class="QWidget" name="tab">
         <attribute name="title">
@@ -901,10 +901,6 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Tác quyền&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <zorder>gridLayoutWidget</zorder>
-   <zorder>textBrowser_6</zorder>
-   <zorder>fyfu11212</zorder>
-   <zorder>fyfu11212</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>

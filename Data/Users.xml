@@ -4,7 +4,7 @@
         <name>admin</name>
         <id>0</id>
         <DoB>01.01.1990</DoB>
-        <sex>male</sex>
+        <sex>nam</sex>
         <address>Mars</address>
         <email>notreal@gmail.com</email>
         <DoP>01.01.2010</DoP>

@@ -20,8 +20,8 @@ User personalinfo::getUser()
 {
     User a;
     QString sex,b,c="";
-    if(ui->male->isChecked()) sex="male";
-    else if (ui->female->isChecked()) sex="female";
+    if(ui->male->isChecked()) sex="nam";
+    else if (ui->female->isChecked()) sex="nữ";
     a.setName(ui->name->text());
     a.setSex(sex);
     a.setDateofBirth(ToString(ui->dateOfBirth->date()));

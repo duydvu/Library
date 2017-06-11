@@ -22,6 +22,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -58,9 +59,9 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_5;
-    QTableView *tableView;
+    QLineEdit *searchUsers;
+    QPushButton *searchButton;
+    QTableWidget *usersTable;
     QWidget *lent;
     QStatusBar *statusbar;
 
@@ -154,15 +155,37 @@ public:
         pushButton_4 = new QPushButton(widget_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(290, 20, 75, 23));
-        lineEdit = new QLineEdit(widget_2);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(400, 20, 231, 31));
-        pushButton_5 = new QPushButton(widget_2);
-        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(640, 20, 75, 23));
-        tableView = new QTableView(users);
-        tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(5, 91, 781, 451));
+        searchUsers = new QLineEdit(widget_2);
+        searchUsers->setObjectName(QStringLiteral("searchUsers"));
+        searchUsers->setGeometry(QRect(400, 20, 231, 31));
+        searchButton = new QPushButton(widget_2);
+        searchButton->setObjectName(QStringLiteral("searchButton"));
+        searchButton->setGeometry(QRect(640, 20, 75, 23));
+        usersTable = new QTableWidget(users);
+        if (usersTable->columnCount() < 7)
+            usersTable->setColumnCount(7);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        usersTable->setObjectName(QStringLiteral("usersTable"));
+        usersTable->setGeometry(QRect(10, 81, 771, 481));
+        usersTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        usersTable->setSortingEnabled(true);
+        usersTable->horizontalHeader()->setStretchLastSection(true);
+        usersTable->verticalHeader()->setVisible(false);
+        usersTable->verticalHeader()->setCascadingSectionResizes(false);
+        usersTable->verticalHeader()->setStretchLastSection(false);
         admin->addTab(users, QString());
         lent = new QWidget();
         lent->setObjectName(QStringLiteral("lent"));
@@ -173,6 +196,7 @@ public:
         Admin->setStatusBar(statusbar);
 
         retranslateUi(Admin);
+        QObject::connect(searchUsers, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
         admin->setCurrentIndex(1);
 
@@ -203,8 +227,22 @@ public:
         pushButton_2->setText(QApplication::translate("Admin", "S\341\273\255a", 0));
         pushButton_3->setText(QApplication::translate("Admin", "X\303\263a", 0));
         pushButton_4->setText(QApplication::translate("Admin", "\304\220\341\273\225i m\341\272\255t kh\341\272\251u", 0));
-        lineEdit->setPlaceholderText(QApplication::translate("Admin", "T\303\254m ki\341\272\277m", 0));
-        pushButton_5->setText(QApplication::translate("Admin", "T\303\254m", 0));
+        searchUsers->setPlaceholderText(QApplication::translate("Admin", "T\303\254m ki\341\272\277m", 0));
+        searchButton->setText(QApplication::translate("Admin", "T\303\254m", 0));
+        QTableWidgetItem *___qtablewidgetitem = usersTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("Admin", "M\303\243 s\341\273\221", 0));
+        QTableWidgetItem *___qtablewidgetitem1 = usersTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
+        QTableWidgetItem *___qtablewidgetitem2 = usersTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211", 0));
+        QTableWidgetItem *___qtablewidgetitem3 = usersTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("Admin", "Ng\303\240y sinh", 0));
+        QTableWidgetItem *___qtablewidgetitem4 = usersTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QApplication::translate("Admin", "Email", 0));
+        QTableWidgetItem *___qtablewidgetitem5 = usersTable->horizontalHeaderItem(5);
+        ___qtablewidgetitem5->setText(QApplication::translate("Admin", "Gi\341\273\233i t\303\255nh", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = usersTable->horizontalHeaderItem(6);
+        ___qtablewidgetitem6->setText(QApplication::translate("Admin", "Ng\303\240y tham gia", 0));
         admin->setTabText(admin->indexOf(users), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 ng\306\260\341\273\235i d\303\271ng", 0));
         admin->setTabText(admin->indexOf(lent), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
     } // retranslateUi

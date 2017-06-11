@@ -8,13 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->BooksTable->setColumnCount(3);
-    ui->BooksTable->setHorizontalHeaderItem(0, new QTableWidgetItem("#"));
-    ui->BooksTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Tựa sách"));
-    ui->BooksTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Tác giả"));
     ui->BooksTable->setColumnWidth(0, ui->BooksTable->width()/100*5);
-    ui->BooksTable->setColumnWidth(1, ui->BooksTable->width()/100*70);
-    ui->BooksTable->horizontalHeader()->setStretchLastSection(true);
+    ui->BooksTable->setColumnWidth(1, ui->BooksTable->width()/100*50);
     ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
     loadBooksFile();
     loadAccountsFile();
@@ -380,67 +375,45 @@ void MainWindow::on_FindBooksButton_clicked()
     ui->BooksTable->setRowCount(0);
     for(;it!=books.end();it++)
     {
-        QString name=(*it).getName(), author=(*it).getAuthor();
+        QString s[]={(*it).getName(), (*it).getAuthor(), (*it).getPublisher()};
         int m=0, i=0, pre=cnt;
-        while(m+i<name.length())
+        for(int j=0; j<3; j++)
         {
-            if(compare(word[i], name[m+i]))
+            while(m+i<s[j].length())
             {
-                i++;
-                if(i==word.length())
+                if(compare(word[i], s[j][m+i]))
                 {
-                    ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
-                    cnt++;
-                    break;
-                }
-            }
-            else
-            {
-                if(table[i]>-1)
-                {
-                    m+=i-table[i];
-                    i=table[i];
+                    i++;
+                    if(i==word.length())
+                    {
+                        ui->BooksTable->insertRow(cnt);
+                        ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
+                        ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem((*it).getName()));
+                        ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAuthor()));
+                        ui->BooksTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
+                        if((*it).getQuantity()>0)
+                            ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
+                        else ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("hết hàng"));
+                        cnt++;
+                        break;
+                    }
                 }
                 else
                 {
-                    m+=i+1;
-                    i=0;
+                    if(table[i]>-1)
+                    {
+                        m+=i-table[i];
+                        i=table[i];
+                    }
+                    else
+                    {
+                        m+=i+1;
+                        i=0;
+                    }
                 }
             }
-        }
-        if(pre!=cnt) continue;
-        m=0, i=0;
-        while(m+i<author.length())
-        {
-            if(compare(word[i], author[m+i]))
-            {
-                i++;
-                if(i==word.length())
-                {
-                    ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
-                    cnt++;
-                    break;
-                }
-            }
-            else
-            {
-                if(table[i]>-1)
-                {
-                    m+=i-table[i];
-                    i=table[i];
-                }
-                else
-                {
-                    m+=i+1;
-                    i=0;
-                }
-            }
+            if(pre!=cnt) break;
+            m=0, i=0;
         }
     }
 
@@ -699,7 +672,6 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
         if(s==(*it).getName())
         {
             ui->intro->setText((*it).getIntro());
-            ui->quantity->setText(QString::number((*it).getQuantity()));
         }
     }
 }

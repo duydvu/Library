@@ -36,10 +36,8 @@ public:
     QPushButton *FindBooksButton;
     QPushButton *SignUpButton;
     QLabel *AccountLabel;
-    QTableWidget *BooksTable;
-    QLabel *quantity;
-    QLabel *quantity_2;
     QTextBrowser *intro;
+    QTableWidget *BooksTable;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -47,7 +45,7 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(721, 546);
+        MainWindow->resize(828, 546);
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(255,255,255)"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -133,60 +131,34 @@ public:
         FindBooksEdit->raise();
         FindBooksButton->raise();
         SignUpButton->raise();
-        BooksTable = new QTableWidget(centralWidget);
-        BooksTable->setObjectName(QStringLiteral("BooksTable"));
-        BooksTable->setEnabled(true);
-        BooksTable->setGeometry(QRect(20, 130, 481, 391));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(BooksTable->sizePolicy().hasHeightForWidth());
-        BooksTable->setSizePolicy(sizePolicy);
-        BooksTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
-        BooksTable->setStyleSheet(QLatin1String("QWidget {\n"
-"    background-color: #333333;\n"
-"    color: #fffff8;\n"
-"}\n"
-"\n"
-"QHeaderView::section {\n"
-"    background-color: #646464;\n"
-"    padding: 4px;\n"
-"    border: 1px solid #fffff8;\n"
-"    font-size: 12pt;\n"
-"	height: 30px;\n"
-"}\n"
-"\n"
-"QTableWidget {\n"
-"    gridline-color: #fffff8;\n"
-"    font-size: 12pt;\n"
-"}\n"
-"\n"
-"QTableWidget QTableCornerButton::section {\n"
-"    background-color: #646464;\n"
-"    border: 1px solid #fffff8;\n"
-"}"));
-        BooksTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        BooksTable->setSortingEnabled(false);
-        BooksTable->setColumnCount(0);
-        BooksTable->horizontalHeader()->setCascadingSectionResizes(false);
-        BooksTable->verticalHeader()->setVisible(false);
-        BooksTable->verticalHeader()->setCascadingSectionResizes(false);
-        quantity = new QLabel(centralWidget);
-        quantity->setObjectName(QStringLiteral("quantity"));
-        quantity->setGeometry(QRect(580, 500, 47, 13));
-        quantity_2 = new QLabel(centralWidget);
-        quantity_2->setObjectName(QStringLiteral("quantity_2"));
-        quantity_2->setGeometry(QRect(520, 500, 47, 13));
         intro = new QTextBrowser(centralWidget);
         intro->setObjectName(QStringLiteral("intro"));
-        intro->setGeometry(QRect(515, 130, 191, 361));
+        intro->setGeometry(QRect(630, 120, 191, 361));
+        BooksTable = new QTableWidget(centralWidget);
+        if (BooksTable->columnCount() < 5)
+            BooksTable->setColumnCount(5);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        BooksTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        BooksTable->setObjectName(QStringLiteral("BooksTable"));
+        BooksTable->setGeometry(QRect(10, 120, 611, 401));
+        BooksTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        BooksTable->setSortingEnabled(true);
+        BooksTable->setWordWrap(false);
+        BooksTable->horizontalHeader()->setStretchLastSection(true);
+        BooksTable->verticalHeader()->setVisible(false);
         MainWindow->setCentralWidget(centralWidget);
         MainBar->raise();
         SignInButton->raise();
-        BooksTable->raise();
-        quantity->raise();
-        quantity_2->raise();
         intro->raise();
+        BooksTable->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -196,6 +168,7 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(FindBooksEdit, SIGNAL(returnPressed()), FindBooksButton, SLOT(click()));
+        QObject::connect(FindBooksEdit, SIGNAL(textChanged(QString)), FindBooksButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -213,8 +186,16 @@ public:
         FindBooksButton->setText(QApplication::translate("MainWindow", "T\303\254m s\303\241ch", 0));
         SignUpButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng k\303\275", 0));
         AccountLabel->setText(QString());
-        quantity->setText(QString());
-        quantity_2->setText(QApplication::translate("MainWindow", "S\341\273\221 l\306\260\341\273\243ng", 0));
+        QTableWidgetItem *___qtablewidgetitem = BooksTable->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "STT", 0));
+        QTableWidgetItem *___qtablewidgetitem1 = BooksTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "T\341\273\261a s\303\241ch", 0));
+        QTableWidgetItem *___qtablewidgetitem2 = BooksTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", 0));
+        QTableWidgetItem *___qtablewidgetitem3 = BooksTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Nh\303\240 xu\341\272\245t b\341\272\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem4 = BooksTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "T\303\254nh tr\341\272\241ng", 0));
     } // retranslateUi
 
 };

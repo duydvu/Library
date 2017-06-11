@@ -378,17 +378,13 @@ public:
         textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
         textBrowser_6->setGeometry(QRect(30, 420, 461, 41));
         librarian->setCentralWidget(centralwidget);
-        gridLayoutWidget->raise();
-        textBrowser_6->raise();
-        fyfu11212->raise();
-        fyfu11212->raise();
         statusbar = new QStatusBar(librarian);
         statusbar->setObjectName(QStringLiteral("statusbar"));
         librarian->setStatusBar(statusbar);
 
         retranslateUi(librarian);
 
-        fyfu11212->setCurrentIndex(5);
+        fyfu11212->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(librarian);

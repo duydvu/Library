@@ -249,7 +249,7 @@ public:
 
         retranslateUi(reader);
 
-        fyfu11212->setCurrentIndex(0);
+        fyfu11212->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(reader);
