@@ -5,16 +5,16 @@
         <author>Stephen Hawking</author>
         <quantity>27</quantity>
         <intro>In the ten years since its publication in 1988, Stephen Hawking's classic work has become a landmark volume in scientific writing, with more than nine million copies in forty languages sold worldwide. That edition was on the cutting edge of what was then known about the origins and nature of the universe. But the intervening years have seen extraordinary advances in the technology of observing both the micro- and the macrocosmic worlds. These observations have confirmed many of Professor Hawking's theoretical predictions in the first edition of his book, including the recent discoveries of the Cosmic Background Explorer satellite (COBE), which probed back in time to within 300,000 years of the universe's beginning and revealed wrinkles in the fabric of space-time that he had projected. Eager to bring to his original text the new knowledge revealed by these observations, as well as his own recent research, Professor Hawking has prepared a new introduction to the book, written an entirely new chapter on wormholes and time travel, and updated the chapters throughout. </intro>
-        <publisher>Bantam Books</publisher>
-        <id>Sc_BB</id>
-    </book>
+    <publisher>Bantam Books</publisher>
+    <id>Sci_HoT</id>
+</book>
     <book>
         <name>The Handmaid's Tale</name>
         <author>Margaret Atwood</author>
         <quantity>19</quantity>
         <intro>Offred is a Handmaid in the Republic of Gilead. She may leave the home of the Commander and his wife once a day to walk to food markets whose signs are now pictures instead of words because women are no longer allowed to read. She must lie on her back once a month and pray that the Commander makes her pregnant, because in an age of declining births, Offred and the other Handmaids are valued only if their ovaries are viable. Offred can remember the years before, when she lived and made love with her husband, Luke; when she played with and protected her daughter; when she had a job, money of her own, and access to knowledge. But all of that is gone now... </intro>
         <publisher>Anchor Books</publisher>
-        <id>Co_AB</id>
+        <id>Nol_HmT</id>
     </book>
     <book>
         <name>Thirteen Reasons Why</name>
@@ -24,10 +24,10 @@
 
 Clay spends the night crisscrossing his town with Hannah as his guide. He becomes a firsthand witness to Hannah’s pain, and as he follows Hannah’s recorded words throughout his town, what he discovers changes his life forever. </intro>
         <publisher>Razorbill </publisher>
-        <id>SH_Ra</id>
-    </book>
-    <book>
-        <name>The 5 Love Languages: The Secret to Love that Lasts</name>
+        <id>Fic_TRW</id>
+    </book> 
+<book>
+<name>The 5 Love Languages: The Secret to Love that Lasts</name>
         <author>Gary Chapman</author>
         <quantity>21</quantity>
         <intro>Falling in love is easy. Staying in love—that’s the challenge! How can you keep your relationship fresh and growing amid the demands, conflicts, and just plain boredom of everyday life?
@@ -36,7 +36,7 @@ In the #1 New York Times bestseller The 5 Love Languages, you’ll discover the 
 
 The 5 Love Languages is as practical as it is insightful. Updated to reflect the complexities of relationships today, this new edition reveals intrinsic truths and applies relevant, actionable wisdom in ways that work.</intro>
         <publisher>Northfield Publishing</publisher>
-        <id>Ro_NP</id>
+        <id>Rom_5LL</id>
     </book>
     <book>
         <name>Algorithms to Live By: The Computer Science of Human Decisions</name>
@@ -48,8 +48,8 @@ All our lives are constrained by limited space and time, limits that give rise t
 
 In a dazzlingly interdisciplinary work, acclaimed author Brian Christian and cognitive scientist Tom Griffiths show how the algorithms used by computers can also untangle very human questions. They explain how to have better hunches and when to leave things to chance, how to deal with overwhelming choices and how best to connect with others. From finding a spouse to finding a parking spot, from organizing one's inbox to understanding the workings of memory, Algorithms to Live By transforms the wisdom of computer science into strategies for human living.</intro>
         <publisher>Henry Holt and Co</publisher>
-        <id>Sc_HHC</id>
-    </book>
+        <id>Sci_ACS</id>
+</book>
     <book>
         <name>Astrophysics for People in a Hurry</name>
         <author>Neil deGrasse Tyson</author>
@@ -60,8 +60,8 @@ But today, few of us have time to contemplate the cosmos. So Tyson brings the un
 
 While you wait for your morning coffee to brew, for the bus, the train, or a plane to arrive, Astrophysics for People in a Hurry will reveal just what you need to be fluent and ready for the next cosmic headlines: from the Big Bang to black holes, from quarks to quantum mechanics, and from the search for planets to the search for life in the universe.</intro>
         <publisher>W. W. Norton and Company</publisher>
-        <id>Sc_WWNC</id>
-    </book>
+        <id>Sci_APH</id>
+</book>
     <book>
         <name>The Lord of the Rings</name>
         <author>J. R. R. Tolkien</author>
@@ -69,8 +69,8 @@ While you wait for your morning coffee to brew, for the bus, the train, or a pla
         <intro>A fantastic starter set for new Tolkien fans or readers interested in rediscovering the magic of Middle-earth, this three-volume box set features paperback editions of the complete trilogy -- The Fellowship of the Ring, The Two Towers, and The Return of the King -- each with art from the New Line Productions feature film on the cover.
         J.R.R. Tolkien's The Lord of the Rings trilogy is a genuine masterpiece. The most widely read and influential fantasy epic of all time, it is also quite simply one of the most memorable and beloved tales ever told. Originally published in 1954, The Lord of the Rings set the framework upon which all epic/quest fantasy since has been built. Through the urgings of the enigmatic wizard Gandalf, young hobbit Frodo Baggins embarks on an urgent, incredibly treacherous journey to destroy the One Ring. This ring -- created and then lost by the Dark Lord, Sauron, centuries earlier -- is a weapon of evil, one that Sauron desperately wants returned to him. With the power of the ring once again his own, the Dark Lord will unleash his wrath upon all of Middle-earth. The only way to prevent this horrible fate from becoming reality is to return the Ring to Mordor, the only place it can be destroyed. Unfortunately for our heroes, Mordor is also Sauron's lair. The Lord of the Rings trilogy is essential reading not only for fans of fantasy but for lovers of classic literature as well...</intro>
         <publisher>Houghton Mifflin Harcourt</publisher>
-        <id>No_WWNC</id>
-    </book>
+        <id>Nol_LoTR</id>
+</book>
     <book>
         <name>A Tale of Two Cities</name>
         <author>Charles Dickens</author>
@@ -79,18 +79,18 @@ While you wait for your morning coffee to brew, for the bus, the train, or a pla
 
 This edition uses the text as it appeared in its serial publication in 1859 to convey the full scope of Dickens's vision, and includes the original illustrations by H. K. Browne ('Phiz'). Richard Maxwell's introduction discusses the intricate interweaving of epic drama with personal tragedy.</intro>
         <publisher>Penguin</publisher>
-        <id>No_Pe</id>
+        <id>Nol_ToTC</id>
     </book>
-    <book>
-        <name>The Hobbit</name>
-        <author>J. R. R. Tolkien</author>
-        <quantity>0</quantity>
-        <intro>In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.
+            <book>
+                <name>The Hobbit</name>
+                <author>J. R. R. Tolkien</author>
+                <quantity>0</quantity>
+                <intro>In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole, filled with the ends of worms and an oozy smell, nor yet a dry, bare, sandy hole with nothing in it to sit down on or to eat: it was a hobbit-hole, and that means comfort.
 
         Written for J.R.R. Tolkien’s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent. The text in this 372-page paperback edition is based on that first published in Great Britain by Collins Modern Classics (1998), and includes a note on the text by Douglas A. Anderson (2001). Unforgettable!</intro>
-        <publisher>Houghton Mifflin</publisher>
-        <id>No_HM</id>
-    </book>
+                <publisher>Houghton Mifflin</publisher>
+                <id>Nol_TH</id>
+                </book>
     <book>
         <name>The Da Vinci Code</name>
         <author>Dan Brown</author>
@@ -101,15 +101,15 @@ While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call i
 
 Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.</intro>
         <publisher>Anchor</publisher>
-        <id>No_HM</id>
-    </book>
+        <id>Nol_DVC</id>
+</book>
     <book>
         <name>The Alchemist</name>
         <author>Paulo Coelho</author>
         <quantity>15</quantity>
         <intro>Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.</intro>
         <publisher> HarperCollins</publisher>
-        <id>No_HC</id>
+        <id>Nol_TAl</id>
     </book>
     <book>
         <name>Memoirs of a Geisha</name>
@@ -119,7 +119,7 @@ Even more startling, the late curator was involved in the Priory of Sion—a sec
 
 In Memoirs of a Geisha, we enter a world where appearances are paramount; where a girl's virginity is auctioned to the highest bidder; where women are trained to beguile the most powerful men; and where love is scorned as illusion. It is a unique and triumphant work of fiction - at once romantic, erotic, suspenseful - and completely unforgettable. </intro>
         <publisher> Random House Large Print Publishing </publisher>
-        <id>No_RHLPP</id>
+        <id>Nol_MoG</id>
     </book>
     <book>
         <name>The Tea Rose </name>
@@ -129,17 +129,57 @@ In Memoirs of a Geisha, we enter a world where appearances are paramount; where 
 
 But Fiona's life is shattered when the actions of a dark and brutal man take from her nearly everything-and everyone-she holds dear. Fearing her own death, she is forced to flee London for New York. There, her indomitable spirit propels her rise from a modest West Side shop-front to the top of Manhattan's tea trade. But Fiona's old ghosts do not rest quietly, and to silence them, she must venture back to the London of her childhood, where a deadly confrontation with her past becomes the key to her future.</intro>
         <publisher> Harper Collins Ltd </publisher>
-        <id>No_HCL</id>
+        <id>Nol_TTR</id>
     </book>
     <book>
         <name>Charlotte's Web</name>
         <author> E.B. White, Garth Williams and Rosemary Wells</author>
         <quantity>0</quantity>
-        <intro>This beloved book by E. B. White, author of Stuart Little and The Trumpet of the Swan, is a classic of children's literature that is &quot;just about perfect.&quot;
+        <intro>This beloved book by E. B. White, author of Stuart Little and The Trumpet of the Swan, is a classic of children's literature that is "just about perfect."
         Some Pig. Humble. Radiant. These are the words in Charlotte's Web, high up in Zuckerman's barn. Charlotte's spiderweb tells of her feelings for a little pig named Wilbur, who simply wants a friend. They also express the love of a girl named Fern, who saved Wilbur's life when he was born the runt of his litter.
         E. B. White's Newbery Honor Book is a tender novel of friendship, love, life, and death that will continue to be enjoyed by generations to come. This edition contains color illustrations by Garth Williams, the acclaimed illustrator of E.B. White's Stuart Little and Laura Ingalls Wilder's Little House series, among many other books.
         Supports the Common Core State Standards </intro>
         <publisher> HarperCollinsPublishers </publisher>
-        <id>Ch_HCP</id>
+        <id>Chi_CW</id>
+    </book>
+	<book>
+        <name>How to Read Literature Like a Professor</name>
+        <author> Thomas C. Foster</author>
+        <quantity>1</quantity>
+        <intro>Ranging from major themes to literary models, narrative devices and form, Thomas C. Foster provides us with a broad overview of literature—a world where a road leads to a quest, a shared meal may signify a communion, and rain, whether cleansing or destructive, is never just a shower-and shows us how to make our reading experience more enriching, satisfying, and fun.</intro>
+        <publisher> Harper Perennial </publisher>
+        <id>Edu_HRLLP</id>
+    </book>
+	<book>
+        <name>A Foreign Policy of Freedom</name>
+        <author> Ron Paul</author>
+        <quantity>1</quantity>
+        <intro>There is one and only one voice in Congress for a foreign policy of freedom, and it belongs to Ron Paul, who has stood alone for freedom for many years. Ron is the seemingly impossible: a voice for reason and truth in a den of thieves.</intro>
+        <publisher> Foundation for Rational </publisher>
+        <id>Pol_FPoF</id>
+    </book>
+	<book>
+        <name>Business Model Generation</name>
+        <author>Alexander Osterwalder</author>
+        <quantity>1</quantity>
+        <intro>Business Model Generation is a handbook for visionaries, game changers, and challengers striving to defy outmoded business models and design tomorrow's enterprises. If your organization needs to adapt to harsh new realities, but you don't yet have a strategy that will get you out in front of your competitors, you need Business Model Generation.</intro>
+        <publisher>John Wiley and Sons</publisher>
+        <id>Bus_BMG</id>
+    </book>
+	<book>
+        <name>Prisoners of Geography: Ten Maps That Explain Everything About the World</name>
+        <author>Tim Marshall </author>
+        <quantity>1</quantity>
+        <intro>Maps have a mysterious hold over us. Whether ancient, crumbling parchments or generated by Google, maps tell us things we want to know, not only about our current location or where we are going but about the world in general. And yet, when it comes to geo-politics, much of what we are told is generated by analysts and other experts who have neglected to refer to a map of the place in question.</intro>
+        <publisher>Scribner</publisher>
+        <id>Geo_PoG</id>
+    </book>
+	<book>
+        <name>Vietnam: A History of the War</name>
+        <author>Russell Freedman</author>
+        <quantity>1</quantity>
+        <intro>In an enthralling book, Newbery Medalist Russell Freedman provides a succinct account of perhaps the most puzzling and contentious of America’s wars. Describing how a superpower caught up in Cold War politics became increasingly enmeshed in a conflict over 8,000 miles away, he then explains</intro>
+        <publisher>Holiday House</publisher>
+        <id>His_VHoW</id>
     </book>
 </Library>
