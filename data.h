@@ -23,5 +23,9 @@ extern Account LogInAcc;
 bool compare(QChar, QChar);
 QString ToString(QDate);
 
+// Knuth–Morris–Pratt algorithm for searching substring
+template <class T>
+T* KMPsearch(QLinkedList<QString>, QLinkedList<T>);
+
 #endif
 

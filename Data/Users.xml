@@ -9,4 +9,22 @@
         <email>notreal@gmail.com</email>
         <DoP>01.01.2010</DoP>
     </user>
+    <user>
+        <name>Reader</name>
+        <id>1</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nam</sex>
+        <address>Earth</address>
+        <email>reader@yahoo.com</email>
+        <DoP>12.06.2017</DoP>
+    </user>
+    <user>
+        <name>Librarian</name>
+        <id>2</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nữ</sex>
+        <address>Jupiter</address>
+        <email>Jupiter@apple.com</email>
+        <DoP>12.06.2017</DoP>
+    </user>
 </Users>

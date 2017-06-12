@@ -83,9 +83,18 @@ public:
         ReenterPassword = new QLineEdit(SignUp);
         ReenterPassword->setObjectName(QStringLiteral("ReenterPassword"));
         ReenterPassword->setGeometry(QRect(90, 140, 231, 31));
+        ReenterPassword->setStyleSheet(QLatin1String("border-width: 0px;\n"
+"border-radius: 12px;\n"
+"background-color: white;\n"
+"padding-left: 12px;\n"
+"font-size: 14px;\n"
+"font: 63 12pt \"Myriad Pro Light\";"));
         ReenterPassword->setEchoMode(QLineEdit::Password);
         QWidget::setTabOrder(NameEdit, PasswordEdit);
-        QWidget::setTabOrder(PasswordEdit, SignUpButton);
+        QWidget::setTabOrder(PasswordEdit, ReenterPassword);
+        QWidget::setTabOrder(ReenterPassword, reader);
+        QWidget::setTabOrder(reader, librarian);
+        QWidget::setTabOrder(librarian, SignUpButton);
 
         retranslateUi(SignUp);
 

@@ -17,3 +17,9 @@ QString ToString(QDate time)
 {
     return time.toString("dd.MM.yyyy");
 }
+
+template <class T>
+T* KMPsearch(QLinkedList<QString>, QLinkedList<T>)
+{
+
+}

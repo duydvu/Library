@@ -35,7 +35,7 @@ void MainWindow::resizeEvent(QResizeEvent* event)
 
 void MainWindow::loadBooksFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Books.xml");
+    QFile* xmlFile = new QFile("Data/Books.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Books.xml to load data",
@@ -93,7 +93,7 @@ void MainWindow::loadBooksFile()
 
 void MainWindow::loadAccountsFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Accounts.xml");
+    QFile* xmlFile = new QFile("Data/Accounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Accounts.xml to load data",
@@ -152,7 +152,7 @@ void MainWindow::loadAccountsFile()
 
 void MainWindow::loadTempAccountsFile()
 {
-    QFile* xmlFile = new QFile(":/Data/TempAccounts.xml");
+    QFile* xmlFile = new QFile("Data/TempAccounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempAccounts.xml to load data",
@@ -211,7 +211,7 @@ void MainWindow::loadTempAccountsFile()
 
 void MainWindow::loadUsersFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Users.xml");
+    QFile* xmlFile = new QFile("Data/Users.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Users.xml to load data",
@@ -275,7 +275,7 @@ void MainWindow::loadUsersFile()
 
 void MainWindow::loadTempUsersFile()
 {
-    QFile* xmlFile = new QFile(":/Data/TempUsers.xml");
+    QFile* xmlFile = new QFile("Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempUsers.xml to load data",
@@ -450,10 +450,14 @@ void MainWindow::logIn()
         connect(re,SIGNAL(closed()),this,SLOT(logOut()));
         re->show();
     }
+    delete s;
 }
 
 void MainWindow::logOut()
 {
+    delete ad;
+    delete li;
+    delete re;
     LogInAcc.clear();
     this->show();
 }
@@ -468,8 +472,6 @@ void MainWindow::on_SignUpButton_clicked()
 
 void MainWindow::createAccount()
 {
-    temp_accounts.append(su->getAccount());
-
     // Fill user information
     pi=new personalinfo;
     pi->setWindowTitle("Thông tin người dùng");
@@ -479,7 +481,11 @@ void MainWindow::createAccount()
 
 void MainWindow::createUser()
 {
+    temp_accounts.append(su->getAccount());
     temp_users.append(pi->getUser());
+    temp_accounts.last().setID(temp_users.last().getID());
+    delete su;
+    delete pi;
 }
 
 
@@ -494,7 +500,7 @@ void MainWindow::closeEvent (QCloseEvent *event)
 }
 void MainWindow::saveUsersFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Users.xml");
+    QFile* xmlFile = new QFile("Data/Users.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Users.xml to write data",
@@ -527,7 +533,7 @@ void MainWindow::saveUsersFile()
 }
 void MainWindow::saveAccountsFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Accounts.xml");
+    QFile* xmlFile = new QFile("Data/Accounts.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -561,7 +567,7 @@ void MainWindow::saveAccountsFile()
 }
 void MainWindow::saveBooksFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Books.xml");
+    QFile* xmlFile = new QFile("Data/Books.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -594,7 +600,7 @@ void MainWindow::saveBooksFile()
 }
 void MainWindow::saveTempAccountsFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempAccounts.xml");
+    QFile* xmlFile = new QFile("Data/TempAccounts.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -628,7 +634,7 @@ void MainWindow::saveTempAccountsFile()
 }
 void MainWindow::saveTempUsersFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempUsers.xml");
+    QFile* xmlFile = new QFile("Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempUsers.xml to write data",

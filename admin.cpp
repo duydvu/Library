@@ -8,6 +8,23 @@ Admin::Admin(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Libpro");
     Admin::setWindowState(Qt::WindowMaximized);
+    ui->registrationTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    QLinkedList<User>::iterator it=temp_users.begin();
+    int cnt=0;
+    for(;it!=temp_users.end();it++)
+    {
+        ui->registrationTable->insertRow(cnt);
+        QLinkedList<Account>::iterator it1=temp_accounts.begin();
+        while(it1!=temp_accounts.end() && (*it1).getID()!=(*it).getID())
+            it1++;
+        ui->registrationTable->setItem(cnt, 0, new QTableWidgetItem((*it1).getAcc()));
+        if((*it1).getRole()=="L")
+            ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem("Thủ thư"));
+        else ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem("Độc giả"));
+        ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem((*it).getName()));
+        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it).getDoP()));
+        cnt++;
+    }
 }
 
 Admin::~Admin()
@@ -61,6 +78,10 @@ void Admin::on_searchButton_clicked()
     ui->usersTable->setRowCount(0);
     for(;it!=users.end();it++)
     {
+        QLinkedList<Account>::iterator it1=temp_accounts.begin();
+        while(it1!=temp_accounts.end() && (*it1).getID()!=(*it).getID())
+            it1++;
+        if((*it1).getRole()!="R") continue;
         QString s[]={(*it).getID(), (*it).getName(), (*it).getAddress(), (*it).getEmail()};
         int m=0, i=0, pre=cnt;
         for(int j=0; j<4; j++)
@@ -103,4 +124,35 @@ void Admin::on_searchButton_clicked()
         }
     }
     delete table;
+}
+
+void Admin::on_registrationTable_cellDoubleClicked(int row, int column)
+{
+    if(column==4)
+    {
+        QLinkedList<User>::iterator u=temp_users.begin()+row;
+
+        users.append(*u);
+        users.last().setDoP(ToString(QDate::currentDate()));
+        users.last().setID(QString::number(users.size()-1));
+        QLinkedList<Account>::iterator it=temp_accounts.begin();
+        while(it!=temp_accounts.end() && (*it).getID()!=(*u).getID())
+            it++;
+        accounts.append(*it);
+        accounts.last().setID(users.last().getID());
+        temp_users.erase(u);
+        temp_accounts.erase(it);
+        ui->registrationTable->removeRow(row);
+    }
+    else if(column==5)
+    {
+        QLinkedList<User>::iterator u=temp_users.begin()+row;
+        users.append(*u);
+        QLinkedList<Account>::iterator it=temp_accounts.begin();
+        while(it!=temp_accounts.end() && (*it).getID()!=(*u).getID())
+            it++;
+        temp_users.erase(u);
+        temp_accounts.erase(it);
+        ui->registrationTable->removeRow(row);
+    }
 }

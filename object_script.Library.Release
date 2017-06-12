@@ -11,6 +11,7 @@ INPUT(
 ./release\admin.o
 ./release\reader.o
 ./release\librarian.o
+./release\cardinfo.o
 ./release\qrc_data.o
 ./release\moc_mainwindow.o
 ./release\moc_signin.o

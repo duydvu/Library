@@ -22,6 +22,8 @@ signals:
 private slots:
     void on_searchButton_clicked();
 
+    void on_registrationTable_cellDoubleClicked(int row, int column);
+
 private:
     Ui::Admin *ui;
 

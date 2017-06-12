@@ -138,6 +138,14 @@ font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
      <height>31</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">border-width: 0px;
+border-radius: 12px;
+background-color: white;
+padding-left: 12px;
+font-size: 14px;
+font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
+   </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
    </property>
@@ -149,6 +157,9 @@ font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
  <tabstops>
   <tabstop>NameEdit</tabstop>
   <tabstop>PasswordEdit</tabstop>
+  <tabstop>ReenterPassword</tabstop>
+  <tabstop>reader</tabstop>
+  <tabstop>librarian</tabstop>
   <tabstop>SignUpButton</tabstop>
  </tabstops>
  <resources/>

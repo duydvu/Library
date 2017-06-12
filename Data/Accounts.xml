@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Accounts>
     <account>
-        <name>admin1</name>
+        <name>admin</name>
         <password>61646d696e</password>
         <role>A</role>
         <id>0</id>
         <active>T</active>
     </account>
     <account>
-        <name>admin2</name>
-        <password>61646d696e</password>
-        <role>L</role>
-        <id>0</id>
+        <name>reader</name>
+        <password>726561646572</password>
+        <role>R</role>
+        <id>1</id>
         <active>T</active>
     </account>
     <account>
-        <name>admin3</name>
-        <password>61646d696e</password>
-        <role>R</role>
-        <id>0</id>
+        <name>librarian</name>
+        <password>6c696272617269616e</password>
+        <role>L</role>
+        <id>2</id>
         <active>T</active>
     </account>
 </Accounts>
