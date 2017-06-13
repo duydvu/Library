@@ -28,6 +28,10 @@ private slots:
 
     void on_name_textChanged(const QString &arg1);
 
+    void on_bookBorrow_clicked();
+
+    void on_send_clicked();
+
 private:
     Ui::reader *ui;
     QLinkedList<Book> bookSearched;

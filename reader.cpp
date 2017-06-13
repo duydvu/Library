@@ -8,6 +8,7 @@ reader::reader(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Libpro");
     reader::setWindowState(Qt::WindowMaximized);
+    ui->send->hide();
     ui->name->setText(LogInUser.getName());
     ui->id->setText(LogInUser.getID());
     ui->dob->setText(LogInUser.getDateofBirth());
@@ -150,4 +151,54 @@ void reader::on_bookTable_cellClicked(int row, int column)
 void reader::on_name_textChanged(const QString &arg1)
 {
 
+}
+
+void reader::on_bookBorrow_clicked()
+{
+    int row=ui->bookTable->rowCount();
+    int i=0,j=0;
+    while(i<row)
+    {
+        if(ui->bookTable->item(i,5)->checkState()!=Qt::Checked)
+            i++;
+        else break;
+    }
+    if(i==row)
+        return;
+    j=i+1;
+    while(j<row)
+    {
+        if(ui->bookTable->item(j,5)->checkState()!=Qt::Checked)
+            j++;
+        else break;
+    }
+    if(j!=row)
+    {
+        QMessageBox::critical(this,"Bạn đã chọn quá nhiều tựa sách",
+        "Vui lòng chọn duy nhất 1 tựa sách để mượn",
+        QMessageBox::Ok);
+        return;
+    }
+    QLinkedList<Book>::iterator b=bookSearched.begin()+i;
+    ui->readerTab->setCurrentIndex(2);
+    ui->send->show();
+    ui->borInfo->setItem(0, 0, new QTableWidgetItem(QString::number(cartInfos.size())));
+    ui->borInfo->setItem(1, 0, new QTableWidgetItem((*b).getID()));
+    ui->borInfo->setItem(2, 0, new QTableWidgetItem((*b).getName()));
+}
+
+void reader::on_send_clicked()
+{
+    cartinfo c;
+    c.setID(QString::number(cartInfos.size()));
+    c.setBookID(ui->borInfo->item(1,0)->text());
+    c.setBookName(ui->borInfo->item(2,0)->text());
+    c.setReaderName(LogInUser.getName());
+    c.setReaderID(LogInUser.getID());
+    c.setBrrowTime(ToString(QDate::currentDate()));
+    c.setDuration(ui->duration->value());
+    c.setAccept(false);
+    c.setPaid(false);
+    cartInfos.append(c);
+    ui->send->hide();
 }

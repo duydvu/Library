@@ -21,6 +21,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
@@ -36,7 +37,7 @@ public:
     QWidget *centralwidget;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QTabWidget *fyfu11212;
+    QTabWidget *readerTab;
     QWidget *tab;
     QWidget *tab_4;
     QGroupBox *groupBox;
@@ -49,9 +50,13 @@ public:
     QTableWidget *bookTable;
     QLabel *label_17;
     QTextBrowser *intro;
-    QWidget *tab_5;
-    QTextBrowser *textBrowser_4;
+    QWidget *borrow;
     QLabel *picBook;
+    QTableWidget *borInfo;
+    QPushButton *send;
+    QLabel *label;
+    QSpinBox *duration;
+    QLabel *label_2;
     QWidget *perInfo;
     QGroupBox *personalInfo;
     QLabel *name_2;
@@ -91,20 +96,20 @@ public:
     {
         if (reader->objectName().isEmpty())
             reader->setObjectName(QStringLiteral("reader"));
-        reader->resize(821, 615);
+        reader->resize(1054, 676);
         centralwidget = new QWidget(reader);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 801, 581));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 1031, 641));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        fyfu11212 = new QTabWidget(gridLayoutWidget);
-        fyfu11212->setObjectName(QStringLiteral("fyfu11212"));
+        readerTab = new QTabWidget(gridLayoutWidget);
+        readerTab->setObjectName(QStringLiteral("readerTab"));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        fyfu11212->addTab(tab, QString());
+        readerTab->addTab(tab, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
         groupBox = new QGroupBox(tab_4);
@@ -144,25 +149,52 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         bookTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         bookTable->setObjectName(QStringLiteral("bookTable"));
-        bookTable->setGeometry(QRect(0, 140, 531, 351));
+        bookTable->setGeometry(QRect(0, 140, 671, 351));
         bookTable->horizontalHeader()->setStretchLastSection(true);
         bookTable->verticalHeader()->setVisible(false);
         label_17 = new QLabel(tab_4);
         label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(550, 110, 61, 21));
+        label_17->setGeometry(QRect(710, 110, 61, 21));
         intro = new QTextBrowser(tab_4);
         intro->setObjectName(QStringLiteral("intro"));
-        intro->setGeometry(QRect(540, 141, 251, 351));
-        fyfu11212->addTab(tab_4, QString());
-        tab_5 = new QWidget();
-        tab_5->setObjectName(QStringLiteral("tab_5"));
-        textBrowser_4 = new QTextBrowser(tab_5);
-        textBrowser_4->setObjectName(QStringLiteral("textBrowser_4"));
-        textBrowser_4->setGeometry(QRect(400, 60, 256, 192));
-        picBook = new QLabel(tab_5);
+        intro->setGeometry(QRect(700, 140, 301, 351));
+        readerTab->addTab(tab_4, QString());
+        borrow = new QWidget();
+        borrow->setObjectName(QStringLiteral("borrow"));
+        picBook = new QLabel(borrow);
         picBook->setObjectName(QStringLiteral("picBook"));
         picBook->setGeometry(QRect(100, 70, 211, 181));
-        fyfu11212->addTab(tab_5, QString());
+        borInfo = new QTableWidget(borrow);
+        if (borInfo->columnCount() < 1)
+            borInfo->setColumnCount(1);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        borInfo->setHorizontalHeaderItem(0, __qtablewidgetitem6);
+        if (borInfo->rowCount() < 3)
+            borInfo->setRowCount(3);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        borInfo->setVerticalHeaderItem(0, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        borInfo->setVerticalHeaderItem(1, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        borInfo->setVerticalHeaderItem(2, __qtablewidgetitem9);
+        borInfo->setObjectName(QStringLiteral("borInfo"));
+        borInfo->setGeometry(QRect(370, 90, 411, 121));
+        borInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        borInfo->horizontalHeader()->setStretchLastSection(true);
+        borInfo->verticalHeader()->setStretchLastSection(true);
+        send = new QPushButton(borrow);
+        send->setObjectName(QStringLiteral("send"));
+        send->setGeometry(QRect(370, 350, 131, 51));
+        label = new QLabel(borrow);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(380, 260, 81, 21));
+        duration = new QSpinBox(borrow);
+        duration->setObjectName(QStringLiteral("duration"));
+        duration->setGeometry(QRect(480, 260, 61, 21));
+        label_2 = new QLabel(borrow);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(560, 260, 47, 21));
+        readerTab->addTab(borrow, QString());
         perInfo = new QWidget();
         perInfo->setObjectName(QStringLiteral("perInfo"));
         personalInfo = new QGroupBox(perInfo);
@@ -247,7 +279,7 @@ public:
         label_15 = new QLabel(cartInfo);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(30, 140, 55, 16));
-        fyfu11212->addTab(perInfo, QString());
+        readerTab->addTab(perInfo, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
         textBrowser_3 = new QTextBrowser(tab_3);
@@ -256,7 +288,7 @@ public:
         textBrowser_5 = new QTextBrowser(tab_3);
         textBrowser_5->setObjectName(QStringLiteral("textBrowser_5"));
         textBrowser_5->setGeometry(QRect(365, 30, 291, 192));
-        fyfu11212->addTab(tab_3, QString());
+        readerTab->addTab(tab_3, QString());
         tabsecond = new QWidget();
         tabsecond->setObjectName(QStringLiteral("tabsecond"));
         textBrowser = new QTextBrowser(tabsecond);
@@ -265,9 +297,9 @@ public:
         textBrowser_2 = new QTextBrowser(tabsecond);
         textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
         textBrowser_2->setGeometry(QRect(400, 80, 256, 192));
-        fyfu11212->addTab(tabsecond, QString());
+        readerTab->addTab(tabsecond, QString());
 
-        gridLayout->addWidget(fyfu11212, 0, 0, 1, 1);
+        gridLayout->addWidget(readerTab, 0, 0, 1, 1);
 
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
@@ -282,7 +314,7 @@ public:
         QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
-        fyfu11212->setCurrentIndex(3);
+        readerTab->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(reader);
@@ -291,7 +323,7 @@ public:
     void retranslateUi(QMainWindow *reader)
     {
         reader->setWindowTitle(QApplication::translate("reader", "MainWindow", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
+        readerTab->setTabText(readerTab->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
         bookBorrow->setText(QApplication::translate("reader", "M\306\260\341\273\243n s\303\241ch  ", 0));
         searchButton->setText(QApplication::translate("reader", "T\303\254m ki\341\272\277m", 0));
@@ -341,9 +373,20 @@ public:
         QTableWidgetItem *___qtablewidgetitem4 = bookTable->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("reader", "T\303\254nh tr\341\272\241ng", 0));
         label_17->setText(QApplication::translate("reader", "Gi\341\273\237i thi\341\273\207u", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
+        readerTab->setTabText(readerTab->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
         picBook->setText(QApplication::translate("reader", "picBook", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab_5), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem5 = borInfo->horizontalHeaderItem(0);
+        ___qtablewidgetitem5->setText(QApplication::translate("reader", "Th\303\264ng tin", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = borInfo->verticalHeaderItem(0);
+        ___qtablewidgetitem6->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u m\306\260\341\273\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = borInfo->verticalHeaderItem(1);
+        ___qtablewidgetitem7->setText(QApplication::translate("reader", "M\303\243 s\303\241ch c\341\272\247n m\306\260\341\273\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = borInfo->verticalHeaderItem(2);
+        ___qtablewidgetitem8->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
+        send->setText(QApplication::translate("reader", "G\341\273\255i phi\341\272\277u m\306\260\341\273\243n", 0));
+        label->setText(QApplication::translate("reader", "Th\341\273\235i gian m\306\260\341\273\243n", 0));
+        label_2->setText(QApplication::translate("reader", "Ng\303\240y", 0));
+        readerTab->setTabText(readerTab->indexOf(borrow), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
         personalInfo->setTitle(QApplication::translate("reader", "Th\303\264ng tin c\341\273\247a b\341\272\241n", 0));
         name_2->setText(QApplication::translate("reader", "H\341\273\215 v\303\240 t\303\252n", 0));
         id_2->setText(QApplication::translate("reader", "M\303\243 \304\221\341\273\231c gi\341\272\243", 0));
@@ -363,7 +406,7 @@ public:
         label_13->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
         label_14->setText(QApplication::translate("reader", "Ng\303\240y m\306\260\341\273\243n", 0));
         label_15->setText(QApplication::translate("reader", "H\341\272\241n tr\341\272\243", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(perInfo), QApplication::translate("reader", "Th\303\264ng tin c\303\241 nh\303\242n", 0));
+        readerTab->setTabText(readerTab->indexOf(perInfo), QApplication::translate("reader", "Th\303\264ng tin c\303\241 nh\303\242n", 0));
         textBrowser_3->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -374,7 +417,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">HDSD</span></p></body></html>", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab_3), QApplication::translate("reader", "Tr\341\273\243 gi\303\272p", 0));
+        readerTab->setTabText(readerTab->indexOf(tab_3), QApplication::translate("reader", "Tr\341\273\243 gi\303\272p", 0));
         textBrowser->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -385,7 +428,7 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">H\341\273\230P TH\306\257 G\303\223P \303\235</span></p></body></html>", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tabsecond), QApplication::translate("reader", "Li\303\252n h\341\273\207", 0));
+        readerTab->setTabText(readerTab->indexOf(tabsecond), QApplication::translate("reader", "Li\303\252n h\341\273\207", 0));
         pushButton->setText(QApplication::translate("reader", "Exit", 0));
     } // retranslateUi
 

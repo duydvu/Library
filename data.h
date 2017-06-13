@@ -4,6 +4,7 @@
 #include "account.h"
 #include "book.h"
 #include "user.h"
+#include "cartinfo.h"
 #include <QLinkedList>
 #include <QDialog>
 #include <QFile>
@@ -18,6 +19,7 @@ extern QLinkedList<Account> accounts;
 extern QLinkedList<User> users;
 extern QLinkedList<Account> temp_accounts;
 extern QLinkedList<User> temp_users;
+extern QLinkedList<cartinfo> cartInfos;
 extern Account LogInAcc;
 extern User LogInUser;
 

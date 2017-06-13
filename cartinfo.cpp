@@ -4,7 +4,7 @@
 
 cartinfo::cartinfo()
 {
-    accept=0;
+
 }
 
 void cartinfo::setID(QString id)
@@ -57,10 +57,9 @@ QString cartinfo::getBookID()
     return this->bookid;
 }
 
-void cartinfo::setBrrowTime()
+void cartinfo::setBrrowTime(QString time)
 {
-    QString a=ToString(QDate::currentDate());
-    this->brrowtime=a;
+    this->brrowtime=time;
 }
 
 QString cartinfo::getBrrowTime()
@@ -68,14 +67,14 @@ QString cartinfo::getBrrowTime()
     return this->brrowtime;
 }
 
-void cartinfo::setPayTime(QString time)
+void cartinfo::setDuration(int time)
 {
-    paytime=time;
+    this->duration=time;
 }
 
-QString cartinfo::getPayTime()
+int cartinfo::getDuration()
 {
-    return paytime;
+    return this->duration;
 }
 
 //void cartinfo::setFee(int fee)
@@ -88,25 +87,36 @@ QString cartinfo::getPayTime()
 //    return this->fee;
 //}
 
-void cartinfo::setAccept()
+void cartinfo::setAccept(bool accept)
 {
-    accept=1;
+    this->accept=accept;
 }
 
 bool cartinfo::getAccept()
 {
-    return accept;
+    return this->accept;
+}
+
+void cartinfo::setPaid(bool paid)
+{
+    this->paid=paid;
+}
+
+bool cartinfo::getPaid()
+{
+    return this->paid;
 }
 
 void cartinfo::clear()
 {
-    id="";
-    readername="";
-    readerid="";
-    bookname="";
-    bookid="";
-    brrowtime="";
-    paytime="";
-    //fee=0;
-    accept=0;
+    this->id="";
+    this->readername="";
+    this->readerid="";
+    this->bookname="";
+    this->bookid="";
+    this->brrowtime="";
+    this->duration=0;
+    //this->fee=0;
+    this->accept=0;
+    this->paid=0;
 }

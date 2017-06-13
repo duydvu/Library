@@ -182,4 +182,281 @@ But Fiona's life is shattered when the actions of a dark and brutal man take fro
         <publisher>Holiday House</publisher>
         <id>His_VHoW</id>
     </book>
+    <book>
+        <name>Wonder Woman: The Art and Making of the Film</name>
+        <author>Sharon Gosling</author>
+        <quantity>1</quantity>
+        <intro>Patty Jenkins’ Wonder Woman sees the hero brought to the big screen for the first time in her own movie, and fully realizes the breathtaking wonder, strength, and grace of such an historic character. Wonder Woman: The Art and Making of the Film celebrates the creation of this groundbreaking movie, taking fans on a voyage of discovery through the world of Wonder Woman. Showcasing the earliest concept art, set and costume designs, sketches and storyboards, the book delves deep into the filmmaking process, from creating the stunning island of Themyscira to the war-torn trenches and towns of First World War Europe. </intro>
+        <publisher>Titan Books</publisher>
+        <id>Enc_WWAMF</id>
+    </book>
+    <book>
+        <name>Pocket Medicine: The Massachusetts General Hospital Handbook of Internal Medicine</name>
+        <author>Marc S Sabatine</author>
+        <quantity>1</quantity>
+        <intro>Quick access to key clinical information and solutions to common problems in internal medicine – as close as your pocket!  Pocket Medicine, Sixth Edition, is your go-to resource for fast answers to diagnostic questions you’ll face on rounds and exams. Prepared by residents and attending physicians at Massachusetts General Hospital, this portable, best-selling reference tackles the diagnosis and treatment of the most common disorders in cardiology, pulmonary medicine, gastroenterology, nephrology, hematology-oncology, infectious diseases, endocrinology, rheumatology, and neurology.  Bulleted lists, tables, and algorithms focus on the information you need in order to make an accurate diagnosis and develop a treatment plan.</intro>
+        <publisher>LWW</publisher>
+        <id>Enc_PMMGHHIM</id>
+    </book>
+    <book>
+        <name>Tea Party Teddy</name>
+        <author>Dianne Harman</author>
+        <quantity>1</quantity>
+        <intro>Tea Party Teddy is a political tell-all novel about Sacramento, California politics - the public corruption, infidelity, and greed.
+
+Teddy, a newly elected Assemblyman, is elected because of his hateful anti-immigration platform. When he gets to Sacramento, he struggles with the temptations that ultimate power affords. His world slowly unravels as he succumbs to the power of his office. The ultimate irony occurs when his wife becomes romantically involved with the founder of the Republicans for Latinos.</intro>
+        <publisher>Dianne Harman</publisher>
+        <id>Sat_TPT</id>
+    </book>
+    <book>
+        <name>On the Road</name>
+        <author>Jack Kerouac</author>
+        <quantity>1</quantity>
+        <intro>Jack Kerouac's groundbreaking novel—soon to be a major motion picture with a star-studded cast</intro>
+        <publisher>Penguin Books</publisher>
+        <id>Tra_OTR</id>
+    </book>
+    <book>
+        <name>Travels with Charley: In Search of America </name>
+        <author>John Steinbeck</author>
+        <quantity>1</quantity>
+        <intro>When he was almost sixty years old, worried that he might have lost touch with the sights, the sounds and the essence of America's people, Steinbeck took note of his itchy feet and prepared to travel. He was accompanied by his French poodle, Charley, diplomat and watchdog, across the states of America from Maine to California. Moving through the woods and deserts, dirt tracks and highways to large cities and glorious wildernesses, Steinbeck observed - with remarkable honesty and insight, with a humorous and sometimes sceptical eye - America, and the Americans who inhabited it. What he saw was a lonely, generous nation too packed with individuals for single judgements; what he saw made him proud, angry, sympathetic and elated. His vision of how the world was changing still speaks to us prophetically through the decades.</intro>
+        <publisher>Penguin Classics</publisher>
+        <id>Tra_TWC</id>
+    </book>
+    <book>
+        <name>The Last Wish </name>
+        <author>Andrzej Sapkowski</author>
+        <quantity>10</quantity>
+        <intro>Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets are the multifarious monsters and vile fiends that ravage the land and attack the innocent. He roams the country seeking assignments, but gradually comes to realise that while some of his quarry are unremittingly vile, vicious grotesques, others are the victims of sin, evil or simple naivety.</intro>
+        <publisher>Gollancz </publisher>
+        <id>Adv_TLW</id>
+    </book>
+    <book>
+        <name>Time of Contempt (Witcher 2)  </name>
+        <author>Andrzej Sapkowski</author>
+        <quantity>5</quantity>
+        <intro>Geralt the Witcher has fought monsters and demons across the land, but even he may not be prepared for what is happening to his world. The kings and armies are manoeuvring for position, each fearing invasion from across the river, each fearing their neighbours more. Intrigue, dissent and rebellion are on all sides.
+
+The Elves and other non-humans are still suffering under decades of repression, and growing numbers join the commando units hidden deep in the forest, striking at will and then dissolving into the trees. The Magicians are fighting amongst themselves, some in the pay of the kings, some sympathetic to the elves.
+
+And against this backdrop of fear and contempt Geralt and his lover Yennefer must protect Ciri, orphaned heir and sought by all sides. For the prophecy rests on her, and whether she lives or dies she has the power to save the world - or perhaps end it.</intro>
+        <publisher>Gollancz </publisher>
+        <id>Adv_ToCW2</id>
+    </book>
+    <book>
+        <name>Sword of Destiny</name>
+        <author>Andrzej Sapkowski</author>
+        <quantity>9</quantity>
+        <intro>Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets are the multifarious monsters and vile fiends that ravage the land and attack the innocent. He roams the country seeking assignments, but gradually comes to realise that while some of his quarry are unremittingly vile, vicious grotesques, others are the victims of sin, evil or simple naivety.
+
+In this collection of short stories, following the adventures of the hit collection THE LAST WISH, join Geralt as he battles monsters, demons and prejudices alike . . .</intro>
+        <publisher>Gollancz </publisher>
+        <id>Adv_SoD</id>
+    </book>
+    <book>
+        <name>A Merciful Death </name>
+        <author> Kendra Elliot </author>
+        <quantity>2</quantity>
+        <intro>FBI special agent Mercy Kilpatrick has been waiting her whole life for disaster to strike. A prepper since childhood, Mercy grew up living off the land—and off the grid—in rural Eagle’s Nest, Oregon. Until a shocking tragedy tore her family apart and forced her to leave home. Now a predator known as the cave man is targeting the survivalists in her hometown, murdering them in their homes, stealing huge numbers of weapons, and creating federal suspicion of a possible domestic terrorism event. But the crime scene details are eerily familiar to an unsolved mystery from Mercy’s past.</intro>
+        <publisher>Montlake Romance </publisher>
+        <id>Mys_AMD</id>
+    </book>
+    <book>
+        <name>The Shadow of the Wind</name>
+        <author> Carlos Ruiz Zafón</author>
+        <quantity>1</quantity>
+        <intro>Barcelona, 1945: A city slowly heals in the aftermath of the Spanish Civil War, and Daniel, an antiquarian book dealer’s son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind, by one Julián Carax. But when he sets out to find the author’s other works, he makes a shocking discovery: someone has been systematically destroying every copy of every book Carax has written. In fact, Daniel may have the last of Carax’s books in existence. Soon Daniel’s seemingly innocent quest opens a door into one of Barcelona’s darkest secrets--an epic story of murder, madness, and doomed love.</intro>
+        <publisher>Penguin Books</publisher>
+        <id>Mys_SoW</id>
+    </book>
+    <book>
+        <name>Part-time Princess: A Romantic Comedy</name>
+        <author> Pamela DuMond</author>
+        <quantity>1</quantity>
+        <intro>Lucy's a down-on-her luck cocktail waitress desperate to find a job to keep her beloved uncle at Assisted Living. Lady Elizabeth hires Lucy to impersonate her for &quot;ten days tops&quot;, while she completes her pressing personal business in the States. The goal: keep Prince Cristoph of Fredonia's wandering eye in check until the real Elizabeth can return.</intro>
+        <publisher>Pamela DuMond Books</publisher>
+        <id>Com_PTP</id>
+    </book>
+    <book>
+        <name>Follow You Home</name>
+        <author>Mark Edwards</author>
+        <quantity>1</quantity>
+        <intro>It was supposed to be the trip of a lifetime, a final adventure before settling down. But after a perfect start, an encounter with a young couple on a night train forces Daniel and Laura to cut their dream trip short and flee home.
+
+Back in London, Daniel and Laura vow never to talk about what happened that night. But as they try to fit into their old lives again, they realise they are in terrible danger—and that their nightmare is just beginning…</intro>
+        <publisher>Thomas and Mercer</publisher>
+        <id>Hor_FYH</id>
+    </book>
+    <book>
+        <name>The Ghost Files</name>
+        <author>Apryl Baker</author>
+        <quantity>1</quantity>
+        <intro>Cherry blossom lipstick: check Smokey eyes: check Skinny jeans: check Dead kid in the mirror: check For sixteen year old Mattie Hathaway, this is her normal everyday routine. She’s been able to see ghosts since her mother tried to murder her when she was five years old. No way does she want anyone to know she can talk to spooks. Being a foster kid is hard enough without being labeled a freak too. Normally, she just ignores the ghosts and they go away. That is until she see’s the ghost of her foster sister… Sally. Everyone thinks Sally’s just another runaway, but Mattie knows the truth—she’s dead. Murdered. Mattie feels like she has to help Sally, but she can’t do it alone. Against her better judgment, she teams up with a young policeman, Officer Dan, and together they set out to discover the real truth behind Sally’s disappearance. Only to find out she’s dealing with a much bigger problem, a serial killer, and she may be the next victim… Will Mattie be able to find out the truth before the killer finds her?</intro>
+        <publisher>Limitless Publishing, LLC</publisher>
+        <id>Hor_TGF</id>
+    </book>
+    <book>
+        <name>Art Journey - Abstract Painting: A Celebration of Contemporary Art</name>
+        <author> Jamie Markle</author>
+        <quantity>1</quantity>
+        <intro>Abstract art is a visual language--a riot of color, a profound explosion of texture and shape, a quiet collision of forms. Dynamic works of art can showcase pastel painting, showcase watercolor flowers, or even build off pen and ink drawings. Abstract artists are limited only by their imagination. And through instinct, composition and an inspired color palette, they translate emotions, ideas or experiences into immersive images you want to explore again and again.</intro>
+        <publisher>North Light Books</publisher>
+        <id>Art_AJAP</id>
+    </book>
+    <book>
+        <name>Art That Changed the World</name>
+        <author>DK</author>
+        <quantity>1</quantity>
+        <intro>Art That Changed the World tells the story of every major art style, movement by movement, giving art lovers a visual timeline showing key paintings that sparked each transition and explaining major events that shaped their evolution.
+Each section features a lavish double-page image of an influential painting that defines each artistic style. Seminal works of genius are portrayed in their historical context, with attention paid to the culture of the time and the lives of their creators.</intro>
+        <publisher>DK</publisher>
+        <id>Art_ACW</id>
+    </book>
+    <book>
+        <name>The Diary of a Young Girl</name>
+        <author>Anne Frank</author>
+        <quantity>1</quantity>
+        <intro>In 1942, with Nazis occupying Holland, a thirteen-year-old Jewish girl and her family fled their home in Amsterdam and went into hiding. For the next two years, until their whereabouts were betrayed to the Gestapo, they and another family lived cloistered in the “Secret Annex” of an old office building. Cut off from the outside world, they faced hunger, boredom, the constant cruelties of living in confined quarters, and the ever-present threat of discovery and death. In her diary Anne Frank recorded vivid impressions of her experiences during this period. By turns thoughtful, moving, and amusing, her account offers a fascinating commentary on human courage and frailty and a compelling self-portrait of a sensitive and spirited young woman whose promise was tragically cut short.</intro>
+        <publisher>Bantam</publisher>
+        <id>Dia_TDoYG</id>
+    </book>
+    <book>
+        <name>Thug Kitchen: The Official Cookbook: Eat Like You Give a F*ck</name>
+        <author>Thug Kitchen LLC</author>
+        <quantity>1</quantity>
+        <intro>Thug Kitchen started their wildly popular website to inspire people to eatsome goddamn vegetables and adopt a healthier lifestyle. Beloved byGwyneth Paltrow ('This might be my favorite thing ever') and with half a million Facebook fans and counting, Thug Kitchen wants to show everyone how to take charge of their plates and cook up some real f*cking food.</intro>
+        <publisher>Rodale Books</publisher>
+        <id>Coo_TKOC</id>
+    </book>
+    <book>
+        <name>The Men's Health Big Book of Exercises: Four Weeks to a Leaner, Stronger, More Muscular You!</name>
+        <author> Adam Campbell MS CSCS </author>
+        <quantity>1</quantity>
+        <intro>The Men’s Health Big Book of Exercises is the essential workout guide for anyone who wants a better body. As the most comprehensive collection of exercises ever created, this book is a body-shaping power tool for both beginners and long-time lifters alike. This book contains hundreds of useful tips, the latest findings in exercise science, and cutting-edge workouts from the world's top trainers.</intro>
+        <publisher>Rodale Books</publisher>
+        <id>Hea_TMH</id>
+    </book>
+    <book>
+        <name>Popular Science</name>
+        <author> Bonnier Corporation </author>
+        <quantity>1</quantity>
+        <intro>The 'What's New'&quot; magazine of science and technology. Covering the latest developments in cars, electronics, communications, tools, energy, aviation, science, space exploration and much more.</intro>
+        <publisher>Bonnier Corporation</publisher>
+        <id>Mag_PS</id>
+    </book>
+    <book>
+        <name>Upstream: Selected Essays</name>
+        <author> Mary Oliver </author>
+        <quantity>1</quantity>
+        <intro>So begins Upstream, a collection of essays in which revered poet Mary Oliver reflects on her willingness, as a young child and as an adult, to lose herself within the beauty and mysteries of both the natural world and the world of literature. Emphasizing the significance of her childhood “friend” Walt Whitman, through whose work she first understood that a poem is a temple, “a place to enter, and in which to feel,” and who encouraged her to vanish into the world of her writing, Oliver meditates on the forces that allowed her to create a life for herself out of work and love. As she writes, “I could not be a poet without the natural world. Someone else could. But not me. For me the door to the woods is the door to the temple.” </intro>
+        <publisher>Penguin Press</publisher>
+        <id>Poe_USE</id>
+    </book>
+    <book>
+        <name>The Universe of Us</name>
+        <author> Lang Leav </author>
+        <quantity>1</quantity>
+        <intro>Planets, stars, and constellations feature prominently in this beautiful, original poetry collection from Lang Leav.  Inspired by the wonders of the universe, the best-selling poetess writes about love and loss, hope and hurt, being lost and found.  Lang's poetry encompasses the breadth of emotions we all experience and evokes universal feelings with her skillfully crafted words.</intro>
+        <publisher>Andrews McMeel Publishing</publisher>
+        <id>Poe_TEU</id>
+    </book>
+    <book>
+        <name>Theft by Finding: Diaries (1977-2002)</name>
+        <author>David Sedaris </author>
+        <quantity>1</quantity>
+        <intro>For forty years, David Sedaris has kept a diary in which he records everything that captures his attention-overheard comments, salacious gossip, soap opera plot twists, secrets confided by total strangers. These observations are the source code for his finest work, and through them he has honed his cunning, surprising sentences.</intro>
+        <publisher>Little, Brown and Company</publisher>
+        <id>Bio_TFD</id>
+    </book>
+    <book>
+        <name>Insomniac City: New York, Oliver, and Me</name>
+        <author>Bill Hayes</author>
+        <quantity>1</quantity>
+        <intro>Bill Hayes came to New York City in 2009 with a one-way ticket and only the vaguest idea of how he would get by. But, at forty-eight years old, having spent decades in San Francisco, he craved change. Grieving over the death of his partner, he quickly discovered the profound consolations of the city's incessant rhythms, the sight of the Empire State Building against the night sky, and New Yorkers themselves, kindred souls that Hayes, a lifelong insomniac, encountered on late-night strolls with his camera.</intro>
+        <publisher>Bloomsbury USA</publisher>
+        <id>Bio_ICNOM</id>
+    </book>
+    <book>
+        <name>Mastering Essential Math Skills: 20 Minutes a Day to Success</name>
+        <author>Richard W. Fisher</author>
+        <quantity>3</quantity>
+        <intro>Perfect Math For Students Who Are Math Challenged
+
+Includes award-winning online video tutorials. One for each lesson in the book.
+
+Lessons are presented in a format that everyone can understand
+
+Each Lesson flows smoothly and logically to the next
+
+Each lesson is short, concise, and to the point
+
+Lots of examples with step-by -step solutions</intro>
+        <publisher>Math Essentials</publisher>
+        <id>Mth_MEMS</id>
+    </book>
+    <book>
+        <name>Everything You Need to Ace Math in One Big Fat Notebook</name>
+        <author> Workman Publishing (Author), Altair Peterson (Author)</author>
+        <quantity>1</quantity>
+        <intro>Everything You Need to Ace Math . . . covers everything to get a student over any math hump: fractions, decimals, and how to multiply and divide them; ratios, proportions, and percentages; geometry; statistics and probability; expressions and equations; and the coordinate plane and functions.</intro>
+        <publisher> Workman Publishing (Author), Altair Peterson (Author)</publisher>
+        <id>Mth_EYNAM</id>
+    </book>
+    <book>
+        <name>Wonder Woman Vol. 1: The Lies</name>
+        <author>Greg Rucka</author>
+        <quantity>1</quantity>
+        <intro>Heroic. Iconic. Unstoppable. Armed with her Lasso of Truth and imbued with the power of the gods themselves, Princess Diana of Themyscira—known to the world as Wonder Woman—is one of the greatest superheroes in history.</intro>
+        <publisher>DC Comics</publisher>
+        <id>Cmc_WWV1</id>
+    </book>
+    <book>
+        <name>The Legend of Wonder Woman Vol. 1: Origins</name>
+        <author>Renae De Liz</author>
+        <quantity>1</quantity>
+        <intro>On the hidden island of Themyscira, the Amazons, led by Queen Hippolyta, live in a kingdom of peace, protected by the gods. But the balance is upset when Hippolyta is granted what no immortal may have: a child, given life from the clay of the island. She is the princess Diana, who alone can sense the evil that is infesting the Amazon’s home.
+</intro>
+        <publisher>DC Comics</publisher>
+        <id>Cmc_TLWWV1</id>
+    </book>
+    <book>
+        <name>Batman Vol. 1: I Am Gotham</name>
+        <author>Tom King</author>
+        <quantity>1</quantity>
+        <intro>He is Gotham City’s hero, its Dark Knight, its greatest protector. He is Batman. And he is not alone.
+
+There are two new heroes in town—a pair of masked metahumans with the powers of Superman and a devotion to preserving all that is good about this twisted city. Calling themselves Gotham and Gotham Girl, they’ve saved Batman’s life, fought by his side and learned from his example.
+ </intro>
+        <publisher>DC Comics</publisher>
+        <id>Cmc_Bat1</id>
+    </book>
+    <book>
+        <name>Wolverine: Old Man Logan Vol. 3: The Last Ronin</name>
+        <author>Jeff Lemire</author>
+        <quantity>1</quantity>
+        <intro>Logan is an Old Man on a mission! Given a second chance, he's determined to put right what went wrong in the reality he knew: the night the villains joined forces and overcame the world's heroes, changing his life forever. Logan lost his friends, his purpose, and all that was left was the Wasteland. Now he's back in the past, and perhaps the Villain Uprising can be prevented. But his bid to defy destiny is about to land him in trouble - deep trouble. Logan wakes up at the bottom of a well, and every time he tries to scale its walls, a mysterious figure from his future appears and riddles him with arrows. Can Logan escape his prison -and spare the world from a fate worse than death?</intro>
+        <publisher>DC Comics</publisher>
+        <id>Cmc_Wolv3</id>
+    </book>
+    <book>
+        <name>Oxford School Dictionary</name>
+        <author> Oxford Dictionaries </author>
+        <quantity>1</quantity>
+        <intro>A major new edition of the trusted, bestselling, comprehensive Oxford School Dictionary with new curriculum support. This fantastic new edition will boost your children's vocabulary with new words and meanings from across the curriculum. A helpful new spelling, grammar and punctuation section is included to enhance language skills and bring the dictionary up to date.</intro>
+        <publisher> OUP Oxford </publisher>
+        <id>Dic_OSD</id>
+    </book>
+    <book>
+        <name>A Dictionary of Biology 7/e</name>
+        <author> Robert Hine</author>
+        <quantity>1</quantity>
+        <intro>Fully revised and updated for the seventh edition, this market-leading dictionary is the perfect guide for anyone studying biology, either at school or university.
+
+With more than 5,500 clear and concise entries, it provides comprehensive coverage of biology, biophysics, and biochemistry. Over 250 new entries include terms such as Broca's area, comparative genomic hybridization, mirror neuron, and Pandoravirus.
+
+</intro>
+        <publisher> OUP Oxford </publisher>
+        <id>Dic_DoB</id>
+    </book>
 </Library>

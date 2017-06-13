@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     loadUsersFile();
     loadTempAccountsFile();
     loadTempUsersFile();
+    loadCartInfosFile();
 }
 
 MainWindow::~MainWindow()
@@ -348,7 +349,7 @@ void MainWindow::loadCartInfosFile()
     }
 
     QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
-    User a;
+    cartinfo a;
 
     while(!xmlReader->atEnd() && !xmlReader->hasError())
     {
@@ -357,32 +358,40 @@ void MainWindow::loadCartInfosFile()
         {
             if(xmlReader->name() == "id")
             {
-                a.setName(xmlReader->readElementText());
+                a.setID(xmlReader->readElementText());
             }
             if(xmlReader->name() == "readername")
             {
-                a.setID(xmlReader->readElementText());
+                a.setReaderName(xmlReader->readElementText());
             }
             if(xmlReader->name() == "readerid")
             {
-                a.setDateofBirth(xmlReader->readElementText());
+                a.setReaderID(xmlReader->readElementText());
             }
             if(xmlReader->name() == "bookname")
             {
-                a.setSex(xmlReader->readElementText());
+                a.setBookName(xmlReader->readElementText());
             }
             if(xmlReader->name() == "bookid")
             {
-                a.setAddress(xmlReader->readElementText());
+                a.setBookID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "email")
+            if(xmlReader->name() == "brtime")
             {
-                a.setEmail(xmlReader->readElementText());
+                a.setBrrowTime(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "DoP")
+            if(xmlReader->name() == "duration")
             {
-                a.setDoP(xmlReader->readElementText());
-                temp_users.append(a);
+                a.setDuration(xmlReader->readElementText().toInt());
+            }
+            if(xmlReader->name() == "accept")
+            {
+                a.setDuration(xmlReader->readElementText().toInt());
+            }
+            if(xmlReader->name() == "paid")
+            {
+                a.setDuration(xmlReader->readElementText().toInt());
+                cartInfos.append(a);
                 a.clear();
             }
         }
@@ -559,6 +568,7 @@ void MainWindow::closeEvent (QCloseEvent *event)
     saveUsersFile();
     saveTempAccountsFile();
     saveTempUsersFile();
+    saveCartInfosFile();
     event->accept();
 }
 void MainWindow::saveUsersFile()
@@ -728,7 +738,41 @@ void MainWindow::saveTempUsersFile()
     xmlFile->close();
     delete xmlFile;
 }
+void MainWindow::saveCartInfosFile()
+{
+    QFile* xmlFile = new QFile("Data/CartInfos.xml");
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open CartInfos.xml to write data",
+        QMessageBox::Ok);
+        return;
+    }
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartDocument();
+    xmlWriter->writeStartElement("CartInfos");
 
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    for(;it!=cartInfos.end();it++)
+    {
+        xmlWriter->writeStartElement("cartInfo");
+        xmlWriter->writeTextElement("id", (*it).getID());
+        xmlWriter->writeTextElement("readername", (*it).getReaderName());
+        xmlWriter->writeTextElement("readerid", (*it).getReaderID());
+        xmlWriter->writeTextElement("bookname", (*it).getBookName());
+        xmlWriter->writeTextElement("bookid", (*it).getBookID());
+        xmlWriter->writeTextElement("brtime", (*it).getBrrowTime());
+        xmlWriter->writeTextElement("duration", QString::number((*it).getDuration()));
+        xmlWriter->writeTextElement("accept", QString::number((*it).getAccept()));
+        xmlWriter->writeTextElement("paid", QString::number((*it).getPaid()));
+        xmlWriter->writeEndElement();
+    }
+    xmlWriter->writeEndElement();
+
+    delete xmlWriter;
+    xmlFile->close();
+    delete xmlFile;
+}
 
 void MainWindow::on_BooksTable_cellClicked(int row, int column)
 {

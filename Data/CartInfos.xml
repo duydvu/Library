@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CartInfos>
+    <cartInfo>
+        <id>0</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>A brief history of time</bookname>
+        <bookid>Sci_HoT</bookid>
+        <brtime>13.06.2017</brtime>
+        <duration>253</duration>
+        <accept>24</accept>
+        <paid>253</paid>
+    </cartInfo>
 </CartInfos>
