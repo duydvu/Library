@@ -19,8 +19,18 @@ public:
 signals:
     void closed();
 
+private slots:
+    void on_searchButton_clicked();
+
+    void on_changeButton_clicked();
+
+    void on_bookTable_cellClicked(int row, int column);
+
+    void on_name_textChanged(const QString &arg1);
+
 private:
     Ui::reader *ui;
+    QLinkedList<Book> bookSearched;
 
     void closeEvent (QCloseEvent *event);
 };

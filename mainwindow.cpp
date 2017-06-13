@@ -487,10 +487,6 @@ void MainWindow::on_FindBooksButton_clicked()
 void MainWindow::on_SignInButton_clicked()
 {
     s=new SignIn;
-    ad=new Admin;
-    li = new librarian;
-    re = new reader;
-    s->setWindowTitle("Đăng nhập");
     connect(s,SIGNAL(accepted()),this,SLOT(logIn()));
     s->exec();
 }
@@ -499,6 +495,9 @@ void MainWindow::logIn()
 {
     this->hide();
     QString role=LogInAcc.getRole();
+    ad=new Admin;
+    li = new librarian;
+    re = new reader;
     if(role=="A")
     {
         connect(ad,SIGNAL(closed()),this,SLOT(logOut()));

@@ -8,6 +8,7 @@ SignIn::SignIn(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowTitle("Đăng nhập");
 }
 
 SignIn::~SignIn()
@@ -26,6 +27,7 @@ void SignIn::on_LogInButton_clicked()
             if(Account::encrypt(psw) == (*it).getPsw())
             {
                 LogInAcc=*it;
+                LogInUser=*(users.begin()+LogInAcc.getID().toInt());
                 this->accept();
                 return;
             }

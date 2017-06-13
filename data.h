@@ -19,13 +19,11 @@ extern QLinkedList<User> users;
 extern QLinkedList<Account> temp_accounts;
 extern QLinkedList<User> temp_users;
 extern Account LogInAcc;
+extern User LogInUser;
 
 bool compare(QChar, QChar);
 QString ToString(QDate);
-
-// Knuth–Morris–Pratt algorithm for searching substring
-template <class T>
-T* KMPsearch(QLinkedList<QString>, QLinkedList<T>);
+QString findCategory(QString);
 
 #endif
 

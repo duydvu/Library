@@ -240,7 +240,7 @@ public:
         retranslateUi(Admin);
         QObject::connect(searchUsers, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
-        admin->setCurrentIndex(5);
+        admin->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Admin);

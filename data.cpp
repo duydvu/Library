@@ -6,6 +6,7 @@ QLinkedList<User> users;
 QLinkedList<Account> temp_accounts;
 QLinkedList<User> temp_users;
 Account LogInAcc;
+User LogInUser;
 
 bool compare(QChar a, QChar b)
 {
@@ -18,8 +19,15 @@ QString ToString(QDate time)
     return time.toString("dd.MM.yyyy");
 }
 
-template <class T>
-T* KMPsearch(QLinkedList<QString>, QLinkedList<T>)
+QString findCategory(QString cat)
 {
-
+    if(cat=="Sci")
+        return "Khoa học";
+    if(cat=="Nol")
+        return "Tiểu thuyết";
+    if(cat=="Fic")
+        return "Khoa học viễn tưởng";
+    if(cat=="Rom")
+        return "Lãng mạn";
+    else return "Tất cả";
 }
