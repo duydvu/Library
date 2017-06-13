@@ -337,6 +337,70 @@ void MainWindow::loadTempUsersFile()
     delete xmlFile;
 }
 
+void MainWindow::loadCartInfosFile()
+{
+    QFile* xmlFile = new QFile("Data/CartInfos.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open CartInfos.xml to load data",
+        QMessageBox::Ok);
+        return;
+    }
+
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
+    User a;
+
+    while(!xmlReader->atEnd() && !xmlReader->hasError())
+    {
+        xmlReader->readNext();
+        if(xmlReader->isStartElement())
+        {
+            if(xmlReader->name() == "id")
+            {
+                a.setName(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "readername")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "readerid")
+            {
+                a.setDateofBirth(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "bookname")
+            {
+                a.setSex(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "bookid")
+            {
+                a.setAddress(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "email")
+            {
+                a.setEmail(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "DoP")
+            {
+                a.setDoP(xmlReader->readElementText());
+                temp_users.append(a);
+                a.clear();
+            }
+        }
+    }
+
+    if(xmlReader->hasError()) {
+        QMessageBox::critical(this,
+        "TempUsers.xml Parse Error",xmlReader->errorString(),
+        QMessageBox::Ok);
+        return;
+    }
+
+    xmlReader->clear();
+    delete xmlReader;
+    xmlFile->close();
+    delete xmlFile;
+}
+
 void MainWindow::on_FindBooksButton_clicked()
 {
     // Substring search

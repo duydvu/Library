@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="main">
      <attribute name="title">
@@ -245,6 +245,55 @@
         <height>51</height>
        </rect>
       </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Thêm</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sửa</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>10</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Xóa</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>256</width>
+        <height>192</height>
+       </rect>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="users">
@@ -360,6 +409,11 @@
       </column>
       <column>
        <property name="text">
+        <string>Tài khoản</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
         <string>Họ và tên</string>
        </property>
       </column>
@@ -388,6 +442,11 @@
         <string>Ngày tham gia</string>
        </property>
       </column>
+      <column>
+       <property name="text">
+        <string>Tình trạng</string>
+       </property>
+      </column>
      </widget>
     </widget>
     <widget class="QWidget" name="lent">
@@ -403,9 +462,9 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>120</y>
         <width>781</width>
-        <height>421</height>
+        <height>441</height>
        </rect>
       </property>
       <attribute name="horizontalHeaderStretchLastSection">
@@ -414,6 +473,11 @@
       <attribute name="verticalHeaderVisible">
        <bool>false</bool>
       </attribute>
+      <column>
+       <property name="text">
+        <string/>
+       </property>
+      </column>
       <column>
        <property name="text">
         <string>Tài khoản</string>
@@ -434,16 +498,32 @@
         <string>Ngày đăng ký</string>
        </property>
       </column>
-      <column>
-       <property name="text">
-        <string>Chấp nhận</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Từ chối</string>
-       </property>
-      </column>
+     </widget>
+     <widget class="QPushButton" name="Agree">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>20</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Chấp nhận</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Deny">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>70</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Từ chối</string>
+      </property>
      </widget>
     </widget>
    </widget>

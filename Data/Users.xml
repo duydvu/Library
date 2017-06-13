@@ -27,4 +27,22 @@
         <email>Jupiter@apple.com</email>
         <DoP>12.06.2017</DoP>
     </user>
+    <user>
+        <name>user</name>
+        <id>3</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nam</sex>
+        <address>123</address>
+        <email>1@ya.com</email>
+        <DoP>12.06.2017</DoP>
+    </user>
+    <user>
+        <name>User2</name>
+        <id>4</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nam</sex>
+        <address>Moon</address>
+        <email>king@gmail.com</email>
+        <DoP>13.06.2017</DoP>
+    </user>
 </Users>

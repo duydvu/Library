@@ -22,7 +22,9 @@ signals:
 private slots:
     void on_searchButton_clicked();
 
-    void on_registrationTable_cellDoubleClicked(int row, int column);
+    void on_Agree_clicked();
+
+    void on_Deny_clicked();
 
 private:
     Ui::Admin *ui;

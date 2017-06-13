@@ -21,4 +21,18 @@
         <id>2</id>
         <active>T</active>
     </account>
+    <account>
+        <name>user</name>
+        <password>75736572</password>
+        <role>R</role>
+        <id>3</id>
+        <active>T</active>
+    </account>
+    <account>
+        <name>user2</name>
+        <password>7573657232</password>
+        <role>L</role>
+        <id>4</id>
+        <active>T</active>
+    </account>
 </Accounts>

@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
@@ -78,28 +77,30 @@ public:
     QTableWidget *tableWidget_3;
     QWidget *tab_3;
     QGroupBox *groupBox_3;
-    QToolButton *toolButton_8;
     QToolButton *toolButton_9;
     QToolButton *toolButton_10;
-    QComboBox *comboBox;
     QGroupBox *groupBox_8;
     QLineEdit *lineEdit;
     QPushButton *pushButton_2;
     QTableWidget *tableWidget_4;
-    QWidget *tabsecond;
     QTextBrowser *textBrowser_6;
+    QWidget *tabsecond;
+    QWidget *newRegistration;
+    QPushButton *Deny;
+    QTableWidget *registrationTable;
+    QPushButton *Agree;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *librarian)
     {
         if (librarian->objectName().isEmpty())
             librarian->setObjectName(QStringLiteral("librarian"));
-        librarian->resize(800, 600);
+        librarian->resize(816, 608);
         centralwidget = new QWidget(librarian);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 30, 751, 441));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 801, 581));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -312,31 +313,25 @@ public:
         tab_3->setObjectName(QStringLiteral("tab_3"));
         groupBox_3 = new QGroupBox(tab_3);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(30, 10, 681, 51));
-        toolButton_8 = new QToolButton(groupBox_3);
-        toolButton_8->setObjectName(QStringLiteral("toolButton_8"));
-        toolButton_8->setGeometry(QRect(10, 10, 121, 22));
+        groupBox_3->setGeometry(QRect(10, 10, 751, 51));
         toolButton_9 = new QToolButton(groupBox_3);
         toolButton_9->setObjectName(QStringLiteral("toolButton_9"));
-        toolButton_9->setGeometry(QRect(150, 10, 121, 22));
+        toolButton_9->setGeometry(QRect(20, 10, 121, 22));
         toolButton_10 = new QToolButton(groupBox_3);
         toolButton_10->setObjectName(QStringLiteral("toolButton_10"));
-        toolButton_10->setGeometry(QRect(300, 10, 121, 22));
-        comboBox = new QComboBox(groupBox_3);
-        comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(500, 10, 73, 22));
+        toolButton_10->setGeometry(QRect(160, 10, 121, 22));
         groupBox_8 = new QGroupBox(tab_3);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setGeometry(QRect(30, 90, 191, 181));
+        groupBox_8->setGeometry(QRect(10, 80, 161, 181));
         lineEdit = new QLineEdit(groupBox_8);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(30, 30, 113, 22));
+        lineEdit->setGeometry(QRect(12, 30, 131, 22));
         pushButton_2 = new QPushButton(groupBox_8);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(40, 60, 93, 28));
+        pushButton_2->setGeometry(QRect(22, 60, 111, 28));
         tableWidget_4 = new QTableWidget(tab_3);
-        if (tableWidget_4->columnCount() < 6)
-            tableWidget_4->setColumnCount(6);
+        if (tableWidget_4->columnCount() < 8)
+            tableWidget_4->setColumnCount(8);
         QTableWidgetItem *__qtablewidgetitem37 = new QTableWidgetItem();
         tableWidget_4->setHorizontalHeaderItem(0, __qtablewidgetitem37);
         QTableWidgetItem *__qtablewidgetitem38 = new QTableWidgetItem();
@@ -349,34 +344,48 @@ public:
         tableWidget_4->setHorizontalHeaderItem(4, __qtablewidgetitem41);
         QTableWidgetItem *__qtablewidgetitem42 = new QTableWidgetItem();
         tableWidget_4->setHorizontalHeaderItem(5, __qtablewidgetitem42);
-        if (tableWidget_4->rowCount() < 7)
-            tableWidget_4->setRowCount(7);
         QTableWidgetItem *__qtablewidgetitem43 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(0, __qtablewidgetitem43);
+        tableWidget_4->setHorizontalHeaderItem(6, __qtablewidgetitem43);
         QTableWidgetItem *__qtablewidgetitem44 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(1, __qtablewidgetitem44);
-        QTableWidgetItem *__qtablewidgetitem45 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(2, __qtablewidgetitem45);
-        QTableWidgetItem *__qtablewidgetitem46 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(3, __qtablewidgetitem46);
-        QTableWidgetItem *__qtablewidgetitem47 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(4, __qtablewidgetitem47);
-        QTableWidgetItem *__qtablewidgetitem48 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(5, __qtablewidgetitem48);
-        QTableWidgetItem *__qtablewidgetitem49 = new QTableWidgetItem();
-        tableWidget_4->setVerticalHeaderItem(6, __qtablewidgetitem49);
+        tableWidget_4->setHorizontalHeaderItem(7, __qtablewidgetitem44);
         tableWidget_4->setObjectName(QStringLiteral("tableWidget_4"));
-        tableWidget_4->setGeometry(QRect(240, 80, 501, 261));
+        tableWidget_4->setGeometry(QRect(180, 80, 581, 261));
+        textBrowser_6 = new QTextBrowser(tab_3);
+        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
+        textBrowser_6->setGeometry(QRect(10, 480, 461, 41));
         fyfu11212->addTab(tab_3, QString());
         tabsecond = new QWidget();
         tabsecond->setObjectName(QStringLiteral("tabsecond"));
         fyfu11212->addTab(tabsecond, QString());
+        newRegistration = new QWidget();
+        newRegistration->setObjectName(QStringLiteral("newRegistration"));
+        Deny = new QPushButton(newRegistration);
+        Deny->setObjectName(QStringLiteral("Deny"));
+        Deny->setGeometry(QRect(40, 60, 75, 23));
+        registrationTable = new QTableWidget(newRegistration);
+        if (registrationTable->columnCount() < 5)
+            registrationTable->setColumnCount(5);
+        QTableWidgetItem *__qtablewidgetitem45 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem45);
+        QTableWidgetItem *__qtablewidgetitem46 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(1, __qtablewidgetitem46);
+        QTableWidgetItem *__qtablewidgetitem47 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(2, __qtablewidgetitem47);
+        QTableWidgetItem *__qtablewidgetitem48 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(3, __qtablewidgetitem48);
+        QTableWidgetItem *__qtablewidgetitem49 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem49);
+        registrationTable->setObjectName(QStringLiteral("registrationTable"));
+        registrationTable->setGeometry(QRect(0, 100, 781, 441));
+        registrationTable->horizontalHeader()->setStretchLastSection(true);
+        registrationTable->verticalHeader()->setVisible(false);
+        Agree = new QPushButton(newRegistration);
+        Agree->setObjectName(QStringLiteral("Agree"));
+        Agree->setGeometry(QRect(40, 10, 75, 23));
+        fyfu11212->addTab(newRegistration, QString());
 
-        gridLayout->addWidget(fyfu11212, 1, 0, 1, 1);
+        gridLayout->addWidget(fyfu11212, 0, 0, 1, 1);
 
-        textBrowser_6 = new QTextBrowser(centralwidget);
-        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
-        textBrowser_6->setGeometry(QRect(30, 420, 461, 41));
         librarian->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(librarian);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -384,7 +393,7 @@ public:
 
         retranslateUi(librarian);
 
-        fyfu11212->setCurrentIndex(2);
+        fyfu11212->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(librarian);
@@ -505,53 +514,45 @@ public:
 
         fyfu11212->setTabText(fyfu11212->indexOf(tab_6), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 s\303\241ch", 0));
         groupBox_3->setTitle(QString());
-        toolButton_8->setText(QApplication::translate("librarian", "Th\303\252m", 0));
         toolButton_9->setText(QApplication::translate("librarian", "S\341\273\255a", 0));
         toolButton_10->setText(QApplication::translate("librarian", "X\303\263a", 0));
-        comboBox->clear();
-        comboBox->insertItems(0, QStringList()
-         << QApplication::translate("librarian", "S\341\272\257p x\341\272\277p theo:", 0)
-         << QApplication::translate("librarian", "Ng\303\240y sinh", 0)
-         << QApplication::translate("librarian", "H\341\273\215 v\303\240 t\303\252n", 0)
-         << QApplication::translate("librarian", "Gi\341\273\233i t\303\255nh", 0)
-         << QApplication::translate("librarian", "Ng\303\240y tham gia", 0)
-        );
         groupBox_8->setTitle(QApplication::translate("librarian", "T\303\254m ki\341\272\277m \304\221\341\273\231c gi\341\272\243", 0));
         pushButton_2->setText(QApplication::translate("librarian", "Search", 0));
         QTableWidgetItem *___qtablewidgetitem34 = tableWidget_4->horizontalHeaderItem(0);
         ___qtablewidgetitem34->setText(QApplication::translate("librarian", "M\303\243", 0));
         QTableWidgetItem *___qtablewidgetitem35 = tableWidget_4->horizontalHeaderItem(1);
-        ___qtablewidgetitem35->setText(QApplication::translate("librarian", "H\341\273\215 T\303\252n", 0));
+        ___qtablewidgetitem35->setText(QApplication::translate("librarian", "T\303\240i kho\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem36 = tableWidget_4->horizontalHeaderItem(2);
-        ___qtablewidgetitem36->setText(QApplication::translate("librarian", "Gi\341\273\233i t\303\255nh", 0));
+        ___qtablewidgetitem36->setText(QApplication::translate("librarian", "H\341\273\215 T\303\252n", 0));
         QTableWidgetItem *___qtablewidgetitem37 = tableWidget_4->horizontalHeaderItem(3);
-        ___qtablewidgetitem37->setText(QApplication::translate("librarian", "Ng\303\240y sinh", 0));
+        ___qtablewidgetitem37->setText(QApplication::translate("librarian", "Gi\341\273\233i t\303\255nh", 0));
         QTableWidgetItem *___qtablewidgetitem38 = tableWidget_4->horizontalHeaderItem(4);
-        ___qtablewidgetitem38->setText(QApplication::translate("librarian", "Email", 0));
+        ___qtablewidgetitem38->setText(QApplication::translate("librarian", "Ng\303\240y sinh", 0));
         QTableWidgetItem *___qtablewidgetitem39 = tableWidget_4->horizontalHeaderItem(5);
-        ___qtablewidgetitem39->setText(QApplication::translate("librarian", "Ng\303\240y tham gia", 0));
-        QTableWidgetItem *___qtablewidgetitem40 = tableWidget_4->verticalHeaderItem(0);
-        ___qtablewidgetitem40->setText(QApplication::translate("librarian", "1", 0));
-        QTableWidgetItem *___qtablewidgetitem41 = tableWidget_4->verticalHeaderItem(1);
-        ___qtablewidgetitem41->setText(QApplication::translate("librarian", "2", 0));
-        QTableWidgetItem *___qtablewidgetitem42 = tableWidget_4->verticalHeaderItem(2);
-        ___qtablewidgetitem42->setText(QApplication::translate("librarian", "3", 0));
-        QTableWidgetItem *___qtablewidgetitem43 = tableWidget_4->verticalHeaderItem(3);
-        ___qtablewidgetitem43->setText(QApplication::translate("librarian", "4", 0));
-        QTableWidgetItem *___qtablewidgetitem44 = tableWidget_4->verticalHeaderItem(4);
-        ___qtablewidgetitem44->setText(QApplication::translate("librarian", "5", 0));
-        QTableWidgetItem *___qtablewidgetitem45 = tableWidget_4->verticalHeaderItem(5);
-        ___qtablewidgetitem45->setText(QApplication::translate("librarian", "6", 0));
-        QTableWidgetItem *___qtablewidgetitem46 = tableWidget_4->verticalHeaderItem(6);
-        ___qtablewidgetitem46->setText(QApplication::translate("librarian", "7", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab_3), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 ng\306\260\341\273\235i d\303\271ng", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tabsecond), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
+        ___qtablewidgetitem39->setText(QApplication::translate("librarian", "Email", 0));
+        QTableWidgetItem *___qtablewidgetitem40 = tableWidget_4->horizontalHeaderItem(6);
+        ___qtablewidgetitem40->setText(QApplication::translate("librarian", "Ng\303\240y tham gia", 0));
+        QTableWidgetItem *___qtablewidgetitem41 = tableWidget_4->horizontalHeaderItem(7);
+        ___qtablewidgetitem41->setText(QApplication::translate("librarian", "T\303\254nh tr\341\272\241ng", 0));
         textBrowser_6->setHtml(QApplication::translate("librarian", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Th\303\264ng tin t\303\241c gi\341\272\243</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">T\303\241c quy\341\273\201n</span></p></body></html>", 0));
+        fyfu11212->setTabText(fyfu11212->indexOf(tab_3), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 ng\306\260\341\273\235i d\303\271ng", 0));
+        fyfu11212->setTabText(fyfu11212->indexOf(tabsecond), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
+        Deny->setText(QApplication::translate("librarian", "T\341\273\253 ch\341\273\221i", 0));
+        QTableWidgetItem *___qtablewidgetitem42 = registrationTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem42->setText(QApplication::translate("librarian", "T\303\240i kho\341\272\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem43 = registrationTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem43->setText(QApplication::translate("librarian", "Vai tr\303\262", 0));
+        QTableWidgetItem *___qtablewidgetitem44 = registrationTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem44->setText(QApplication::translate("librarian", "H\341\273\215 v\303\240 t\303\252n", 0));
+        QTableWidgetItem *___qtablewidgetitem45 = registrationTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem45->setText(QApplication::translate("librarian", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
+        Agree->setText(QApplication::translate("librarian", "Ch\341\272\245p nh\341\272\255n", 0));
+        fyfu11212->setTabText(fyfu11212->indexOf(newRegistration), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 \304\221\304\203ng k\303\275 m\341\273\233i", 0));
     } // retranslateUi
 
 };

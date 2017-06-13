@@ -19,6 +19,11 @@ public:
 signals:
     void closed();
 
+private slots:
+    void on_Agree_clicked();
+
+    void on_Deny_clicked();
+
 private:
     Ui::librarian *ui;
 

@@ -21,6 +21,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
@@ -51,6 +52,10 @@ public:
     QTableWidget *tableWidget;
     QWidget *books;
     QWidget *widget;
+    QPushButton *pushButton;
+    QPushButton *pushButton_5;
+    QPushButton *pushButton_6;
+    QTableView *tableView;
     QWidget *users;
     QWidget *widget_2;
     QPushButton *pushButton_2;
@@ -62,6 +67,8 @@ public:
     QWidget *lent;
     QWidget *NewRegistrations;
     QTableWidget *registrationTable;
+    QPushButton *Agree;
+    QPushButton *Deny;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Admin)
@@ -133,6 +140,18 @@ public:
         widget = new QWidget(books);
         widget->setObjectName(QStringLiteral("widget"));
         widget->setGeometry(QRect(20, 20, 511, 51));
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(10, 10, 75, 23));
+        pushButton_5 = new QPushButton(widget);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(110, 10, 75, 23));
+        pushButton_6 = new QPushButton(widget);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(210, 10, 75, 23));
+        tableView = new QTableView(books);
+        tableView->setObjectName(QStringLiteral("tableView"));
+        tableView->setGeometry(QRect(20, 80, 256, 192));
         admin->addTab(books, QString());
         users = new QWidget();
         users->setObjectName(QStringLiteral("users"));
@@ -155,8 +174,8 @@ public:
         searchButton->setObjectName(QStringLiteral("searchButton"));
         searchButton->setGeometry(QRect(640, 20, 75, 23));
         usersTable = new QTableWidget(users);
-        if (usersTable->columnCount() < 7)
-            usersTable->setColumnCount(7);
+        if (usersTable->columnCount() < 9)
+            usersTable->setColumnCount(9);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         usersTable->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -171,6 +190,10 @@ public:
         usersTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         usersTable->setHorizontalHeaderItem(6, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(7, __qtablewidgetitem7);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        usersTable->setHorizontalHeaderItem(8, __qtablewidgetitem8);
         usersTable->setObjectName(QStringLiteral("usersTable"));
         usersTable->setGeometry(QRect(10, 81, 771, 481));
         usersTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -186,24 +209,28 @@ public:
         NewRegistrations = new QWidget();
         NewRegistrations->setObjectName(QStringLiteral("NewRegistrations"));
         registrationTable = new QTableWidget(NewRegistrations);
-        if (registrationTable->columnCount() < 6)
-            registrationTable->setColumnCount(6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(1, __qtablewidgetitem8);
+        if (registrationTable->columnCount() < 5)
+            registrationTable->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(2, __qtablewidgetitem9);
+        registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem9);
         QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(3, __qtablewidgetitem10);
+        registrationTable->setHorizontalHeaderItem(1, __qtablewidgetitem10);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem11);
+        registrationTable->setHorizontalHeaderItem(2, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(5, __qtablewidgetitem12);
+        registrationTable->setHorizontalHeaderItem(3, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem13);
         registrationTable->setObjectName(QStringLiteral("registrationTable"));
-        registrationTable->setGeometry(QRect(10, 140, 781, 421));
+        registrationTable->setGeometry(QRect(10, 120, 781, 441));
         registrationTable->horizontalHeader()->setStretchLastSection(true);
         registrationTable->verticalHeader()->setVisible(false);
+        Agree = new QPushButton(NewRegistrations);
+        Agree->setObjectName(QStringLiteral("Agree"));
+        Agree->setGeometry(QRect(50, 20, 75, 23));
+        Deny = new QPushButton(NewRegistrations);
+        Deny->setObjectName(QStringLiteral("Deny"));
+        Deny->setGeometry(QRect(50, 70, 75, 23));
         admin->addTab(NewRegistrations, QString());
         Admin->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(Admin);
@@ -213,7 +240,7 @@ public:
         retranslateUi(Admin);
         QObject::connect(searchUsers, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
-        admin->setCurrentIndex(3);
+        admin->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(Admin);
@@ -236,6 +263,9 @@ public:
         payDate->setText(QApplication::translate("Admin", "C\303\262n XX ng\303\240y n\341\273\257a \304\221\306\260\341\273\243c l\304\251nh l\306\260\306\241ng", 0));
         label_7->setText(QApplication::translate("Admin", "Ca tr\341\273\261c:", 0));
         admin->setTabText(admin->indexOf(staffs), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 nh\303\242n vi\303\252n", 0));
+        pushButton->setText(QApplication::translate("Admin", "Th\303\252m", 0));
+        pushButton_5->setText(QApplication::translate("Admin", "S\341\273\255a", 0));
+        pushButton_6->setText(QApplication::translate("Admin", "X\303\263a", 0));
         admin->setTabText(admin->indexOf(books), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 s\303\241ch", 0));
         pushButton_2->setText(QApplication::translate("Admin", "S\341\273\255a", 0));
         pushButton_3->setText(QApplication::translate("Admin", "X\303\263a", 0));
@@ -245,31 +275,33 @@ public:
         QTableWidgetItem *___qtablewidgetitem = usersTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("Admin", "M\303\243 s\341\273\221", 0));
         QTableWidgetItem *___qtablewidgetitem1 = usersTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem2 = usersTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
         QTableWidgetItem *___qtablewidgetitem3 = usersTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("Admin", "Ng\303\240y sinh", 0));
+        ___qtablewidgetitem3->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211", 0));
         QTableWidgetItem *___qtablewidgetitem4 = usersTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QApplication::translate("Admin", "Email", 0));
+        ___qtablewidgetitem4->setText(QApplication::translate("Admin", "Ng\303\240y sinh", 0));
         QTableWidgetItem *___qtablewidgetitem5 = usersTable->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QApplication::translate("Admin", "Gi\341\273\233i t\303\255nh", 0));
+        ___qtablewidgetitem5->setText(QApplication::translate("Admin", "Email", 0));
         QTableWidgetItem *___qtablewidgetitem6 = usersTable->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QApplication::translate("Admin", "Ng\303\240y tham gia", 0));
+        ___qtablewidgetitem6->setText(QApplication::translate("Admin", "Gi\341\273\233i t\303\255nh", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = usersTable->horizontalHeaderItem(7);
+        ___qtablewidgetitem7->setText(QApplication::translate("Admin", "Ng\303\240y tham gia", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = usersTable->horizontalHeaderItem(8);
+        ___qtablewidgetitem8->setText(QApplication::translate("Admin", "T\303\254nh tr\341\272\241ng", 0));
         admin->setTabText(admin->indexOf(users), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 ng\306\260\341\273\235i d\303\271ng", 0));
         admin->setTabText(admin->indexOf(lent), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = registrationTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem7->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = registrationTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem8->setText(QApplication::translate("Admin", "Vai tr\303\262", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = registrationTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem9->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
-        QTableWidgetItem *___qtablewidgetitem10 = registrationTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem10->setText(QApplication::translate("Admin", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
-        QTableWidgetItem *___qtablewidgetitem11 = registrationTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem11->setText(QApplication::translate("Admin", "Ch\341\272\245p nh\341\272\255n", 0));
-        QTableWidgetItem *___qtablewidgetitem12 = registrationTable->horizontalHeaderItem(5);
-        ___qtablewidgetitem12->setText(QApplication::translate("Admin", "T\341\273\253 ch\341\273\221i", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = registrationTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem9->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = registrationTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem10->setText(QApplication::translate("Admin", "Vai tr\303\262", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = registrationTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem11->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
+        QTableWidgetItem *___qtablewidgetitem12 = registrationTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem12->setText(QApplication::translate("Admin", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
+        Agree->setText(QApplication::translate("Admin", "Ch\341\272\245p nh\341\272\255n", 0));
+        Deny->setText(QApplication::translate("Admin", "T\341\273\253 ch\341\273\221i", 0));
         admin->setTabText(admin->indexOf(NewRegistrations), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 \304\221\304\203ng k\303\275 m\341\273\233i", 0));
     } // retranslateUi
 

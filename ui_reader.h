@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
@@ -22,7 +23,6 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
@@ -40,11 +40,12 @@ public:
     QWidget *tab_4;
     QGroupBox *groupBox;
     QToolButton *toolButton_2;
-    QToolButton *toolButton_3;
     QToolButton *toolButton_4;
     QLineEdit *lineEdit;
-    QTableWidget *tableWidget;
     QTextBrowser *textBrowser_7;
+    QTextBrowser *textBrowser_6;
+    QComboBox *comboBox;
+    QLabel *label_16;
     QWidget *tab_5;
     QTextBrowser *textBrowser_4;
     QLabel *picBook;
@@ -73,7 +74,6 @@ public:
     QWidget *tabsecond;
     QTextBrowser *textBrowser;
     QTextBrowser *textBrowser_2;
-    QTextBrowser *textBrowser_6;
     QPushButton *pushButton;
     QStatusBar *statusbar;
 
@@ -81,12 +81,12 @@ public:
     {
         if (reader->objectName().isEmpty())
             reader->setObjectName(QStringLiteral("reader"));
-        reader->resize(800, 600);
+        reader->resize(821, 615);
         centralwidget = new QWidget(reader);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         gridLayoutWidget = new QWidget(centralwidget);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(20, 20, 751, 441));
+        gridLayoutWidget->setGeometry(QRect(10, 10, 801, 581));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -103,51 +103,24 @@ public:
         toolButton_2 = new QToolButton(groupBox);
         toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
         toolButton_2->setGeometry(QRect(10, 10, 121, 22));
-        toolButton_3 = new QToolButton(groupBox);
-        toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
-        toolButton_3->setGeometry(QRect(10, 40, 121, 22));
         toolButton_4 = new QToolButton(groupBox);
         toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
         toolButton_4->setGeometry(QRect(240, 10, 101, 22));
         lineEdit = new QLineEdit(groupBox);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
         lineEdit->setGeometry(QRect(240, 40, 113, 22));
-        tableWidget = new QTableWidget(tab_4);
-        if (tableWidget->columnCount() < 4)
-            tableWidget->setColumnCount(4);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        if (tableWidget->rowCount() < 8)
-            tableWidget->setRowCount(8);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(1, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(5, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(6, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(7, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget->setItem(0, 3, __qtablewidgetitem12);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(30, 130, 371, 192));
         textBrowser_7 = new QTextBrowser(tab_4);
         textBrowser_7->setObjectName(QStringLiteral("textBrowser_7"));
-        textBrowser_7->setGeometry(QRect(460, 130, 256, 192));
+        textBrowser_7->setGeometry(QRect(5, 150, 781, 321));
+        textBrowser_6 = new QTextBrowser(tab_4);
+        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
+        textBrowser_6->setGeometry(QRect(0, 500, 461, 41));
+        comboBox = new QComboBox(tab_4);
+        comboBox->setObjectName(QStringLiteral("comboBox"));
+        comboBox->setGeometry(QRect(120, 110, 221, 22));
+        label_16 = new QLabel(tab_4);
+        label_16->setObjectName(QStringLiteral("label_16"));
+        label_16->setGeometry(QRect(30, 110, 71, 21));
         fyfu11212->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
@@ -236,9 +209,6 @@ public:
 
         gridLayout->addWidget(fyfu11212, 0, 0, 1, 1);
 
-        textBrowser_6 = new QTextBrowser(centralwidget);
-        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
-        textBrowser_6->setGeometry(QRect(30, 410, 461, 41));
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(670, 14, 81, 31));
@@ -249,7 +219,7 @@ public:
 
         retranslateUi(reader);
 
-        fyfu11212->setCurrentIndex(2);
+        fyfu11212->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(reader);
@@ -261,37 +231,14 @@ public:
         fyfu11212->setTabText(fyfu11212->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
         toolButton_2->setText(QApplication::translate("reader", "M\306\260\341\273\243n s\303\241ch  ", 0));
-        toolButton_3->setText(QApplication::translate("reader", "\304\220\303\241nh gi\303\241 s\303\241ch", 0));
         toolButton_4->setText(QApplication::translate("reader", "T\303\254m ki\341\272\277m", 0));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("reader", "M\303\243", 0));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("reader", "Chuy\303\252n m\341\273\245c", 0));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("reader", "Chuy\303\252n m\341\273\245c con", 0));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QApplication::translate("reader", "Next", 0));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->verticalHeaderItem(0);
-        ___qtablewidgetitem4->setText(QApplication::translate("reader", "1", 0));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->verticalHeaderItem(1);
-        ___qtablewidgetitem5->setText(QApplication::translate("reader", "2", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->verticalHeaderItem(2);
-        ___qtablewidgetitem6->setText(QApplication::translate("reader", "3", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->verticalHeaderItem(3);
-        ___qtablewidgetitem7->setText(QApplication::translate("reader", "4", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->verticalHeaderItem(4);
-        ___qtablewidgetitem8->setText(QApplication::translate("reader", "5", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = tableWidget->verticalHeaderItem(5);
-        ___qtablewidgetitem9->setText(QApplication::translate("reader", "6", 0));
-        QTableWidgetItem *___qtablewidgetitem10 = tableWidget->verticalHeaderItem(6);
-        ___qtablewidgetitem10->setText(QApplication::translate("reader", "7", 0));
-        QTableWidgetItem *___qtablewidgetitem11 = tableWidget->verticalHeaderItem(7);
-        ___qtablewidgetitem11->setText(QApplication::translate("reader", "8", 0));
-
-        const bool __sortingEnabled = tableWidget->isSortingEnabled();
-        tableWidget->setSortingEnabled(false);
-        tableWidget->setSortingEnabled(__sortingEnabled);
-
+        textBrowser_6->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Th\303\264ng tin t\303\241c gi\341\272\243</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">T\303\241c quy\341\273\201n</span></p></body></html>", 0));
+        label_16->setText(QApplication::translate("reader", "Chuy\303\252n m\341\273\245c", 0));
         fyfu11212->setTabText(fyfu11212->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
         picBook->setText(QApplication::translate("reader", "picBook", 0));
         fyfu11212->setTabText(fyfu11212->indexOf(tab_5), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
@@ -336,12 +283,6 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">H\341\273\230P TH\306\257 G\303\223P \303\235</span></p></body></html>", 0));
         fyfu11212->setTabText(fyfu11212->indexOf(tabsecond), QApplication::translate("reader", "Li\303\252n h\341\273\207", 0));
-        textBrowser_6->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Th\303\264ng tin t\303\241c gi\341\272\243</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">T\303\241c quy\341\273\201n</span></p></body></html>", 0));
         pushButton->setText(QApplication::translate("reader", "Exit", 0));
     } // retranslateUi
 

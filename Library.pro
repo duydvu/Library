@@ -24,7 +24,7 @@ SOURCES += main.cpp\
     admin.cpp \
     reader.cpp \
     librarian.cpp \
-    cardinfo.cpp
+    cartinfo.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -38,7 +38,7 @@ HEADERS  += mainwindow.h \
     admin.h \
     reader.h \
     librarian.h \
-    cardinfo.h
+    cartinfo.h
 
 FORMS    += \
     signin.ui \

@@ -56,6 +56,7 @@ private:
     void loadUsersFile();
     void loadTempAccountsFile();
     void loadTempUsersFile();
+    void loadCartInfosFile();
 
     void closeEvent (QCloseEvent *event);
     void saveBooksFile();
@@ -63,6 +64,7 @@ private:
     void saveUsersFile();
     void saveTempAccountsFile();
     void saveTempUsersFile();
+    void saveCartInfosFile();
 };
 
 #endif // MAINWINDOW_H
