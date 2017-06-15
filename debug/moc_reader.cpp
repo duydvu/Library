@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_reader_t {
-    QByteArrayData data[12];
-    char stringdata0[162];
+    QByteArrayData data[13];
+    char stringdata0[180];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,14 +40,15 @@ QT_MOC_LITERAL(7, 92, 6), // "column"
 QT_MOC_LITERAL(8, 99, 19), // "on_name_textChanged"
 QT_MOC_LITERAL(9, 119, 4), // "arg1"
 QT_MOC_LITERAL(10, 124, 21), // "on_bookBorrow_clicked"
-QT_MOC_LITERAL(11, 146, 15) // "on_send_clicked"
+QT_MOC_LITERAL(11, 146, 15), // "on_send_clicked"
+QT_MOC_LITERAL(12, 162, 17) // "on_cancel_clicked"
 
     },
     "reader\0closed\0\0on_searchButton_clicked\0"
     "on_changeButton_clicked\0"
     "on_bookTable_cellClicked\0row\0column\0"
     "on_name_textChanged\0arg1\0on_bookBorrow_clicked\0"
-    "on_send_clicked"
+    "on_send_clicked\0on_cancel_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,7 +58,7 @@ static const uint qt_meta_data_reader[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -65,15 +66,16 @@ static const uint qt_meta_data_reader[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x06 /* Public */,
+       1,    0,   54,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   50,    2, 0x08 /* Private */,
-       4,    0,   51,    2, 0x08 /* Private */,
-       5,    2,   52,    2, 0x08 /* Private */,
-       8,    1,   57,    2, 0x08 /* Private */,
-      10,    0,   60,    2, 0x08 /* Private */,
-      11,    0,   61,    2, 0x08 /* Private */,
+       3,    0,   55,    2, 0x08 /* Private */,
+       4,    0,   56,    2, 0x08 /* Private */,
+       5,    2,   57,    2, 0x08 /* Private */,
+       8,    1,   62,    2, 0x08 /* Private */,
+      10,    0,   65,    2, 0x08 /* Private */,
+      11,    0,   66,    2, 0x08 /* Private */,
+      12,    0,   67,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -83,6 +85,7 @@ static const uint qt_meta_data_reader[] = {
     QMetaType::Void,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    6,    7,
     QMetaType::Void, QMetaType::QString,    9,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -102,6 +105,7 @@ void reader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 4: _t->on_name_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 5: _t->on_bookBorrow_clicked(); break;
         case 6: _t->on_send_clicked(); break;
+        case 7: _t->on_cancel_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -142,13 +146,13 @@ int reader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 8;
     }
     return _id;
 }

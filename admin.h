@@ -26,6 +26,26 @@ private slots:
 
     void on_Deny_clicked();
 
+    void on_CartInfos_cellClicked(int row, int column);
+
+    void on_newCart_clicked();
+
+    void on_acceptedCart_clicked();
+
+    void on_lendingCart_clicked();
+
+    void on_doneCart_clicked();
+
+    void on_infringeCart_clicked();
+
+    void on_accept_clicked();
+
+    void on_send_clicked();
+
+    void on_done_clicked();
+
+    void on_infringe_clicked();
+
 private:
     Ui::Admin *ui;
 

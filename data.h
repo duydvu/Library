@@ -13,6 +13,7 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QIcon>
+#include <QScrollArea>
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;

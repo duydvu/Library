@@ -32,6 +32,8 @@ private slots:
 
     void on_send_clicked();
 
+    void on_cancel_clicked();
+
 private:
     Ui::reader *ui;
     QLinkedList<Book> bookSearched;

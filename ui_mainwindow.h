@@ -14,14 +14,18 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,14 +34,20 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QPushButton *SignInButton;
+    QGridLayout *gridLayout;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout;
     QFrame *MainBar;
+    QHBoxLayout *horizontalLayout_2;
     QLineEdit *FindBooksEdit;
     QPushButton *FindBooksButton;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *SignInButton;
     QPushButton *SignUpButton;
-    QLabel *AccountLabel;
-    QTextBrowser *intro;
+    QHBoxLayout *horizontalLayout;
     QTableWidget *BooksTable;
+    QTextBrowser *intro;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -45,22 +55,77 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(828, 546);
+        MainWindow->resize(749, 564);
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(255,255,255)"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        SignInButton = new QPushButton(centralWidget);
+        gridLayout = new QGridLayout(centralWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        scrollArea = new QScrollArea(centralWidget);
+        scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 729, 524));
+        verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        MainBar = new QFrame(scrollAreaWidgetContents);
+        MainBar->setObjectName(QStringLiteral("MainBar"));
+        MainBar->setStyleSheet(QStringLiteral("background: #00BCFF;"));
+        MainBar->setFrameShape(QFrame::StyledPanel);
+        MainBar->setFrameShadow(QFrame::Raised);
+        horizontalLayout_2 = new QHBoxLayout(MainBar);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        FindBooksEdit = new QLineEdit(MainBar);
+        FindBooksEdit->setObjectName(QStringLiteral("FindBooksEdit"));
+        FindBooksEdit->setMinimumSize(QSize(242, 30));
+        FindBooksEdit->setStyleSheet(QLatin1String("#FindBooksEdit {\n"
+"	height: 40px;\n"
+"	border: none;\n"
+"	border-radius: 5px;\n"
+"	padding-left: 10px;\n"
+"	background: white;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(FindBooksEdit);
+
+        FindBooksButton = new QPushButton(MainBar);
+        FindBooksButton->setObjectName(QStringLiteral("FindBooksButton"));
+        FindBooksButton->setCursor(QCursor(Qt::PointingHandCursor));
+        FindBooksButton->setStyleSheet(QLatin1String("#FindBooksButton{\n"
+"	height: 40px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background-color: #eee;\n"
+"	color: #222;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"#FindBooksButton:hover{\n"
+"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"}"));
+
+        horizontalLayout_2->addWidget(FindBooksButton);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        SignInButton = new QPushButton(MainBar);
         SignInButton->setObjectName(QStringLiteral("SignInButton"));
-        SignInButton->setGeometry(QRect(500, 20, 101, 31));
         SignInButton->setCursor(QCursor(Qt::PointingHandCursor));
         SignInButton->setStyleSheet(QLatin1String("#SignInButton \n"
 "{\n"
-"	border: 1px solid darkgray;\n"
+"	border-width: 0px;\n"
 "	border-radius: 5px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #eee, stop: 0.4 #ddd,\n"
-"                                stop: 0.5 #d8d8d8, stop: 1.0 #ddd);\n"
+"	background-color: #eee;\n"
 "	color: #222;\n"
 "	outline: none;\n"
 "}\n"
@@ -74,39 +139,11 @@ public:
 "{\n"
 "	padding-top: 2px;\n"
 "}"));
-        MainBar = new QFrame(centralWidget);
-        MainBar->setObjectName(QStringLiteral("MainBar"));
-        MainBar->setGeometry(QRect(0, 0, 721, 101));
-        MainBar->setStyleSheet(QStringLiteral("background: #00BCFF;"));
-        MainBar->setFrameShape(QFrame::StyledPanel);
-        MainBar->setFrameShadow(QFrame::Raised);
-        FindBooksEdit = new QLineEdit(MainBar);
-        FindBooksEdit->setObjectName(QStringLiteral("FindBooksEdit"));
-        FindBooksEdit->setGeometry(QRect(60, 20, 411, 41));
-        FindBooksEdit->setStyleSheet(QLatin1String("#FindBooksEdit {\n"
-"	border: none;\n"
-"	border-radius: 5px;\n"
-"	padding-left: 10px;\n"
-"	background: white;\n"
-"}"));
-        FindBooksButton = new QPushButton(MainBar);
-        FindBooksButton->setObjectName(QStringLiteral("FindBooksButton"));
-        FindBooksButton->setGeometry(QRect(380, 20, 91, 41));
-        FindBooksButton->setCursor(QCursor(Qt::PointingHandCursor));
-        FindBooksButton->setStyleSheet(QLatin1String("#FindBooksButton{\n"
-"	border-width: 0px;\n"
-"	border-radius: 5px;\n"
-"	background-color: #eee;\n"
-"	color: #222;\n"
-"	outline: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";\n"
-"}\n"
-"#FindBooksButton:hover{\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"}"));
+
+        horizontalLayout_2->addWidget(SignInButton);
+
         SignUpButton = new QPushButton(MainBar);
         SignUpButton->setObjectName(QStringLiteral("SignUpButton"));
-        SignUpButton->setGeometry(QRect(610, 20, 101, 31));
         SignUpButton->setCursor(QCursor(Qt::PointingHandCursor));
         SignUpButton->setStyleSheet(QLatin1String("#SignUpButton \n"
 "{\n"
@@ -119,22 +156,32 @@ public:
 "}\n"
 "#SignUpButton:hover \n"
 "{\n"
-"	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
+"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"}\n"
+"#SignUpButton:pressed \n"
+"{\n"
+"	padding-top: 2px;\n"
 "}"));
-        AccountLabel = new QLabel(MainBar);
-        AccountLabel->setObjectName(QStringLiteral("AccountLabel"));
-        AccountLabel->setGeometry(QRect(480, 20, 231, 31));
-        AccountLabel->setStyleSheet(QLatin1String("font: 63 12pt \"Myriad Pro Light\";\n"
-"background: none;"));
-        AccountLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-        AccountLabel->raise();
-        FindBooksEdit->raise();
-        FindBooksButton->raise();
+
+        horizontalLayout_2->addWidget(SignUpButton);
+
+        horizontalLayout_2->setStretch(0, 3);
+        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_2->setStretch(3, 1);
+        horizontalLayout_2->setStretch(4, 1);
         SignUpButton->raise();
-        intro = new QTextBrowser(centralWidget);
-        intro->setObjectName(QStringLiteral("intro"));
-        intro->setGeometry(QRect(630, 120, 191, 361));
-        BooksTable = new QTableWidget(centralWidget);
+        SignInButton->raise();
+        FindBooksButton->raise();
+        FindBooksEdit->raise();
+
+        verticalLayout->addWidget(MainBar);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        BooksTable = new QTableWidget(scrollAreaWidgetContents);
         if (BooksTable->columnCount() < 5)
             BooksTable->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -148,23 +195,34 @@ public:
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         BooksTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         BooksTable->setObjectName(QStringLiteral("BooksTable"));
-        BooksTable->setGeometry(QRect(10, 120, 611, 401));
         BooksTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         BooksTable->setSortingEnabled(true);
         BooksTable->setWordWrap(false);
         BooksTable->horizontalHeader()->setStretchLastSection(true);
         BooksTable->verticalHeader()->setVisible(false);
+
+        horizontalLayout->addWidget(BooksTable);
+
+        intro = new QTextBrowser(scrollAreaWidgetContents);
+        intro->setObjectName(QStringLiteral("intro"));
+
+        horizontalLayout->addWidget(intro);
+
+        horizontalLayout->setStretch(0, 2);
+        horizontalLayout->setStretch(1, 1);
+
+        verticalLayout->addLayout(horizontalLayout);
+
+        verticalLayout->setStretch(0, 1);
+        verticalLayout->setStretch(1, 4);
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout->addWidget(scrollArea, 0, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
-        MainBar->raise();
-        SignInButton->raise();
-        intro->raise();
-        BooksTable->raise();
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
-        QWidget::setTabOrder(FindBooksEdit, FindBooksButton);
-        QWidget::setTabOrder(FindBooksButton, SignInButton);
-        QWidget::setTabOrder(SignInButton, SignUpButton);
 
         retranslateUi(MainWindow);
         QObject::connect(FindBooksEdit, SIGNAL(returnPressed()), FindBooksButton, SLOT(click()));
@@ -176,7 +234,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        SignInButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", 0));
 #ifndef QT_NO_TOOLTIP
         FindBooksButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>T\303\254m s\303\241ch</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -184,8 +241,8 @@ public:
         FindBooksButton->setWhatsThis(QApplication::translate("MainWindow", "<html><head/><body><p>T\303\254m s\303\241ch</p></body></html>", 0));
 #endif // QT_NO_WHATSTHIS
         FindBooksButton->setText(QApplication::translate("MainWindow", "T\303\254m s\303\241ch", 0));
+        SignInButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", 0));
         SignUpButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng k\303\275", 0));
-        AccountLabel->setText(QString());
         QTableWidgetItem *___qtablewidgetitem = BooksTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "STT", 0));
         QTableWidgetItem *___qtablewidgetitem1 = BooksTable->horizontalHeaderItem(1);

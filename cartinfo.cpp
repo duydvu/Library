@@ -67,6 +67,16 @@ QString cartinfo::getBrrowTime()
     return this->brrowtime;
 }
 
+void cartinfo::setRecipient(QString id)
+{
+    this->recipientID=id;
+}
+
+QString cartinfo::getRecipient()
+{
+    return this->recipientID;
+}
+
 void cartinfo::setDuration(int time)
 {
     this->duration=time;
@@ -87,24 +97,14 @@ int cartinfo::getDuration()
 //    return this->fee;
 //}
 
-void cartinfo::setAccept(bool accept)
+void cartinfo::setStatus(int stt)
 {
-    this->accept=accept;
+    this->status=stt;
 }
 
-bool cartinfo::getAccept()
+int cartinfo::getStatus()
 {
-    return this->accept;
-}
-
-void cartinfo::setPaid(bool paid)
-{
-    this->paid=paid;
-}
-
-bool cartinfo::getPaid()
-{
-    return this->paid;
+    return this->status;
 }
 
 void cartinfo::clear()
@@ -117,6 +117,5 @@ void cartinfo::clear()
     this->brrowtime="";
     this->duration=0;
     //this->fee=0;
-    this->accept=0;
-    this->paid=0;
+    this->status=0;
 }

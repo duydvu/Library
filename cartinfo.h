@@ -14,10 +14,10 @@ private:
     QString bookname;
     QString bookid;
     QString brrowtime;
+    QString recipientID;
     int duration;
 //    int fee;
-    bool accept;
-    bool paid;
+    int status;
 public:
     void setID(QString id);
     QString getID();
@@ -31,15 +31,16 @@ public:
     QString getBookID();
     void setBrrowTime(QString time);
     QString getBrrowTime();
+    void setRecipient(QString id);
+    QString getRecipient();
     void setDuration(int time);
     int getDuration();
 //    void setFee(int fee);
 //    int getFee();
+
+    void setStatus(int stt);
+    int getStatus();
     void clear();
-    void setAccept(bool accept);
-    bool getAccept();
-    void setPaid(bool accept);
-    bool getPaid();
 };
 
 #endif // CARDINFO_H

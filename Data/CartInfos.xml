@@ -6,9 +6,53 @@
         <readerid>1</readerid>
         <bookname>A brief history of time</bookname>
         <bookid>Sci_HoT</bookid>
-        <brtime>13.06.2017</brtime>
-        <duration>253</duration>
-        <accept>24</accept>
-        <paid>253</paid>
+        <recipientID></recipientID>
+        <brtime>15.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>1</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>The Handmaid's Tale</bookname>
+        <bookid>Nol_HmT</bookid>
+        <recipientID></recipientID>
+        <brtime>15.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>2</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Thirteen Reasons Why</bookname>
+        <bookid>Fic_TRW</bookid>
+        <recipientID></recipientID>
+        <brtime>15.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>3</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>The 5 Love Languages: The Secret to Love that Lasts</bookname>
+        <bookid>Rom_5LL</bookid>
+        <recipientID></recipientID>
+        <brtime>15.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>4</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Algorithms to Live By: The Computer Science of Human Decisions</bookname>
+        <bookid>Sci_ACS</bookid>
+        <recipientID></recipientID>
+        <brtime>15.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
     </cartInfo>
 </CartInfos>

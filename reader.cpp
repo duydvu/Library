@@ -8,7 +8,9 @@ reader::reader(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Libpro");
     reader::setWindowState(Qt::WindowMaximized);
+    ui->borInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->send->hide();
+    ui->cancel->hide();
     ui->name->setText(LogInUser.getName());
     ui->id->setText(LogInUser.getID());
     ui->dob->setText(LogInUser.getDateofBirth());
@@ -155,50 +157,47 @@ void reader::on_name_textChanged(const QString &arg1)
 
 void reader::on_bookBorrow_clicked()
 {
-    int row=ui->bookTable->rowCount();
-    int i=0,j=0;
-    while(i<row)
+    QLinkedList<Book>::iterator it=bookSearched.begin();
+    int row=ui->bookTable->rowCount(), cnt=0;
+    for(int i=0; i<row; i++)
     {
-        if(ui->bookTable->item(i,5)->checkState()!=Qt::Checked)
-            i++;
-        else break;
+        if(ui->bookTable->item(i,5)->checkState()==Qt::Checked)
+        {
+            ui->borInfo->insertRow(cnt);
+            ui->borInfo->setItem(cnt, 0, new QTableWidgetItem(QString::number(cartInfos.size()+cnt)));
+            ui->borInfo->setItem(cnt, 1, new QTableWidgetItem((*(it+i)).getID()));
+            ui->borInfo->setItem(cnt, 2, new QTableWidgetItem((*(it+i)).getName()));
+            cnt++;
+        }
     }
-    if(i==row)
-        return;
-    j=i+1;
-    while(j<row)
-    {
-        if(ui->bookTable->item(j,5)->checkState()!=Qt::Checked)
-            j++;
-        else break;
-    }
-    if(j!=row)
-    {
-        QMessageBox::critical(this,"Bạn đã chọn quá nhiều tựa sách",
-        "Vui lòng chọn duy nhất 1 tựa sách để mượn",
-        QMessageBox::Ok);
-        return;
-    }
-    QLinkedList<Book>::iterator b=bookSearched.begin()+i;
+
     ui->readerTab->setCurrentIndex(2);
     ui->send->show();
-    ui->borInfo->setItem(0, 0, new QTableWidgetItem(QString::number(cartInfos.size())));
-    ui->borInfo->setItem(1, 0, new QTableWidgetItem((*b).getID()));
-    ui->borInfo->setItem(2, 0, new QTableWidgetItem((*b).getName()));
+    ui->cancel->show();
 }
 
 void reader::on_send_clicked()
 {
     cartinfo c;
-    c.setID(QString::number(cartInfos.size()));
-    c.setBookID(ui->borInfo->item(1,0)->text());
-    c.setBookName(ui->borInfo->item(2,0)->text());
-    c.setReaderName(LogInUser.getName());
-    c.setReaderID(LogInUser.getID());
-    c.setBrrowTime(ToString(QDate::currentDate()));
-    c.setDuration(ui->duration->value());
-    c.setAccept(false);
-    c.setPaid(false);
-    cartInfos.append(c);
+    for(int i=0;i<ui->borInfo->rowCount();i++)
+    {
+        c.setID(QString::number(cartInfos.size()));
+        c.setBookID(ui->borInfo->item(i,1)->text());
+        c.setBookName(ui->borInfo->item(i,2)->text());
+        c.setReaderName(LogInUser.getName());
+        c.setReaderID(LogInUser.getID());
+        c.setRecipient("");
+        c.setBrrowTime(ToString(QDate::currentDate()));
+        c.setDuration(ui->duration->value());
+        c.setStatus(0);
+        cartInfos.append(c);
+    }
     ui->send->hide();
+}
+
+void reader::on_cancel_clicked()
+{
+    ui->borInfo->clearContents();
+    ui->send->hide();
+    ui->cancel->hide();
 }

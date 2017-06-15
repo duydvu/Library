@@ -29,7 +29,6 @@ class Ui_SignIn
 public:
     QHBoxLayout *horizontalLayout_2;
     QHBoxLayout *horizontalLayout;
-    QSpacerItem *horizontalSpacer;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
     QLineEdit *AccountEdit;
@@ -37,33 +36,30 @@ public:
     QPushButton *LogInButton;
     QLabel *ResultLabel;
     QSpacerItem *verticalSpacer;
-    QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QDialog *SignIn)
     {
         if (SignIn->objectName().isEmpty())
             SignIn->setObjectName(QStringLiteral("SignIn"));
-        SignIn->resize(481, 364);
+        SignIn->resize(480, 360);
         horizontalLayout_2 = new QHBoxLayout(SignIn);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer);
-
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(30);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
-        verticalLayout->setContentsMargins(20, 0, 20, 0);
+        verticalLayout->setContentsMargins(40, 0, 40, 0);
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer_2);
 
         AccountEdit = new QLineEdit(SignIn);
         AccountEdit->setObjectName(QStringLiteral("AccountEdit"));
-        AccountEdit->setStyleSheet(QLatin1String("border-width: 0px;\n"
+        AccountEdit->setMinimumSize(QSize(152, 30));
+        AccountEdit->setStyleSheet(QLatin1String("height: 30px;\n"
+"border-width: 0px;\n"
 "border-radius: 16px;\n"
 "background-color: white;\n"
 "padding-left: 12px;\n"
@@ -73,7 +69,9 @@ public:
 
         PasswordEdit = new QLineEdit(SignIn);
         PasswordEdit->setObjectName(QStringLiteral("PasswordEdit"));
-        PasswordEdit->setStyleSheet(QLatin1String("border-width: 0px;\n"
+        PasswordEdit->setMinimumSize(QSize(152, 30));
+        PasswordEdit->setStyleSheet(QLatin1String("height: 30px;\n"
+"border-width: 0px;\n"
 "border-radius: 16px;\n"
 "background-color: white;\n"
 "padding-left: 12px;\n"
@@ -84,9 +82,11 @@ public:
 
         LogInButton = new QPushButton(SignIn);
         LogInButton->setObjectName(QStringLiteral("LogInButton"));
+        LogInButton->setMinimumSize(QSize(152, 30));
         LogInButton->setCursor(QCursor(Qt::PointingHandCursor));
         LogInButton->setStyleSheet(QLatin1String("#LogInButton \n"
 "{\n"
+"	height:30px;\n"
 "	border-width: 0px;\n"
 "	border-radius: 16px;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
@@ -106,7 +106,8 @@ public:
 
         ResultLabel = new QLabel(SignIn);
         ResultLabel->setObjectName(QStringLiteral("ResultLabel"));
-        ResultLabel->setStyleSheet(QLatin1String("text-align: center;\n"
+        ResultLabel->setStyleSheet(QLatin1String("height: 30px;\n"
+"text-align: center;\n"
 "font: 63 12pt \"Myriad Pro Light\";"));
         ResultLabel->setAlignment(Qt::AlignCenter);
 
@@ -120,14 +121,11 @@ public:
         verticalLayout->setStretch(2, 2);
         verticalLayout->setStretch(3, 2);
         verticalLayout->setStretch(4, 2);
+        verticalLayout->setStretch(5, 1);
 
         horizontalLayout->addLayout(verticalLayout);
 
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-        horizontalLayout->setStretch(1, 5);
+        horizontalLayout->setStretch(0, 5);
 
         horizontalLayout_2->addLayout(horizontalLayout);
 

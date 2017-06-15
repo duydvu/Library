@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
@@ -51,12 +52,13 @@ public:
     QLabel *label_17;
     QTextBrowser *intro;
     QWidget *borrow;
-    QLabel *picBook;
     QTableWidget *borInfo;
     QPushButton *send;
     QLabel *label;
     QSpinBox *duration;
     QLabel *label_2;
+    QGraphicsView *graphicsView;
+    QPushButton *cancel;
     QWidget *perInfo;
     QGroupBox *personalInfo;
     QLabel *name_2;
@@ -161,39 +163,39 @@ public:
         readerTab->addTab(tab_4, QString());
         borrow = new QWidget();
         borrow->setObjectName(QStringLiteral("borrow"));
-        picBook = new QLabel(borrow);
-        picBook->setObjectName(QStringLiteral("picBook"));
-        picBook->setGeometry(QRect(100, 70, 211, 181));
         borInfo = new QTableWidget(borrow);
-        if (borInfo->columnCount() < 1)
-            borInfo->setColumnCount(1);
+        if (borInfo->columnCount() < 3)
+            borInfo->setColumnCount(3);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         borInfo->setHorizontalHeaderItem(0, __qtablewidgetitem6);
-        if (borInfo->rowCount() < 3)
-            borInfo->setRowCount(3);
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        borInfo->setVerticalHeaderItem(0, __qtablewidgetitem7);
+        borInfo->setHorizontalHeaderItem(1, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        borInfo->setVerticalHeaderItem(1, __qtablewidgetitem8);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        borInfo->setVerticalHeaderItem(2, __qtablewidgetitem9);
+        borInfo->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         borInfo->setObjectName(QStringLiteral("borInfo"));
-        borInfo->setGeometry(QRect(370, 90, 411, 121));
+        borInfo->setGeometry(QRect(370, 90, 631, 141));
         borInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
         borInfo->horizontalHeader()->setStretchLastSection(true);
+        borInfo->verticalHeader()->setVisible(false);
         borInfo->verticalHeader()->setStretchLastSection(true);
         send = new QPushButton(borrow);
         send->setObjectName(QStringLiteral("send"));
         send->setGeometry(QRect(370, 350, 131, 51));
         label = new QLabel(borrow);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(380, 260, 81, 21));
+        label->setGeometry(QRect(370, 300, 81, 21));
         duration = new QSpinBox(borrow);
         duration->setObjectName(QStringLiteral("duration"));
-        duration->setGeometry(QRect(480, 260, 61, 21));
+        duration->setGeometry(QRect(470, 300, 61, 21));
         label_2 = new QLabel(borrow);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(560, 260, 47, 21));
+        label_2->setGeometry(QRect(550, 300, 47, 21));
+        graphicsView = new QGraphicsView(borrow);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        graphicsView->setGeometry(QRect(20, 30, 301, 431));
+        cancel = new QPushButton(borrow);
+        cancel->setObjectName(QStringLiteral("cancel"));
+        cancel->setGeometry(QRect(520, 350, 121, 51));
         readerTab->addTab(borrow, QString());
         perInfo = new QWidget();
         perInfo->setObjectName(QStringLiteral("perInfo"));
@@ -374,18 +376,16 @@ public:
         ___qtablewidgetitem4->setText(QApplication::translate("reader", "T\303\254nh tr\341\272\241ng", 0));
         label_17->setText(QApplication::translate("reader", "Gi\341\273\237i thi\341\273\207u", 0));
         readerTab->setTabText(readerTab->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
-        picBook->setText(QApplication::translate("reader", "picBook", 0));
         QTableWidgetItem *___qtablewidgetitem5 = borInfo->horizontalHeaderItem(0);
-        ___qtablewidgetitem5->setText(QApplication::translate("reader", "Th\303\264ng tin", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = borInfo->verticalHeaderItem(0);
-        ___qtablewidgetitem6->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u m\306\260\341\273\243n", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = borInfo->verticalHeaderItem(1);
-        ___qtablewidgetitem7->setText(QApplication::translate("reader", "M\303\243 s\303\241ch c\341\272\247n m\306\260\341\273\243n", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = borInfo->verticalHeaderItem(2);
-        ___qtablewidgetitem8->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
+        ___qtablewidgetitem5->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u m\306\260\341\273\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = borInfo->horizontalHeaderItem(1);
+        ___qtablewidgetitem6->setText(QApplication::translate("reader", "M\303\243 s\303\241ch c\341\272\247n m\306\260\341\273\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = borInfo->horizontalHeaderItem(2);
+        ___qtablewidgetitem7->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
         send->setText(QApplication::translate("reader", "G\341\273\255i phi\341\272\277u m\306\260\341\273\243n", 0));
         label->setText(QApplication::translate("reader", "Th\341\273\235i gian m\306\260\341\273\243n", 0));
         label_2->setText(QApplication::translate("reader", "Ng\303\240y", 0));
+        cancel->setText(QApplication::translate("reader", "H\303\271y", 0));
         readerTab->setTabText(readerTab->indexOf(borrow), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
         personalInfo->setTitle(QApplication::translate("reader", "Th\303\264ng tin c\341\273\247a b\341\272\241n", 0));
         name_2->setText(QApplication::translate("reader", "H\341\273\215 v\303\240 t\303\252n", 0));

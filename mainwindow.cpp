@@ -8,8 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->BooksTable->setColumnWidth(0, ui->BooksTable->width()/100*5);
-    ui->BooksTable->setColumnWidth(1, ui->BooksTable->width()/100*50);
+    ui->BooksTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
     loadBooksFile();
     loadAccountsFile();
@@ -27,10 +26,6 @@ MainWindow::~MainWindow()
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
    QMainWindow::resizeEvent(event);
-   ui->MainBar->setGeometry(QRect(0,0,this->size().width(),101));
-   ui->SignUpButton->setGeometry(QRect(this->size().width()-110, 20, 101, 31));
-   ui->SignInButton->setGeometry(QRect(this->size().width()-219, 20, 101, 31));
-   ui->AccountLabel->setGeometry(QRect(this->size().width()-239, 20, 231, 31));
 }
 
 
@@ -376,6 +371,10 @@ void MainWindow::loadCartInfosFile()
             {
                 a.setBookID(xmlReader->readElementText());
             }
+            if(xmlReader->name() == "recipientID")
+            {
+                a.setRecipient(xmlReader->readElementText());
+            }
             if(xmlReader->name() == "brtime")
             {
                 a.setBrrowTime(xmlReader->readElementText());
@@ -384,13 +383,9 @@ void MainWindow::loadCartInfosFile()
             {
                 a.setDuration(xmlReader->readElementText().toInt());
             }
-            if(xmlReader->name() == "accept")
+            if(xmlReader->name() == "status")
             {
-                a.setDuration(xmlReader->readElementText().toInt());
-            }
-            if(xmlReader->name() == "paid")
-            {
-                a.setDuration(xmlReader->readElementText().toInt());
+                a.setStatus(xmlReader->readElementText().toInt());
                 cartInfos.append(a);
                 a.clear();
             }
@@ -761,10 +756,10 @@ void MainWindow::saveCartInfosFile()
         xmlWriter->writeTextElement("readerid", (*it).getReaderID());
         xmlWriter->writeTextElement("bookname", (*it).getBookName());
         xmlWriter->writeTextElement("bookid", (*it).getBookID());
+        xmlWriter->writeTextElement("recipientID", (*it).getRecipient());
         xmlWriter->writeTextElement("brtime", (*it).getBrrowTime());
         xmlWriter->writeTextElement("duration", QString::number((*it).getDuration()));
-        xmlWriter->writeTextElement("accept", QString::number((*it).getAccept()));
-        xmlWriter->writeTextElement("paid", QString::number((*it).getPaid()));
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();

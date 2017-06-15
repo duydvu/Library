@@ -9,6 +9,7 @@ Admin::Admin(QWidget *parent) :
     setWindowTitle("Libpro");
     Admin::setWindowState(Qt::WindowMaximized);
     ui->registrationTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->CartInfos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     QLinkedList<Account>::iterator it=temp_accounts.begin();
     int cnt=0;
     for(;it!=temp_accounts.end();it++)
@@ -30,6 +31,7 @@ Admin::Admin(QWidget *parent) :
         ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
         cnt++;
     }
+    on_newCart_clicked();
 }
 
 Admin::~Admin()
@@ -150,8 +152,29 @@ void Admin::on_Agree_clicked()
                 temp_users.erase(u);
             }
             temp_accounts.erase(a);
-            ui->registrationTable->removeRow(i);
         }
+    ui->registrationTable->setRowCount(0);
+    QLinkedList<Account>::iterator it=temp_accounts.begin();
+    int cnt=0;
+    for(;it!=temp_accounts.end();it++)
+    {
+        ui->registrationTable->insertRow(cnt);
+        QTableWidgetItem *item = new QTableWidgetItem("");
+        item->setCheckState(Qt::Unchecked);
+        ui->registrationTable->setItem(cnt, 0, item);
+        QLinkedList<User>::iterator it1;
+        int id=(*it).getID().toInt();
+        if(id>=users.size())
+            it1=temp_users.begin()+id-users.size();
+        else it1=users.begin()+id;
+        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+        if((*it).getRole()=="L")
+            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
+        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
+        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
+        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
+        cnt++;
+    }
 }
 
 
@@ -168,6 +191,210 @@ void Admin::on_Deny_clicked()
                 temp_users.erase(u);
             }
             temp_accounts.erase(a);
-            ui->registrationTable->removeRow(i);
         }
+    ui->registrationTable->setRowCount(0);
+    QLinkedList<Account>::iterator it=temp_accounts.begin();
+    int cnt=0;
+    for(;it!=temp_accounts.end();it++)
+    {
+        ui->registrationTable->insertRow(cnt);
+        QTableWidgetItem *item = new QTableWidgetItem("");
+        item->setCheckState(Qt::Unchecked);
+        ui->registrationTable->setItem(cnt, 0, item);
+        QLinkedList<User>::iterator it1;
+        int id=(*it).getID().toInt();
+        if(id>=users.size())
+            it1=temp_users.begin()+id-users.size();
+        else it1=users.begin()+id;
+        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+        if((*it).getRole()=="L")
+            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
+        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
+        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
+        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
+        cnt++;
+    }
+}
+
+void Admin::on_CartInfos_cellClicked(int row, int column)
+{
+    column++;
+    QString id=ui->CartInfos->item(row,1)->text();
+    QLinkedList<cartinfo>::iterator c=cartInfos.begin()+id.toInt();
+    ui->bookName->setText((*c).getBookName());
+    ui->readerName->setText((*c).getReaderName());
+    QString s;
+    if((*c).getStatus()==0)
+        s="Chưa phản hồi";
+    else if((*c).getStatus()==1)
+        s="Đang chờ";
+    else if((*c).getStatus()==2)
+        s="Đang cho mượn";
+    else if((*c).getStatus()==3)
+        s="Đã trả";
+    else if((*c).getStatus()==4)
+        s="Vi phạm";
+    ui->status->setText(s);
+}
+
+void Admin::on_newCart_clicked()
+{
+    ui->CartInfos->setRowCount(0);
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    int cnt=0;
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getStatus()==0)
+        {
+            ui->CartInfos->insertRow(cnt);
+            QTableWidgetItem *item = new QTableWidgetItem("");
+            item->setCheckState(Qt::Unchecked);
+            ui->CartInfos->setItem(cnt, 0, item);
+            ui->CartInfos->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
+            ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
+            ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            cnt++;
+        }
+    }
+}
+
+void Admin::on_acceptedCart_clicked()
+{
+    ui->CartInfos->setRowCount(0);
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    int cnt=0;
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getStatus()==1)
+        {
+            ui->CartInfos->insertRow(cnt);
+            QTableWidgetItem *item = new QTableWidgetItem("");
+            item->setCheckState(Qt::Unchecked);
+            ui->CartInfos->setItem(cnt, 0, item);
+            ui->CartInfos->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
+            ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
+            ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            cnt++;
+        }
+    }
+}
+
+void Admin::on_lendingCart_clicked()
+{
+    ui->CartInfos->setRowCount(0);
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    int cnt=0;
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getStatus()==2)
+        {
+            ui->CartInfos->insertRow(cnt);
+            QTableWidgetItem *item = new QTableWidgetItem("");
+            item->setCheckState(Qt::Unchecked);
+            ui->CartInfos->setItem(cnt, 0, item);
+            ui->CartInfos->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
+            ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
+            ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            cnt++;
+        }
+    }
+}
+
+void Admin::on_doneCart_clicked()
+{
+    ui->CartInfos->setRowCount(0);
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    int cnt=0;
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getStatus()==3)
+        {
+            ui->CartInfos->insertRow(cnt);
+            QTableWidgetItem *item = new QTableWidgetItem("");
+            item->setCheckState(Qt::Unchecked);
+            ui->CartInfos->setItem(cnt, 0, item);
+            ui->CartInfos->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
+            ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
+            ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            cnt++;
+        }
+    }
+}
+
+void Admin::on_infringeCart_clicked()
+{
+    ui->CartInfos->setRowCount(0);
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    int cnt=0;
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getStatus()==4)
+        {
+            ui->CartInfos->insertRow(cnt);
+            QTableWidgetItem *item = new QTableWidgetItem("");
+            item->setCheckState(Qt::Unchecked);
+            ui->CartInfos->setItem(cnt, 0, item);
+            ui->CartInfos->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
+            ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
+            ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            cnt++;
+        }
+    }
+}
+
+void Admin::on_accept_clicked()
+{
+    for(int i=0;i<ui->CartInfos->rowCount();i++)
+    {
+        if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
+        {
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(1);
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+        }
+    }
+    on_newCart_clicked();
+}
+
+void Admin::on_send_clicked()
+{
+    for(int i=0;i<ui->CartInfos->rowCount();i++)
+    {
+        if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
+        {
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(2);
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+        }
+    }
+    on_acceptedCart_clicked();
+}
+
+void Admin::on_done_clicked()
+{
+    for(int i=0;i<ui->CartInfos->rowCount();i++)
+    {
+        if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
+        {
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+        }
+    }
+    on_doneCart_clicked();
+}
+
+void Admin::on_infringe_clicked()
+{
+    for(int i=0;i<ui->CartInfos->rowCount();i++)
+    {
+        if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
+        {
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+        }
+    }
+    on_infringeCart_clicked();
 }
