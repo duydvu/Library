@@ -41,6 +41,10 @@ private slots:
 
     void on_BooksTable_cellClicked(int row, int column);
 
+    void on_Search_clicked();
+
+    void on_Back_clicked();
+
 private:
     Ui::MainWindow *ui;
     SignIn* s;

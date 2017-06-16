@@ -46,6 +46,8 @@ private slots:
 
     void on_infringe_clicked();
 
+    void on_name_returnPressed();
+
 private:
     Ui::Admin *ui;
 

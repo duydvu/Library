@@ -14,6 +14,7 @@
 #include <QCloseEvent>
 #include <QIcon>
 #include <QScrollArea>
+#include <QPropertyAnimation>
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;

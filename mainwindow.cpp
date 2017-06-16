@@ -10,6 +10,25 @@ MainWindow::MainWindow(QWidget *parent) :
     MainWindow::setWindowState(Qt::WindowMaximized);
     ui->BooksTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
+    ui->frame_2->setStyleSheet(
+                             "background: url(Images/Background.png) no-repeat center center;\n"
+                             "background-color: white;");
+    QPixmap pixmap("Images/back.png");
+    QIcon ButtonIcon(pixmap);
+    ui->Back->setIcon(ButtonIcon);
+    ui->Back->setIconSize(pixmap.rect().size());
+    ui->MainBar->hide();
+    ui->BooksTable->hide();
+    ui->intro->hide();
+    ui->label->hide();
+
+    QPropertyAnimation animation(ui->SignInButton, "geometry");
+    animation.setDuration(10000);
+    animation.setStartValue(QRect(0, 0, 100, 30));
+    animation.setEndValue(QRect(250, 250, 100, 30));
+
+    animation.start();
+
     loadBooksFile();
     loadAccountsFile();
     loadUsersFile();
@@ -782,4 +801,22 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
             ui->intro->setText((*it).getIntro());
         }
     }
+}
+
+void MainWindow::on_Search_clicked()
+{
+    ui->MainBar->show();
+    ui->BooksTable->show();
+    ui->intro->show();
+    ui->label->show();
+    ui->frame_2->hide();
+}
+
+void MainWindow::on_Back_clicked()
+{
+    ui->MainBar->hide();
+    ui->BooksTable->hide();
+    ui->intro->hide();
+    ui->label->hide();
+    ui->frame_2->show();
 }

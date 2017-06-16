@@ -398,3 +398,85 @@ void Admin::on_infringe_clicked()
     }
     on_infringeCart_clicked();
 }
+
+void Admin::on_name_returnPressed()
+{
+    // Substring search
+    // using Knuth–Morris–Pratt algorithm
+
+    // Get word
+    QString word=ui->name->text();
+    if(word.length()==0)
+        return;
+    // Create table
+    int* table=new int[word.length()+1];
+    int pos=1, cnd=0;
+    table[0]=-1;
+    while(pos<word.length())
+    {
+        if(compare(word[pos], word[cnd]))
+        {
+            table[pos]=table[cnd];
+            pos++;
+            cnd++;
+        }
+        else
+        {
+            table[pos]=cnd;
+            cnd=table[cnd];
+            while(cnd>=0 && !compare(word[pos], word[cnd]))
+                cnd=table[cnd];
+            pos++;
+            cnd++;
+        }
+    }
+    table[pos]=cnd;
+    // Search through the data
+    QLinkedList<Account>::iterator it=accounts.begin();
+    int cnt=0;
+    ui->staffTable->setRowCount(0);
+    for(;it!=accounts.end();it++)
+    {
+        QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
+        if((*it).getRole()!="L") continue;
+        QString s[]={(*it1).getID(), (*it1).getName(), (*it1).getAddress(), (*it1).getEmail()};
+        int m=0, i=0, pre=cnt;
+        for(int j=0; j<4; j++)
+        {
+            while(m+i < s[j].length())
+            {
+                if(compare(word[i], s[j][m+i]))
+                {
+                    i++;
+                    if(i==word.length())
+                    {
+                        ui->staffTable->insertRow(cnt);
+                        QTableWidgetItem *item = new QTableWidgetItem("");
+                        item->setCheckState(Qt::Unchecked);
+                        ui->staffTable->setItem(cnt, 0, item);
+                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+                        ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
+                        cnt++;
+                        break;
+                    }
+                }
+                else
+                {
+                    if(table[i]>-1)
+                    {
+                        m+=i-table[i];
+                        i=table[i];
+                    }
+                    else
+                    {
+                        m+=i+1;
+                        i=0;
+                    }
+                }
+            }
+            if(pre!=cnt) break;
+            m=0, i=0;
+        }
+    }
+    delete table;
+}
