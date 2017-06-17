@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="admin">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="staffs">
        <attribute name="title">
@@ -286,154 +286,116 @@ border-radius: 5px;</string>
        <attribute name="title">
         <string>Quản lý người dùng</string>
        </attribute>
-       <widget class="QWidget" name="widget_2" native="true">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>771</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>20</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Sửa</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="geometry">
-          <rect>
-           <x>140</x>
-           <y>20</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Xóa</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="geometry">
-          <rect>
-           <x>230</x>
-           <y>20</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Đổi mật khẩu</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="searchUsers">
-         <property name="geometry">
-          <rect>
-           <x>330</x>
-           <y>20</y>
-           <width>301</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="placeholderText">
-          <string>Tìm kiếm</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="searchButton">
-         <property name="geometry">
-          <rect>
-           <x>640</x>
-           <y>20</y>
-           <width>75</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Tìm</string>
-         </property>
-        </widget>
-       </widget>
-       <widget class="QTableWidget" name="usersTable">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>81</y>
-          <width>771</width>
-          <height>481</height>
-         </rect>
-        </property>
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="sortingEnabled">
-         <bool>true</bool>
-        </property>
-        <attribute name="horizontalHeaderStretchLastSection">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="verticalHeaderCascadingSectionResizes">
-         <bool>false</bool>
-        </attribute>
-        <attribute name="verticalHeaderStretchLastSection">
-         <bool>false</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string>Mã số</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Tài khoản</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Họ và tên</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Địa chỉ</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Ngày sinh</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Email</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Giới tính</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Ngày tham gia</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Tình trạng</string>
-         </property>
-        </column>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QWidget" name="widget_2" native="true">
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="text">
+              <string>Sửa</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_3">
+             <property name="text">
+              <string>Xóa</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="text">
+              <string>Đổi mật khẩu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="searchUsers">
+             <property name="placeholderText">
+              <string>Tìm kiếm</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="searchButton">
+             <property name="text">
+              <string>Tìm</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="usersTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderCascadingSectionResizes">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="verticalHeaderStretchLastSection">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>Mã số</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Tài khoản</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Họ và tên</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Địa chỉ</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ngày sinh</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Email</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Giới tính</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ngày tham gia</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Tình trạng</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="lent">
        <attribute name="title">
@@ -712,73 +674,74 @@ width: 50px;</string>
        <attribute name="title">
         <string>Quản lý đăng ký mới</string>
        </attribute>
-       <widget class="QTableWidget" name="registrationTable">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>551</width>
-          <height>441</height>
-         </rect>
-        </property>
-        <attribute name="horizontalHeaderStretchLastSection">
-         <bool>true</bool>
-        </attribute>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-        <column>
-         <property name="text">
-          <string/>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Tài khoản</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Vai trò</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Họ và tên</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Ngày đăng ký</string>
-         </property>
-        </column>
-       </widget>
-       <widget class="QPushButton" name="Agree">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>60</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Chấp nhận</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="Deny">
-        <property name="geometry">
-         <rect>
-          <x>50</x>
-          <y>70</y>
-          <width>75</width>
-          <height>23</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Từ chối</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,2">
+          <item>
+           <widget class="QPushButton" name="Deny">
+            <property name="text">
+             <string>Từ chối</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Agree">
+            <property name="text">
+             <string>Chấp nhận</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTableWidget" name="registrationTable">
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <attribute name="verticalHeaderVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string/>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Tài khoản</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Vai trò</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Họ và tên</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Ngày đăng ký</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>

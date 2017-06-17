@@ -24,6 +24,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
@@ -68,7 +69,9 @@ public:
     QPushButton *pushButton_6;
     QTableView *tableView;
     QWidget *users;
+    QGridLayout *gridLayout_5;
     QWidget *widget_2;
+    QHBoxLayout *horizontalLayout_4;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
@@ -105,9 +108,12 @@ public:
     QPushButton *send;
     QPushButton *infringe;
     QWidget *NewRegistrations;
-    QTableWidget *registrationTable;
-    QPushButton *Agree;
+    QGridLayout *gridLayout_4;
+    QHBoxLayout *horizontalLayout_3;
     QPushButton *Deny;
+    QPushButton *Agree;
+    QSpacerItem *horizontalSpacer;
+    QTableWidget *registrationTable;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Admin)
@@ -257,24 +263,40 @@ public:
         admin->addTab(books, QString());
         users = new QWidget();
         users->setObjectName(QStringLiteral("users"));
+        gridLayout_5 = new QGridLayout(users);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
         widget_2 = new QWidget(users);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        widget_2->setGeometry(QRect(10, 10, 771, 61));
+        horizontalLayout_4 = new QHBoxLayout(widget_2);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         pushButton_2 = new QPushButton(widget_2);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(30, 20, 75, 23));
+
+        horizontalLayout_4->addWidget(pushButton_2);
+
         pushButton_3 = new QPushButton(widget_2);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(140, 20, 75, 23));
+
+        horizontalLayout_4->addWidget(pushButton_3);
+
         pushButton_4 = new QPushButton(widget_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(230, 20, 75, 23));
+
+        horizontalLayout_4->addWidget(pushButton_4);
+
         searchUsers = new QLineEdit(widget_2);
         searchUsers->setObjectName(QStringLiteral("searchUsers"));
-        searchUsers->setGeometry(QRect(330, 20, 301, 31));
+
+        horizontalLayout_4->addWidget(searchUsers);
+
         searchButton = new QPushButton(widget_2);
         searchButton->setObjectName(QStringLiteral("searchButton"));
-        searchButton->setGeometry(QRect(640, 20, 75, 23));
+
+        horizontalLayout_4->addWidget(searchButton);
+
+
+        gridLayout_5->addWidget(widget_2, 0, 0, 1, 1);
+
         usersTable = new QTableWidget(users);
         if (usersTable->columnCount() < 9)
             usersTable->setColumnCount(9);
@@ -297,13 +319,15 @@ public:
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
         usersTable->setHorizontalHeaderItem(8, __qtablewidgetitem11);
         usersTable->setObjectName(QStringLiteral("usersTable"));
-        usersTable->setGeometry(QRect(10, 81, 771, 481));
         usersTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         usersTable->setSortingEnabled(true);
         usersTable->horizontalHeader()->setStretchLastSection(true);
         usersTable->verticalHeader()->setVisible(false);
         usersTable->verticalHeader()->setCascadingSectionResizes(false);
         usersTable->verticalHeader()->setStretchLastSection(false);
+
+        gridLayout_5->addWidget(usersTable, 1, 0, 1, 1);
+
         admin->addTab(users, QString());
         lent = new QWidget();
         lent->setObjectName(QStringLiteral("lent"));
@@ -480,6 +504,30 @@ public:
         admin->addTab(lent, QString());
         NewRegistrations = new QWidget();
         NewRegistrations->setObjectName(QStringLiteral("NewRegistrations"));
+        gridLayout_4 = new QGridLayout(NewRegistrations);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        Deny = new QPushButton(NewRegistrations);
+        Deny->setObjectName(QStringLiteral("Deny"));
+
+        horizontalLayout_3->addWidget(Deny);
+
+        Agree = new QPushButton(NewRegistrations);
+        Agree->setObjectName(QStringLiteral("Agree"));
+
+        horizontalLayout_3->addWidget(Agree);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer);
+
+        horizontalLayout_3->setStretch(0, 1);
+        horizontalLayout_3->setStretch(1, 1);
+        horizontalLayout_3->setStretch(2, 2);
+
+        gridLayout_4->addLayout(horizontalLayout_3, 0, 0, 1, 1);
+
         registrationTable = new QTableWidget(NewRegistrations);
         if (registrationTable->columnCount() < 5)
             registrationTable->setColumnCount(5);
@@ -494,15 +542,11 @@ public:
         QTableWidgetItem *__qtablewidgetitem21 = new QTableWidgetItem();
         registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem21);
         registrationTable->setObjectName(QStringLiteral("registrationTable"));
-        registrationTable->setGeometry(QRect(10, 120, 551, 441));
         registrationTable->horizontalHeader()->setStretchLastSection(true);
         registrationTable->verticalHeader()->setVisible(false);
-        Agree = new QPushButton(NewRegistrations);
-        Agree->setObjectName(QStringLiteral("Agree"));
-        Agree->setGeometry(QRect(190, 60, 75, 23));
-        Deny = new QPushButton(NewRegistrations);
-        Deny->setObjectName(QStringLiteral("Deny"));
-        Deny->setGeometry(QRect(50, 70, 75, 23));
+
+        gridLayout_4->addWidget(registrationTable, 1, 0, 1, 1);
+
         admin->addTab(NewRegistrations, QString());
 
         gridLayout->addWidget(admin, 0, 0, 1, 1);
@@ -515,7 +559,7 @@ public:
         retranslateUi(Admin);
         QObject::connect(searchUsers, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
-        admin->setCurrentIndex(0);
+        admin->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(Admin);
@@ -598,6 +642,8 @@ public:
         send->setText(QApplication::translate("Admin", "Cho m\306\260\341\273\243n", 0));
         infringe->setText(QApplication::translate("Admin", "Vi ph\341\272\241m", 0));
         admin->setTabText(admin->indexOf(lent), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
+        Deny->setText(QApplication::translate("Admin", "T\341\273\253 ch\341\273\221i", 0));
+        Agree->setText(QApplication::translate("Admin", "Ch\341\272\245p nh\341\272\255n", 0));
         QTableWidgetItem *___qtablewidgetitem15 = registrationTable->horizontalHeaderItem(1);
         ___qtablewidgetitem15->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem16 = registrationTable->horizontalHeaderItem(2);
@@ -606,8 +652,6 @@ public:
         ___qtablewidgetitem17->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
         QTableWidgetItem *___qtablewidgetitem18 = registrationTable->horizontalHeaderItem(4);
         ___qtablewidgetitem18->setText(QApplication::translate("Admin", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
-        Agree->setText(QApplication::translate("Admin", "Ch\341\272\245p nh\341\272\255n", 0));
-        Deny->setText(QApplication::translate("Admin", "T\341\273\253 ch\341\273\221i", 0));
         admin->setTabText(admin->indexOf(NewRegistrations), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 \304\221\304\203ng k\303\275 m\341\273\233i", 0));
     } // retranslateUi
 

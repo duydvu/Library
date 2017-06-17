@@ -16,6 +16,7 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -27,6 +28,7 @@
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -35,42 +37,31 @@ class Ui_librarian
 {
 public:
     QWidget *centralwidget;
-    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout_4;
     QGridLayout *gridLayout;
     QTabWidget *fyfu11212;
-    QWidget *tab;
-    QGroupBox *groupBox_4;
-    QTextBrowser *textBrowser_8;
-    QGroupBox *groupBox_5;
-    QLabel *label_16;
-    QLabel *label_17;
-    QLabel *label_18;
-    QLabel *label_19;
-    QLabel *label_20;
-    QLabel *label_21;
-    QGroupBox *groupBox_6;
-    QLabel *label_22;
-    QLabel *label_23;
-    QLabel *label_24;
-    QLabel *label_25;
-    QLabel *label_26;
     QWidget *tab_4;
+    QGridLayout *gridLayout_8;
     QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout_2;
     QToolButton *toolButton_2;
     QToolButton *toolButton_3;
     QToolButton *toolButton_4;
     QTableWidget *tableWidget;
     QTextBrowser *textBrowser_7;
     QWidget *tab_5;
-    QTextBrowser *textBrowser_4;
-    QLabel *label_27;
+    QVBoxLayout *verticalLayout_3;
     QTableWidget *tableWidget_2;
+    QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox_7;
     QLabel *label_28;
     QLabel *label_29;
     QLabel *label_30;
     QLabel *label_31;
     QLabel *label_32;
+    QVBoxLayout *verticalLayout_2;
+    QLabel *label_27;
+    QTextBrowser *textBrowser_4;
     QWidget *tab_6;
     QGroupBox *groupBox_2;
     QToolButton *toolButton_5;
@@ -78,15 +69,31 @@ public:
     QToolButton *toolButton_7;
     QTableWidget *tableWidget_3;
     QWidget *tab_3;
+    QGridLayout *gridLayout_7;
     QGroupBox *groupBox_3;
+    QGridLayout *gridLayout_6;
     QToolButton *toolButton_9;
     QToolButton *toolButton_10;
     QGroupBox *groupBox_8;
+    QVBoxLayout *verticalLayout;
     QLineEdit *lineEdit;
     QPushButton *pushButton_2;
     QTableWidget *tableWidget_4;
-    QTextBrowser *textBrowser_6;
     QWidget *tabsecond;
+    QGridLayout *gridLayout_5;
+    QFrame *frame_2;
+    QGridLayout *gridLayout_2;
+    QRadioButton *newCart;
+    QRadioButton *doneCart;
+    QRadioButton *acceptedCart;
+    QRadioButton *infringeCart;
+    QRadioButton *lendingCart;
+    QFrame *frame;
+    QGridLayout *gridLayout_3;
+    QPushButton *accept;
+    QPushButton *done;
+    QPushButton *send;
+    QPushButton *infringe;
     QFrame *frame_3;
     QLabel *label;
     QLabel *label_2;
@@ -99,17 +106,6 @@ public:
     QLabel *recipient;
     QLabel *label_6;
     QLabel *capacity;
-    QFrame *frame;
-    QPushButton *accept;
-    QPushButton *send;
-    QPushButton *done;
-    QPushButton *infringe;
-    QFrame *frame_2;
-    QRadioButton *newCart;
-    QRadioButton *lendingCart;
-    QRadioButton *doneCart;
-    QRadioButton *infringeCart;
-    QRadioButton *acceptedCart;
     QTableWidget *CartInfos;
     QWidget *newRegistration;
     QPushButton *Deny;
@@ -124,76 +120,38 @@ public:
         librarian->resize(908, 623);
         centralwidget = new QWidget(librarian);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        gridLayoutWidget = new QWidget(centralwidget);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 891, 591));
-        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout_4 = new QGridLayout(centralwidget);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
+        gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        fyfu11212 = new QTabWidget(gridLayoutWidget);
+        fyfu11212 = new QTabWidget(centralwidget);
         fyfu11212->setObjectName(QStringLiteral("fyfu11212"));
-        tab = new QWidget();
-        tab->setObjectName(QStringLiteral("tab"));
-        groupBox_4 = new QGroupBox(tab);
-        groupBox_4->setObjectName(QStringLiteral("groupBox_4"));
-        groupBox_4->setGeometry(QRect(30, 20, 451, 321));
-        textBrowser_8 = new QTextBrowser(groupBox_4);
-        textBrowser_8->setObjectName(QStringLiteral("textBrowser_8"));
-        textBrowser_8->setGeometry(QRect(10, 40, 431, 271));
-        groupBox_5 = new QGroupBox(tab);
-        groupBox_5->setObjectName(QStringLiteral("groupBox_5"));
-        groupBox_5->setGeometry(QRect(490, 30, 231, 161));
-        label_16 = new QLabel(groupBox_5);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(10, 20, 55, 16));
-        label_17 = new QLabel(groupBox_5);
-        label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(10, 40, 55, 16));
-        label_18 = new QLabel(groupBox_5);
-        label_18->setObjectName(QStringLiteral("label_18"));
-        label_18->setGeometry(QRect(10, 60, 55, 16));
-        label_19 = new QLabel(groupBox_5);
-        label_19->setObjectName(QStringLiteral("label_19"));
-        label_19->setGeometry(QRect(10, 80, 55, 16));
-        label_20 = new QLabel(groupBox_5);
-        label_20->setObjectName(QStringLiteral("label_20"));
-        label_20->setGeometry(QRect(10, 100, 55, 16));
-        label_21 = new QLabel(groupBox_5);
-        label_21->setObjectName(QStringLiteral("label_21"));
-        label_21->setGeometry(QRect(10, 120, 55, 16));
-        groupBox_6 = new QGroupBox(tab);
-        groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(490, 200, 231, 161));
-        label_22 = new QLabel(groupBox_6);
-        label_22->setObjectName(QStringLiteral("label_22"));
-        label_22->setGeometry(QRect(10, 30, 55, 16));
-        label_23 = new QLabel(groupBox_6);
-        label_23->setObjectName(QStringLiteral("label_23"));
-        label_23->setGeometry(QRect(10, 50, 55, 16));
-        label_24 = new QLabel(groupBox_6);
-        label_24->setObjectName(QStringLiteral("label_24"));
-        label_24->setGeometry(QRect(10, 70, 55, 16));
-        label_25 = new QLabel(groupBox_6);
-        label_25->setObjectName(QStringLiteral("label_25"));
-        label_25->setGeometry(QRect(10, 90, 55, 16));
-        label_26 = new QLabel(groupBox_6);
-        label_26->setObjectName(QStringLiteral("label_26"));
-        label_26->setGeometry(QRect(10, 110, 55, 16));
-        fyfu11212->addTab(tab, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
+        gridLayout_8 = new QGridLayout(tab_4);
+        gridLayout_8->setObjectName(QStringLiteral("gridLayout_8"));
         groupBox = new QGroupBox(tab_4);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(30, 30, 451, 71));
+        horizontalLayout_2 = new QHBoxLayout(groupBox);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         toolButton_2 = new QToolButton(groupBox);
         toolButton_2->setObjectName(QStringLiteral("toolButton_2"));
-        toolButton_2->setGeometry(QRect(10, 10, 121, 22));
+
+        horizontalLayout_2->addWidget(toolButton_2);
+
         toolButton_3 = new QToolButton(groupBox);
         toolButton_3->setObjectName(QStringLiteral("toolButton_3"));
-        toolButton_3->setGeometry(QRect(180, 10, 121, 22));
+
+        horizontalLayout_2->addWidget(toolButton_3);
+
         toolButton_4 = new QToolButton(groupBox);
         toolButton_4->setObjectName(QStringLiteral("toolButton_4"));
-        toolButton_4->setGeometry(QRect(350, 10, 101, 22));
+
+        horizontalLayout_2->addWidget(toolButton_4);
+
+
+        gridLayout_8->addWidget(groupBox, 0, 0, 1, 1);
+
         tableWidget = new QTableWidget(tab_4);
         if (tableWidget->columnCount() < 4)
             tableWidget->setColumnCount(4);
@@ -226,19 +184,19 @@ public:
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
         tableWidget->setItem(0, 3, __qtablewidgetitem12);
         tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(30, 130, 371, 192));
+
+        gridLayout_8->addWidget(tableWidget, 1, 0, 1, 1);
+
         textBrowser_7 = new QTextBrowser(tab_4);
         textBrowser_7->setObjectName(QStringLiteral("textBrowser_7"));
-        textBrowser_7->setGeometry(QRect(460, 130, 256, 192));
+
+        gridLayout_8->addWidget(textBrowser_7, 1, 1, 1, 1);
+
         fyfu11212->addTab(tab_4, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        textBrowser_4 = new QTextBrowser(tab_5);
-        textBrowser_4->setObjectName(QStringLiteral("textBrowser_4"));
-        textBrowser_4->setGeometry(QRect(470, 90, 256, 192));
-        label_27 = new QLabel(tab_5);
-        label_27->setObjectName(QStringLiteral("label_27"));
-        label_27->setGeometry(QRect(480, 60, 131, 16));
+        verticalLayout_3 = new QVBoxLayout(tab_5);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         tableWidget_2 = new QTableWidget(tab_5);
         if (tableWidget_2->columnCount() < 6)
             tableWidget_2->setColumnCount(6);
@@ -259,10 +217,13 @@ public:
         QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
         tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem19);
         tableWidget_2->setObjectName(QStringLiteral("tableWidget_2"));
-        tableWidget_2->setGeometry(QRect(15, 20, 431, 71));
+
+        verticalLayout_3->addWidget(tableWidget_2);
+
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         groupBox_7 = new QGroupBox(tab_5);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
-        groupBox_7->setGeometry(QRect(20, 110, 431, 241));
         label_28 = new QLabel(groupBox_7);
         label_28->setObjectName(QStringLiteral("label_28"));
         label_28->setGeometry(QRect(124, 30, 161, 20));
@@ -278,6 +239,31 @@ public:
         label_32 = new QLabel(groupBox_7);
         label_32->setObjectName(QStringLiteral("label_32"));
         label_32->setGeometry(QRect(30, 160, 111, 16));
+
+        horizontalLayout->addWidget(groupBox_7);
+
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        label_27 = new QLabel(tab_5);
+        label_27->setObjectName(QStringLiteral("label_27"));
+
+        verticalLayout_2->addWidget(label_27);
+
+        textBrowser_4 = new QTextBrowser(tab_5);
+        textBrowser_4->setObjectName(QStringLiteral("textBrowser_4"));
+
+        verticalLayout_2->addWidget(textBrowser_4);
+
+
+        horizontalLayout->addLayout(verticalLayout_2);
+
+        horizontalLayout->setStretch(0, 1);
+        horizontalLayout->setStretch(1, 1);
+
+        verticalLayout_3->addLayout(horizontalLayout);
+
+        verticalLayout_3->setStretch(0, 1);
+        verticalLayout_3->setStretch(1, 10);
         fyfu11212->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
@@ -337,24 +323,42 @@ public:
         fyfu11212->addTab(tab_6, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
+        gridLayout_7 = new QGridLayout(tab_3);
+        gridLayout_7->setObjectName(QStringLiteral("gridLayout_7"));
         groupBox_3 = new QGroupBox(tab_3);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
-        groupBox_3->setGeometry(QRect(10, 10, 751, 51));
+        gridLayout_6 = new QGridLayout(groupBox_3);
+        gridLayout_6->setObjectName(QStringLiteral("gridLayout_6"));
         toolButton_9 = new QToolButton(groupBox_3);
         toolButton_9->setObjectName(QStringLiteral("toolButton_9"));
-        toolButton_9->setGeometry(QRect(20, 10, 121, 22));
+
+        gridLayout_6->addWidget(toolButton_9, 0, 0, 1, 1);
+
         toolButton_10 = new QToolButton(groupBox_3);
         toolButton_10->setObjectName(QStringLiteral("toolButton_10"));
-        toolButton_10->setGeometry(QRect(160, 10, 121, 22));
+
+        gridLayout_6->addWidget(toolButton_10, 0, 1, 1, 1);
+
+
+        gridLayout_7->addWidget(groupBox_3, 0, 0, 1, 1);
+
         groupBox_8 = new QGroupBox(tab_3);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setGeometry(QRect(10, 80, 161, 181));
+        verticalLayout = new QVBoxLayout(groupBox_8);
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         lineEdit = new QLineEdit(groupBox_8);
         lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(12, 30, 131, 22));
+
+        verticalLayout->addWidget(lineEdit);
+
         pushButton_2 = new QPushButton(groupBox_8);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(22, 60, 111, 28));
+
+        verticalLayout->addWidget(pushButton_2);
+
+
+        gridLayout_7->addWidget(groupBox_8, 1, 0, 1, 1);
+
         tableWidget_4 = new QTableWidget(tab_3);
         if (tableWidget_4->columnCount() < 8)
             tableWidget_4->setColumnCount(8);
@@ -375,16 +379,82 @@ public:
         QTableWidgetItem *__qtablewidgetitem44 = new QTableWidgetItem();
         tableWidget_4->setHorizontalHeaderItem(7, __qtablewidgetitem44);
         tableWidget_4->setObjectName(QStringLiteral("tableWidget_4"));
-        tableWidget_4->setGeometry(QRect(180, 80, 581, 261));
-        textBrowser_6 = new QTextBrowser(tab_3);
-        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
-        textBrowser_6->setGeometry(QRect(10, 480, 461, 41));
+
+        gridLayout_7->addWidget(tableWidget_4, 1, 1, 1, 1);
+
         fyfu11212->addTab(tab_3, QString());
         tabsecond = new QWidget();
         tabsecond->setObjectName(QStringLiteral("tabsecond"));
+        gridLayout_5 = new QGridLayout(tabsecond);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        frame_2 = new QFrame(tabsecond);
+        frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setFrameShape(QFrame::StyledPanel);
+        frame_2->setFrameShadow(QFrame::Raised);
+        gridLayout_2 = new QGridLayout(frame_2);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        newCart = new QRadioButton(frame_2);
+        newCart->setObjectName(QStringLiteral("newCart"));
+        newCart->setChecked(true);
+
+        gridLayout_2->addWidget(newCart, 0, 0, 1, 1);
+
+        doneCart = new QRadioButton(frame_2);
+        doneCart->setObjectName(QStringLiteral("doneCart"));
+        doneCart->setChecked(false);
+
+        gridLayout_2->addWidget(doneCart, 0, 1, 1, 1);
+
+        acceptedCart = new QRadioButton(frame_2);
+        acceptedCart->setObjectName(QStringLiteral("acceptedCart"));
+
+        gridLayout_2->addWidget(acceptedCart, 1, 0, 1, 1);
+
+        infringeCart = new QRadioButton(frame_2);
+        infringeCart->setObjectName(QStringLiteral("infringeCart"));
+
+        gridLayout_2->addWidget(infringeCart, 1, 1, 1, 1);
+
+        lendingCart = new QRadioButton(frame_2);
+        lendingCart->setObjectName(QStringLiteral("lendingCart"));
+
+        gridLayout_2->addWidget(lendingCart, 2, 0, 1, 1);
+
+
+        gridLayout_5->addWidget(frame_2, 0, 0, 1, 1);
+
+        frame = new QFrame(tabsecond);
+        frame->setObjectName(QStringLiteral("frame"));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        gridLayout_3 = new QGridLayout(frame);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
+        gridLayout_3->setContentsMargins(-1, -1, 300, -1);
+        accept = new QPushButton(frame);
+        accept->setObjectName(QStringLiteral("accept"));
+
+        gridLayout_3->addWidget(accept, 0, 0, 1, 1);
+
+        done = new QPushButton(frame);
+        done->setObjectName(QStringLiteral("done"));
+
+        gridLayout_3->addWidget(done, 0, 1, 1, 1);
+
+        send = new QPushButton(frame);
+        send->setObjectName(QStringLiteral("send"));
+
+        gridLayout_3->addWidget(send, 1, 0, 1, 1);
+
+        infringe = new QPushButton(frame);
+        infringe->setObjectName(QStringLiteral("infringe"));
+
+        gridLayout_3->addWidget(infringe, 1, 1, 1, 1);
+
+
+        gridLayout_5->addWidget(frame, 0, 1, 1, 1);
+
         frame_3 = new QFrame(tabsecond);
         frame_3->setObjectName(QStringLiteral("frame_3"));
-        frame_3->setGeometry(QRect(10, 140, 261, 411));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         label = new QLabel(frame_3);
@@ -420,45 +490,9 @@ public:
         capacity = new QLabel(frame_3);
         capacity->setObjectName(QStringLiteral("capacity"));
         capacity->setGeometry(QRect(110, 120, 61, 21));
-        frame = new QFrame(tabsecond);
-        frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(370, 10, 491, 121));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        accept = new QPushButton(frame);
-        accept->setObjectName(QStringLiteral("accept"));
-        accept->setGeometry(QRect(40, 20, 111, 31));
-        send = new QPushButton(frame);
-        send->setObjectName(QStringLiteral("send"));
-        send->setGeometry(QRect(40, 70, 111, 31));
-        done = new QPushButton(frame);
-        done->setObjectName(QStringLiteral("done"));
-        done->setGeometry(QRect(260, 20, 101, 31));
-        infringe = new QPushButton(frame);
-        infringe->setObjectName(QStringLiteral("infringe"));
-        infringe->setGeometry(QRect(260, 70, 101, 31));
-        frame_2 = new QFrame(tabsecond);
-        frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(10, 10, 351, 121));
-        frame_2->setFrameShape(QFrame::StyledPanel);
-        frame_2->setFrameShadow(QFrame::Raised);
-        newCart = new QRadioButton(frame_2);
-        newCart->setObjectName(QStringLiteral("newCart"));
-        newCart->setGeometry(QRect(20, 20, 101, 17));
-        newCart->setChecked(true);
-        lendingCart = new QRadioButton(frame_2);
-        lendingCart->setObjectName(QStringLiteral("lendingCart"));
-        lendingCart->setGeometry(QRect(20, 80, 131, 17));
-        doneCart = new QRadioButton(frame_2);
-        doneCart->setObjectName(QStringLiteral("doneCart"));
-        doneCart->setGeometry(QRect(180, 20, 131, 17));
-        doneCart->setChecked(false);
-        infringeCart = new QRadioButton(frame_2);
-        infringeCart->setObjectName(QStringLiteral("infringeCart"));
-        infringeCart->setGeometry(QRect(180, 50, 101, 17));
-        acceptedCart = new QRadioButton(frame_2);
-        acceptedCart->setObjectName(QStringLiteral("acceptedCart"));
-        acceptedCart->setGeometry(QRect(20, 50, 121, 17));
+
+        gridLayout_5->addWidget(frame_3, 1, 0, 1, 1);
+
         CartInfos = new QTableWidget(tabsecond);
         if (CartInfos->columnCount() < 5)
             CartInfos->setColumnCount(5);
@@ -473,12 +507,18 @@ public:
         QTableWidgetItem *__qtablewidgetitem49 = new QTableWidgetItem();
         CartInfos->setHorizontalHeaderItem(4, __qtablewidgetitem49);
         CartInfos->setObjectName(QStringLiteral("CartInfos"));
-        CartInfos->setGeometry(QRect(295, 141, 571, 411));
         CartInfos->setStyleSheet(QStringLiteral("text-align:center;"));
         CartInfos->setEditTriggers(QAbstractItemView::NoEditTriggers);
         CartInfos->horizontalHeader()->setCascadingSectionResizes(false);
         CartInfos->horizontalHeader()->setStretchLastSection(true);
         CartInfos->verticalHeader()->setVisible(false);
+
+        gridLayout_5->addWidget(CartInfos, 1, 1, 1, 1);
+
+        gridLayout_5->setRowStretch(0, 1);
+        gridLayout_5->setRowStretch(1, 4);
+        gridLayout_5->setColumnStretch(0, 1);
+        gridLayout_5->setColumnStretch(1, 2);
         fyfu11212->addTab(tabsecond, QString());
         newRegistration = new QWidget();
         newRegistration->setObjectName(QStringLiteral("newRegistration"));
@@ -509,6 +549,9 @@ public:
 
         gridLayout->addWidget(fyfu11212, 0, 0, 1, 1);
 
+
+        gridLayout_4->addLayout(gridLayout, 0, 0, 1, 1);
+
         librarian->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(librarian);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -516,7 +559,7 @@ public:
 
         retranslateUi(librarian);
 
-        fyfu11212->setCurrentIndex(5);
+        fyfu11212->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(librarian);
@@ -525,21 +568,6 @@ public:
     void retranslateUi(QMainWindow *librarian)
     {
         librarian->setWindowTitle(QApplication::translate("librarian", "MainWindow", 0));
-        groupBox_4->setTitle(QApplication::translate("librarian", "B\341\272\243n tin", 0));
-        groupBox_5->setTitle(QApplication::translate("librarian", "S\303\241ch m\341\273\233i", 0));
-        label_16->setText(QApplication::translate("librarian", "1.", 0));
-        label_17->setText(QApplication::translate("librarian", "2.", 0));
-        label_18->setText(QApplication::translate("librarian", "3.", 0));
-        label_19->setText(QApplication::translate("librarian", "4.", 0));
-        label_20->setText(QApplication::translate("librarian", "5.", 0));
-        label_21->setText(QApplication::translate("librarian", "6.", 0));
-        groupBox_6->setTitle(QApplication::translate("librarian", "Y\303\252u th\303\255ch nh\341\272\245t", 0));
-        label_22->setText(QApplication::translate("librarian", "1.", 0));
-        label_23->setText(QApplication::translate("librarian", "2.", 0));
-        label_24->setText(QApplication::translate("librarian", "3.", 0));
-        label_25->setText(QApplication::translate("librarian", "4.", 0));
-        label_26->setText(QApplication::translate("librarian", "5.", 0));
-        fyfu11212->setTabText(fyfu11212->indexOf(tab), QApplication::translate("librarian", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
         toolButton_2->setText(QApplication::translate("librarian", "Th\303\252m", 0));
         toolButton_3->setText(QApplication::translate("librarian", "S\341\273\255a", 0));
@@ -574,7 +602,6 @@ public:
         tableWidget->setSortingEnabled(__sortingEnabled);
 
         fyfu11212->setTabText(fyfu11212->indexOf(tab_4), QApplication::translate("librarian", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
-        label_27->setText(QApplication::translate("librarian", "Nh\341\272\257c nh\341\273\237 t\341\273\253 Admin", 0));
         QTableWidgetItem *___qtablewidgetitem12 = tableWidget_2->horizontalHeaderItem(0);
         ___qtablewidgetitem12->setText(QApplication::translate("librarian", "M\303\243", 0));
         QTableWidgetItem *___qtablewidgetitem13 = tableWidget_2->horizontalHeaderItem(1);
@@ -593,6 +620,7 @@ public:
         label_30->setText(QApplication::translate("librarian", "Th\341\273\235i h\341\272\241n h\341\273\243p \304\221\341\273\223ng", 0));
         label_31->setText(QApplication::translate("librarian", "V\341\273\213 tr\303\255", 0));
         label_32->setText(QApplication::translate("librarian", "M\341\273\251c l\306\260\306\241ng", 0));
+        label_27->setText(QApplication::translate("librarian", "Nh\341\272\257c nh\341\273\237 t\341\273\253 Admin", 0));
         fyfu11212->setTabText(fyfu11212->indexOf(tab_5), QApplication::translate("librarian", "Th\303\264ng tin c\303\241 nh\303\242n", 0));
         groupBox_2->setTitle(QString());
         toolButton_5->setText(QApplication::translate("librarian", "Th\303\252m", 0));
@@ -657,13 +685,16 @@ public:
         ___qtablewidgetitem40->setText(QApplication::translate("librarian", "Ng\303\240y tham gia", 0));
         QTableWidgetItem *___qtablewidgetitem41 = tableWidget_4->horizontalHeaderItem(7);
         ___qtablewidgetitem41->setText(QApplication::translate("librarian", "T\303\254nh tr\341\272\241ng", 0));
-        textBrowser_6->setHtml(QApplication::translate("librarian", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Th\303\264ng tin t\303\241c gi\341\272\243</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">T\303\241c quy\341\273\201n</span></p></body></html>", 0));
         fyfu11212->setTabText(fyfu11212->indexOf(tab_3), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 ng\306\260\341\273\235i d\303\271ng", 0));
+        newCart->setText(QApplication::translate("librarian", "Phi\341\272\277u m\306\260\341\273\243n m\341\273\233i", 0));
+        doneCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221\303\243 tr\341\272\243 \304\221\303\272ng h\341\272\241n", 0));
+        acceptedCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221\303\243 ch\341\272\245p nh\341\272\255n", 0));
+        infringeCart->setText(QApplication::translate("librarian", "Phi\341\272\277u vi ph\341\272\241m", 0));
+        lendingCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221ang cho m\306\260\341\273\243n", 0));
+        accept->setText(QApplication::translate("librarian", "Ch\341\272\245p nh\341\272\255n", 0));
+        done->setText(QApplication::translate("librarian", "\304\220\303\243 tr\341\272\243 \304\221\303\272ng h\341\272\241n", 0));
+        send->setText(QApplication::translate("librarian", "Cho m\306\260\341\273\243n", 0));
+        infringe->setText(QApplication::translate("librarian", "Vi ph\341\272\241m", 0));
         label->setText(QApplication::translate("librarian", "Th\303\264ng tin chi ti\341\272\277t", 0));
         label_2->setText(QApplication::translate("librarian", "T\341\273\261a s\303\241ch:", 0));
         bookName->setText(QString());
@@ -675,15 +706,6 @@ public:
         recipient->setText(QString());
         label_6->setText(QApplication::translate("librarian", "X\303\241c nh\341\272\255n l\341\272\247n cu\341\273\221i b\341\273\237i", 0));
         capacity->setText(QString());
-        accept->setText(QApplication::translate("librarian", "Ch\341\272\245p nh\341\272\255n", 0));
-        send->setText(QApplication::translate("librarian", "Cho m\306\260\341\273\243n", 0));
-        done->setText(QApplication::translate("librarian", "\304\220\303\243 tr\341\272\243 \304\221\303\272ng h\341\272\241n", 0));
-        infringe->setText(QApplication::translate("librarian", "Vi ph\341\272\241m", 0));
-        newCart->setText(QApplication::translate("librarian", "Phi\341\272\277u m\306\260\341\273\243n m\341\273\233i", 0));
-        lendingCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221ang cho m\306\260\341\273\243n", 0));
-        doneCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221\303\243 tr\341\272\243 \304\221\303\272ng h\341\272\241n", 0));
-        infringeCart->setText(QApplication::translate("librarian", "Phi\341\272\277u vi ph\341\272\241m", 0));
-        acceptedCart->setText(QApplication::translate("librarian", "Phi\341\272\277u \304\221\303\243 ch\341\272\245p nh\341\272\255n", 0));
         QTableWidgetItem *___qtablewidgetitem42 = CartInfos->horizontalHeaderItem(1);
         ___qtablewidgetitem42->setText(QApplication::translate("librarian", "M\303\243 phi\341\272\277u", 0));
         QTableWidgetItem *___qtablewidgetitem43 = CartInfos->horizontalHeaderItem(2);

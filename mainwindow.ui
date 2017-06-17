@@ -36,8 +36,14 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="1">
      <widget class="QScrollArea" name="scrollArea">
+      <property name="styleSheet">
+       <string notr="true">border: none;</string>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -46,12 +52,12 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>1067</width>
-         <height>823</height>
+         <width>1055</width>
+         <height>771</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true"/>
+        <string notr="true">border: none;</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
         <property name="spacing">
@@ -81,6 +87,9 @@
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0">
+           <property name="spacing">
+            <number>0</number>
+           </property>
            <property name="leftMargin">
             <number>0</number>
            </property>
@@ -95,6 +104,10 @@
            </property>
            <item>
             <widget class="QFrame" name="frame_2">
+             <property name="styleSheet">
+              <string notr="true">background: url(Images/Background.png) no-repeat center center;
+background-color: #1DE9B6;</string>
+             </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
              </property>
@@ -116,18 +129,16 @@
                    <string notr="true">#Search 
 {
 	height: 30px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 4px;
+	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #eee;
-	color: #222;
+	background: #6A1B9A;
+	color: #fff;
 	outline: none;
 }
 #Search:hover 
 {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+	background: #8E24AA;
 }
 #Search:pressed 
 {
@@ -148,18 +159,16 @@
                    <string notr="true">#SignInButton 
 {
 	height: 30px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 4px;
+	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #eee;
-	color: #222;
+	background: #6A1B9A;
+	color: #fff;
 	outline: none;
 }
 #SignInButton:hover 
 {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+	background: #8E24AA;
 }
 #SignInButton:pressed 
 {
@@ -180,18 +189,16 @@
                    <string notr="true">#SignUpButton 
 {
 	height: 30px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 4px;
+	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #eee;
-	color: #222;
+	background: #6A1B9A;
+	color: #fff;
 	outline: none;
 }
 #SignUpButton:hover 
 {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+	background: #8E24AA;
 }
 #SignUpButton:pressed 
 {
@@ -212,18 +219,16 @@
                    <string notr="true">#Help 
 {
 	height: 30px;
-	border: 1px solid black;
-	border-radius: 5px;
+	border-radius: 4px;
+	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #eee;
-	color: #222;
+	background: #6A1B9A;
+	color: #fff;
 	outline: none;
 }
 #Help:hover 
 {
-	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);
+	background: #8E24AA;
 }
 #Help:pressed 
 {
@@ -256,6 +261,7 @@ background: none;</string>
                <widget class="QLabel" name="label_3">
                 <property name="styleSheet">
                  <string notr="true">font: 60pt &quot;Lobster&quot;;
+color: #0277BD;
 background: none;</string>
                 </property>
                 <property name="text">
@@ -270,6 +276,7 @@ background: none;</string>
                <widget class="QLabel" name="label_4">
                 <property name="styleSheet">
                  <string notr="true">font: 30pt &quot;Lobster&quot;;
+color: #fff;
 background: none;</string>
                 </property>
                 <property name="text">
@@ -294,20 +301,25 @@ background: none;</string>
              <property name="frameShadow">
               <enum>QFrame::Raised</enum>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,15,3">
+             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,12,3,2">
               <item>
                <widget class="QPushButton" name="Back">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">height: 40px;
+                 <string notr="true">#Back{
+	height: 40px;
 	border-width: 0px;
 	border-radius: 5px;
-	background: #4FC3F7;
+	background-color: #C62828;
 	color: #222;
 	outline: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+#Back:hover{
+	background-color: #E53935;
+}</string>
                 </property>
                 <property name="text">
                  <string/>
@@ -334,6 +346,75 @@ background: none;</string>
                </widget>
               </item>
               <item>
+               <widget class="QComboBox" name="Category">
+                <property name="styleSheet">
+                 <string notr="true">#Category{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #448AFF;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QComboBox:editable {
+    background: white;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Kinh dị</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Trẻ em</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Khoa học</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
                <widget class="QPushButton" name="FindBooksButton">
                 <property name="cursor">
                  <cursorShape>PointingHandCursor</cursorShape>
@@ -349,13 +430,14 @@ background: none;</string>
 	height: 40px;
 	border-width: 0px;
 	border-radius: 5px;
-	background: #4FC3F7;
-	color: #222;
+	background: #6A1B9A;
+	color: #fff;
 	outline: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
 }
-#FindBooksButton:hover{
-	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4FC3F7, stop:0.5 #B3E5FC, stop:1 #4FC3F7);
+#FindBooksButton:hover 
+{
+	background: #8E24AA;
 }</string>
                 </property>
                 <property name="text">
@@ -367,10 +449,14 @@ background: none;</string>
              <zorder>FindBooksButton</zorder>
              <zorder>FindBooksEdit</zorder>
              <zorder>Back</zorder>
+             <zorder>Category</zorder>
             </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+            <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <item>
               <widget class="QTableWidget" name="BooksTable">
                <property name="minimumSize">
@@ -380,7 +466,26 @@ background: none;</string>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true">background: #f7f7f7;</string>
+                <string notr="true">QHeaderView::section {
+    background-color: #6A1B9A;
+	padding: 4px;
+    border: 1px solid #fff;
+	color: #fff;
+    font-size: 15pt;
+	font-family: &quot;Myriad Pro Cond&quot;;
+}
+
+QTableWidget {
+	background-color: #eee;
+    gridline-color: #fffff8;
+    font-size: 12pt;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #646464;
+    border: 1px solid #fffff8;
+}
+</string>
                </property>
                <property name="editTriggers">
                 <set>QAbstractItemView::NoEditTriggers</set>
@@ -395,13 +500,8 @@ background: none;</string>
                 <bool>true</bool>
                </attribute>
                <attribute name="verticalHeaderVisible">
-                <bool>false</bool>
+                <bool>true</bool>
                </attribute>
-               <column>
-                <property name="text">
-                 <string>STT</string>
-                </property>
-               </column>
                <column>
                 <property name="text">
                  <string>Tựa sách</string>
@@ -410,6 +510,11 @@ background: none;</string>
                <column>
                 <property name="text">
                  <string>Tác giả</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Thể loại</string>
                 </property>
                </column>
                <column>
@@ -425,37 +530,55 @@ background: none;</string>
               </widget>
              </item>
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_5">
-               <item>
-                <widget class="QLabel" name="label">
-                 <property name="layoutDirection">
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
-                 </property>
-                 <property name="text">
-                  <string>Giới thiệu</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QTextBrowser" name="intro">
-                 <property name="minimumSize">
-                  <size>
-                   <width>246</width>
-                   <height>427</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background: #f7f7f7;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QFrame" name="frame_3">
+               <property name="styleSheet">
+                <string notr="true">background: #fff;</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="layoutDirection">
+                   <enum>Qt::LeftToRight</enum>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+                  </property>
+                  <property name="text">
+                   <string>Giới thiệu</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGraphicsView" name="bookView">
+                  <property name="styleSheet">
+                   <string notr="true">border: none;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QTextBrowser" name="intro">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
              </item>
             </layout>
            </item>
@@ -486,12 +609,28 @@ background: none;</string>
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>287</x>
-     <y>41</y>
+     <x>83</x>
+     <y>332</y>
     </hint>
     <hint type="destinationlabel">
-     <x>427</x>
-     <y>43</y>
+     <x>773</x>
+     <y>332</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>FindBooksEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>FindBooksButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>288</x>
+     <y>313</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>639</x>
+     <y>315</y>
     </hint>
    </hints>
   </connection>

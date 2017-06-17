@@ -9,18 +9,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
     ui->BooksTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
-    ui->frame_2->setStyleSheet(
-                             "background: url(Images/Background.png) no-repeat center center;\n"
-                             "background-color: white;");
     QPixmap pixmap("Images/back.png");
     QIcon ButtonIcon(pixmap);
     ui->Back->setIcon(ButtonIcon);
     ui->Back->setIconSize(pixmap.rect().size());
+    QPixmap pixmap2("Images/search.png");
+    QIcon ButtonIcon2(pixmap2);
+    ui->Search->setIcon(ButtonIcon2);
+    ui->Search->setIconSize(pixmap2.rect().size());
+    ui->FindBooksButton->setIcon(ButtonIcon2);
+    ui->FindBooksButton->setIconSize(pixmap2.rect().size());
     ui->MainBar->hide();
     ui->BooksTable->hide();
-    ui->intro->hide();
-    ui->label->hide();
+    ui->frame_3->hide();
 
     QPropertyAnimation animation(ui->SignInButton, "geometry");
     animation.setDuration(10000);
@@ -460,6 +461,7 @@ void MainWindow::on_FindBooksButton_clicked()
     QLinkedList<Book>::iterator it=books.begin();
     int cnt=0;
     ui->BooksTable->setRowCount(0);
+    ui->BooksTable->setSortingEnabled(false);
     for(;it!=books.end();it++)
     {
         QString s[]={(*it).getName(), (*it).getAuthor(), (*it).getPublisher()};
@@ -474,9 +476,9 @@ void MainWindow::on_FindBooksButton_clicked()
                     if(i==word.length())
                     {
                         ui->BooksTable->insertRow(cnt);
-                        ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
-                        ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem((*it).getName()));
-                        ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAuthor()));
+                        ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem((*it).getName()));
+                        ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAuthor()));
+                        ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(findCategory((*it).getID().left(3))));
                         ui->BooksTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
                         if((*it).getQuantity()>0)
                             ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
@@ -503,7 +505,7 @@ void MainWindow::on_FindBooksButton_clicked()
             m=0, i=0;
         }
     }
-
+    ui->BooksTable->setSortingEnabled(true);
     delete table;
 }
 
@@ -791,7 +793,8 @@ void MainWindow::saveCartInfosFile()
 void MainWindow::on_BooksTable_cellClicked(int row, int column)
 {
     column++;
-    QString s = ui->BooksTable->item(row,1)->text();
+    ui->BooksTable->selectRow(row);
+    QString s = ui->BooksTable->item(row,0)->text();
     QLinkedList<Book>::iterator it=books.begin();
     for(;it!=books.end();it++)
     {
@@ -807,8 +810,7 @@ void MainWindow::on_Search_clicked()
 {
     ui->MainBar->show();
     ui->BooksTable->show();
-    ui->intro->show();
-    ui->label->show();
+    ui->frame_3->show();
     ui->frame_2->hide();
 }
 
@@ -816,7 +818,6 @@ void MainWindow::on_Back_clicked()
 {
     ui->MainBar->hide();
     ui->BooksTable->hide();
-    ui->intro->hide();
-    ui->label->hide();
+    ui->frame_3->hide();
     ui->frame_2->show();
 }

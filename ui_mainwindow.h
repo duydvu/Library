@@ -13,7 +13,9 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -54,11 +56,14 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *Back;
     QLineEdit *FindBooksEdit;
+    QComboBox *Category;
     QPushButton *FindBooksButton;
     QHBoxLayout *horizontalLayout;
     QTableWidget *BooksTable;
-    QVBoxLayout *verticalLayout_5;
+    QFrame *frame_3;
+    QVBoxLayout *verticalLayout_4;
     QLabel *label;
+    QGraphicsView *bookView;
     QTextBrowser *intro;
     QStatusBar *statusBar;
 
@@ -73,17 +78,18 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         centralWidget->setStyleSheet(QStringLiteral(""));
         gridLayout = new QGridLayout(centralWidget);
-        gridLayout->setSpacing(6);
+        gridLayout->setSpacing(0);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         scrollArea = new QScrollArea(centralWidget);
         scrollArea->setObjectName(QStringLiteral("scrollArea"));
+        scrollArea->setStyleSheet(QStringLiteral("border: none;"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1067, 823));
-        scrollAreaWidgetContents->setStyleSheet(QStringLiteral(""));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1055, 771));
+        scrollAreaWidgetContents->setStyleSheet(QStringLiteral("border: none;"));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout->setSpacing(0);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -95,12 +101,14 @@ public:
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         verticalLayout_2 = new QVBoxLayout(frame);
-        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setSpacing(0);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         frame_2 = new QFrame(frame);
         frame_2->setObjectName(QStringLiteral("frame_2"));
+        frame_2->setStyleSheet(QLatin1String("background: url(Images/Background.png) no-repeat center center;\n"
+"background-color: #1DE9B6;"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         verticalLayout_3 = new QVBoxLayout(frame_2);
@@ -117,18 +125,16 @@ public:
         Search->setStyleSheet(QLatin1String("#Search \n"
 "{\n"
 "	height: 30px;\n"
-"	border: 1px solid black;\n"
-"	border-radius: 5px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #eee;\n"
-"	color: #222;\n"
+"	background: #6A1B9A;\n"
+"	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
 "#Search:hover \n"
 "{\n"
-"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
-"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"	background: #8E24AA;\n"
 "}\n"
 "#Search:pressed \n"
 "{\n"
@@ -143,18 +149,16 @@ public:
         SignInButton->setStyleSheet(QLatin1String("#SignInButton \n"
 "{\n"
 "	height: 30px;\n"
-"	border: 1px solid black;\n"
-"	border-radius: 5px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #eee;\n"
-"	color: #222;\n"
+"	background: #6A1B9A;\n"
+"	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
 "#SignInButton:hover \n"
 "{\n"
-"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
-"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"	background: #8E24AA;\n"
 "}\n"
 "#SignInButton:pressed \n"
 "{\n"
@@ -169,18 +173,16 @@ public:
         SignUpButton->setStyleSheet(QLatin1String("#SignUpButton \n"
 "{\n"
 "	height: 30px;\n"
-"	border: 1px solid black;\n"
-"	border-radius: 5px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #eee;\n"
-"	color: #222;\n"
+"	background: #6A1B9A;\n"
+"	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
 "#SignUpButton:hover \n"
 "{\n"
-"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
-"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"	background: #8E24AA;\n"
 "}\n"
 "#SignUpButton:pressed \n"
 "{\n"
@@ -195,18 +197,16 @@ public:
         Help->setStyleSheet(QLatin1String("#Help \n"
 "{\n"
 "	height: 30px;\n"
-"	border: 1px solid black;\n"
-"	border-radius: 5px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #eee;\n"
-"	color: #222;\n"
+"	background: #6A1B9A;\n"
+"	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
 "#Help:hover \n"
 "{\n"
-"	background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"                                stop: 0 #e9e9e9, stop: 0.4 #D8D8D8,\n"
-"                                stop: 0.5 #DDDDDD, stop: 1.0 #e9e9e9);\n"
+"	background: #8E24AA;\n"
 "}\n"
 "#Help:pressed \n"
 "{\n"
@@ -230,6 +230,7 @@ public:
         label_3 = new QLabel(frame_2);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setStyleSheet(QLatin1String("font: 60pt \"Lobster\";\n"
+"color: #0277BD;\n"
 "background: none;"));
         label_3->setAlignment(Qt::AlignHCenter|Qt::AlignTop);
 
@@ -238,6 +239,7 @@ public:
         label_4 = new QLabel(frame_2);
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setStyleSheet(QLatin1String("font: 30pt \"Lobster\";\n"
+"color: #fff;\n"
 "background: none;"));
         label_4->setAlignment(Qt::AlignCenter);
 
@@ -262,13 +264,18 @@ public:
         Back = new QPushButton(MainBar);
         Back->setObjectName(QStringLiteral("Back"));
         Back->setCursor(QCursor(Qt::PointingHandCursor));
-        Back->setStyleSheet(QLatin1String("height: 40px;\n"
+        Back->setStyleSheet(QLatin1String("#Back{\n"
+"	height: 40px;\n"
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
-"	background: #4FC3F7;\n"
+"	background-color: #C62828;\n"
 "	color: #222;\n"
 "	outline: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";"));
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"#Back:hover{\n"
+"	background-color: #E53935;\n"
+"}"));
 
         horizontalLayout_2->addWidget(Back);
 
@@ -285,6 +292,60 @@ public:
 
         horizontalLayout_2->addWidget(FindBooksEdit);
 
+        Category = new QComboBox(MainBar);
+        Category->setObjectName(QStringLiteral("Category"));
+        Category->setStyleSheet(QLatin1String("#Category{\n"
+"	height: 40px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background-color: #448AFF;\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"QComboBox:editable {\n"
+"    background: white;\n"
+"}\n"
+"\n"
+"QComboBox:!editable, QComboBox::drop-down:editable {\n"
+"     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,\n"
+"                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);\n"
+"}\n"
+"\n"
+"/* QComboBox gets the \"on\" state when the popup is open */\n"
+"QComboBox:!editable:on, QComboBox::drop-down:editable:on {\n"
+"    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,\n"
+"                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);\n"
+"}\n"
+"\n"
+"QComboBox:on { /* shift the text when the popup opens */\n"
+"    padding-top: 3px;\n"
+"    padding-left: 4px;\n"
+"}\n"
+"\n"
+"QComboBox"
+                        "::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 15px;\n"
+"\n"
+"    border-left-width: 1px;\n"
+"    border-left-color: darkgray;\n"
+"    border-left-style: solid; /* just a single line */\n"
+"    border-top-right-radius: 3px; /* same radius as the QComboBox */\n"
+"    border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"\n"
+"QComboBox::down-arrow:on { /* shift the arrow when popup is open */\n"
+"    top: 1px;\n"
+"    left: 1px;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(Category);
+
         FindBooksButton = new QPushButton(MainBar);
         FindBooksButton->setObjectName(QStringLiteral("FindBooksButton"));
         FindBooksButton->setCursor(QCursor(Qt::PointingHandCursor));
@@ -292,28 +353,31 @@ public:
 "	height: 40px;\n"
 "	border-width: 0px;\n"
 "	border-radius: 5px;\n"
-"	background: #4FC3F7;\n"
-"	color: #222;\n"
+"	background: #6A1B9A;\n"
+"	color: #fff;\n"
 "	outline: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
 "}\n"
-"#FindBooksButton:hover{\n"
-"	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #4FC3F7, stop:0.5 #B3E5FC, stop:1 #4FC3F7);\n"
+"#FindBooksButton:hover \n"
+"{\n"
+"	background: #8E24AA;\n"
 "}"));
 
         horizontalLayout_2->addWidget(FindBooksButton);
 
         horizontalLayout_2->setStretch(0, 1);
-        horizontalLayout_2->setStretch(1, 15);
+        horizontalLayout_2->setStretch(1, 12);
         horizontalLayout_2->setStretch(2, 3);
+        horizontalLayout_2->setStretch(3, 2);
         FindBooksButton->raise();
         FindBooksEdit->raise();
         Back->raise();
+        Category->raise();
 
         verticalLayout_2->addWidget(MainBar);
 
         horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
+        horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         BooksTable = new QTableWidget(frame);
         if (BooksTable->columnCount() < 5)
@@ -330,38 +394,67 @@ public:
         BooksTable->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         BooksTable->setObjectName(QStringLiteral("BooksTable"));
         BooksTable->setMinimumSize(QSize(493, 427));
-        BooksTable->setStyleSheet(QStringLiteral("background: #f7f7f7;"));
+        BooksTable->setStyleSheet(QLatin1String("QHeaderView::section {\n"
+"    background-color: #6A1B9A;\n"
+"	padding: 4px;\n"
+"    border: 1px solid #fff;\n"
+"	color: #fff;\n"
+"    font-size: 15pt;\n"
+"	font-family: \"Myriad Pro Cond\";\n"
+"}\n"
+"\n"
+"QTableWidget {\n"
+"	background-color: #eee;\n"
+"    gridline-color: #fffff8;\n"
+"    font-size: 12pt;\n"
+"}\n"
+"\n"
+"QTableWidget QTableCornerButton::section {\n"
+"    background-color: #646464;\n"
+"    border: 1px solid #fffff8;\n"
+"}\n"
+""));
         BooksTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         BooksTable->setSortingEnabled(true);
         BooksTable->setWordWrap(false);
         BooksTable->horizontalHeader()->setStretchLastSection(true);
-        BooksTable->verticalHeader()->setVisible(false);
+        BooksTable->verticalHeader()->setVisible(true);
 
         horizontalLayout->addWidget(BooksTable);
 
-        verticalLayout_5 = new QVBoxLayout();
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        label = new QLabel(frame);
+        frame_3 = new QFrame(frame);
+        frame_3->setObjectName(QStringLiteral("frame_3"));
+        frame_3->setStyleSheet(QStringLiteral("background: #fff;"));
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Raised);
+        verticalLayout_4 = new QVBoxLayout(frame_3);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        label = new QLabel(frame_3);
         label->setObjectName(QStringLiteral("label"));
         label->setLayoutDirection(Qt::LeftToRight);
         label->setStyleSheet(QStringLiteral("font: 15pt \"Myriad Pro Cond\";"));
         label->setAlignment(Qt::AlignCenter);
 
-        verticalLayout_5->addWidget(label);
+        verticalLayout_4->addWidget(label);
 
-        intro = new QTextBrowser(frame);
+        bookView = new QGraphicsView(frame_3);
+        bookView->setObjectName(QStringLiteral("bookView"));
+        bookView->setStyleSheet(QStringLiteral("border: none;"));
+
+        verticalLayout_4->addWidget(bookView);
+
+        intro = new QTextBrowser(frame_3);
         intro->setObjectName(QStringLiteral("intro"));
-        intro->setMinimumSize(QSize(246, 427));
-        intro->setStyleSheet(QStringLiteral("background: #f7f7f7;"));
+        intro->setMinimumSize(QSize(0, 0));
+        intro->setStyleSheet(QStringLiteral("font: 15pt \"Myriad Pro Cond\";"));
 
-        verticalLayout_5->addWidget(intro);
+        verticalLayout_4->addWidget(intro);
 
 
-        horizontalLayout->addLayout(verticalLayout_5);
+        horizontalLayout->addWidget(frame_3);
 
-        horizontalLayout->setStretch(0, 2);
-        horizontalLayout->setStretch(1, 1);
 
         verticalLayout_2->addLayout(horizontalLayout);
 
@@ -383,6 +476,7 @@ public:
 
         retranslateUi(MainWindow);
         QObject::connect(FindBooksEdit, SIGNAL(returnPressed()), FindBooksButton, SLOT(click()));
+        QObject::connect(FindBooksEdit, SIGNAL(textChanged(QString)), FindBooksButton, SLOT(click()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -398,6 +492,12 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "LIBRO", 0));
         label_4->setText(QApplication::translate("MainWindow", "Th\306\260 vi\341\273\207n Khoa KH & KT M\303\241y t\303\255nh", 0));
         Back->setText(QString());
+        Category->clear();
+        Category->insertItems(0, QStringList()
+         << QApplication::translate("MainWindow", "Kinh d\341\273\213", 0)
+         << QApplication::translate("MainWindow", "Tr\341\272\273 em", 0)
+         << QApplication::translate("MainWindow", "Khoa h\341\273\215c", 0)
+        );
 #ifndef QT_NO_TOOLTIP
         FindBooksButton->setToolTip(QApplication::translate("MainWindow", "<html><head/><body><p>T\303\254m s\303\241ch</p></body></html>", 0));
 #endif // QT_NO_TOOLTIP
@@ -406,11 +506,11 @@ public:
 #endif // QT_NO_WHATSTHIS
         FindBooksButton->setText(QApplication::translate("MainWindow", "T\303\254m", 0));
         QTableWidgetItem *___qtablewidgetitem = BooksTable->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "STT", 0));
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "T\341\273\261a s\303\241ch", 0));
         QTableWidgetItem *___qtablewidgetitem1 = BooksTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "T\341\273\261a s\303\241ch", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", 0));
         QTableWidgetItem *___qtablewidgetitem2 = BooksTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "T\303\241c gi\341\272\243", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Th\341\273\203 lo\341\272\241i", 0));
         QTableWidgetItem *___qtablewidgetitem3 = BooksTable->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Nh\303\240 xu\341\272\245t b\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem4 = BooksTable->horizontalHeaderItem(4);

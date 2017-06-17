@@ -55,4 +55,92 @@
         <duration>0</duration>
         <status>0</status>
     </cartInfo>
+    <cartInfo>
+        <id>5</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>A brief history of time</bookname>
+        <bookid>Sci_HoT</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>6</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>The Handmaid's Tale</bookname>
+        <bookid>Nol_HmT</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>7</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Thirteen Reasons Why</bookname>
+        <bookid>Fic_TRW</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>8</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>The 5 Love Languages: The Secret to Love that Lasts</bookname>
+        <bookid>Rom_5LL</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>9</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Algorithms to Live By: The Computer Science of Human Decisions</bookname>
+        <bookid>Sci_ACS</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>10</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Astrophysics for People in a Hurry</bookname>
+        <bookid>Sci_APH</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>3</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>11</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Algorithms to Live By: The Computer Science of Human Decisions</bookname>
+        <bookid>Sci_ACS</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>12</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Astrophysics for People in a Hurry</bookname>
+        <bookid>Sci_APH</bookid>
+        <recipientID></recipientID>
+        <brtime>17.06.2017</brtime>
+        <duration>0</duration>
+        <status>0</status>
+    </cartInfo>
 </CartInfos>
