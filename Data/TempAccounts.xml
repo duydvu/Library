@@ -1,10 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempAccounts>
-    <account>
-        <name>einstein</name>
-        <password>65696e737465696e</password>
-        <role>R</role>
-        <id>5</id>
-        <active>T</active>
-    </account>
-</TempAccounts>
+<TempAccounts/>

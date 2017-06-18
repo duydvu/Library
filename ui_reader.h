@@ -17,17 +17,20 @@
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpinBox>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolButton>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,31 +39,40 @@ class Ui_reader
 {
 public:
     QWidget *centralwidget;
+    QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *label_3;
     QPushButton *pushButton;
-    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QTabWidget *readerTab;
     QWidget *tab;
     QWidget *tab_4;
+    QGridLayout *gridLayout_4;
     QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout;
     QToolButton *bookBorrow;
-    QToolButton *searchButton;
     QLineEdit *bookSearch;
-    QTextBrowser *textBrowser_6;
     QComboBox *category;
-    QLabel *label_16;
+    QToolButton *searchButton;
+    QHBoxLayout *horizontalLayout_2;
     QTableWidget *bookTable;
+    QVBoxLayout *verticalLayout;
     QLabel *label_17;
+    QGraphicsView *graphicsView;
     QTextBrowser *intro;
     QWidget *borrow;
+    QGridLayout *gridLayout_5;
+    QVBoxLayout *verticalLayout_2;
     QTableWidget *borInfo;
-    QPushButton *send;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QSpinBox *duration;
     QLabel *label_2;
-    QGraphicsView *graphicsView;
+    QHBoxLayout *horizontalLayout_4;
+    QPushButton *send;
     QPushButton *cancel;
     QWidget *perInfo;
+    QGridLayout *gridLayout_3;
     QGroupBox *personalInfo;
     QLabel *name_2;
     QLabel *id_2;
@@ -81,11 +93,24 @@ public:
     QLineEdit *address;
     QLabel *dop;
     QGroupBox *cartInfo;
+    QGridLayout *gridLayout_2;
+    QStackedWidget *stackedWidget;
+    QWidget *page;
+    QVBoxLayout *verticalLayout_4;
     QLabel *label_11;
+    QHBoxLayout *horizontalLayout_6;
     QLabel *label_12;
+    QLabel *label_4;
+    QHBoxLayout *horizontalLayout_7;
     QLabel *label_13;
+    QLabel *label_5;
+    QHBoxLayout *horizontalLayout_8;
     QLabel *label_14;
+    QLabel *label_6;
+    QHBoxLayout *horizontalLayout_9;
     QLabel *label_15;
+    QLabel *label_7;
+    QWidget *page_2;
     QWidget *tab_3;
     QTextBrowser *textBrowser_3;
     QTextBrowser *textBrowser_5;
@@ -98,14 +123,28 @@ public:
     {
         if (reader->objectName().isEmpty())
             reader->setObjectName(QStringLiteral("reader"));
-        reader->resize(1054, 676);
+        reader->resize(821, 586);
         centralwidget = new QWidget(reader);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
+        verticalLayout_3 = new QVBoxLayout(centralwidget);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        horizontalLayout_5->addWidget(label_3);
+
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(670, 14, 81, 31));
-        gridLayout_2 = new QGridLayout(centralwidget);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+
+        horizontalLayout_5->addWidget(pushButton);
+
+        horizontalLayout_5->setStretch(0, 10);
+        horizontalLayout_5->setStretch(1, 1);
+
+        verticalLayout_3->addLayout(horizontalLayout_5);
+
         gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         readerTab = new QTabWidget(centralwidget);
@@ -115,27 +154,37 @@ public:
         readerTab->addTab(tab, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
+        gridLayout_4 = new QGridLayout(tab_4);
+        gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
         groupBox = new QGroupBox(tab_4);
         groupBox->setObjectName(QStringLiteral("groupBox"));
-        groupBox->setGeometry(QRect(20, 20, 451, 71));
+        horizontalLayout = new QHBoxLayout(groupBox);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         bookBorrow = new QToolButton(groupBox);
         bookBorrow->setObjectName(QStringLiteral("bookBorrow"));
-        bookBorrow->setGeometry(QRect(10, 10, 121, 22));
-        searchButton = new QToolButton(groupBox);
-        searchButton->setObjectName(QStringLiteral("searchButton"));
-        searchButton->setGeometry(QRect(320, 40, 101, 22));
+
+        horizontalLayout->addWidget(bookBorrow);
+
         bookSearch = new QLineEdit(groupBox);
         bookSearch->setObjectName(QStringLiteral("bookSearch"));
-        bookSearch->setGeometry(QRect(220, 10, 201, 22));
-        textBrowser_6 = new QTextBrowser(tab_4);
-        textBrowser_6->setObjectName(QStringLiteral("textBrowser_6"));
-        textBrowser_6->setGeometry(QRect(0, 500, 461, 41));
-        category = new QComboBox(tab_4);
+
+        horizontalLayout->addWidget(bookSearch);
+
+        category = new QComboBox(groupBox);
         category->setObjectName(QStringLiteral("category"));
-        category->setGeometry(QRect(120, 110, 221, 22));
-        label_16 = new QLabel(tab_4);
-        label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(30, 110, 71, 21));
+
+        horizontalLayout->addWidget(category);
+
+        searchButton = new QToolButton(groupBox);
+        searchButton->setObjectName(QStringLiteral("searchButton"));
+
+        horizontalLayout->addWidget(searchButton);
+
+
+        gridLayout_4->addWidget(groupBox, 0, 0, 1, 1);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         bookTable = new QTableWidget(tab_4);
         if (bookTable->columnCount() < 6)
             bookTable->setColumnCount(6);
@@ -152,18 +201,41 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         bookTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         bookTable->setObjectName(QStringLiteral("bookTable"));
-        bookTable->setGeometry(QRect(0, 140, 671, 351));
         bookTable->horizontalHeader()->setStretchLastSection(true);
         bookTable->verticalHeader()->setVisible(false);
+
+        horizontalLayout_2->addWidget(bookTable);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label_17 = new QLabel(tab_4);
         label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(710, 110, 61, 21));
+
+        verticalLayout->addWidget(label_17);
+
+        graphicsView = new QGraphicsView(tab_4);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+
+        verticalLayout->addWidget(graphicsView);
+
         intro = new QTextBrowser(tab_4);
         intro->setObjectName(QStringLiteral("intro"));
-        intro->setGeometry(QRect(700, 140, 301, 351));
+
+        verticalLayout->addWidget(intro);
+
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
+
+        gridLayout_4->addLayout(horizontalLayout_2, 1, 0, 1, 1);
+
         readerTab->addTab(tab_4, QString());
         borrow = new QWidget();
         borrow->setObjectName(QStringLiteral("borrow"));
+        gridLayout_5 = new QGridLayout(borrow);
+        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         borInfo = new QTableWidget(borrow);
         if (borInfo->columnCount() < 3)
             borInfo->setColumnCount(3);
@@ -174,35 +246,60 @@ public:
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         borInfo->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         borInfo->setObjectName(QStringLiteral("borInfo"));
-        borInfo->setGeometry(QRect(370, 90, 631, 141));
         borInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
         borInfo->horizontalHeader()->setStretchLastSection(true);
         borInfo->verticalHeader()->setVisible(false);
         borInfo->verticalHeader()->setStretchLastSection(true);
-        send = new QPushButton(borrow);
-        send->setObjectName(QStringLiteral("send"));
-        send->setGeometry(QRect(370, 350, 131, 51));
+
+        verticalLayout_2->addWidget(borInfo);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(-1, -1, 500, -1);
         label = new QLabel(borrow);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(370, 300, 81, 21));
+
+        horizontalLayout_3->addWidget(label);
+
         duration = new QSpinBox(borrow);
         duration->setObjectName(QStringLiteral("duration"));
-        duration->setGeometry(QRect(470, 300, 61, 21));
+
+        horizontalLayout_3->addWidget(duration);
+
         label_2 = new QLabel(borrow);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(550, 300, 47, 21));
-        graphicsView = new QGraphicsView(borrow);
-        graphicsView->setObjectName(QStringLiteral("graphicsView"));
-        graphicsView->setGeometry(QRect(20, 30, 301, 431));
+
+        horizontalLayout_3->addWidget(label_2);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        send = new QPushButton(borrow);
+        send->setObjectName(QStringLiteral("send"));
+
+        horizontalLayout_4->addWidget(send);
+
         cancel = new QPushButton(borrow);
         cancel->setObjectName(QStringLiteral("cancel"));
-        cancel->setGeometry(QRect(520, 350, 121, 51));
+
+        horizontalLayout_4->addWidget(cancel);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_4);
+
+
+        gridLayout_5->addLayout(verticalLayout_2, 0, 0, 1, 1);
+
         readerTab->addTab(borrow, QString());
         perInfo = new QWidget();
         perInfo->setObjectName(QStringLiteral("perInfo"));
+        gridLayout_3 = new QGridLayout(perInfo);
+        gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
         personalInfo = new QGroupBox(perInfo);
         personalInfo->setObjectName(QStringLiteral("personalInfo"));
-        personalInfo->setGeometry(QRect(30, 30, 351, 321));
+        personalInfo->setMinimumSize(QSize(370, 341));
         name_2 = new QLabel(personalInfo);
         name_2->setObjectName(QStringLiteral("name_2"));
         name_2->setGeometry(QRect(20, 20, 55, 16));
@@ -264,24 +361,95 @@ public:
         dop = new QLabel(personalInfo);
         dop->setObjectName(QStringLiteral("dop"));
         dop->setGeometry(QRect(100, 180, 131, 21));
+
+        gridLayout_3->addWidget(personalInfo, 0, 0, 1, 1);
+
         cartInfo = new QGroupBox(perInfo);
         cartInfo->setObjectName(QStringLiteral("cartInfo"));
-        cartInfo->setGeometry(QRect(429, 30, 271, 321));
-        label_11 = new QLabel(cartInfo);
+        cartInfo->setMinimumSize(QSize(369, 341));
+        gridLayout_2 = new QGridLayout(cartInfo);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        stackedWidget = new QStackedWidget(cartInfo);
+        stackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+        page = new QWidget();
+        page->setObjectName(QStringLiteral("page"));
+        verticalLayout_4 = new QVBoxLayout(page);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        label_11 = new QLabel(page);
         label_11->setObjectName(QStringLiteral("label_11"));
-        label_11->setGeometry(QRect(20, 50, 55, 16));
-        label_12 = new QLabel(cartInfo);
+
+        verticalLayout_4->addWidget(label_11);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
+        label_12 = new QLabel(page);
         label_12->setObjectName(QStringLiteral("label_12"));
-        label_12->setGeometry(QRect(30, 80, 55, 16));
-        label_13 = new QLabel(cartInfo);
+
+        horizontalLayout_6->addWidget(label_12);
+
+        label_4 = new QLabel(page);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        horizontalLayout_6->addWidget(label_4);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_6);
+
+        horizontalLayout_7 = new QHBoxLayout();
+        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
+        label_13 = new QLabel(page);
         label_13->setObjectName(QStringLiteral("label_13"));
-        label_13->setGeometry(QRect(30, 100, 55, 16));
-        label_14 = new QLabel(cartInfo);
+
+        horizontalLayout_7->addWidget(label_13);
+
+        label_5 = new QLabel(page);
+        label_5->setObjectName(QStringLiteral("label_5"));
+
+        horizontalLayout_7->addWidget(label_5);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_7);
+
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
+        label_14 = new QLabel(page);
         label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(30, 120, 81, 16));
-        label_15 = new QLabel(cartInfo);
+
+        horizontalLayout_8->addWidget(label_14);
+
+        label_6 = new QLabel(page);
+        label_6->setObjectName(QStringLiteral("label_6"));
+
+        horizontalLayout_8->addWidget(label_6);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_8);
+
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
+        label_15 = new QLabel(page);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(30, 140, 55, 16));
+
+        horizontalLayout_9->addWidget(label_15);
+
+        label_7 = new QLabel(page);
+        label_7->setObjectName(QStringLiteral("label_7"));
+
+        horizontalLayout_9->addWidget(label_7);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_9);
+
+        stackedWidget->addWidget(page);
+        page_2 = new QWidget();
+        page_2->setObjectName(QStringLiteral("page_2"));
+        stackedWidget->addWidget(page_2);
+
+        gridLayout_2->addWidget(stackedWidget, 0, 0, 1, 1);
+
+
+        gridLayout_3->addWidget(cartInfo, 0, 1, 1, 1);
+
         readerTab->addTab(perInfo, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
@@ -305,7 +473,7 @@ public:
         gridLayout->addWidget(readerTab, 0, 0, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+        verticalLayout_3->addLayout(gridLayout);
 
         reader->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(reader);
@@ -314,10 +482,11 @@ public:
 
         retranslateUi(reader);
         QObject::connect(category, SIGNAL(currentIndexChanged(QString)), searchButton, SLOT(click()));
-        QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
+        QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
         readerTab->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(reader);
@@ -326,17 +495,11 @@ public:
     void retranslateUi(QMainWindow *reader)
     {
         reader->setWindowTitle(QApplication::translate("reader", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("reader", "Exit", 0));
+        label_3->setText(QString());
+        pushButton->setText(QApplication::translate("reader", "\304\220\304\203ng xu\341\272\245t", 0));
         readerTab->setTabText(readerTab->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
         bookBorrow->setText(QApplication::translate("reader", "M\306\260\341\273\243n s\303\241ch  ", 0));
-        searchButton->setText(QApplication::translate("reader", "T\303\254m ki\341\272\277m", 0));
-        textBrowser_6->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">Th\303\264ng tin t\303\241c gi\341\272\243</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">T\303\241c quy\341\273\201n</span></p></body></html>", 0));
         category->clear();
         category->insertItems(0, QStringList()
          << QApplication::translate("reader", "T\341\272\245t c\341\272\243", 0)
@@ -367,7 +530,7 @@ public:
          << QApplication::translate("reader", "Truy\341\273\207n tranh", 0)
          << QApplication::translate("reader", "T\341\273\253 \304\221i\341\273\203n", 0)
         );
-        label_16->setText(QApplication::translate("reader", "Chuy\303\252n m\341\273\245c", 0));
+        searchButton->setText(QApplication::translate("reader", "T\303\254m ki\341\272\277m", 0));
         QTableWidgetItem *___qtablewidgetitem = bookTable->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("reader", "T\341\273\261a s\303\241ch", 0));
         QTableWidgetItem *___qtablewidgetitem1 = bookTable->horizontalHeaderItem(1);
@@ -386,9 +549,9 @@ public:
         ___qtablewidgetitem6->setText(QApplication::translate("reader", "M\303\243 s\303\241ch c\341\272\247n m\306\260\341\273\243n", 0));
         QTableWidgetItem *___qtablewidgetitem7 = borInfo->horizontalHeaderItem(2);
         ___qtablewidgetitem7->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
-        send->setText(QApplication::translate("reader", "G\341\273\255i phi\341\272\277u m\306\260\341\273\243n", 0));
         label->setText(QApplication::translate("reader", "Th\341\273\235i gian m\306\260\341\273\243n", 0));
         label_2->setText(QApplication::translate("reader", "Ng\303\240y", 0));
+        send->setText(QApplication::translate("reader", "G\341\273\255i phi\341\272\277u m\306\260\341\273\243n", 0));
         cancel->setText(QApplication::translate("reader", "H\303\271y", 0));
         readerTab->setTabText(readerTab->indexOf(borrow), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
         personalInfo->setTitle(QApplication::translate("reader", "Th\303\264ng tin c\341\273\247a b\341\272\241n", 0));
@@ -407,9 +570,13 @@ public:
         cartInfo->setTitle(QApplication::translate("reader", "Chi ti\341\272\277t phi\341\272\277u m\306\260\341\273\243n", 0));
         label_11->setText(QApplication::translate("reader", "1. L\341\272\247n 1", 0));
         label_12->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u", 0));
+        label_4->setText(QApplication::translate("reader", "TextLabel", 0));
         label_13->setText(QApplication::translate("reader", "T\303\252n s\303\241ch", 0));
+        label_5->setText(QApplication::translate("reader", "TextLabel", 0));
         label_14->setText(QApplication::translate("reader", "Ng\303\240y m\306\260\341\273\243n", 0));
+        label_6->setText(QApplication::translate("reader", "TextLabel", 0));
         label_15->setText(QApplication::translate("reader", "H\341\272\241n tr\341\272\243", 0));
+        label_7->setText(QApplication::translate("reader", "TextLabel", 0));
         readerTab->setTabText(readerTab->indexOf(perInfo), QApplication::translate("reader", "Th\303\264ng tin c\303\241 nh\303\242n", 0));
         textBrowser_3->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

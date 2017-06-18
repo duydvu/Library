@@ -23,9 +23,11 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
+protected:
 
     void resizeEvent(QResizeEvent* event);
+
+private slots:
 
     void on_FindBooksButton_clicked();
 
@@ -50,6 +52,10 @@ private slots:
     void on_Help_clicked();
 
     void on_About_clicked();
+
+signals:
+
+    void sigShowEvent();
 
 private:
     Ui::MainWindow *ui;

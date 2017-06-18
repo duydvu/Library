@@ -20,117 +20,8 @@
       <item row="0" column="0">
        <widget class="QTabWidget" name="fyfu11212">
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
-        <widget class="QWidget" name="tab_4">
-         <attribute name="title">
-          <string>Thư viện sách</string>
-         </attribute>
-         <layout class="QGridLayout" name="gridLayout_8">
-          <item row="0" column="0">
-           <widget class="QGroupBox" name="groupBox">
-            <property name="title">
-             <string/>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <item>
-              <widget class="QToolButton" name="toolButton_2">
-               <property name="text">
-                <string>Thêm</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButton_3">
-               <property name="text">
-                <string>Sửa</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QToolButton" name="toolButton_4">
-               <property name="text">
-                <string>Xóa</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QTableWidget" name="tableWidget">
-            <row>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>6</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>7</string>
-             </property>
-            </row>
-            <row>
-             <property name="text">
-              <string>8</string>
-             </property>
-            </row>
-            <column>
-             <property name="text">
-              <string>Mã</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Chuyên mục</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Chuyên mục con</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Next</string>
-             </property>
-            </column>
-            <item row="0" column="3">
-             <property name="text">
-              <string/>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QTextBrowser" name="textBrowser_7"/>
-          </item>
-         </layout>
-        </widget>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
           <string>Thông tin cá nhân</string>
@@ -138,6 +29,9 @@
          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,10">
           <item>
            <widget class="QTableWidget" name="tableWidget_2">
+            <attribute name="verticalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
             <row>
              <property name="text">
               <string/>
@@ -271,243 +165,637 @@
          <attribute name="title">
           <string>Quản lý sách</string>
          </attribute>
-         <widget class="QGroupBox" name="groupBox_2">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>10</y>
-            <width>451</width>
-            <height>71</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string/>
-          </property>
-          <widget class="QToolButton" name="toolButton_5">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>10</y>
-             <width>121</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Thêm</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="toolButton_6">
-           <property name="geometry">
-            <rect>
-             <x>180</x>
-             <y>10</y>
-             <width>121</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Sửa</string>
-           </property>
-          </widget>
-          <widget class="QToolButton" name="toolButton_7">
-           <property name="geometry">
-            <rect>
-             <x>350</x>
-             <y>10</y>
-             <width>101</width>
-             <height>22</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Xóa</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QTableWidget" name="tableWidget_3">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>70</y>
-            <width>671</width>
-            <height>281</height>
-           </rect>
-          </property>
-          <row>
-           <property name="text">
-            <string>1</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <column>
-           <property name="text">
-            <string>Mã</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Chuyên mục</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Next</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Nhà xuất bản</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Ngày nhập</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Tổng số</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Đã cho mượn</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Hiện còn</string>
-           </property>
-          </column>
-          <item row="0" column="2">
-           <property name="text">
-            <string/>
-           </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,2">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLineEdit" name="lineEdit_11"/>
+              </item>
+              <item>
+               <widget class="QComboBox" name="category">
+                <item>
+                 <property name="text">
+                  <string>Tất cả</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Bách khoa toàn thư</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Châm biếm</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Du lịch</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Địa lý</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Hành động và phiêu lưu</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Huyền bí</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Khoa học</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Khoa học viễn tưởng</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kịch</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kinh dị</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Kinh tế</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Lãng mạn</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Lịch sử</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Nghệ thuật</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Nhật ký</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Sách nấu ăn</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Sức khỏe</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tạp chí</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Thơ</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tiểu sử</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Toán</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Tôn giáo</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Chính trị</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Trẻ em</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Truyện tranh</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Từ điển</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tableWidget_3">
+                <attribute name="horizontalHeaderStretchLastSection">
+                 <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>Mã sách</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Tựa sách</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>Thêm</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QFrame" name="frame_5">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_9">
+               <item row="0" column="0" colspan="2">
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="0" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_14">
+                   <item>
+                    <widget class="QLabel" name="label_22">
+                     <property name="minimumSize">
+                      <size>
+                       <width>101</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Tên:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_5"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="0" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_15">
+                   <item>
+                    <widget class="QLabel" name="label_23">
+                     <property name="minimumSize">
+                      <size>
+                       <width>101</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Tác giả:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_7"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="1" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <item>
+                    <widget class="QLabel" name="label_24">
+                     <property name="minimumSize">
+                      <size>
+                       <width>101</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Mã:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_8"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="1" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <item>
+                    <widget class="QLabel" name="label_25">
+                     <property name="minimumSize">
+                      <size>
+                       <width>101</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Số lượng:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_9"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLabel" name="label_26">
+                     <property name="minimumSize">
+                      <size>
+                       <width>101</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string>Nhà xuất bản:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineEdit_10"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="1">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19">
+                   <item>
+                    <widget class="QLabel" name="label_33">
+                     <property name="text">
+                      <string>Chuyên mục:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_34">
+                     <property name="minimumSize">
+                      <size>
+                       <width>128</width>
+                       <height>16</height>
+                      </size>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="0">
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_20">
+                   <item>
+                    <widget class="QLabel" name="label_35">
+                     <property name="text">
+                      <string>Đã cho mượn:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_36">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <item>
+                    <widget class="QLabel" name="label_37">
+                     <property name="text">
+                      <string>Hiện còn:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_38">
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_7">
+                   <item>
+                    <widget class="QLabel" name="label_39">
+                     <property name="text">
+                      <string>Sơ lược:</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QTextEdit" name="textEdit_2"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item row="1" column="1">
+                <widget class="QFrame" name="frame_7">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_10">
+                  <property name="topMargin">
+                   <number>200</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_7">
+                    <property name="text">
+                     <string>Sửa</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="pushButton_8">
+                    <property name="text">
+                     <string>Xóa</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </item>
-         </widget>
+         </layout>
         </widget>
         <widget class="QWidget" name="tab_3">
          <attribute name="title">
           <string>Quản lý người dùng</string>
          </attribute>
-         <layout class="QGridLayout" name="gridLayout_7">
-          <item row="0" column="0">
-           <widget class="QGroupBox" name="groupBox_3">
-            <property name="title">
-             <string/>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QWidget" name="widget_2" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <widget class="QLineEdit" name="searchUsers">
+                 <property name="placeholderText">
+                  <string>Tìm kiếm</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="searchButton">
+                 <property name="text">
+                  <string>Tìm</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTableWidget" name="usersTable">
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderCascadingSectionResizes">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string>Mã số</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Tài khoản</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Họ và tên</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Tình trạng</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_4">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout_6">
-             <item row="0" column="0">
-              <widget class="QToolButton" name="toolButton_9">
-               <property name="text">
-                <string>Sửa</string>
-               </property>
-              </widget>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_11">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_7">
+                 <property name="text">
+                  <string>Họ và tên:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_12">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
-             <item row="0" column="1">
-              <widget class="QToolButton" name="toolButton_10">
-               <property name="text">
-                <string>Xóa</string>
-               </property>
-              </widget>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_8">
+                 <property name="text">
+                  <string>Giới tính:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_13">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_9">
+                 <property name="text">
+                  <string>Ngày sinh:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_14">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_40">
+                 <property name="text">
+                  <string>Email:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_15">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_41">
+                 <property name="text">
+                  <string>Ngày tham gia:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_16">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_42">
+                 <property name="text">
+                  <string>Địa chỉ:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_17">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="1,4">
+               <item>
+                <widget class="QLabel" name="label_43">
+                 <property name="text">
+                  <string>Tình trạng:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_18">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_29">
+               <item>
+                <widget class="QPushButton" name="pushButton_4">
+                 <property name="text">
+                  <string>Đổi mật khẩu</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="text">
+                  <string>Sửa</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QGroupBox" name="groupBox_8">
-            <property name="title">
-             <string>Tìm kiếm độc giả</string>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout">
-             <item>
-              <widget class="QLineEdit" name="lineEdit"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_2">
-               <property name="text">
-                <string>Search</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QTableWidget" name="tableWidget_4">
-            <column>
-             <property name="text">
-              <string>Mã</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Tài khoản</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Họ Tên</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Giới tính</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Ngày sinh</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Email</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Ngày tham gia</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Tình trạng</string>
-             </property>
-            </column>
            </widget>
           </item>
          </layout>
@@ -816,73 +1104,94 @@
          <attribute name="title">
           <string>Quản lý đăng ký mới</string>
          </attribute>
-         <widget class="QPushButton" name="Deny">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>60</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Từ chối</string>
-          </property>
-         </widget>
-         <widget class="QTableWidget" name="registrationTable">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>100</y>
-            <width>781</width>
-            <height>441</height>
-           </rect>
-          </property>
-          <attribute name="horizontalHeaderStretchLastSection">
-           <bool>true</bool>
-          </attribute>
-          <attribute name="verticalHeaderVisible">
-           <bool>false</bool>
-          </attribute>
-          <column>
-           <property name="text">
-            <string/>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Tài khoản</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Vai trò</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Họ và tên</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Ngày đăng ký</string>
-           </property>
-          </column>
-         </widget>
-         <widget class="QPushButton" name="Agree">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>10</y>
-            <width>75</width>
-            <height>23</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Chấp nhận</string>
-          </property>
-         </widget>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="1,1,3">
+            <item>
+             <widget class="QPushButton" name="Agree">
+              <property name="text">
+               <string>Chấp nhận</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="Deny">
+              <property name="text">
+               <string>Từ chối</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <widget class="QTableWidget" name="registrationTable">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string/>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tài khoản</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Vai trò</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Họ và tên</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Ngày đăng ký</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Giới tính</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Ngày sinh</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Email</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Địa chỉ</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
       </item>

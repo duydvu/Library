@@ -44,10 +44,14 @@ private slots:
 
     void on_infringe_clicked();
 
+    void on_searchButton_clicked();
+
 private:
     Ui::librarian *ui;
 
     void closeEvent (QCloseEvent *event);
+
+    void regisTable();
 };
 
 #endif // LIBRARIAN_H

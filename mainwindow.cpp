@@ -8,7 +8,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->BooksTable->setColumnWidth(0,500);
 
     QPixmap pixmap("Images/back.png");
     QIcon ButtonIcon(pixmap);
@@ -41,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->BooksTable->hide();
     ui->frame_3->hide();
 
-
     loadBooksFile();
     loadAccountsFile();
     loadUsersFile();
@@ -57,9 +55,13 @@ MainWindow::~MainWindow()
 
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
-   QMainWindow::resizeEvent(event);
+    ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
+    ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
+    QMainWindow::resizeEvent(event);
 }
-
 
 void MainWindow::loadBooksFile()
 {
@@ -153,12 +155,9 @@ void MainWindow::loadAccountsFile()
             {
                 a.setID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "active")
+            if(xmlReader->name() == "status")
             {
-                QString b=xmlReader->readElementText();
-                if(b=="T")
-                    a.setStatus(true);
-                else a.setStatus(false);
+                a.setStatus(xmlReader->readElementText().toInt());
                 accounts.append(a);
                 a.clear();
             }
@@ -214,11 +213,8 @@ void MainWindow::loadTempAccountsFile()
             }
             if(xmlReader->name() == "active")
             {
-                QString b=xmlReader->readElementText();
-                if(b=="T")
-                    a.setStatus(true);
-                else a.setStatus(false);
-                temp_accounts.append(a);
+                a.setStatus(xmlReader->readElementText().toInt());
+                accounts.append(a);
                 a.clear();
             }
         }
@@ -654,9 +650,7 @@ void MainWindow::saveAccountsFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getStatus())
-            xmlWriter->writeTextElement("active", "T");
-        else xmlWriter->writeTextElement("active", "F");
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -721,9 +715,7 @@ void MainWindow::saveTempAccountsFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getStatus())
-            xmlWriter->writeTextElement("active", "T");
-        else xmlWriter->writeTextElement("active", "F");
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -831,6 +823,11 @@ void MainWindow::on_Search_clicked()
     ui->BooksTable->show();
     ui->frame_3->show();
     ui->frame_2->hide();
+    ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
+    ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
 }
 
 void MainWindow::on_Back_clicked()

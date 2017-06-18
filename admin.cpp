@@ -8,29 +8,11 @@ Admin::Admin(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Libpro");
     Admin::setWindowState(Qt::WindowMaximized);
+    ui->staffTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->usersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->registrationTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->CartInfos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    QLinkedList<Account>::iterator it=temp_accounts.begin();
-    int cnt=0;
-    for(;it!=temp_accounts.end();it++)
-    {
-        ui->registrationTable->insertRow(cnt);
-        QTableWidgetItem *item = new QTableWidgetItem("");
-        item->setCheckState(Qt::Unchecked);
-        ui->registrationTable->setItem(cnt, 0, item);
-        QLinkedList<User>::iterator it1;
-        int id=(*it).getID().toInt();
-        if(id>=users.size())
-            it1=temp_users.begin()+id-users.size();
-        else it1=users.begin()+id;
-        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
-        if((*it).getRole()=="L")
-            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
-        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
-        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
-        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
-        cnt++;
-    }
+    regisTable();
     on_newCart_clicked();
 }
 
@@ -45,7 +27,33 @@ void Admin::closeEvent (QCloseEvent *event)
     event->accept();
 }
 
-
+void Admin::regisTable()
+{
+    ui->registrationTable->setRowCount(0);
+    QLinkedList<Account>::iterator it=temp_accounts.begin();
+    int cnt=0;
+    for(;it!=temp_accounts.end();it++)
+    {
+        ui->registrationTable->insertRow(cnt);
+        QTableWidgetItem *item = new QTableWidgetItem("");
+        item->setCheckState(Qt::Unchecked);
+        ui->registrationTable->setItem(cnt, 0, item);
+        QLinkedList<User>::iterator it1;
+        int id=(*it).getID().toInt();
+        it1=temp_users.begin()+id;
+        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+        if((*it).getRole()=="L")
+            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
+        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
+        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
+        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
+        ui->registrationTable->setItem(cnt, 5, new QTableWidgetItem((*it1).getDateofBirth()));
+        ui->registrationTable->setItem(cnt, 6, new QTableWidgetItem((*it1).getSex()));
+        ui->registrationTable->setItem(cnt, 7, new QTableWidgetItem((*it1).getEmail()));
+        ui->registrationTable->setItem(cnt, 8, new QTableWidgetItem((*it1).getAddress()));
+        cnt++;
+    }
+}
 
 void Admin::on_searchButton_clicked()
 {
@@ -83,13 +91,14 @@ void Admin::on_searchButton_clicked()
     QLinkedList<Account>::iterator it=accounts.begin();
     int cnt=0;
     ui->usersTable->setRowCount(0);
+    ui->usersTable->setSortingEnabled(false);
     for(;it!=accounts.end();it++)
     {
         QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
         if((*it).getRole()!="R") continue;
-        QString s[]={(*it1).getID(), (*it1).getName(), (*it1).getAddress(), (*it1).getEmail()};
+        QString s[]={(*it).getAcc(), (*it1).getName()};
         int m=0, i=0, pre=cnt;
-        for(int j=0; j<4; j++)
+        for(int j=0; j<2; j++)
         {
             while(m+i < s[j].length())
             {
@@ -102,14 +111,15 @@ void Admin::on_searchButton_clicked()
                         ui->usersTable->setItem(cnt, 0, new QTableWidgetItem((*it1).getID()));
                         ui->usersTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
                         ui->usersTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
-                        ui->usersTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getAddress()));
-                        ui->usersTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDateofBirth()));
-                        ui->usersTable->setItem(cnt, 5, new QTableWidgetItem((*it1).getEmail()));
-                        ui->usersTable->setItem(cnt, 6, new QTableWidgetItem((*it1).getSex()));
-                        ui->usersTable->setItem(cnt, 7, new QTableWidgetItem((*it1).getDoP()));
-                        if((*it).getStatus())
-                            ui->usersTable->setItem(cnt, 8, new QTableWidgetItem("Kích hoạt"));
-                        else ui->usersTable->setItem(cnt, 8, new QTableWidgetItem("Đã hủy"));
+                        QString status;
+                        switch((*it).getStatus())
+                        {
+                        case 0:status="Đã kích hoạt";break;
+                        case 1:status="Bị khóa";break;
+                        case 2:status="Cấm mượn";break;
+                        case 3:status="Tạm khóa";break;
+                        }
+                        ui->usersTable->setItem(cnt, 3, new QTableWidgetItem(status));
                         cnt++;
                         break;
                     }
@@ -132,6 +142,7 @@ void Admin::on_searchButton_clicked()
             m=0, i=0;
         }
     }
+    ui->usersTable->setSortingEnabled(true);
     delete table;
 }
 
@@ -153,28 +164,7 @@ void Admin::on_Agree_clicked()
             }
             temp_accounts.erase(a);
         }
-    ui->registrationTable->setRowCount(0);
-    QLinkedList<Account>::iterator it=temp_accounts.begin();
-    int cnt=0;
-    for(;it!=temp_accounts.end();it++)
-    {
-        ui->registrationTable->insertRow(cnt);
-        QTableWidgetItem *item = new QTableWidgetItem("");
-        item->setCheckState(Qt::Unchecked);
-        ui->registrationTable->setItem(cnt, 0, item);
-        QLinkedList<User>::iterator it1;
-        int id=(*it).getID().toInt();
-        if(id>=users.size())
-            it1=temp_users.begin()+id-users.size();
-        else it1=users.begin()+id;
-        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
-        if((*it).getRole()=="L")
-            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
-        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
-        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
-        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
-        cnt++;
-    }
+    regisTable();
 }
 
 
@@ -192,28 +182,7 @@ void Admin::on_Deny_clicked()
             }
             temp_accounts.erase(a);
         }
-    ui->registrationTable->setRowCount(0);
-    QLinkedList<Account>::iterator it=temp_accounts.begin();
-    int cnt=0;
-    for(;it!=temp_accounts.end();it++)
-    {
-        ui->registrationTable->insertRow(cnt);
-        QTableWidgetItem *item = new QTableWidgetItem("");
-        item->setCheckState(Qt::Unchecked);
-        ui->registrationTable->setItem(cnt, 0, item);
-        QLinkedList<User>::iterator it1;
-        int id=(*it).getID().toInt();
-        if(id>=users.size())
-            it1=temp_users.begin()+id-users.size();
-        else it1=users.begin()+id;
-        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
-        if((*it).getRole()=="L")
-            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
-        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
-        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
-        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
-        cnt++;
-    }
+    regisTable();
 }
 
 void Admin::on_CartInfos_cellClicked(int row, int column)
@@ -441,22 +410,20 @@ void Admin::on_name_returnPressed()
     {
         QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
         if((*it).getRole()!="L") continue;
-        QString s[]={(*it1).getID(), (*it1).getName(), (*it1).getAddress(), (*it1).getEmail()};
+        QString s=(*it1).getName();
         int m=0, i=0, pre=cnt;
         for(int j=0; j<4; j++)
         {
-            while(m+i < s[j].length())
+            while(m+i < s.length())
             {
-                if(compare(word[i], s[j][m+i]))
+                if(compare(word[i], s[m+i]))
                 {
                     i++;
                     if(i==word.length())
                     {
                         ui->staffTable->insertRow(cnt);
-                        QTableWidgetItem *item = new QTableWidgetItem("");
-                        item->setCheckState(Qt::Unchecked);
-                        ui->staffTable->setItem(cnt, 0, item);
-                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+                        ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
+                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
                         ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
                         cnt++;
                         break;
@@ -519,6 +486,7 @@ void Admin::on_id_returnPressed()
     QLinkedList<Account>::iterator it=accounts.begin();
     int cnt=0;
     ui->staffTable->setRowCount(0);
+    ui->staffTable->setSortingEnabled(false);
     for(;it!=accounts.end();it++)
     {
         QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
@@ -535,12 +503,9 @@ void Admin::on_id_returnPressed()
                     if(i==word.length())
                     {
                         ui->staffTable->insertRow(cnt);
-                        QTableWidgetItem *item = new QTableWidgetItem("");
-                        item->setCheckState(Qt::Unchecked);
-                        ui->staffTable->setItem(cnt, 0, item);
-                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
-                        ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAcc()));
-                        ui->staffTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
+                        ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
+                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+                        ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
                         cnt++;
                         break;
                     }
@@ -563,12 +528,13 @@ void Admin::on_id_returnPressed()
             m=0, i=0;
         }
     }
+    ui->staffTable->setSortingEnabled(true);
     delete table;
 }
 
 void Admin::on_staffTable_cellClicked(int row, int column)
 {
-    QString id=ui->staffTable->item(row,1)->text();
+    QString id=ui->staffTable->item(row,0)->text();
     QLinkedList<User>::iterator it=users.begin()+id.toInt();
     ui->s_id->setText((*it).getID());
     ui->s_name->setText((*it).getName());

@@ -60,6 +60,8 @@ public:
 
         label_3 = new QLabel(About);
         label_3->setObjectName(QStringLiteral("label_3"));
+        label_3->setStyleSheet(QStringLiteral("margin-bottom: 10px;"));
+        label_3->setAlignment(Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft);
 
         verticalLayout->addWidget(label_3);
 

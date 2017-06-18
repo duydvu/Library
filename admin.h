@@ -56,6 +56,8 @@ private:
     Ui::Admin *ui;
 
     void closeEvent (QCloseEvent *event);
+
+    void regisTable();
 };
 
 #endif // ADMIN_H

@@ -52,7 +52,7 @@ background-color: #1DE9B6;</string>
     </widget>
    </item>
    <item row="2" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -111,7 +111,7 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
    <item row="3" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,5">
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -159,7 +159,7 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
    <item row="4" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,5">
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,4">
      <property name="spacing">
       <number>0</number>
      </property>
@@ -207,7 +207,7 @@ p, li { white-space: pre-wrap; }
     </layout>
    </item>
    <item row="5" column="0">
-    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,5">
+    <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,4">
      <property name="spacing">
       <number>0</number>
      </property>

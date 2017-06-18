@@ -34,8 +34,14 @@ background-color: #1DE9B6;</string>
        </item>
        <item>
         <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">margin-bottom: 10px;</string>
+         </property>
          <property name="text">
           <string>Release Build 18-06-2017</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
          </property>
         </widget>
        </item>

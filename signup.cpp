@@ -53,6 +53,6 @@ Account SignUp::getAccount()
     if(ui->librarian->isChecked())
         a.setRole("L");
     else a.setRole("R");
-    a.setStatus(true);
+    a.setStatus(0);
     return a;
 }

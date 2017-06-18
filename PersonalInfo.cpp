@@ -27,7 +27,7 @@ User personalinfo::getUser()
     a.setDateofBirth(ToString(ui->dateOfBirth->date()));
     a.setAddress(ui->address->text());
     a.setEmail(ui->email->text());
-    QString id = QString::number(temp_users.size()+users.size());
+    QString id = QString::number(temp_users.size());
     a.setID(id);
     a.setDoP(ToString(QDate::currentDate()));
     return a;

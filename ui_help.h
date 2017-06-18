@@ -112,7 +112,7 @@ public:
         horizontalLayout->addWidget(textBrowser);
 
         horizontalLayout->setStretch(0, 1);
-        horizontalLayout->setStretch(1, 5);
+        horizontalLayout->setStretch(1, 4);
 
         gridLayout->addLayout(horizontalLayout, 2, 0, 1, 1);
 
@@ -143,7 +143,7 @@ public:
         horizontalLayout_2->addWidget(textBrowser_2);
 
         horizontalLayout_2->setStretch(0, 1);
-        horizontalLayout_2->setStretch(1, 5);
+        horizontalLayout_2->setStretch(1, 4);
 
         gridLayout->addLayout(horizontalLayout_2, 3, 0, 1, 1);
 
@@ -174,7 +174,7 @@ public:
         horizontalLayout_3->addWidget(textBrowser_3);
 
         horizontalLayout_3->setStretch(0, 1);
-        horizontalLayout_3->setStretch(1, 5);
+        horizontalLayout_3->setStretch(1, 4);
 
         gridLayout->addLayout(horizontalLayout_3, 4, 0, 1, 1);
 
@@ -208,7 +208,7 @@ public:
         horizontalLayout_4->addWidget(textBrowser_4);
 
         horizontalLayout_4->setStretch(0, 1);
-        horizontalLayout_4->setStretch(1, 5);
+        horizontalLayout_4->setStretch(1, 4);
 
         gridLayout->addLayout(horizontalLayout_4, 5, 0, 1, 1);
 

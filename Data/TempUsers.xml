@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempUsers>
-    <user>
-        <name>Einstein</name>
-        <id>5</id>
-        <DoB>01.01.1998</DoB>
-        <sex>nam</sex>
-        <address>German</address>
-        <email>einstein@physics.com</email>
-        <DoP>13.06.2017</DoP>
-    </user>
-</TempUsers>
+<TempUsers/>

@@ -321,6 +321,7 @@ debug/moc_mainwindow.cpp: E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QMainWi
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
 		signup.h \
 		help.h \
+		about.h \
 		PersonalInfo.h \
 		admin.h \
 		librarian.h \
@@ -1547,6 +1548,7 @@ debug/main.o: main.cpp mainwindow.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
 		signup.h \
 		help.h \
+		about.h \
 		PersonalInfo.h \
 		admin.h \
 		librarian.h \
@@ -1703,74 +1705,12 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
 		signup.h \
 		help.h \
+		about.h \
 		PersonalInfo.h \
 		admin.h \
 		librarian.h \
 		reader.h \
 		ui_mainwindow.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QComboBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QFrame \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpainter.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsscene.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGridLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTableWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtablewidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtableview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTextBrowser \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextbrowser.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextdocument.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
@@ -1953,54 +1893,7 @@ debug/signin.o: signin.cpp signin.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
-		ui_signin.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QVBoxLayout
+		ui_signin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\signin.o signin.cpp
 
 debug/book.o: book.cpp book.h \
@@ -2180,49 +2073,7 @@ debug/signup.o: signup.cpp signup.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
-		ui_signup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGroupBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgroupbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QRadioButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qradiobutton.h
+		ui_signup.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\signup.o signup.cpp
 
 debug/data.o: data.cpp data.h \
@@ -2527,55 +2378,6 @@ debug/PersonalInfo.o: PersonalInfo.cpp PersonalInfo.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvector2d.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		ui_PersonalInfo.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qicon.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QDateEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdatetimeedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGroupBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgroupbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qframe.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QRadioButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qradiobutton.h \
 		data.h \
 		account.h \
 		book.h \
@@ -2591,8 +2393,11 @@ debug/PersonalInfo.o: PersonalInfo.cpp PersonalInfo.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qmessagebox.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/QCloseEvent \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/QIcon \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qicon.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QScrollArea \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qframe.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QPropertyAnimation \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qpropertyanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qvariantanimation.h \
@@ -2742,70 +2547,7 @@ debug/admin.o: admin.cpp admin.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
-		ui_admin.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QFormLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qformlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QFrame \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGridLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGroupBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgroupbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QRadioButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qradiobutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QSpacerItem \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTabWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTableView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtableview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTableWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtablewidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget
+		ui_admin.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\admin.o admin.cpp
 
 debug/reader.o: reader.cpp reader.h \
@@ -2948,74 +2690,7 @@ debug/reader.o: reader.cpp reader.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
-		ui_reader.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QComboBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qcombobox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpainter.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsscene.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGridLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGroupBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgroupbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QSpinBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTabWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTableWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtablewidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtableview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTextBrowser \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextbrowser.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextdocument.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QToolButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget
+		ui_reader.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\reader.o reader.cpp
 
 debug/librarian.o: librarian.cpp librarian.h \
@@ -3158,71 +2833,7 @@ debug/librarian.o: librarian.cpp librarian.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractanimation.h \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGraphicsPixmapItem \
 		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgraphicsitem.h \
-		ui_librarian.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/QVariant \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QAction \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qaction.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qactiongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QApplication \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qeventloop.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qguiapplication.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QFrame \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGridLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QGroupBox \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qgroupbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QHeaderView \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qabstractitemmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qitemselectionmodel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractitemdelegate.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyleoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractspinbox.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qvalidator.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtCore/qregularexpression.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractslider.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstyle.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLabel \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlabel.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QLineEdit \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextcursor.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextformat.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qpen.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextoption.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QPushButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QRadioButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qradiobutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QStatusBar \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTabWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTableWidget \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtablewidget.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtableview.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QTextBrowser \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextbrowser.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtextedit.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtGui/qtextdocument.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QToolButton \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/qtoolbutton.h \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
-		E:/Qt/Qt5.6.2/5.6/mingw49_32/include/QtWidgets/QWidget
+		ui_librarian.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\librarian.o librarian.cpp
 
 debug/cartinfo.o: cartinfo.cpp cartinfo.h \
