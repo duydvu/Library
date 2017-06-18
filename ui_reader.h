@@ -36,7 +36,8 @@ class Ui_reader
 {
 public:
     QWidget *centralwidget;
-    QWidget *gridLayoutWidget;
+    QPushButton *pushButton;
+    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QTabWidget *readerTab;
     QWidget *tab;
@@ -91,7 +92,6 @@ public:
     QWidget *tabsecond;
     QTextBrowser *textBrowser;
     QTextBrowser *textBrowser_2;
-    QPushButton *pushButton;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *reader)
@@ -101,13 +101,14 @@ public:
         reader->resize(1054, 676);
         centralwidget = new QWidget(reader);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
-        gridLayoutWidget = new QWidget(centralwidget);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 10, 1031, 641));
-        gridLayout = new QGridLayout(gridLayoutWidget);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(670, 14, 81, 31));
+        gridLayout_2 = new QGridLayout(centralwidget);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout = new QGridLayout();
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        readerTab = new QTabWidget(gridLayoutWidget);
+        readerTab = new QTabWidget(centralwidget);
         readerTab->setObjectName(QStringLiteral("readerTab"));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -303,9 +304,9 @@ public:
 
         gridLayout->addWidget(readerTab, 0, 0, 1, 1);
 
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(670, 14, 81, 31));
+
+        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
+
         reader->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(reader);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -316,7 +317,7 @@ public:
         QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
 
-        readerTab->setCurrentIndex(2);
+        readerTab->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(reader);
@@ -325,6 +326,7 @@ public:
     void retranslateUi(QMainWindow *reader)
     {
         reader->setWindowTitle(QApplication::translate("reader", "MainWindow", 0));
+        pushButton->setText(QApplication::translate("reader", "Exit", 0));
         readerTab->setTabText(readerTab->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
         bookBorrow->setText(QApplication::translate("reader", "M\306\260\341\273\243n s\303\241ch  ", 0));
@@ -341,12 +343,14 @@ public:
          << QApplication::translate("reader", "B\303\241ch khoa to\303\240n th\306\260", 0)
          << QApplication::translate("reader", "Ch\303\242m bi\341\272\277m", 0)
          << QApplication::translate("reader", "Du l\341\273\213ch", 0)
+         << QApplication::translate("reader", "\304\220\341\273\213a l\303\275", 0)
          << QApplication::translate("reader", "H\303\240nh \304\221\341\273\231ng v\303\240 phi\303\252u l\306\260u", 0)
          << QApplication::translate("reader", "Huy\341\273\201n b\303\255", 0)
          << QApplication::translate("reader", "Khoa h\341\273\215c", 0)
          << QApplication::translate("reader", "Khoa h\341\273\215c vi\341\273\205n t\306\260\341\273\237ng", 0)
          << QApplication::translate("reader", "K\341\273\213ch", 0)
          << QApplication::translate("reader", "Kinh d\341\273\213", 0)
+         << QApplication::translate("reader", "Kinh t\341\272\277", 0)
          << QApplication::translate("reader", "L\303\243ng m\341\272\241n", 0)
          << QApplication::translate("reader", "L\341\273\213ch s\341\273\255", 0)
          << QApplication::translate("reader", "Ngh\341\273\207 thu\341\272\255t", 0)
@@ -429,7 +433,6 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:7.8pt;\">H\341\273\230P TH\306\257 G\303\223P \303\235</span></p></body></html>", 0));
         readerTab->setTabText(readerTab->indexOf(tabsecond), QApplication::translate("reader", "Li\303\252n h\341\273\207", 0));
-        pushButton->setText(QApplication::translate("reader", "Exit", 0));
     } // retranslateUi
 
 };

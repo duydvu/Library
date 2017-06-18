@@ -14,7 +14,7 @@
         <quantity>19</quantity>
         <intro>Offred is a Handmaid in the Republic of Gilead. She may leave the home of the Commander and his wife once a day to walk to food markets whose signs are now pictures instead of words because women are no longer allowed to read. She must lie on her back once a month and pray that the Commander makes her pregnant, because in an age of declining births, Offred and the other Handmaids are valued only if their ovaries are viable. Offred can remember the years before, when she lived and made love with her husband, Luke; when she played with and protected her daughter; when she had a job, money of her own, and access to knowledge. But all of that is gone now... </intro>
         <publisher>Anchor Books</publisher>
-        <id>Nol_HmT</id>
+        <id>Fic_HmT</id>
     </book>
     <book>
         <name>Thirteen Reasons Why</name>
@@ -69,7 +69,7 @@ While you wait for your morning coffee to brew, for the bus, the train, or a pla
         <intro>A fantastic starter set for new Tolkien fans or readers interested in rediscovering the magic of Middle-earth, this three-volume box set features paperback editions of the complete trilogy -- The Fellowship of the Ring, The Two Towers, and The Return of the King -- each with art from the New Line Productions feature film on the cover.
         J.R.R. Tolkien's The Lord of the Rings trilogy is a genuine masterpiece. The most widely read and influential fantasy epic of all time, it is also quite simply one of the most memorable and beloved tales ever told. Originally published in 1954, The Lord of the Rings set the framework upon which all epic/quest fantasy since has been built. Through the urgings of the enigmatic wizard Gandalf, young hobbit Frodo Baggins embarks on an urgent, incredibly treacherous journey to destroy the One Ring. This ring -- created and then lost by the Dark Lord, Sauron, centuries earlier -- is a weapon of evil, one that Sauron desperately wants returned to him. With the power of the ring once again his own, the Dark Lord will unleash his wrath upon all of Middle-earth. The only way to prevent this horrible fate from becoming reality is to return the Ring to Mordor, the only place it can be destroyed. Unfortunately for our heroes, Mordor is also Sauron's lair. The Lord of the Rings trilogy is essential reading not only for fans of fantasy but for lovers of classic literature as well...</intro>
         <publisher>Houghton Mifflin Harcourt</publisher>
-        <id>Nol_LoTR</id>
+        <id>Adv_LoTR</id>
     </book>
     <book>
         <name>A Tale of Two Cities</name>
@@ -79,7 +79,7 @@ While you wait for your morning coffee to brew, for the bus, the train, or a pla
 
 This edition uses the text as it appeared in its serial publication in 1859 to convey the full scope of Dickens's vision, and includes the original illustrations by H. K. Browne ('Phiz'). Richard Maxwell's introduction discusses the intricate interweaving of epic drama with personal tragedy.</intro>
         <publisher>Penguin</publisher>
-        <id>Nol_ToTC</id>
+        <id>His_ToTC</id>
     </book>
     <book>
         <name>The Hobbit</name>
@@ -89,7 +89,7 @@ This edition uses the text as it appeared in its serial publication in 1859 to c
 
         Written for J.R.R. Tolkien’s own children, The Hobbit met with instant critical acclaim when it was first published in 1937. Now recognized as a timeless classic, this introduction to the hobbit Bilbo Baggins, the wizard Gandalf, Gollum, and the spectacular world of Middle-earth recounts of the adventures of a reluctant hero, a powerful and dangerous ring, and the cruel dragon Smaug the Magnificent. The text in this 372-page paperback edition is based on that first published in Great Britain by Collins Modern Classics (1998), and includes a note on the text by Douglas A. Anderson (2001). Unforgettable!</intro>
         <publisher>Houghton Mifflin</publisher>
-        <id>Nol_TH</id>
+        <id>Adv_TH</id>
     </book>
     <book>
         <name>The Da Vinci Code</name>
@@ -101,7 +101,7 @@ While in Paris, Harvard symbologist Robert Langdon is awakened by a phone call i
 
 Even more startling, the late curator was involved in the Priory of Sion—a secret society whose members included Sir Isaac Newton, Victor Hugo, and Da Vinci—and he guarded a breathtaking historical secret. Unless Langdon and Neveu can decipher the labyrinthine puzzle—while avoiding the faceless adversary who shadows their every move—the explosive, ancient truth will be lost forever.</intro>
         <publisher>Anchor</publisher>
-        <id>Nol_DVC</id>
+        <id>Mys_DVC</id>
     </book>
     <book>
         <name>The Alchemist</name>
@@ -109,7 +109,7 @@ Even more startling, the late curator was involved in the Priory of Sion—a sec
         <quantity>15</quantity>
         <intro>Paulo Coelho's enchanting novel has inspired a devoted following around the world. This story, dazzling in its powerful simplicity and inspiring wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of a treasure buried in the Pyramids. Along the way he meets a Gypsy woman, a man who calls himself king, and an alchemist, all of whom point Santiago in the direction of his quest. No one knows what the treasure is, or if Santiago will be able to surmount the obstacles along the way. But what starts out as a journey to find worldly goods turns into a discovery of the treasure found within. Lush, evocative, and deeply humane, the story of Santiago is an eternal testament to the transforming power of our dreams and the importance of listening to our hearts.</intro>
         <publisher> HarperCollins</publisher>
-        <id>Nol_TAl</id>
+        <id>Adv_TAl</id>
     </book>
     <book>
         <name>Memoirs of a Geisha</name>
@@ -119,7 +119,7 @@ Even more startling, the late curator was involved in the Priory of Sion—a sec
 
 In Memoirs of a Geisha, we enter a world where appearances are paramount; where a girl's virginity is auctioned to the highest bidder; where women are trained to beguile the most powerful men; and where love is scorned as illusion. It is a unique and triumphant work of fiction - at once romantic, erotic, suspenseful - and completely unforgettable. </intro>
         <publisher> Random House Large Print Publishing </publisher>
-        <id>Nol_MoG</id>
+        <id>Fic_MoG</id>
     </book>
     <book>
         <name>The Tea Rose </name>
@@ -129,7 +129,7 @@ In Memoirs of a Geisha, we enter a world where appearances are paramount; where 
 
 But Fiona's life is shattered when the actions of a dark and brutal man take from her nearly everything-and everyone-she holds dear. Fearing her own death, she is forced to flee London for New York. There, her indomitable spirit propels her rise from a modest West Side shop-front to the top of Manhattan's tea trade. But Fiona's old ghosts do not rest quietly, and to silence them, she must venture back to the London of her childhood, where a deadly confrontation with her past becomes the key to her future.</intro>
         <publisher> Harper Collins Ltd </publisher>
-        <id>Nol_TTR</id>
+        <id>Rom_TTR</id>
     </book>
     <book>
         <name>Charlotte's Web</name>
@@ -148,7 +148,7 @@ But Fiona's life is shattered when the actions of a dark and brutal man take fro
         <quantity>1</quantity>
         <intro>Ranging from major themes to literary models, narrative devices and form, Thomas C. Foster provides us with a broad overview of literature—a world where a road leads to a quest, a shared meal may signify a communion, and rain, whether cleansing or destructive, is never just a shower-and shows us how to make our reading experience more enriching, satisfying, and fun.</intro>
         <publisher> Harper Perennial </publisher>
-        <id>Edu_HRLLP</id>
+        <id>Sci_HRLLP</id>
     </book>
     <book>
         <name>A Foreign Policy of Freedom</name>
@@ -186,7 +186,7 @@ But Fiona's life is shattered when the actions of a dark and brutal man take fro
         <name>Wonder Woman: The Art and Making of the Film</name>
         <author>Sharon Gosling</author>
         <quantity>1</quantity>
-        <intro>Patty Jenkins’ Wonder Woman sees the hero brought to the big screen for the first time in her own movie, and fully realizes the breathtaking wonder, strength, and grace of such an historic character. Wonder Woman: The Art and Making of the Film celebrates the creation of this groundbreaking movie, taking fans on a voyage of discovery through the world of Wonder Woman. Showcasing the earliest concept art, set and costume designs, sketches and storyboards, the book delves deep into the filmmaking process, from creating the stunning island of Themyscira to the war-torn trenches and towns of First World War Europe. </intro>
+        <intro>Patty Jenkins’ Wonder Woman sees the hero brought to the big screen for the first time in her own movie, and fully realizes the breathtaking wonder, strength, and grace of such an historic character. Wonder Woman: The Art   Making of the Film celebrates the creation of this groundbreaking movie, taking fans on a voyage of discovery through the world of Wonder Woman. Showcasing the earliest concept art, set and costume designs, sketches and storyboards, the book delves deep into the filmmaking process, from creating the stunning island of Themyscira to the war-torn trenches and towns of First World War Europe. </intro>
         <publisher>Titan Books</publisher>
         <id>Enc_WWAMF</id>
     </book>
@@ -285,7 +285,7 @@ In this collection of short stories, following the adventures of the hit collect
         <intro>It was supposed to be the trip of a lifetime, a final adventure before settling down. But after a perfect start, an encounter with a young couple on a night train forces Daniel and Laura to cut their dream trip short and flee home.
 
 Back in London, Daniel and Laura vow never to talk about what happened that night. But as they try to fit into their old lives again, they realise they are in terrible danger—and that their nightmare is just beginning…</intro>
-        <publisher>Thomas and Mercer</publisher>
+        <publisher>Thomas   Mercer</publisher>
         <id>Hor_FYH</id>
     </book>
     <book>

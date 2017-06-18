@@ -8,7 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->BooksTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->BooksTable->setColumnWidth(0,500);
+
     QPixmap pixmap("Images/back.png");
     QIcon ButtonIcon(pixmap);
     ui->Back->setIcon(ButtonIcon);
@@ -17,18 +18,29 @@ MainWindow::MainWindow(QWidget *parent) :
     QIcon ButtonIcon2(pixmap2);
     ui->Search->setIcon(ButtonIcon2);
     ui->Search->setIconSize(pixmap2.rect().size());
+    QPixmap pixmap3("Images/help.png");
+    QIcon ButtonIcon3(pixmap3);
+    ui->Help->setIcon(ButtonIcon3);
+    ui->Help->setIconSize(pixmap3.rect().size());
+    QPixmap pixmap4("Images/about.png");
+    QIcon ButtonIcon4(pixmap4);
+    ui->About->setIcon(ButtonIcon4);
+    ui->About->setIconSize(pixmap4.rect().size());
+    QPixmap pixmap5("Images/signin.png");
+    QIcon ButtonIcon5(pixmap5);
+    ui->SignInButton->setIcon(ButtonIcon5);
+    ui->SignInButton->setIconSize(pixmap5.rect().size());
+    QPixmap pixmap6("Images/signup.png");
+    QIcon ButtonIcon6(pixmap6);
+    ui->SignUpButton->setIcon(ButtonIcon6);
+    ui->SignUpButton->setIconSize(pixmap6.rect().size());
+
     ui->FindBooksButton->setIcon(ButtonIcon2);
     ui->FindBooksButton->setIconSize(pixmap2.rect().size());
     ui->MainBar->hide();
     ui->BooksTable->hide();
     ui->frame_3->hide();
 
-    QPropertyAnimation animation(ui->SignInButton, "geometry");
-    animation.setDuration(10000);
-    animation.setStartValue(QRect(0, 0, 100, 30));
-    animation.setEndValue(QRect(250, 250, 100, 30));
-
-    animation.start();
 
     loadBooksFile();
     loadAccountsFile();
@@ -145,8 +157,8 @@ void MainWindow::loadAccountsFile()
             {
                 QString b=xmlReader->readElementText();
                 if(b=="T")
-                    a.setActive(true);
-                else a.setActive(false);
+                    a.setStatus(true);
+                else a.setStatus(false);
                 accounts.append(a);
                 a.clear();
             }
@@ -204,8 +216,8 @@ void MainWindow::loadTempAccountsFile()
             {
                 QString b=xmlReader->readElementText();
                 if(b=="T")
-                    a.setActive(true);
-                else a.setActive(false);
+                    a.setStatus(true);
+                else a.setStatus(false);
                 temp_accounts.append(a);
                 a.clear();
             }
@@ -460,10 +472,15 @@ void MainWindow::on_FindBooksButton_clicked()
     // Search through the data
     QLinkedList<Book>::iterator it=books.begin();
     int cnt=0;
+    QString category=ui->Category->currentText();
     ui->BooksTable->setRowCount(0);
     ui->BooksTable->setSortingEnabled(false);
     for(;it!=books.end();it++)
     {
+        QString cat=(*it).getID().left(3);
+        cat=findCategory(cat);
+        if(cat!=category && category!="Tất cả") continue;
+
         QString s[]={(*it).getName(), (*it).getAuthor(), (*it).getPublisher()};
         int m=0, i=0, pre=cnt;
         for(int j=0; j<3; j++)
@@ -511,69 +528,63 @@ void MainWindow::on_FindBooksButton_clicked()
 
 void MainWindow::on_SignInButton_clicked()
 {
-    s=new SignIn;
-    connect(s,SIGNAL(accepted()),this,SLOT(logIn()));
-    s->exec();
+    s = QSharedPointer<SignIn>(new SignIn);
+    connect(s.data(),SIGNAL(accepted()),this,SLOT(logIn()));
+    s.data()->exec();
 }
 
 void MainWindow::logIn()
 {
     this->hide();
     QString role=LogInAcc.getRole();
-    ad=new Admin;
-    li = new librarian;
-    re = new reader;
     if(role=="A")
     {
-        connect(ad,SIGNAL(closed()),this,SLOT(logOut()));
-        ad->show();
+        ad= QSharedPointer<Admin>(new Admin);
+        connect(ad.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        ad.data()->show();
     }
     else if(role=="L")
     {
-        connect(li,SIGNAL(closed()),this,SLOT(logOut()));
-        li->show();
+        li = QSharedPointer<librarian>(new librarian);
+        connect(li.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        li.data()->show();
     }
     else if(role=="R")
     {
-        connect(re,SIGNAL(closed()),this,SLOT(logOut()));
-        re->show();
+        re = QSharedPointer<reader>(new reader);
+        connect(re.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        re.data()->show();
     }
-    delete s;
 }
 
 void MainWindow::logOut()
 {
-    delete ad;
-    delete li;
-    delete re;
     LogInAcc.clear();
     this->show();
 }
 
 void MainWindow::on_SignUpButton_clicked()
 {
-    su=new SignUp;
-    su->setWindowTitle("Đăng ký");
-    connect(su,SIGNAL(accepted()),this,SLOT(createAccount()));
-    su->exec();
+    su=QSharedPointer<SignUp>(new SignUp);
+    su.data()->setWindowTitle("Đăng ký");
+    connect(su.data(),SIGNAL(accepted()),this,SLOT(createAccount()));
+    su.data()->exec();
 }
 
 void MainWindow::createAccount()
 {
     // Fill user information
-    pi=new personalinfo;
-    pi->setWindowTitle("Thông tin người dùng");
-    connect(pi,SIGNAL(accepted()),this,SLOT(createUser()));
-    pi->exec();
+    pi=QSharedPointer<personalinfo>(new personalinfo);
+    pi.data()->setWindowTitle("Thông tin người dùng");
+    connect(pi.data(),SIGNAL(accepted()),this,SLOT(createUser()));
+    pi.data()->exec();
 }
 
 void MainWindow::createUser()
 {
-    temp_accounts.append(su->getAccount());
-    temp_users.append(pi->getUser());
+    temp_accounts.append(su.data()->getAccount());
+    temp_users.append(pi.data()->getUser());
     temp_accounts.last().setID(temp_users.last().getID());
-    delete su;
-    delete pi;
 }
 
 
@@ -643,7 +654,7 @@ void MainWindow::saveAccountsFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getActive())
+        if((*it).getStatus())
             xmlWriter->writeTextElement("active", "T");
         else xmlWriter->writeTextElement("active", "F");
         xmlWriter->writeEndElement();
@@ -710,7 +721,7 @@ void MainWindow::saveTempAccountsFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getActive())
+        if((*it).getStatus())
             xmlWriter->writeTextElement("active", "T");
         else xmlWriter->writeTextElement("active", "F");
         xmlWriter->writeEndElement();
@@ -793,7 +804,6 @@ void MainWindow::saveCartInfosFile()
 void MainWindow::on_BooksTable_cellClicked(int row, int column)
 {
     column++;
-    ui->BooksTable->selectRow(row);
     QString s = ui->BooksTable->item(row,0)->text();
     QLinkedList<Book>::iterator it=books.begin();
     for(;it!=books.end();it++)
@@ -802,6 +812,15 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
         if(s==(*it).getName())
         {
             ui->intro->setText((*it).getIntro());
+            ui->bookName->setText(s);
+            QImage image("Images/Books/"+(*it).getID()+".jpg");
+            this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
+            ui->bookView->setScene(ptr_scene.data());
+            QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+            ptr_scene.data()->addItem(item);
+            ui->bookView->fitInView(ptr_scene.data()->itemsBoundingRect(),Qt::KeepAspectRatio);
+            ui->bookView->show();
+            break;
         }
     }
 }
@@ -820,4 +839,16 @@ void MainWindow::on_Back_clicked()
     ui->BooksTable->hide();
     ui->frame_3->hide();
     ui->frame_2->show();
+}
+
+void MainWindow::on_Help_clicked()
+{
+    he=QSharedPointer<Help>(new Help);
+    he.data()->exec();
+}
+
+void MainWindow::on_About_clicked()
+{
+    ab=QSharedPointer<About>(new About);
+    ab.data()->exec();
 }

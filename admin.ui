@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="admin">
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="staffs">
        <attribute name="title">
@@ -92,6 +92,11 @@
             </column>
             <column>
              <property name="text">
+              <string>Tài khoản</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
               <string>Họ và tên</string>
              </property>
             </column>
@@ -147,71 +152,98 @@ border-radius: 5px;</string>
             <property name="title">
              <string>Thông tin nhân viên</string>
             </property>
-            <widget class="QLabel" name="staffID">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>20</y>
-               <width>81</width>
-               <height>21</height>
-              </rect>
+            <layout class="QFormLayout" name="formLayout">
+             <property name="horizontalSpacing">
+              <number>6</number>
              </property>
-             <property name="text">
-              <string>Mã nhân viên:</string>
+             <property name="verticalSpacing">
+              <number>20</number>
              </property>
-            </widget>
-            <widget class="QLabel" name="staffName">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>50</y>
-               <width>81</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Tên nhân viên:</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="startDate">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>80</y>
-               <width>101</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Bắt đầu làm việc từ:</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="payDate">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>110</y>
-               <width>171</width>
-               <height>21</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Còn XX ngày nữa được lĩnh lương</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_7">
-             <property name="geometry">
-              <rect>
-               <x>20</x>
-               <y>140</y>
-               <width>47</width>
-               <height>16</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>Ca trực:</string>
-             </property>
-            </widget>
+             <item row="0" column="0">
+              <widget class="QLabel" name="staffID">
+               <property name="text">
+                <string>Mã nhân viên:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLabel" name="s_id">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="staffName">
+               <property name="text">
+                <string>Tên nhân viên:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QLabel" name="s_name">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="startDate">
+               <property name="text">
+                <string>Bắt đầu làm việc từ:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLabel" name="s_DoP">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Giới tính: </string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="s_sex">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Email:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLabel" name="s_email">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Địa chỉ:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="5" column="1">
+              <widget class="QLabel" name="s_add">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
          </layout>
@@ -409,6 +441,9 @@ border-radius: 5px;</string>
           </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
           </property>
           <attribute name="horizontalHeaderCascadingSectionResizes">
            <bool>false</bool>
@@ -676,18 +711,18 @@ width: 50px;</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_4">
         <item row="0" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,2">
-          <item>
-           <widget class="QPushButton" name="Deny">
-            <property name="text">
-             <string>Từ chối</string>
-            </property>
-           </widget>
-          </item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,1,3">
           <item>
            <widget class="QPushButton" name="Agree">
             <property name="text">
              <string>Chấp nhận</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Deny">
+            <property name="text">
+             <string>Từ chối</string>
             </property>
            </widget>
           </item>
@@ -762,8 +797,8 @@ width: 50px;</string>
      <y>66</y>
     </hint>
     <hint type="destinationlabel">
-     <x>673</x>
-     <y>65</y>
+     <x>882</x>
+     <y>71</y>
     </hint>
    </hints>
   </connection>

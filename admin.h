@@ -48,6 +48,10 @@ private slots:
 
     void on_name_returnPressed();
 
+    void on_id_returnPressed();
+
+    void on_staffTable_cellClicked(int row, int column);
+
 private:
     Ui::Admin *ui;
 

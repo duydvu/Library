@@ -45,4 +45,230 @@
         <email>king@gmail.com</email>
         <DoP>13.06.2017</DoP>
     </user>
+    <user>
+        <name>
+Lê Tiến Ninh</name>
+        <id>5</id>
+        <DoB>01.08.1995</DoB>
+        <sex>nam</sex>
+        <address>409 Nguyễn Tri Phương, P. 5,  Quận 10, TP. HCM</address>
+        <email>
+ltninh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Đỗ Như Lâm</name>
+        <id>6</id>
+        <DoB>03.05.1998</DoB>
+        <sex>nữ</sex>
+        <address>63/1 Pasteur, P. Bến Nghé,  Quận 1, TP. HCM</address>
+        <email>dnlam.stttt@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Nguyễn Ngọc Hải</name>
+        <id>7</id>
+        <DoB>01.04.1997</DoB>
+        <sex>nam</sex>
+        <address>46 Ngô Đức Kế,  Quận 1, TP. HCM</address>
+        <email>ngochai@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Phạm Văn Yên</name>
+        <id>8</id>
+        <DoB>01.05.1996</DoB>
+        <sex>nam</sex>
+        <address>891/79 Nguyễn Kiệm,  Quận Gò Vấp, TP. HCM</address>
+        <email>vanyen@yahoo.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Phạm Phương Loan</name>
+        <id>9</id>
+        <DoB>01.08.1987</DoB>
+        <sex>nữ</sex>
+        <address>357 - 359 Hoàng Sa, P. Tân Định,  Quận 1, TP. HCM</address>
+        <email>phuongloan@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Đinh Thị Tuấn Anh</name>
+        <id>10</id>
+        <DoB>01.07.1998</DoB>
+        <sex>nữ</sex>
+        <address>230B Hậu Giang,  Quận 6, TP. HCM</address>
+        <email>tuananh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Phùng Thị Thanh Mai</name>
+        <id>11</id>
+        <DoB>15.03.1998</DoB>
+        <sex>nữ</sex>
+        <address>398 Phan Xích Long, P. 2,  Quận Phú Nhuận, TP. HCM</address>
+        <email>thanhmai@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Trịnh Xuân Hoàng</name>
+        <id>12</id>
+        <DoB>14.02.1998</DoB>
+        <sex>nam</sex>
+        <address>263 Trần Quang Khải, P. Tân Định,  Quận 1, TP. HCM</address>
+        <email>xuanhoang@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Vũ Thị Hoài</name>
+        <id>13</id>
+        <DoB>17.04.1996</DoB>
+        <sex>nữ</sex>
+        <address>75 Đồng Đen,  Quận Tân Bình, TP. HCM</address>
+        <email>thihoai@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Bùi Đình Thịnh</name>
+        <id>14</id>
+        <DoB>10.11.1997</DoB>
+        <sex>nam</sex>
+        <address> Ngã Tư Lê Duẩn - Hai Bà Trưng, Q.1,  Quận 1, TP. HCM</address>
+        <email>btdthinh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Vũ Xuân Thành</name>
+        <id>15</id>
+        <DoB>03.04.1997</DoB>
+        <sex>nam</sex>
+        <address> Ngã Tư Lê Duẩn - Hai Bà Trưng, Q.1,  Quận 1, TP. HCM</address>
+        <email>xuanthanh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Bùi Thị Oanh</name>
+        <id>16</id>
+        <DoB>01.05.1998</DoB>
+        <sex>nữ</sex>
+        <address> 72 Lê Thánh Tôn, P. Bến Nghé,  Quận 1, TP. HCM</address>
+        <email>thioanh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Bùi Đình Hùng</name>
+        <id>17</id>
+        <DoB>04.08.1992</DoB>
+        <sex>nam</sex>
+        <address>60/2 Duyên Hải, TT. Cần Thạnh,  Cần Giờ, TP. HCM</address>
+        <email>dinhhung@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Lưu Thị Hương</name>
+        <id>18</id>
+        <DoB>03.11.1996</DoB>
+        <sex>nữ</sex>
+        <address>Đường 17, P. Linh Chiểu,  Quận Thủ Đức, TP. HCM</address>
+        <email>thihuong@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Thị Thắm</name>
+        <id>19</id>
+        <DoB>01.12.1998</DoB>
+        <sex>nữ</sex>
+        <address>80A Cao Thắng,  Quận 3, TP. HCM</address>
+        <email>thitham@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Vũ Hưng</name>
+        <id>20</id>
+        <DoB>08.01.1997</DoB>
+        <sex>nam</sex>
+        <address>118 Thăng Long, P. 4,  Quận Tân Bình, TP. HCM</address>
+        <email>vuhung@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Vũ Thị Nga</name>
+        <id>21</id>
+        <DoB>01.04.1998</DoB>
+        <sex>nữ</sex>
+        <address>132E Nguyễn Tri Phương, P. 9,  Quận 5, TP. HCM</address>
+        <email>thinga@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>
+Nguyễn Thanh Bình</name>
+        <id>22</id>
+        <DoB>03.01.1998</DoB>
+        <sex>nam</sex>
+        <address>484 Lê Văn Sỹ, P. 14,  Quận 3, TP. HCM</address>
+        <email>thanhbinh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Hoàng Thị Nhuần</name>
+        <id>23</id>
+        <DoB>03.01.1998</DoB>
+        <sex>nữ</sex>
+        <address>410 An Dương Vương, P. 4,  Quận 5, TP. HCM</address>
+        <email>thinhuan@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Vũ Thị Lan Anh</name>
+        <id>24</id>
+        <DoB>07.04.1998</DoB>
+        <sex>nữ</sex>
+        <address>359 Trần Hưng Đạo, P. Cầu Kho,  Quận 1, TP. HCM</address>
+        <email>lananh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Thị Ngân</name>
+        <id>25</id>
+        <DoB>01.05.1998</DoB>
+        <sex>nữ</sex>
+        <address>27 Hồng Hà,  Quận Phú Nhuận, TP. HCM</address>
+        <email>thingan@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Trần Thị Hòa</name>
+        <id>26</id>
+        <DoB>03.01.1987</DoB>
+        <sex>nữ</sex>
+        <address>6A Trần Hưng Đạo, P. Phạm Ngũ Lão,  Quận 1, TP. HCM</address>
+        <email>thihoa@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Thị Chanh</name>
+        <id>27</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nữ</sex>
+        <address>6A Ngô Đức Kế, Phường 7, Quận 3,  Quận 3, TP. HCM</address>
+        <email>thichanh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Ngô Nguyên Long</name>
+        <id>28</id>
+        <DoB>01.05.1996</DoB>
+        <sex>nam</sex>
+        <address>Hẻm 241 Nguyễn Văn Luông,  Quận 6, TP. HCM</address>
+        <email>nguyenlong@gmail.com</email>
+        <DoP>18.06.2017</DoP>
+    </user>
 </Users>

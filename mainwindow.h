@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "signin.h"
 #include "signup.h"
+#include "help.h"
+#include "about.h"
 #include "PersonalInfo.h"
 #include "admin.h"
 #include "librarian.h"
@@ -45,14 +47,21 @@ private slots:
 
     void on_Back_clicked();
 
+    void on_Help_clicked();
+
+    void on_About_clicked();
+
 private:
     Ui::MainWindow *ui;
-    SignIn* s;
-    SignUp* su;
-    personalinfo* pi;
-    Admin* ad;
-    librarian* li;
-    reader* re;
+    QSharedPointer<SignIn> s;
+    QSharedPointer<SignUp> su;
+    QSharedPointer<Help> he;
+    QSharedPointer<About> ab;
+    QSharedPointer<personalinfo> pi;
+    QSharedPointer<Admin> ad;
+    QSharedPointer<librarian> li;
+    QSharedPointer<reader> re;
+    QSharedPointer<QGraphicsScene> ptr_scene;
 
 
     void loadBooksFile();

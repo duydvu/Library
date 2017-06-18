@@ -15,6 +15,7 @@
 #include <QIcon>
 #include <QScrollArea>
 #include <QPropertyAnimation>
+#include <QGraphicsPixmapItem>
 
 extern QLinkedList<Book> books;
 extern QLinkedList<Account> accounts;

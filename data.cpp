@@ -68,5 +68,9 @@ QString findCategory(QString cat)
         return "Truyện tranh";
     if(cat=="Dic")
         return "Từ điển";
+    if(cat=="Geo")
+        return "Địa lý";
+    if(cat=="Bus")
+        return "Kinh tế";
     return "Tất cả";
 }

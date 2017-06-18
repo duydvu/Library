@@ -129,6 +129,11 @@ p, li { white-space: pre-wrap; }
           </item>
           <item>
            <property name="text">
+            <string>Địa lý</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
             <string>Hành động và phiêu lưu</string>
            </property>
           </item>
@@ -155,6 +160,11 @@ p, li { white-space: pre-wrap; }
           <item>
            <property name="text">
             <string>Kinh dị</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kinh tế</string>
            </property>
           </item>
           <item>
