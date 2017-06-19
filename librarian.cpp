@@ -226,7 +226,7 @@ void librarian::on_accept_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(1);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getID());
         }
     }
     on_newCart_clicked();
@@ -239,7 +239,7 @@ void librarian::on_send_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(2);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getID());
         }
     }
     on_acceptedCart_clicked();
@@ -252,7 +252,7 @@ void librarian::on_done_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getID());
         }
     }
     on_doneCart_clicked();
@@ -265,7 +265,7 @@ void librarian::on_infringe_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getID());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getID());
         }
     }
     on_infringeCart_clicked();

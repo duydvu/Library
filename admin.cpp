@@ -14,6 +14,8 @@ Admin::Admin(QWidget *parent) :
     ui->CartInfos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     regisTable();
     on_newCart_clicked();
+    ui->s_done->hide();
+    ui->r_done->hide();
 }
 
 Admin::~Admin()
@@ -62,8 +64,6 @@ void Admin::on_searchButton_clicked()
 
     // Get word
     QString word=ui->searchUsers->text();
-    if(word.length()==0)
-        return;
     // Create table
     int* table=new int[word.length()+1];
     int pos=1, cnd=0;
@@ -96,30 +96,21 @@ void Admin::on_searchButton_clicked()
     {
         QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
         if((*it).getRole()!="R") continue;
-        QString s[]={(*it).getAcc(), (*it1).getName()};
+        QString s[]={(*it).getAcc(), (*it1).getName(), (*it).getID()};
         int m=0, i=0, pre=cnt;
-        for(int j=0; j<2; j++)
+        for(int j=0; j<3; j++)
         {
             while(m+i < s[j].length())
             {
-                if(compare(word[i], s[j][m+i]))
+                if(compare(word[i], s[j][m+i])||word.length()==0)
                 {
                     i++;
-                    if(i==word.length())
+                    if(i==word.length()||word.length()==0)
                     {
                         ui->usersTable->insertRow(cnt);
                         ui->usersTable->setItem(cnt, 0, new QTableWidgetItem((*it1).getID()));
                         ui->usersTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
                         ui->usersTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
-                        QString status;
-                        switch((*it).getStatus())
-                        {
-                        case 0:status="Đã kích hoạt";break;
-                        case 1:status="Bị khóa";break;
-                        case 2:status="Cấm mượn";break;
-                        case 3:status="Tạm khóa";break;
-                        }
-                        ui->usersTable->setItem(cnt, 3, new QTableWidgetItem(status));
                         cnt++;
                         break;
                     }
@@ -225,6 +216,15 @@ void Admin::on_newCart_clicked()
             ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            QLinkedList<Book>::iterator b=books.begin();
+            for(;b!=books.end();b++)
+            {
+                if((*b).getID()==(*it).getBookID())
+                {
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity())));
+                    break;
+                }
+            }
             cnt++;
         }
     }
@@ -247,6 +247,15 @@ void Admin::on_acceptedCart_clicked()
             ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            QLinkedList<Book>::iterator b=books.begin();
+            for(;b!=books.end();b++)
+            {
+                if((*b).getID()==(*it).getBookID())
+                {
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity())));
+                    break;
+                }
+            }
             cnt++;
         }
     }
@@ -269,6 +278,15 @@ void Admin::on_lendingCart_clicked()
             ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            QLinkedList<Book>::iterator b=books.begin();
+            for(;b!=books.end();b++)
+            {
+                if((*b).getID()==(*it).getBookID())
+                {
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity())));
+                    break;
+                }
+            }
             cnt++;
         }
     }
@@ -291,6 +309,15 @@ void Admin::on_doneCart_clicked()
             ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            QLinkedList<Book>::iterator b=books.begin();
+            for(;b!=books.end();b++)
+            {
+                if((*b).getID()==(*it).getBookID())
+                {
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity())));
+                    break;
+                }
+            }
             cnt++;
         }
     }
@@ -313,6 +340,15 @@ void Admin::on_infringeCart_clicked()
             ui->CartInfos->setItem(cnt, 2, new QTableWidgetItem((*it).getBookID()));
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
+            QLinkedList<Book>::iterator b=books.begin();
+            for(;b!=books.end();b++)
+            {
+                if((*b).getID()==(*it).getBookID())
+                {
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity())));
+                    break;
+                }
+            }
             cnt++;
         }
     }
@@ -325,7 +361,7 @@ void Admin::on_accept_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(1);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getName());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
         }
     }
     on_newCart_clicked();
@@ -338,7 +374,7 @@ void Admin::on_send_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(2);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getName());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
         }
     }
     on_acceptedCart_clicked();
@@ -351,7 +387,7 @@ void Admin::on_done_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getName());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
         }
     }
     on_doneCart_clicked();
@@ -364,7 +400,7 @@ void Admin::on_infringe_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(3);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient(LogInUser.getName());
+            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
         }
     }
     on_infringeCart_clicked();
@@ -406,47 +442,44 @@ void Admin::on_name_returnPressed()
     QLinkedList<Account>::iterator it=accounts.begin();
     int cnt=0;
     ui->staffTable->setRowCount(0);
+    ui->staffTable->setSortingEnabled(false);
     for(;it!=accounts.end();it++)
     {
         QLinkedList<User>::iterator it1=users.begin()+(*it).getID().toInt();
         if((*it).getRole()!="L") continue;
         QString s=(*it1).getName();
         int m=0, i=0, pre=cnt;
-        for(int j=0; j<4; j++)
+        while(m+i < s.length())
         {
-            while(m+i < s.length())
+            if(compare(word[i], s[m+i])||word.length()==0)
             {
-                if(compare(word[i], s[m+i]))
+                i++;
+                if(i==word.length()||word.length()==0)
                 {
-                    i++;
-                    if(i==word.length())
-                    {
-                        ui->staffTable->insertRow(cnt);
-                        ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
-                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
-                        ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
-                        cnt++;
-                        break;
-                    }
+                    ui->staffTable->insertRow(cnt);
+                    ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
+                    ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+                    ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
+                    cnt++;
+                    break;
+                }
+            }
+            else
+            {
+                if(table[i]>-1)
+                {
+                    m+=i-table[i];
+                    i=table[i];
                 }
                 else
                 {
-                    if(table[i]>-1)
-                    {
-                        m+=i-table[i];
-                        i=table[i];
-                    }
-                    else
-                    {
-                        m+=i+1;
-                        i=0;
-                    }
+                    m+=i+1;
+                    i=0;
                 }
             }
-            if(pre!=cnt) break;
-            m=0, i=0;
         }
     }
+    ui->staffTable->setSortingEnabled(true);
     delete table;
 }
 
@@ -457,8 +490,6 @@ void Admin::on_id_returnPressed()
 
     // Get word
     QString word=ui->id->text();
-    if(word.length()==0)
-        return;
     // Create table
     int* table=new int[word.length()+1];
     int pos=1, cnd=0;
@@ -493,39 +524,34 @@ void Admin::on_id_returnPressed()
         if((*it).getRole()!="L") continue;
         QString s=(*it1).getID();
         int m=0, i=0, pre=cnt;
-        for(int j=0; j<4; j++)
+        while(m+i < s.length())
         {
-            while(m+i < s.length())
+            if(compare(word[i], s[m+i])||word.length()==0)
             {
-                if(compare(word[i], s[m+i]))
+                i++;
+                if(i==word.length()||word.length()==0)
                 {
-                    i++;
-                    if(i==word.length())
-                    {
-                        ui->staffTable->insertRow(cnt);
-                        ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
-                        ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
-                        ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
-                        cnt++;
-                        break;
-                    }
+                    ui->staffTable->insertRow(cnt);
+                    ui->staffTable->setItem(cnt, 0, new QTableWidgetItem((*it).getID()));
+                    ui->staffTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+                    ui->staffTable->setItem(cnt, 2, new QTableWidgetItem((*it1).getName()));
+                    cnt++;
+                    break;
+                }
+            }
+            else
+            {
+                if(table[i]>-1)
+                {
+                    m+=i-table[i];
+                    i=table[i];
                 }
                 else
                 {
-                    if(table[i]>-1)
-                    {
-                        m+=i-table[i];
-                        i=table[i];
-                    }
-                    else
-                    {
-                        m+=i+1;
-                        i=0;
-                    }
+                    m+=i+1;
+                    i=0;
                 }
             }
-            if(pre!=cnt) break;
-            m=0, i=0;
         }
     }
     ui->staffTable->setSortingEnabled(true);
@@ -536,10 +562,147 @@ void Admin::on_staffTable_cellClicked(int row, int column)
 {
     QString id=ui->staffTable->item(row,0)->text();
     QLinkedList<User>::iterator it=users.begin()+id.toInt();
+    QLinkedList<Account>::iterator a=accounts.begin()+id.toInt();
     ui->s_id->setText((*it).getID());
     ui->s_name->setText((*it).getName());
     ui->s_DoP->setText((*it).getDoP());
     ui->s_sex->setText((*it).getSex());
     ui->s_email->setText((*it).getEmail());
     ui->s_add->setText((*it).getAddress());
+    ui->s_DoB->setText((*it).getDateofBirth());
+    if((*a).getStatus()==0)
+        ui->s_active->setChecked(true);
+    else ui->s_nactive->setChecked(true);
+}
+
+void Admin::on_changePass_clicked()
+{
+    if(ui->s_id->text()=="") return;
+    pa=QSharedPointer<Password>(new Password);
+    connect(pa.data(),SIGNAL(accepted()),this,SLOT(LibraPassChange()));
+    pa.data()->exec();
+}
+
+void Admin::LibraPassChange()
+{
+    QLinkedList<Account>::iterator a=accounts.begin()+ui->s_id->text().toInt();
+    (*a).setPsw(Account::encrypt(pa.data()->getPass()));
+}
+
+void Admin::on_changeInfo_clicked()
+{
+    if(ui->s_id->text()=="") return;
+    ui->s_done->show();
+    ui->s_name->setReadOnly(false);
+    ui->s_sex->setReadOnly(false);
+    ui->s_email->setReadOnly(false);
+    ui->s_add->setReadOnly(false);
+    ui->s_DoB->setReadOnly(false);
+    ui->staffTable->setEnabled(false);
+}
+
+void Admin::on_s_done_clicked()
+{
+    QLinkedList<User>::iterator u=users.begin()+ui->s_id->text().toInt();
+    QLinkedList<Account>::iterator a=accounts.begin()+ui->s_id->text().toInt();
+    (*u).setName(ui->s_name->text());
+    (*u).setSex(ui->s_sex->text());
+    (*u).setEmail(ui->s_email->text());
+    (*u).setAddress(ui->s_add->text());
+    if(ui->s_active->isChecked())
+        (*a).setStatus(0);
+    else (*a).setStatus(1);
+    ui->s_done->hide();
+    ui->s_name->setReadOnly(true);
+    ui->s_sex->setReadOnly(true);
+    ui->s_email->setReadOnly(true);
+    ui->s_add->setReadOnly(true);
+    ui->s_DoB->setReadOnly(true);
+    ui->staffTable->setEnabled(true);
+}
+
+void Admin::on_usersTable_cellClicked(int row, int column)
+{
+    QString id=ui->usersTable->item(row,0)->text();
+    QLinkedList<User>::iterator it=users.begin()+id.toInt();
+    QLinkedList<Account>::iterator a=accounts.begin()+id.toInt();
+    ui->r_id->setText((*it).getID());
+    ui->r_name->setText((*it).getName());
+    ui->r_DoP->setText((*it).getDoP());
+    ui->r_DoB->setText((*it).getDateofBirth());
+    ui->r_sex->setText((*it).getSex());
+    ui->r_email->setText((*it).getEmail());
+    ui->r_add->setText((*it).getAddress());
+    QString status;
+    switch((*a).getStatus())
+    {
+    case 0:status="Đã kích hoạt";break;
+    case 1:status="Bị khóa";break;
+    case 2:status="Cấm mượn";break;
+    case 3:status="Tạm khóa";break;
+    }
+    ui->r_stt->setText(status);
+}
+
+void Admin::on_pushButton_4_clicked()
+{
+    if(ui->r_id->text()=="") return;
+    pa=QSharedPointer<Password>(new Password);
+    connect(pa.data(),SIGNAL(accepted()),this,SLOT(ReaderPassChange()));
+    pa.data()->exec();
+}
+
+void Admin::ReaderPassChange()
+{
+    QLinkedList<Account>::iterator a=accounts.begin()+ui->r_id->text().toInt();
+    (*a).setPsw(Account::encrypt(pa.data()->getPass()));
+}
+
+void Admin::on_pushButton_3_clicked()
+{
+    if(ui->r_id->text()=="") return;
+    QLinkedList<Account>::iterator a=accounts.begin()+ui->r_id->text().toInt();
+    if((*a).getStatus()==0)
+        (*a).setStatus(1);
+    else if((*a).getStatus()==1)
+        (*a).setStatus(0);
+    QString status;
+    switch((*a).getStatus())
+    {
+    case 0:status="Đã kích hoạt";break;
+    case 1:status="Bị khóa";break;
+    case 2:status="Cấm mượn";break;
+    case 3:status="Tạm khóa";break;
+    }
+    ui->r_stt->setText(status);
+}
+
+void Admin::on_pushButton_2_clicked()
+{
+    if(ui->r_id->text()=="") return;
+    ui->r_done->show();
+    ui->r_name->setReadOnly(false);
+    ui->r_sex->setReadOnly(false);
+    ui->r_email->setReadOnly(false);
+    ui->r_add->setReadOnly(false);
+    ui->r_DoB->setReadOnly(false);
+    ui->usersTable->setEnabled(false);
+}
+
+void Admin::on_r_done_clicked()
+{
+    QLinkedList<User>::iterator u=users.begin()+ui->r_id->text().toInt();
+    QLinkedList<Account>::iterator a=accounts.begin()+ui->r_id->text().toInt();
+    (*u).setName(ui->r_name->text());
+    (*u).setSex(ui->r_sex->text());
+    (*u).setEmail(ui->r_email->text());
+    (*u).setAddress(ui->r_add->text());
+    (*u).setDateofBirth(ui->r_DoB->text());
+    ui->r_done->hide();
+    ui->r_name->setReadOnly(true);
+    ui->r_sex->setReadOnly(true);
+    ui->r_email->setReadOnly(true);
+    ui->r_add->setReadOnly(true);
+    ui->r_DoB->setReadOnly(true);
+    ui->usersTable->setEnabled(true);
 }

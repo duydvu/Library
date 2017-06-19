@@ -22,18 +22,18 @@
         <name>Librarian</name>
         <id>2</id>
         <DoB>01.01.1998</DoB>
-        <sex>nữ</sex>
+        <sex>nam</sex>
         <address>Jupiter</address>
         <email>Jupiter@apple.com</email>
         <DoP>12.06.2017</DoP>
     </user>
     <user>
-        <name>user</name>
+        <name>anhnhat</name>
         <id>3</id>
         <DoB>01.01.1998</DoB>
         <sex>nam</sex>
-        <address>123</address>
-        <email>1@ya.com</email>
+        <address>Bảo Lộc, Lâm Đồng</address>
+        <email>nhokheo@gmail.com</email>
         <DoP>12.06.2017</DoP>
     </user>
     <user>
@@ -46,14 +46,12 @@
         <DoP>13.06.2017</DoP>
     </user>
     <user>
-        <name>
-Lê Tiến Ninh</name>
+        <name>Lê Tiến Ninh</name>
         <id>5</id>
         <DoB>01.08.1995</DoB>
         <sex>nam</sex>
         <address>409 Nguyễn Tri Phương, P. 5,  Quận 10, TP. HCM</address>
-        <email>
-ltninh@gmail.com</email>
+        <email>ltninh@gmail.com</email>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
@@ -66,8 +64,7 @@ ltninh@gmail.com</email>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Nguyễn Ngọc Hải</name>
+        <name>Nguyễn Ngọc Hải</name>
         <id>7</id>
         <DoB>01.04.1997</DoB>
         <sex>nam</sex>
@@ -76,8 +73,7 @@ Nguyễn Ngọc Hải</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Phạm Văn Yên</name>
+        <name>Phạm Văn Yên</name>
         <id>8</id>
         <DoB>01.05.1996</DoB>
         <sex>nam</sex>
@@ -95,8 +91,7 @@ Phạm Văn Yên</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Đinh Thị Tuấn Anh</name>
+        <name>Đinh Thị Tuấn Anh</name>
         <id>10</id>
         <DoB>01.07.1998</DoB>
         <sex>nữ</sex>
@@ -114,8 +109,7 @@ Phạm Văn Yên</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Trịnh Xuân Hoàng</name>
+        <name>Trịnh Xuân Hoàng</name>
         <id>12</id>
         <DoB>14.02.1998</DoB>
         <sex>nam</sex>
@@ -142,8 +136,7 @@ Trịnh Xuân Hoàng</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Vũ Xuân Thành</name>
+        <name>Vũ Xuân Thành</name>
         <id>15</id>
         <DoB>03.04.1997</DoB>
         <sex>nam</sex>
@@ -161,8 +154,7 @@ Vũ Xuân Thành</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Bùi Đình Hùng</name>
+        <name>Bùi Đình Hùng</name>
         <id>17</id>
         <DoB>04.08.1992</DoB>
         <sex>nam</sex>
@@ -189,8 +181,7 @@ Bùi Đình Hùng</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Vũ Hưng</name>
+        <name>Vũ Hưng</name>
         <id>20</id>
         <DoB>08.01.1997</DoB>
         <sex>nam</sex>
@@ -208,8 +199,7 @@ Vũ Hưng</name>
         <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>
-Nguyễn Thanh Bình</name>
+        <name>Nguyễn Thanh Bình</name>
         <id>22</id>
         <DoB>03.01.1998</DoB>
         <sex>nam</sex>

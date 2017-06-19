@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     librarian.cpp \
     cartinfo.cpp \
     help.cpp \
-    about.cpp
+    about.cpp \
+    password.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -42,7 +43,8 @@ HEADERS  += mainwindow.h \
     librarian.h \
     cartinfo.h \
     help.h \
-    about.h
+    about.h \
+    password.h
 
 FORMS    += \
     signin.ui \
@@ -53,7 +55,8 @@ FORMS    += \
     reader.ui \
     librarian.ui \
     help.ui \
-    about.ui
+    about.ui \
+    password.ui
 
 RESOURCES += \
     data.qrc

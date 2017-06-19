@@ -11,13 +11,37 @@ reader::reader(QWidget *parent) :
     ui->borInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->send->hide();
     ui->cancel->hide();
-    ui->name->setText(LogInUser.getName());
-    ui->id->setText(LogInUser.getID());
-    ui->dob->setText(LogInUser.getDateofBirth());
-    ui->sex->setText(LogInUser.getSex());
-    ui->email->setText(LogInUser.getEmail());
-    ui->address->setText(LogInUser.getAddress());
-    ui->dop->setText(LogInUser.getDoP());
+    ui->name->setText((*LogInUser).getName());
+    ui->id->setText((*LogInUser).getID());
+    ui->dob->setText((*LogInUser).getDateofBirth());
+    ui->sex->setText((*LogInUser).getSex());
+    ui->email->setText((*LogInUser).getEmail());
+    ui->address->setText((*LogInUser).getAddress());
+    ui->dop->setText((*LogInUser).getDoP());
+    int allbor=0, allreturn=0, infringe=0;
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    for(;it!=cartInfos.end();it++)
+    {
+        if((*it).getReaderID()==(*LogInUser).getID())
+        {
+            switch((*it).getStatus())
+            {
+            case 2:
+                allbor++;
+                break;
+            case 3:
+                allbor++;
+                allreturn++;
+                break;
+            case 4:
+                allbor++;
+                infringe++;
+            }
+        }
+    }
+    ui->allbor->setText(QString::number(allbor));
+    ui->allreturn->setText(QString::number(allreturn));
+    ui->infringe->setText(QString::number(infringe));
 }
 
 reader::~reader()
@@ -64,9 +88,9 @@ void reader::on_searchButton_clicked()
     // Search through the data
     QLinkedList<Book>::iterator it=books.begin();
     int cnt=0;
-    bookSearched.clear();
     QString category=ui->category->currentText();
     ui->bookTable->setRowCount(0);
+    ui->bookTable->setSortingEnabled(false);
     for(;it!=books.end();it++)
     {
         QString cat=(*it).getID().left(3);
@@ -79,12 +103,11 @@ void reader::on_searchButton_clicked()
         {
             while(m+i<s[j].length())
             {
-                if(compare(word[i], s[j][m+i]))
+                if(compare(word[i], s[j][m+i])||word.length()==0)
                 {
                     i++;
-                    if(i==word.length())
+                    if(i==word.length()||word.length()==0)
                     {
-                        bookSearched.append(*it);
                         ui->bookTable->insertRow(cnt);
                         ui->bookTable->setItem(cnt, 0, new QTableWidgetItem((*it).getName()));
                         ui->bookTable->setItem(cnt, 1, new QTableWidgetItem(cat));
@@ -92,7 +115,7 @@ void reader::on_searchButton_clicked()
                         ui->bookTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
                         if((*it).getQuantity()>0)
                             ui->bookTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
-                        else ui->bookTable->setItem(cnt, 4, new QTableWidgetItem("hết hàng"));
+                        else ui->bookTable->setItem(cnt, 4, new QTableWidgetItem("hết sách"));
                         QTableWidgetItem *item = new QTableWidgetItem("");
                         item->setCheckState(Qt::Unchecked);
                         ui->bookTable->setItem(cnt, 5, item);
@@ -118,59 +141,81 @@ void reader::on_searchButton_clicked()
             m=0, i=0;
         }
     }
-
+    ui->bookTable->setSortingEnabled(true);
     delete table;
 }
 
 void reader::on_changeButton_clicked()
 {
-    bool read;
     if(ui->changeButton->text()=="Cập nhật")
     {
-        read=false;
+        ui->name->setReadOnly(false);
+        ui->dob->setReadOnly(false);
+        ui->sex->setReadOnly(false);
+        ui->email->setReadOnly(false);
+        ui->address->setReadOnly(false);
         ui->changeButton->setText("Xong");
     }
     else
     {
-        read=true;
+        (*LogInUser).setName(ui->name->text());
+        (*LogInUser).setDateofBirth(ui->dob->text());
+        (*LogInUser).setSex(ui->sex->text());
+        (*LogInUser).setEmail(ui->email->text());
+        (*LogInUser).setAddress(ui->address->text());
+        ui->name->setReadOnly(true);
+        ui->dob->setReadOnly(true);
+        ui->sex->setReadOnly(true);
+        ui->email->setReadOnly(true);
+        ui->address->setReadOnly(true);
         ui->changeButton->setText("Cập nhật");
     }
-    ui->name->setReadOnly(read);
-    ui->id->setReadOnly(read);
-    ui->dob->setReadOnly(read);
-    ui->sex->setReadOnly(read);
-    ui->email->setReadOnly(read);
-    ui->address->setReadOnly(read);
 }
 
 void reader::on_bookTable_cellClicked(int row, int column)
 {
-    column++;
-    QLinkedList<Book>::iterator b=bookSearched.begin()+row;
-    ui->intro->setText((*b).getIntro());
-}
+    QString s = ui->bookTable->item(row,0)->text();
+    QLinkedList<Book>::iterator it=books.begin();
+    for(;it!=books.end();it++)
+    {
 
-void reader::on_name_textChanged(const QString &arg1)
-{
-
+        if(s==(*it).getName())
+        {
+            ui->intro->setText((*it).getIntro());
+            ui->bookName->setText(s);
+            QImage image("Images/Books/"+(*it).getID()+".jpg");
+            this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
+            ui->bookView->setScene(ptr_scene.data());
+            QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+            ptr_scene.data()->addItem(item);
+            ui->bookView->fitInView(ptr_scene.data()->itemsBoundingRect(),Qt::KeepAspectRatio);
+            ui->bookView->show();
+            break;
+        }
+    }
 }
 
 void reader::on_bookBorrow_clicked()
 {
-    QLinkedList<Book>::iterator it=bookSearched.begin();
     int row=ui->bookTable->rowCount(), cnt=0;
     for(int i=0; i<row; i++)
     {
         if(ui->bookTable->item(i,5)->checkState()==Qt::Checked)
         {
+            QString s = ui->bookTable->item(i,0)->text();
+            QLinkedList<Book>::iterator it=books.begin();
+            for(;it!=books.end();it++)
+            {
+                if(s==(*it).getName()) break;
+            }
             ui->borInfo->insertRow(cnt);
             ui->borInfo->setItem(cnt, 0, new QTableWidgetItem(QString::number(cartInfos.size()+cnt)));
-            ui->borInfo->setItem(cnt, 1, new QTableWidgetItem((*(it+i)).getID()));
-            ui->borInfo->setItem(cnt, 2, new QTableWidgetItem((*(it+i)).getName()));
+            ui->borInfo->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+            ui->borInfo->setItem(cnt, 2, new QTableWidgetItem((*it).getName()));
             cnt++;
         }
     }
-
+    if(cnt==0) return;
     ui->readerTab->setCurrentIndex(2);
     ui->send->show();
     ui->cancel->show();
@@ -184,8 +229,8 @@ void reader::on_send_clicked()
         c.setID(QString::number(cartInfos.size()));
         c.setBookID(ui->borInfo->item(i,1)->text());
         c.setBookName(ui->borInfo->item(i,2)->text());
-        c.setReaderName(LogInUser.getName());
-        c.setReaderID(LogInUser.getID());
+        c.setReaderName((*LogInUser).getName());
+        c.setReaderID((*LogInUser).getID());
         c.setRecipient("");
         c.setBrrowTime(ToString(QDate::currentDate()));
         c.setDuration(ui->duration->value());
@@ -193,11 +238,46 @@ void reader::on_send_clicked()
         cartInfos.append(c);
     }
     ui->send->hide();
+    ui->cancel->hide();
 }
 
 void reader::on_cancel_clicked()
 {
-    ui->borInfo->clearContents();
+    ui->borInfo->setRowCount(0);
     ui->send->hide();
     ui->cancel->hide();
+}
+
+void reader::on_borInfo_cellClicked(int row, int column)
+{
+    QString s = ui->borInfo->item(row,1)->text();
+    QLinkedList<Book>::iterator it=books.begin();
+    for(;it!=books.end();it++)
+    {
+
+        if(s==(*it).getID())
+        {
+            ui->borBookName->setText(s);
+            QImage image("Images/Books/"+(*it).getID()+".jpg");
+            this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
+            ui->borBookView->setScene(ptr_scene.data());
+            QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+            ptr_scene.data()->addItem(item);
+            ui->borBookView->fitInView(ptr_scene.data()->itemsBoundingRect(),Qt::KeepAspectRatio);
+            ui->borBookView->show();
+            break;
+        }
+    }
+}
+
+void reader::on_changePass_clicked()
+{
+    pa=QSharedPointer<Password>(new Password);
+    connect(pa.data(),SIGNAL(accepted()),this,SLOT(ChangePass()));
+    pa.data()->exec();
+}
+
+void reader::ChangePass()
+{
+    (*LogInAcc).setPsw(Account::encrypt(pa.data()->getPass()));
 }

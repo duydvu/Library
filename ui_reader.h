@@ -58,12 +58,14 @@ public:
     QTableWidget *bookTable;
     QVBoxLayout *verticalLayout;
     QLabel *label_17;
-    QGraphicsView *graphicsView;
+    QLabel *bookName;
+    QGraphicsView *bookView;
     QTextBrowser *intro;
     QWidget *borrow;
-    QGridLayout *gridLayout_5;
-    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_10;
+    QVBoxLayout *verticalLayout_5;
     QTableWidget *borInfo;
+    QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QSpinBox *duration;
@@ -71,27 +73,11 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QPushButton *send;
     QPushButton *cancel;
+    QVBoxLayout *verticalLayout_6;
+    QGraphicsView *borBookView;
+    QLabel *borBookName;
     QWidget *perInfo;
     QGridLayout *gridLayout_3;
-    QGroupBox *personalInfo;
-    QLabel *name_2;
-    QLabel *id_2;
-    QLabel *dob_2;
-    QLabel *sex_2;
-    QLabel *email_2;
-    QLabel *address_2;
-    QLabel *dop_2;
-    QLabel *label_8;
-    QLabel *label_9;
-    QLabel *label_10;
-    QPushButton *changeButton;
-    QLineEdit *name;
-    QLineEdit *id;
-    QLineEdit *dob;
-    QLineEdit *sex;
-    QLineEdit *email;
-    QLineEdit *address;
-    QLabel *dop;
     QGroupBox *cartInfo;
     QGridLayout *gridLayout_2;
     QStackedWidget *stackedWidget;
@@ -111,6 +97,43 @@ public:
     QLabel *label_15;
     QLabel *label_7;
     QWidget *page_2;
+    QGroupBox *personalInfo;
+    QVBoxLayout *verticalLayout_7;
+    QVBoxLayout *verticalLayout_9;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *id_2;
+    QLabel *id;
+    QHBoxLayout *horizontalLayout_12;
+    QLabel *name_2;
+    QLineEdit *name;
+    QHBoxLayout *horizontalLayout_13;
+    QLabel *dob_2;
+    QLineEdit *dob;
+    QHBoxLayout *horizontalLayout_14;
+    QLabel *sex_2;
+    QLineEdit *sex;
+    QHBoxLayout *horizontalLayout_21;
+    QLabel *address_2;
+    QLineEdit *address;
+    QHBoxLayout *horizontalLayout_15;
+    QLabel *email_2;
+    QLineEdit *email;
+    QVBoxLayout *verticalLayout_11;
+    QHBoxLayout *horizontalLayout_17;
+    QLabel *dop_2;
+    QLabel *dop;
+    QHBoxLayout *horizontalLayout_18;
+    QLabel *label_8;
+    QLabel *allbor;
+    QHBoxLayout *horizontalLayout_19;
+    QLabel *label_9;
+    QLabel *allreturn;
+    QHBoxLayout *horizontalLayout_20;
+    QLabel *label_10;
+    QLabel *infringe;
+    QHBoxLayout *horizontalLayout_16;
+    QPushButton *changePass;
+    QPushButton *changeButton;
     QWidget *tab_3;
     QTextBrowser *textBrowser_3;
     QTextBrowser *textBrowser_5;
@@ -123,7 +146,7 @@ public:
     {
         if (reader->objectName().isEmpty())
             reader->setObjectName(QStringLiteral("reader"));
-        reader->resize(821, 586);
+        reader->resize(830, 577);
         centralwidget = new QWidget(reader);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         verticalLayout_3 = new QVBoxLayout(centralwidget);
@@ -201,6 +224,10 @@ public:
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         bookTable->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         bookTable->setObjectName(QStringLiteral("bookTable"));
+        bookTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        bookTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+        bookTable->setSortingEnabled(true);
+        bookTable->horizontalHeader()->setHighlightSections(false);
         bookTable->horizontalHeader()->setStretchLastSection(true);
         bookTable->verticalHeader()->setVisible(false);
 
@@ -210,13 +237,20 @@ public:
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         label_17 = new QLabel(tab_4);
         label_17->setObjectName(QStringLiteral("label_17"));
+        label_17->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(label_17);
 
-        graphicsView = new QGraphicsView(tab_4);
-        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        bookName = new QLabel(tab_4);
+        bookName->setObjectName(QStringLiteral("bookName"));
+        bookName->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(graphicsView);
+        verticalLayout->addWidget(bookName);
+
+        bookView = new QGraphicsView(tab_4);
+        bookView->setObjectName(QStringLiteral("bookView"));
+
+        verticalLayout->addWidget(bookView);
 
         intro = new QTextBrowser(tab_4);
         intro->setObjectName(QStringLiteral("intro"));
@@ -232,10 +266,10 @@ public:
         readerTab->addTab(tab_4, QString());
         borrow = new QWidget();
         borrow->setObjectName(QStringLiteral("borrow"));
-        gridLayout_5 = new QGridLayout(borrow);
-        gridLayout_5->setObjectName(QStringLiteral("gridLayout_5"));
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        horizontalLayout_10 = new QHBoxLayout(borrow);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
         borInfo = new QTableWidget(borrow);
         if (borInfo->columnCount() < 3)
             borInfo->setColumnCount(3);
@@ -247,15 +281,18 @@ public:
         borInfo->setHorizontalHeaderItem(2, __qtablewidgetitem8);
         borInfo->setObjectName(QStringLiteral("borInfo"));
         borInfo->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        borInfo->setSelectionBehavior(QAbstractItemView::SelectRows);
         borInfo->horizontalHeader()->setStretchLastSection(true);
         borInfo->verticalHeader()->setVisible(false);
         borInfo->verticalHeader()->setStretchLastSection(true);
 
-        verticalLayout_2->addWidget(borInfo);
+        verticalLayout_5->addWidget(borInfo);
 
+        verticalLayout_2 = new QVBoxLayout();
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(-1, -1, 500, -1);
+        horizontalLayout_3->setContentsMargins(-1, -1, 80, -1);
         label = new QLabel(borrow);
         label->setObjectName(QStringLiteral("label"));
 
@@ -290,80 +327,32 @@ public:
         verticalLayout_2->addLayout(horizontalLayout_4);
 
 
-        gridLayout_5->addLayout(verticalLayout_2, 0, 0, 1, 1);
+        verticalLayout_5->addLayout(verticalLayout_2);
+
+
+        horizontalLayout_10->addLayout(verticalLayout_5);
+
+        verticalLayout_6 = new QVBoxLayout();
+        verticalLayout_6->setObjectName(QStringLiteral("verticalLayout_6"));
+        borBookView = new QGraphicsView(borrow);
+        borBookView->setObjectName(QStringLiteral("borBookView"));
+
+        verticalLayout_6->addWidget(borBookView);
+
+        borBookName = new QLabel(borrow);
+        borBookName->setObjectName(QStringLiteral("borBookName"));
+        borBookName->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_6->addWidget(borBookName);
+
+
+        horizontalLayout_10->addLayout(verticalLayout_6);
 
         readerTab->addTab(borrow, QString());
         perInfo = new QWidget();
         perInfo->setObjectName(QStringLiteral("perInfo"));
         gridLayout_3 = new QGridLayout(perInfo);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        personalInfo = new QGroupBox(perInfo);
-        personalInfo->setObjectName(QStringLiteral("personalInfo"));
-        personalInfo->setMinimumSize(QSize(370, 341));
-        name_2 = new QLabel(personalInfo);
-        name_2->setObjectName(QStringLiteral("name_2"));
-        name_2->setGeometry(QRect(20, 20, 55, 16));
-        id_2 = new QLabel(personalInfo);
-        id_2->setObjectName(QStringLiteral("id_2"));
-        id_2->setGeometry(QRect(20, 50, 81, 16));
-        dob_2 = new QLabel(personalInfo);
-        dob_2->setObjectName(QStringLiteral("dob_2"));
-        dob_2->setGeometry(QRect(20, 80, 81, 16));
-        sex_2 = new QLabel(personalInfo);
-        sex_2->setObjectName(QStringLiteral("sex_2"));
-        sex_2->setGeometry(QRect(20, 110, 81, 16));
-        email_2 = new QLabel(personalInfo);
-        email_2->setObjectName(QStringLiteral("email_2"));
-        email_2->setGeometry(QRect(220, 20, 101, 16));
-        address_2 = new QLabel(personalInfo);
-        address_2->setObjectName(QStringLiteral("address_2"));
-        address_2->setGeometry(QRect(220, 80, 101, 16));
-        dop_2 = new QLabel(personalInfo);
-        dop_2->setObjectName(QStringLiteral("dop_2"));
-        dop_2->setGeometry(QRect(20, 180, 141, 16));
-        label_8 = new QLabel(personalInfo);
-        label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(20, 200, 121, 16));
-        label_9 = new QLabel(personalInfo);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(20, 220, 121, 16));
-        label_10 = new QLabel(personalInfo);
-        label_10->setObjectName(QStringLiteral("label_10"));
-        label_10->setGeometry(QRect(20, 250, 121, 16));
-        changeButton = new QPushButton(personalInfo);
-        changeButton->setObjectName(QStringLiteral("changeButton"));
-        changeButton->setGeometry(QRect(250, 280, 93, 28));
-        name = new QLineEdit(personalInfo);
-        name->setObjectName(QStringLiteral("name"));
-        name->setGeometry(QRect(80, 20, 113, 20));
-        name->setEchoMode(QLineEdit::Normal);
-        name->setReadOnly(true);
-        id = new QLineEdit(personalInfo);
-        id->setObjectName(QStringLiteral("id"));
-        id->setGeometry(QRect(80, 50, 113, 20));
-        id->setReadOnly(true);
-        dob = new QLineEdit(personalInfo);
-        dob->setObjectName(QStringLiteral("dob"));
-        dob->setGeometry(QRect(80, 80, 113, 20));
-        dob->setReadOnly(true);
-        sex = new QLineEdit(personalInfo);
-        sex->setObjectName(QStringLiteral("sex"));
-        sex->setGeometry(QRect(80, 110, 113, 20));
-        sex->setReadOnly(true);
-        email = new QLineEdit(personalInfo);
-        email->setObjectName(QStringLiteral("email"));
-        email->setGeometry(QRect(220, 50, 113, 20));
-        email->setReadOnly(true);
-        address = new QLineEdit(personalInfo);
-        address->setObjectName(QStringLiteral("address"));
-        address->setGeometry(QRect(220, 110, 113, 20));
-        address->setReadOnly(true);
-        dop = new QLabel(personalInfo);
-        dop->setObjectName(QStringLiteral("dop"));
-        dop->setGeometry(QRect(100, 180, 131, 21));
-
-        gridLayout_3->addWidget(personalInfo, 0, 0, 1, 1);
-
         cartInfo = new QGroupBox(perInfo);
         cartInfo->setObjectName(QStringLiteral("cartInfo"));
         cartInfo->setMinimumSize(QSize(369, 341));
@@ -450,6 +439,241 @@ public:
 
         gridLayout_3->addWidget(cartInfo, 0, 1, 1, 1);
 
+        personalInfo = new QGroupBox(perInfo);
+        personalInfo->setObjectName(QStringLiteral("personalInfo"));
+        personalInfo->setMinimumSize(QSize(370, 341));
+        verticalLayout_7 = new QVBoxLayout(personalInfo);
+        verticalLayout_7->setObjectName(QStringLiteral("verticalLayout_7"));
+        verticalLayout_9 = new QVBoxLayout();
+        verticalLayout_9->setObjectName(QStringLiteral("verticalLayout_9"));
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
+        id_2 = new QLabel(personalInfo);
+        id_2->setObjectName(QStringLiteral("id_2"));
+
+        horizontalLayout_11->addWidget(id_2);
+
+        id = new QLabel(personalInfo);
+        id->setObjectName(QStringLiteral("id"));
+
+        horizontalLayout_11->addWidget(id);
+
+        horizontalLayout_11->setStretch(0, 1);
+        horizontalLayout_11->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_11);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
+        name_2 = new QLabel(personalInfo);
+        name_2->setObjectName(QStringLiteral("name_2"));
+
+        horizontalLayout_12->addWidget(name_2);
+
+        name = new QLineEdit(personalInfo);
+        name->setObjectName(QStringLiteral("name"));
+        name->setEchoMode(QLineEdit::Normal);
+        name->setReadOnly(true);
+
+        horizontalLayout_12->addWidget(name);
+
+        horizontalLayout_12->setStretch(0, 1);
+        horizontalLayout_12->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_12);
+
+        horizontalLayout_13 = new QHBoxLayout();
+        horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
+        dob_2 = new QLabel(personalInfo);
+        dob_2->setObjectName(QStringLiteral("dob_2"));
+
+        horizontalLayout_13->addWidget(dob_2);
+
+        dob = new QLineEdit(personalInfo);
+        dob->setObjectName(QStringLiteral("dob"));
+        dob->setReadOnly(true);
+
+        horizontalLayout_13->addWidget(dob);
+
+        horizontalLayout_13->setStretch(0, 1);
+        horizontalLayout_13->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_13);
+
+        horizontalLayout_14 = new QHBoxLayout();
+        horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
+        sex_2 = new QLabel(personalInfo);
+        sex_2->setObjectName(QStringLiteral("sex_2"));
+
+        horizontalLayout_14->addWidget(sex_2);
+
+        sex = new QLineEdit(personalInfo);
+        sex->setObjectName(QStringLiteral("sex"));
+        sex->setReadOnly(true);
+
+        horizontalLayout_14->addWidget(sex);
+
+        horizontalLayout_14->setStretch(0, 1);
+        horizontalLayout_14->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_14);
+
+        horizontalLayout_21 = new QHBoxLayout();
+        horizontalLayout_21->setObjectName(QStringLiteral("horizontalLayout_21"));
+        address_2 = new QLabel(personalInfo);
+        address_2->setObjectName(QStringLiteral("address_2"));
+
+        horizontalLayout_21->addWidget(address_2);
+
+        address = new QLineEdit(personalInfo);
+        address->setObjectName(QStringLiteral("address"));
+        address->setReadOnly(true);
+
+        horizontalLayout_21->addWidget(address);
+
+        horizontalLayout_21->setStretch(0, 1);
+        horizontalLayout_21->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_21);
+
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
+        email_2 = new QLabel(personalInfo);
+        email_2->setObjectName(QStringLiteral("email_2"));
+
+        horizontalLayout_15->addWidget(email_2);
+
+        email = new QLineEdit(personalInfo);
+        email->setObjectName(QStringLiteral("email"));
+        email->setReadOnly(true);
+
+        horizontalLayout_15->addWidget(email);
+
+        horizontalLayout_15->setStretch(0, 1);
+        horizontalLayout_15->setStretch(1, 3);
+
+        verticalLayout_9->addLayout(horizontalLayout_15);
+
+
+        verticalLayout_7->addLayout(verticalLayout_9);
+
+        verticalLayout_11 = new QVBoxLayout();
+        verticalLayout_11->setObjectName(QStringLiteral("verticalLayout_11"));
+        horizontalLayout_17 = new QHBoxLayout();
+        horizontalLayout_17->setObjectName(QStringLiteral("horizontalLayout_17"));
+        dop_2 = new QLabel(personalInfo);
+        dop_2->setObjectName(QStringLiteral("dop_2"));
+
+        horizontalLayout_17->addWidget(dop_2);
+
+        dop = new QLabel(personalInfo);
+        dop->setObjectName(QStringLiteral("dop"));
+
+        horizontalLayout_17->addWidget(dop);
+
+        horizontalLayout_17->setStretch(0, 1);
+        horizontalLayout_17->setStretch(1, 3);
+
+        verticalLayout_11->addLayout(horizontalLayout_17);
+
+        horizontalLayout_18 = new QHBoxLayout();
+        horizontalLayout_18->setObjectName(QStringLiteral("horizontalLayout_18"));
+        label_8 = new QLabel(personalInfo);
+        label_8->setObjectName(QStringLiteral("label_8"));
+
+        horizontalLayout_18->addWidget(label_8);
+
+        allbor = new QLabel(personalInfo);
+        allbor->setObjectName(QStringLiteral("allbor"));
+
+        horizontalLayout_18->addWidget(allbor);
+
+        horizontalLayout_18->setStretch(0, 1);
+        horizontalLayout_18->setStretch(1, 3);
+
+        verticalLayout_11->addLayout(horizontalLayout_18);
+
+        horizontalLayout_19 = new QHBoxLayout();
+        horizontalLayout_19->setObjectName(QStringLiteral("horizontalLayout_19"));
+        label_9 = new QLabel(personalInfo);
+        label_9->setObjectName(QStringLiteral("label_9"));
+
+        horizontalLayout_19->addWidget(label_9);
+
+        allreturn = new QLabel(personalInfo);
+        allreturn->setObjectName(QStringLiteral("allreturn"));
+
+        horizontalLayout_19->addWidget(allreturn);
+
+        horizontalLayout_19->setStretch(0, 1);
+        horizontalLayout_19->setStretch(1, 3);
+
+        verticalLayout_11->addLayout(horizontalLayout_19);
+
+        horizontalLayout_20 = new QHBoxLayout();
+        horizontalLayout_20->setObjectName(QStringLiteral("horizontalLayout_20"));
+        label_10 = new QLabel(personalInfo);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        horizontalLayout_20->addWidget(label_10);
+
+        infringe = new QLabel(personalInfo);
+        infringe->setObjectName(QStringLiteral("infringe"));
+
+        horizontalLayout_20->addWidget(infringe);
+
+        horizontalLayout_20->setStretch(0, 1);
+        horizontalLayout_20->setStretch(1, 3);
+
+        verticalLayout_11->addLayout(horizontalLayout_20);
+
+
+        verticalLayout_7->addLayout(verticalLayout_11);
+
+        horizontalLayout_16 = new QHBoxLayout();
+        horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
+        changePass = new QPushButton(personalInfo);
+        changePass->setObjectName(QStringLiteral("changePass"));
+
+        horizontalLayout_16->addWidget(changePass);
+
+        changeButton = new QPushButton(personalInfo);
+        changeButton->setObjectName(QStringLiteral("changeButton"));
+
+        horizontalLayout_16->addWidget(changeButton);
+
+
+        verticalLayout_7->addLayout(horizontalLayout_16);
+
+        verticalLayout_7->setStretch(0, 2);
+        verticalLayout_7->setStretch(1, 1);
+        name_2->raise();
+        id_2->raise();
+        dob_2->raise();
+        sex_2->raise();
+        email_2->raise();
+        address_2->raise();
+        dop_2->raise();
+        label_8->raise();
+        label_9->raise();
+        label_10->raise();
+        changeButton->raise();
+        name->raise();
+        dob->raise();
+        sex->raise();
+        email->raise();
+        address->raise();
+        dop->raise();
+        changePass->raise();
+        id->raise();
+        allbor->raise();
+        allreturn->raise();
+        infringe->raise();
+        address->raise();
+        address_2->raise();
+
+        gridLayout_3->addWidget(personalInfo, 0, 0, 1, 1);
+
         readerTab->addTab(perInfo, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QStringLiteral("tab_3"));
@@ -485,7 +709,7 @@ public:
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        readerTab->setCurrentIndex(1);
+        readerTab->setCurrentIndex(3);
         stackedWidget->setCurrentIndex(0);
 
 
@@ -542,6 +766,7 @@ public:
         QTableWidgetItem *___qtablewidgetitem4 = bookTable->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("reader", "T\303\254nh tr\341\272\241ng", 0));
         label_17->setText(QApplication::translate("reader", "Gi\341\273\237i thi\341\273\207u", 0));
+        bookName->setText(QString());
         readerTab->setTabText(readerTab->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));
         QTableWidgetItem *___qtablewidgetitem5 = borInfo->horizontalHeaderItem(0);
         ___qtablewidgetitem5->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u m\306\260\341\273\243n", 0));
@@ -553,20 +778,8 @@ public:
         label_2->setText(QApplication::translate("reader", "Ng\303\240y", 0));
         send->setText(QApplication::translate("reader", "G\341\273\255i phi\341\272\277u m\306\260\341\273\243n", 0));
         cancel->setText(QApplication::translate("reader", "H\303\271y", 0));
+        borBookName->setText(QString());
         readerTab->setTabText(readerTab->indexOf(borrow), QApplication::translate("reader", "\304\220\304\203ng k\303\275 m\306\260\341\273\243n", 0));
-        personalInfo->setTitle(QApplication::translate("reader", "Th\303\264ng tin c\341\273\247a b\341\272\241n", 0));
-        name_2->setText(QApplication::translate("reader", "H\341\273\215 v\303\240 t\303\252n", 0));
-        id_2->setText(QApplication::translate("reader", "M\303\243 \304\221\341\273\231c gi\341\272\243", 0));
-        dob_2->setText(QApplication::translate("reader", "Ng\303\240y sinh", 0));
-        sex_2->setText(QApplication::translate("reader", "Gi\341\273\233i t\303\255nh", 0));
-        email_2->setText(QApplication::translate("reader", "Email", 0));
-        address_2->setText(QApplication::translate("reader", "\304\220\341\273\213a ch\341\273\211", 0));
-        dop_2->setText(QApplication::translate("reader", "Ng\303\240y tham gia", 0));
-        label_8->setText(QApplication::translate("reader", "T\341\273\225ng s\303\241ch m\306\260\341\273\243n", 0));
-        label_9->setText(QApplication::translate("reader", "T\341\273\225ng s\303\241ch tr\341\272\243", 0));
-        label_10->setText(QApplication::translate("reader", "Vi ph\341\272\241m", 0));
-        changeButton->setText(QApplication::translate("reader", "C\341\272\255p nh\341\272\255t", 0));
-        dop->setText(QString());
         cartInfo->setTitle(QApplication::translate("reader", "Chi ti\341\272\277t phi\341\272\277u m\306\260\341\273\243n", 0));
         label_11->setText(QApplication::translate("reader", "1. L\341\272\247n 1", 0));
         label_12->setText(QApplication::translate("reader", "M\303\243 phi\341\272\277u", 0));
@@ -577,6 +790,24 @@ public:
         label_6->setText(QApplication::translate("reader", "TextLabel", 0));
         label_15->setText(QApplication::translate("reader", "H\341\272\241n tr\341\272\243", 0));
         label_7->setText(QApplication::translate("reader", "TextLabel", 0));
+        personalInfo->setTitle(QApplication::translate("reader", "Th\303\264ng tin c\341\273\247a b\341\272\241n", 0));
+        id_2->setText(QApplication::translate("reader", "M\303\243 \304\221\341\273\231c gi\341\272\243", 0));
+        id->setText(QString());
+        name_2->setText(QApplication::translate("reader", "H\341\273\215 v\303\240 t\303\252n", 0));
+        dob_2->setText(QApplication::translate("reader", "Ng\303\240y sinh", 0));
+        sex_2->setText(QApplication::translate("reader", "Gi\341\273\233i t\303\255nh", 0));
+        address_2->setText(QApplication::translate("reader", "\304\220\341\273\213a ch\341\273\211", 0));
+        email_2->setText(QApplication::translate("reader", "Email", 0));
+        dop_2->setText(QApplication::translate("reader", "Ng\303\240y tham gia", 0));
+        dop->setText(QString());
+        label_8->setText(QApplication::translate("reader", "T\341\273\225ng s\303\241ch m\306\260\341\273\243n", 0));
+        allbor->setText(QString());
+        label_9->setText(QApplication::translate("reader", "T\341\273\225ng s\303\241ch tr\341\272\243", 0));
+        allreturn->setText(QString());
+        label_10->setText(QApplication::translate("reader", "Vi ph\341\272\241m", 0));
+        infringe->setText(QString());
+        changePass->setText(QApplication::translate("reader", "\304\220\341\273\225i m\341\272\255t kh\341\272\251u", 0));
+        changeButton->setText(QApplication::translate("reader", "C\341\272\255p nh\341\272\255t", 0));
         readerTab->setTabText(readerTab->indexOf(perInfo), QApplication::translate("reader", "Th\303\264ng tin c\303\241 nh\303\242n", 0));
         textBrowser_3->setHtml(QApplication::translate("reader", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"

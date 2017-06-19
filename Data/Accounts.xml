@@ -19,7 +19,7 @@
         <password>6c696272617269616e</password>
         <role>L</role>
         <id>2</id>
-        <status>0</status>
+        <status>1</status>
     </account>
     <account>
         <name>user</name>
@@ -201,13 +201,6 @@
         <password>6e677579656e6c6f6e67</password>
         <role>L</role>
         <id>28</id>
-        <status>0</status>
-    </account>
-    <account>
-        <name>einstein</name>
-        <password>65696e737465696e</password>
-        <role>R</role>
-        <id>5</id>
         <status>0</status>
     </account>
 </Accounts>

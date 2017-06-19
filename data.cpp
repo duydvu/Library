@@ -6,8 +6,8 @@ QLinkedList<User> users;
 QLinkedList<Account> temp_accounts;
 QLinkedList<User> temp_users;
 QLinkedList<cartinfo> cartInfos;
-Account LogInAcc;
-User LogInUser;
+QLinkedList<Account>::iterator LogInAcc;
+QLinkedList<User>::iterator LogInUser;
 
 bool compare(QChar a, QChar b)
 {

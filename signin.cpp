@@ -26,8 +26,8 @@ void SignIn::on_LogInButton_clicked()
         if((*it).getAcc() == acc)
             if(Account::encrypt(psw) == (*it).getPsw())
             {
-                LogInAcc=*it;
-                LogInUser=*(users.begin()+LogInAcc.getID().toInt());
+                LogInAcc=it;
+                LogInUser=users.begin()+(*LogInAcc).getID().toInt();
                 this->accept();
                 return;
             }

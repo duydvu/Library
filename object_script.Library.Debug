@@ -14,6 +14,7 @@ INPUT(
 ./debug\cartinfo.o
 ./debug\help.o
 ./debug\about.o
+./debug\password.o
 ./debug\qrc_data.o
 ./debug\moc_mainwindow.o
 ./debug\moc_signin.o
@@ -24,4 +25,5 @@ INPUT(
 ./debug\moc_librarian.o
 ./debug\moc_help.o
 ./debug\moc_about.o
+./debug\moc_password.o
 );

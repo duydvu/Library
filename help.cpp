@@ -6,6 +6,7 @@ Help::Help(QWidget *parent) :
     ui(new Ui::Help)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Trợ giúp");
 }
 
 Help::~Help()

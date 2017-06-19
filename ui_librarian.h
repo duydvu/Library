@@ -883,7 +883,7 @@ public:
 
         retranslateUi(librarian);
 
-        fyfu11212->setCurrentIndex(2);
+        fyfu11212->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(librarian);

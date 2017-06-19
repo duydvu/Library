@@ -26,19 +26,25 @@ private slots:
 
     void on_bookTable_cellClicked(int row, int column);
 
-    void on_name_textChanged(const QString &arg1);
-
     void on_bookBorrow_clicked();
 
     void on_send_clicked();
 
     void on_cancel_clicked();
 
+    void on_borInfo_cellClicked(int row, int column);
+
+    void on_changePass_clicked();
+
+    void ChangePass();
+
 private:
     Ui::reader *ui;
-    QLinkedList<Book> bookSearched;
+    QSharedPointer<Password> pa;
+    QSharedPointer<QGraphicsScene> ptr_scene;
 
     void closeEvent (QCloseEvent *event);
+
 };
 
 #endif // READER_H

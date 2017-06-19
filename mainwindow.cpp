@@ -483,10 +483,10 @@ void MainWindow::on_FindBooksButton_clicked()
         {
             while(m+i<s[j].length())
             {
-                if(compare(word[i], s[j][m+i]))
+                if(compare(word[i], s[j][m+i])||word.length()==0)
                 {
                     i++;
-                    if(i==word.length())
+                    if(i==word.length()||word.length()==0)
                     {
                         ui->BooksTable->insertRow(cnt);
                         ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem((*it).getName()));
@@ -495,7 +495,7 @@ void MainWindow::on_FindBooksButton_clicked()
                         ui->BooksTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
                         if((*it).getQuantity()>0)
                             ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
-                        else ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("hết hàng"));
+                        else ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("hết sách"));
                         cnt++;
                         break;
                     }
@@ -532,7 +532,7 @@ void MainWindow::on_SignInButton_clicked()
 void MainWindow::logIn()
 {
     this->hide();
-    QString role=LogInAcc.getRole();
+    QString role=(*LogInAcc).getRole();
     if(role=="A")
     {
         ad= QSharedPointer<Admin>(new Admin);
@@ -555,7 +555,7 @@ void MainWindow::logIn()
 
 void MainWindow::logOut()
 {
-    LogInAcc.clear();
+    LogInAcc=NULL;
     this->show();
 }
 

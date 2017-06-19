@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QTabWidget" name="admin">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="staffs">
        <attribute name="title">
@@ -26,84 +26,7 @@
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,3">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,6">
-          <item>
-           <widget class="QWidget" name="customize" native="true">
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="spacing">
-              <number>50</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>9</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="changeInfo">
-               <property name="styleSheet">
-                <string notr="true">height: 20px;</string>
-               </property>
-               <property name="text">
-                <string>Sửa thông tin</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="remove">
-               <property name="styleSheet">
-                <string notr="true">height: 20px;</string>
-               </property>
-               <property name="text">
-                <string>Xóa</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="changePass">
-               <property name="styleSheet">
-                <string notr="true">height: 20px;</string>
-               </property>
-               <property name="text">
-                <string>Đổi mật khẩu</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QTableWidget" name="staffTable">
-            <property name="sortingEnabled">
-             <bool>true</bool>
-            </property>
-            <attribute name="horizontalHeaderStretchLastSection">
-             <bool>true</bool>
-            </attribute>
-            <attribute name="verticalHeaderVisible">
-             <bool>false</bool>
-            </attribute>
-            <column>
-             <property name="text">
-              <string>Mã nhân viên</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Tài khoản</string>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Họ và tên</string>
-             </property>
-            </column>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,3">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,6">
           <item>
            <widget class="QGroupBox" name="search">
             <property name="title">
@@ -146,6 +69,44 @@ border-radius: 5px;</string>
            </widget>
           </item>
           <item>
+           <widget class="QTableWidget" name="staffTable">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Mã nhân viên</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tài khoản</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Họ và tên</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="3">
+          <item>
            <widget class="QGroupBox" name="staffInfo">
             <property name="title">
              <string>Thông tin nhân viên</string>
@@ -157,42 +118,134 @@ border-radius: 5px;</string>
              <property name="verticalSpacing">
               <number>20</number>
              </property>
-             <item row="0" column="0">
+             <item row="1" column="0">
               <widget class="QLabel" name="staffID">
                <property name="text">
                 <string>Mã nhân viên:</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QLabel" name="s_id">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0">
+             <item row="2" column="0">
               <widget class="QLabel" name="staffName">
                <property name="text">
                 <string>Tên nhân viên:</string>
                </property>
               </widget>
              </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Địa chỉ:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QLineEdit" name="s_name">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="1">
+              <widget class="QLineEdit" name="s_add">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QWidget" name="customize" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <property name="spacing">
+                 <number>50</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>9</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="changeInfo">
+                  <property name="styleSheet">
+                   <string notr="true">height: 20px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Sửa thông tin</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="changePass">
+                  <property name="styleSheet">
+                   <string notr="true">height: 20px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Đổi mật khẩu</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
              <item row="1" column="1">
-              <widget class="QLabel" name="s_name">
+              <widget class="QLabel" name="s_id">
                <property name="text">
                 <string/>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
+             <item row="9" column="0">
+              <widget class="QPushButton" name="s_done">
+               <property name="text">
+                <string>Xong</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_25">
+               <property name="text">
+                <string>Tình trạng:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="1">
+              <widget class="QFrame" name="s_stt">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_17">
+                <item>
+                 <widget class="QRadioButton" name="s_active">
+                  <property name="text">
+                   <string>Đang làm việc</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QRadioButton" name="s_nactive">
+                  <property name="text">
+                   <string>Đã hủy hợp đồng</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="7" column="0">
               <widget class="QLabel" name="startDate">
                <property name="text">
                 <string>Bắt đầu làm việc từ:</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="1">
+             <item row="7" column="1">
               <widget class="QLabel" name="s_DoP">
                <property name="text">
                 <string/>
@@ -207,37 +260,33 @@ border-radius: 5px;</string>
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QLabel" name="s_sex">
-               <property name="text">
-                <string/>
+              <widget class="QLineEdit" name="s_sex">
+               <property name="readOnly">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
-             <item row="4" column="0">
+             <item row="5" column="0">
               <widget class="QLabel" name="label_8">
                <property name="text">
                 <string>Email:</string>
                </property>
               </widget>
              </item>
-             <item row="4" column="1">
-              <widget class="QLabel" name="s_email">
-               <property name="text">
-                <string/>
-               </property>
-              </widget>
-             </item>
-             <item row="5" column="0">
-              <widget class="QLabel" name="label_9">
-               <property name="text">
-                <string>Địa chỉ:</string>
-               </property>
-              </widget>
-             </item>
              <item row="5" column="1">
-              <widget class="QLabel" name="s_add">
+              <widget class="QLineEdit" name="s_email">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QLineEdit" name="s_DoB"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_27">
                <property name="text">
-                <string/>
+                <string>Ngày sinh:</string>
                </property>
               </widget>
              </item>
@@ -401,6 +450,9 @@ border-radius: 5px;</string>
             </item>
             <item>
              <widget class="QTableWidget" name="tableWidget">
+              <property name="editTriggers">
+               <set>QAbstractItemView::NoEditTriggers</set>
+              </property>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>
@@ -649,25 +701,6 @@ border-radius: 5px;</string>
               </widget>
              </item>
             </layout>
-            <zorder>label_10</zorder>
-            <zorder>label_11</zorder>
-            <zorder>label_13</zorder>
-            <zorder>label_14</zorder>
-            <zorder>label_15</zorder>
-            <zorder>label_12</zorder>
-            <zorder>label_16</zorder>
-            <zorder>lineEdit</zorder>
-            <zorder>lineEdit_2</zorder>
-            <zorder>lineEdit_3</zorder>
-            <zorder>lineEdit_4</zorder>
-            <zorder>lineEdit_6</zorder>
-            <zorder>label_17</zorder>
-            <zorder>textEdit</zorder>
-            <zorder>frame_5</zorder>
-            <zorder>label_18</zorder>
-            <zorder>label_19</zorder>
-            <zorder>layoutWidget</zorder>
-            <zorder>label_17</zorder>
            </widget>
           </item>
          </layout>
@@ -678,8 +711,8 @@ border-radius: 5px;</string>
        <attribute name="title">
         <string>Quản lý độc giả</string>
        </attribute>
-       <layout class="QHBoxLayout" name="horizontalLayout_15">
-        <item>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
          <layout class="QVBoxLayout" name="verticalLayout_7">
           <item>
            <widget class="QWidget" name="widget_2" native="true">
@@ -739,16 +772,11 @@ border-radius: 5px;</string>
               <string>Họ và tên</string>
              </property>
             </column>
-            <column>
-             <property name="text">
-              <string>Tình trạng</string>
-             </property>
-            </column>
            </widget>
           </item>
          </layout>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QFrame" name="frame_6">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
@@ -757,104 +785,6 @@ border-radius: 5px;</string>
            <enum>QFrame::Raised</enum>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_11">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_22">
-               <property name="text">
-                <string>Họ và tên:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_12"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_23">
-               <property name="text">
-                <string>Giới tính:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_13"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_24">
-               <property name="text">
-                <string>Ngày sinh:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_14"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_40">
-               <property name="text">
-                <string>Email:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_15"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_41">
-               <property name="text">
-                <string>Ngày tham gia:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_16"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_42">
-               <property name="text">
-                <string>Địa chỉ:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_17"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="1,4">
-             <item>
-              <widget class="QLabel" name="label_43">
-               <property name="text">
-                <string>Tình trạng:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_18"/>
-             </item>
-            </layout>
-           </item>
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_16">
              <item>
@@ -871,20 +801,185 @@ border-radius: 5px;</string>
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_3">
+               <property name="text">
+                <string>Khóa / Mở khóa</string>
+               </property>
+              </widget>
+             </item>
             </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_26">
+               <property name="text">
+                <string>Mã số:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="r_id">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_22">
+               <property name="text">
+                <string>Họ và tên:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_name">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_23">
+               <property name="text">
+                <string>Giới tính:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_sex">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_24">
+               <property name="text">
+                <string>Ngày sinh:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_DoB">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_25" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_40">
+               <property name="text">
+                <string>Email:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_email">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_42">
+               <property name="text">
+                <string>Địa chỉ:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="r_add">
+               <property name="readOnly">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_41">
+               <property name="text">
+                <string>Ngày tham gia:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="r_DoP">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="1,4">
+             <item>
+              <widget class="QLabel" name="label_43">
+               <property name="text">
+                <string>Tình trạng:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="r_stt">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_7">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_18">
+              <property name="rightMargin">
+               <number>200</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="r_done">
+                <property name="text">
+                 <string>Xong</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
            </item>
           </layout>
          </widget>
         </item>
        </layout>
-       <zorder>usersTable</zorder>
-       <zorder>frame_6</zorder>
-       <zorder>frame_6</zorder>
-       <zorder>usersTable</zorder>
-       <zorder>widget_2</zorder>
-       <zorder>usersTable</zorder>
-       <zorder>pushButton_2</zorder>
-       <zorder>pushButton_4</zorder>
       </widget>
       <widget class="QWidget" name="lent">
        <attribute name="title">
@@ -934,6 +1029,11 @@ border-radius: 5px;</string>
           <column>
            <property name="text">
             <string>Thời hạn</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Số sách còn</string>
            </property>
           </column>
          </widget>
@@ -1034,55 +1134,41 @@ border-radius: 5px;</string>
             </widget>
            </item>
            <item row="5" column="0" colspan="2">
-            <widget class="QLabel" name="label_5">
-             <property name="text">
-              <string>Số lượng tồn kho:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
-            <widget class="QLabel" name="capacity">
-             <property name="text">
-              <string/>
-             </property>
-            </widget>
-           </item>
-           <item row="7" column="0" colspan="2">
             <widget class="QLabel" name="label_3">
              <property name="text">
               <string>Tên người mượn:</string>
              </property>
             </widget>
            </item>
-           <item row="8" column="0" colspan="2">
+           <item row="6" column="0" colspan="2">
             <widget class="QLabel" name="readerName">
              <property name="text">
               <string/>
              </property>
             </widget>
            </item>
-           <item row="10" column="0" colspan="2">
+           <item row="8" column="0" colspan="2">
             <widget class="QLabel" name="label_6">
              <property name="text">
               <string>Xác nhận lần cuối bởi</string>
              </property>
             </widget>
            </item>
-           <item row="12" column="0" colspan="2">
+           <item row="10" column="0" colspan="2">
             <widget class="QLabel" name="recipient">
              <property name="text">
               <string/>
              </property>
             </widget>
            </item>
-           <item row="14" column="0">
+           <item row="12" column="0">
             <widget class="QLabel" name="label_4">
              <property name="text">
               <string>Tình trạng:</string>
              </property>
             </widget>
            </item>
-           <item row="15" column="0" colspan="2">
+           <item row="13" column="0" colspan="2">
             <widget class="QLabel" name="status">
              <property name="text">
               <string/>
@@ -1200,6 +1286,9 @@ width: 50px;</string>
         </item>
         <item row="1" column="0">
          <widget class="QTableWidget" name="registrationTable">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
           </attribute>
@@ -1262,5 +1351,22 @@ width: 50px;</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>searchUsers</sender>
+   <signal>returnPressed()</signal>
+   <receiver>searchButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>191</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>326</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

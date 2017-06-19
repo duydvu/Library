@@ -52,8 +52,29 @@ private slots:
 
     void on_staffTable_cellClicked(int row, int column);
 
+    void on_changePass_clicked();
+
+    void LibraPassChange();
+
+    void on_changeInfo_clicked();
+
+    void on_s_done_clicked();
+
+    void on_usersTable_cellClicked(int row, int column);
+
+    void on_pushButton_4_clicked();
+
+    void ReaderPassChange();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_r_done_clicked();
+
 private:
     Ui::Admin *ui;
+    QSharedPointer<Password> pa;
 
     void closeEvent (QCloseEvent *event);
 
