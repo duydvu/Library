@@ -16,8 +16,8 @@ public:
     void setRole(QString role);
     QString getID();
     void setID(QString id);
-    void setActive(bool TF);
-    bool getActive();
+    void setStatus(int stt);
+    int getStatus();
     void clear();
     static QString encrypt(QString psw);
 private:
@@ -25,7 +25,7 @@ private:
     QString psw;
     QString role;
     QString id;
-    bool active;
+    int status;
 };
 
 #endif // ACCOUNT_H

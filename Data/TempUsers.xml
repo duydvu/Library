@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempUsers>
-    <user>
-        <name>vu</name>
-        <id>1</id>
-        <DoB>01.01.1998</DoB>
-        <sex>male</sex>
-        <address>123</address>
-        <email>321</email>
-        <DoP>321</DoP>
-    </user>
-</TempUsers>
+<TempUsers/>

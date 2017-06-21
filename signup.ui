@@ -7,145 +7,187 @@
     <x>0</x>
     <y>0</y>
     <width>408</width>
-    <height>370</height>
+    <height>390</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>408</width>
+    <height>390</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>408</width>
+    <height>408</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="SignUpButton">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>300</y>
-     <width>131</width>
-     <height>31</height>
-    </rect>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 64, 46, 255), stop:1 rgba(0, 118, 191, 255));
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="4,1,1,1,1,1">
+   <property name="spacing">
+    <number>10</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">#SignUpButton{
-	font: 63 12pt &quot;Myriad Pro Light&quot;;
+   <property name="leftMargin">
+    <number>40</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>40</number>
+   </property>
+   <property name="bottomMargin">
+    <number>40</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">background: none;
+image: url(Images/logup.png);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="NameEdit">
+     <property name="styleSheet">
+      <string notr="true">height: 35px;
+border: none;
+border-radius: 5px;
+padding-left: 10px;
+background: white;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+     </property>
+     <property name="placeholderText">
+      <string>Tên đăng nhập</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="PasswordEdit">
+     <property name="styleSheet">
+      <string notr="true">height: 35px;
+border: none;
+border-radius: 5px;
+padding-left: 10px;
+background: white;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Mật khẩu</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="ReenterPassword">
+     <property name="styleSheet">
+      <string notr="true">height: 35px;
+border: none;
+border-radius: 5px;
+padding-left: 10px;
+background: white;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
+     <property name="placeholderText">
+      <string>Nhập lại mật khẩu</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="role">
+     <property name="styleSheet">
+      <string notr="true">background: none;
+color: #fff;
+height: 40px;</string>
+     </property>
+     <property name="title">
+      <string>Đăng ký với vai trò</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QRadioButton" name="reader">
+        <property name="text">
+         <string>Độc giả</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="librarian">
+        <property name="text">
+         <string>Thủ thư</string>
+        </property>
+        <property name="autoExclusive">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="SignUpButton">
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton 
+{
+	height: 35px;
+	border-width: 0px;
 	border-radius: 5px;
-	background: #ddd;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: #00BFA5;
+	color: #eee;
+	outline: none;
+	font-weight: bold;
 }
-#SignUpButton:hover {
-	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(157, 157, 157, 255), stop:0.99435 rgba(241, 241, 241, 255), stop:1 rgba(255, 255, 255, 255));
+QPushButton:hover 
+{
+	background-color: #1DE9B6;
 }</string>
-   </property>
-   <property name="text">
-    <string>Đăng ký</string>
-   </property>
-   <property name="flat">
-    <bool>false</bool>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="NameEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>40</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-width: 0px;
-border-radius: 12px;
-background-color: white;
-padding-left: 12px;
-font-size: 14px;
-font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
-   </property>
-   <property name="placeholderText">
-    <string>Tên đăng nhập</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="PasswordEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>90</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">border-width: 0px;
-border-radius: 12px;
-background-color: white;
-padding-left: 12px;
-font-size: 14px;
-font: 63 12pt &quot;Myriad Pro Light&quot;;</string>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
-   </property>
-   <property name="placeholderText">
-    <string>Mật khẩu</string>
-   </property>
-  </widget>
-  <widget class="QGroupBox" name="role">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>210</y>
-     <width>311</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="title">
-    <string>Đăng ký với vai trò</string>
-   </property>
-   <widget class="QRadioButton" name="reader">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>20</y>
-      <width>82</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Độc giả</string>
-    </property>
-    <property name="autoExclusive">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="librarian">
-    <property name="geometry">
-     <rect>
-      <x>160</x>
-      <y>20</y>
-      <width>82</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Thủ thư</string>
-    </property>
-    <property name="autoExclusive">
-     <bool>true</bool>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>140</y>
-     <width>231</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>Nhập lại mật khẩu</string>
-   </property>
-  </widget>
+     </property>
+     <property name="text">
+      <string>Đăng ký</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <tabstops>
   <tabstop>NameEdit</tabstop>
   <tabstop>PasswordEdit</tabstop>
+  <tabstop>ReenterPassword</tabstop>
+  <tabstop>reader</tabstop>
+  <tabstop>librarian</tabstop>
   <tabstop>SignUpButton</tabstop>
  </tabstops>
  <resources/>

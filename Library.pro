@@ -21,7 +21,13 @@ SOURCES += main.cpp\
     data.cpp \
     user.cpp \
     PersonalInfo.cpp \
-    admin.cpp
+    admin.cpp \
+    reader.cpp \
+    librarian.cpp \
+    cartinfo.cpp \
+    help.cpp \
+    about.cpp \
+    password.cpp
 
 HEADERS  += mainwindow.h \
     account.h \
@@ -32,14 +38,25 @@ HEADERS  += mainwindow.h \
     ui_mainwindow.h \
     user.h \
     PersonalInfo.h \
-    admin.h
+    admin.h \
+    reader.h \
+    librarian.h \
+    cartinfo.h \
+    help.h \
+    about.h \
+    password.h
 
 FORMS    += \
     signin.ui \
     signup.ui \
     mainwindow.ui \
     PersonalInfo.ui \
-    admin.ui
+    admin.ui \
+    reader.ui \
+    librarian.ui \
+    help.ui \
+    about.ui \
+    password.ui
 
 RESOURCES += \
     data.qrc

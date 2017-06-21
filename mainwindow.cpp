@@ -8,19 +8,44 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
-    ui->BooksTable->setColumnCount(3);
-    ui->BooksTable->setHorizontalHeaderItem(0, new QTableWidgetItem("#"));
-    ui->BooksTable->setHorizontalHeaderItem(1, new QTableWidgetItem("Tựa sách"));
-    ui->BooksTable->setHorizontalHeaderItem(2, new QTableWidgetItem("Tác giả"));
-    ui->BooksTable->setColumnWidth(0, ui->BooksTable->width()/100*5);
-    ui->BooksTable->setColumnWidth(1, ui->BooksTable->width()/100*70);
-    ui->BooksTable->horizontalHeader()->setStretchLastSection(true);
-    ui->BooksTable->setStyleSheet("QTableView {selection-background-color: #66b2ff;}");
+
+    QPixmap pixmap("Images/back.png");
+    QIcon ButtonIcon(pixmap);
+    ui->Back->setIcon(ButtonIcon);
+    ui->Back->setIconSize(pixmap.rect().size());
+    QPixmap pixmap2("Images/search.png");
+    QIcon ButtonIcon2(pixmap2);
+    ui->Search->setIcon(ButtonIcon2);
+    ui->Search->setIconSize(pixmap2.rect().size());
+    QPixmap pixmap3("Images/help.png");
+    QIcon ButtonIcon3(pixmap3);
+    ui->Help->setIcon(ButtonIcon3);
+    ui->Help->setIconSize(pixmap3.rect().size());
+    QPixmap pixmap4("Images/about.png");
+    QIcon ButtonIcon4(pixmap4);
+    ui->About->setIcon(ButtonIcon4);
+    ui->About->setIconSize(pixmap4.rect().size());
+    QPixmap pixmap5("Images/signin.png");
+    QIcon ButtonIcon5(pixmap5);
+    ui->SignInButton->setIcon(ButtonIcon5);
+    ui->SignInButton->setIconSize(pixmap5.rect().size());
+    QPixmap pixmap6("Images/signup.png");
+    QIcon ButtonIcon6(pixmap6);
+    ui->SignUpButton->setIcon(ButtonIcon6);
+    ui->SignUpButton->setIconSize(pixmap6.rect().size());
+
+    ui->FindBooksButton->setIcon(ButtonIcon2);
+    ui->FindBooksButton->setIconSize(pixmap2.rect().size());
+    ui->MainBar->hide();
+    ui->BooksTable->hide();
+    ui->frame_3->hide();
+
     loadBooksFile();
-    loadAccountFile();
-    loadUserFile();
-    loadTempAccountFile();
-    loadTempUserFile();
+    loadAccountsFile();
+    loadUsersFile();
+    loadTempAccountsFile();
+    loadTempUsersFile();
+    loadCartInfosFile();
 }
 
 MainWindow::~MainWindow()
@@ -30,17 +55,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::resizeEvent(QResizeEvent* event)
 {
-   QMainWindow::resizeEvent(event);
-   ui->MainBar->setGeometry(QRect(0,0,this->size().width(),101));
-   ui->SignUpButton->setGeometry(QRect(this->size().width()-110, 20, 101, 31));
-   ui->SignInButton->setGeometry(QRect(this->size().width()-219, 20, 101, 31));
-   ui->AccountLabel->setGeometry(QRect(this->size().width()-239, 20, 231, 31));
+    ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
+    ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
+    QMainWindow::resizeEvent(event);
 }
-
 
 void MainWindow::loadBooksFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Books.xml");
+    QFile* xmlFile = new QFile("Data/Books.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Books.xml to load data",
@@ -69,6 +94,14 @@ void MainWindow::loadBooksFile()
             if(xmlReader->name() == "intro")
             {
                 b.setIntro(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "publisher")
+            {
+                b.setPublisher(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "id")
+            {
+                b.setID(xmlReader->readElementText());
                 books.append(b);
                 b.clear();
             }
@@ -88,9 +121,9 @@ void MainWindow::loadBooksFile()
     delete xmlFile;
 }
 
-void MainWindow::loadAccountFile()
+void MainWindow::loadAccountsFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Accounts.xml");
+    QFile* xmlFile = new QFile("Data/Accounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Accounts.xml to load data",
@@ -122,12 +155,9 @@ void MainWindow::loadAccountFile()
             {
                 a.setID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "active")
+            if(xmlReader->name() == "status")
             {
-                QString b=xmlReader->readElementText();
-                if(b=="T")
-                    a.setActive(true);
-                else a.setActive(false);
+                a.setStatus(xmlReader->readElementText().toInt());
                 accounts.append(a);
                 a.clear();
             }
@@ -147,9 +177,9 @@ void MainWindow::loadAccountFile()
     delete xmlFile;
 }
 
-void MainWindow::loadTempAccountFile()
+void MainWindow::loadTempAccountsFile()
 {
-    QFile* xmlFile = new QFile(":/Data/TempAccounts.xml");
+    QFile* xmlFile = new QFile("Data/TempAccounts.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempAccounts.xml to load data",
@@ -183,11 +213,8 @@ void MainWindow::loadTempAccountFile()
             }
             if(xmlReader->name() == "active")
             {
-                QString b=xmlReader->readElementText();
-                if(b=="T")
-                    a.setActive(true);
-                else a.setActive(false);
-                temp_accounts.append(a);
+                a.setStatus(xmlReader->readElementText().toInt());
+                accounts.append(a);
                 a.clear();
             }
         }
@@ -206,9 +233,9 @@ void MainWindow::loadTempAccountFile()
     delete xmlFile;
 }
 
-void MainWindow::loadUserFile()
+void MainWindow::loadUsersFile()
 {
-    QFile* xmlFile = new QFile(":/Data/Users.xml");
+    QFile* xmlFile = new QFile("Data/Users.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Users.xml to load data",
@@ -270,9 +297,9 @@ void MainWindow::loadUserFile()
     delete xmlFile;
 }
 
-void MainWindow::loadTempUserFile()
+void MainWindow::loadTempUsersFile()
 {
-    QFile* xmlFile = new QFile(":/Data/TempUsers.xml");
+    QFile* xmlFile = new QFile("Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempUsers.xml to load data",
@@ -334,6 +361,91 @@ void MainWindow::loadTempUserFile()
     delete xmlFile;
 }
 
+void MainWindow::loadCartInfosFile()
+{
+    QFile* xmlFile = new QFile("Data/CartInfos.xml");
+    if (!xmlFile->open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open CartInfos.xml to load data",
+        QMessageBox::Ok);
+        return;
+    }
+
+    QXmlStreamReader* xmlReader = new QXmlStreamReader(xmlFile);
+    cartinfo a;
+
+    while(!xmlReader->atEnd() && !xmlReader->hasError())
+    {
+        xmlReader->readNext();
+        if(xmlReader->isStartElement())
+        {
+            if(xmlReader->name() == "id")
+            {
+                a.setID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "readername")
+            {
+                a.setReaderName(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "readerid")
+            {
+                a.setReaderID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "bookname")
+            {
+                a.setBookName(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "bookid")
+            {
+                a.setBookID(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "recipient")
+            {
+                a.setRecipient(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "brtime")
+            {
+                a.setBrrowTime(xmlReader->readElementText());
+            }
+            if(xmlReader->name() == "duration")
+            {
+                a.setDuration(xmlReader->readElementText().toInt());
+            }
+            if(xmlReader->name() == "status")
+            {
+                a.setStatus(xmlReader->readElementText().toInt());
+                cartInfos.append(a);
+                a.clear();
+            }
+        }
+    }
+
+    if(xmlReader->hasError()) {
+        QMessageBox::critical(this,
+        "TempUsers.xml Parse Error",xmlReader->errorString(),
+        QMessageBox::Ok);
+        return;
+    }
+
+    // initialize numberOfLentBooks
+    numberOfLentBooks = new int[books.size()];
+    for(int i=0;i<books.size();i++)
+    {
+        numberOfLentBooks[i]=0;
+        QLinkedList<Book>::iterator it=books.begin()+i;
+        QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
+        for(;it1!=cartInfos.end();it1++)
+            if((*it1).getBookID()==(*it).getID())
+                if((*it1).getStatus()==2||(*it1).getStatus()==3)
+                    numberOfLentBooks[i]++;
+    }
+
+    xmlReader->clear();
+    delete xmlReader;
+    xmlFile->close();
+    delete xmlFile;
+}
+
 void MainWindow::on_FindBooksButton_clicked()
 {
     // Substring search
@@ -341,8 +453,6 @@ void MainWindow::on_FindBooksButton_clicked()
 
     // Get word
     QString word=ui->FindBooksEdit->text();
-    if(word.length()==0)
-        return;
     // Create table
     int* table=new int[word.length()+1];
     int pos=1, cnd=0;
@@ -369,132 +479,147 @@ void MainWindow::on_FindBooksButton_clicked()
     // Search through the data
     QLinkedList<Book>::iterator it=books.begin();
     int cnt=0;
+    QString category=ui->Category->currentText();
     ui->BooksTable->setRowCount(0);
-    for(;it!=books.end();it++)
+    ui->BooksTable->setSortingEnabled(false);
+    for(int k=0;it!=books.end();it++)
     {
-        QString name=(*it).getName(), author=(*it).getAuthor();
-        int m=0, i=0, pre=cnt;
-        while(m+i<name.length())
-        {
-            if(compare(word[i], name[m+i]))
-            {
-                i++;
-                if(i==word.length())
-                {
-                    ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
-                    cnt++;
-                    break;
-                }
-            }
-            else
-            {
-                if(table[i]>-1)
-                {
-                    m+=i-table[i];
-                    i=table[i];
-                }
-                else
-                {
-                    m+=i+1;
-                    i=0;
-                }
-            }
-        }
-        if(pre!=cnt) continue;
-        m=0, i=0;
-        while(m+i<author.length())
-        {
-            if(compare(word[i], author[m+i]))
-            {
-                i++;
-                if(i==word.length())
-                {
-                    ui->BooksTable->insertRow(cnt);
-                    ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem(QString::number(cnt+1)));
-                    ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem(name));
-                    ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(author));
-                    cnt++;
-                    break;
-                }
-            }
-            else
-            {
-                if(table[i]>-1)
-                {
-                    m+=i-table[i];
-                    i=table[i];
-                }
-                else
-                {
-                    m+=i+1;
-                    i=0;
-                }
-            }
-        }
-    }
+        QString cat=(*it).getID().left(3);
+        cat=findCategory(cat);
+        if(cat!=category && category!="Tất cả") continue;
 
+        QString s[]={(*it).getName(), (*it).getAuthor(), (*it).getPublisher()};
+        int m=0, i=0, pre=cnt;
+        for(int j=0; j<3; j++)
+        {
+            while(m+i<s[j].length())
+            {
+                if(compare(word[i], s[j][m+i])||word.length()==0)
+                {
+                    i++;
+                    if(i==word.length()||word.length()==0)
+                    {
+                        ui->BooksTable->insertRow(cnt);
+                        ui->BooksTable->setItem(cnt, 0, new QTableWidgetItem((*it).getName()));
+                        ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAuthor()));
+                        ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(findCategory((*it).getID().left(3))));
+                        ui->BooksTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
+                        if((*it).getQuantity()-numberOfLentBooks[k]>0)
+                            ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
+                        else ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("hết sách"));
+                        cnt++;
+                        break;
+                    }
+                }
+                else
+                {
+                    if(table[i]>-1)
+                    {
+                        m+=i-table[i];
+                        i=table[i];
+                    }
+                    else
+                    {
+                        m+=i+1;
+                        i=0;
+                    }
+                }
+            }
+            if(pre!=cnt) break;
+            m=0, i=0;
+        }
+        k++;
+    }
+    ui->BooksTable->setSortingEnabled(true);
     delete table;
 }
 
 void MainWindow::on_SignInButton_clicked()
 {
-    s=new SignIn;
-    s->setWindowTitle("Đăng nhập");
-    connect(s,SIGNAL(accepted()),this,SLOT(getAccount()));
-    s->exec();
+    s = QSharedPointer<SignIn>(new SignIn);
+    connect(s.data(),SIGNAL(accepted()),this,SLOT(logIn()));
+    s.data()->exec();
 }
 
-void MainWindow::getAccount()
+void MainWindow::logIn()
 {
-    ui->SignInButton->hide();
-    ui->SignUpButton->hide();
-    ui->AccountLabel->setText("Xin chào!  " + LogInAcc.getAcc());
-    delete s;
+    this->hide();
+    QString role=(*LogInAcc).getRole();
+    if(role=="A")
+    {
+        ad = QSharedPointer<Admin>(new Admin);
+        connect(ad.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        ad.data()->show();
+    }
+    else if(role=="L")
+    {
+        li = QSharedPointer<librarian>(new librarian);
+        connect(li.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        li.data()->show();
+    }
+    else
+    {
+        re = QSharedPointer<reader>(new reader);
+        connect(re.data(),SIGNAL(closed()),this,SLOT(logOut()));
+        re.data()->show();
+    }
+    s.clear();
 }
 
+void MainWindow::logOut()
+{
+    QString role=(*LogInAcc).getRole();
+    LogInAcc=NULL;
+    LogInUser=NULL;
+    this->show();
+    if(role=="A")
+        ad.clear();
+    else if(role=="L")
+        li.clear();
+    else re.clear();
+}
 
 void MainWindow::on_SignUpButton_clicked()
 {
-    su=new SignUp;
-    su->setWindowTitle("Đăng ký");
-    connect(su,SIGNAL(accepted()),this,SLOT(createAccount()));
-    su->exec();
+    su=QSharedPointer<SignUp>(new SignUp);
+    su.data()->setWindowTitle("Đăng ký");
+    connect(su.data(),SIGNAL(accepted()),this,SLOT(createAccount()));
+    su.data()->exec();
 }
 
 void MainWindow::createAccount()
 {
-    temp_accounts.append(su->getAccount());
-    delete su;
-
     // Fill user information
-    pi=new personalinfo;
-    pi->setWindowTitle("Thông tin người dùng");
-    connect(pi,SIGNAL(accepted()),this,SLOT(createUser()));
-    pi->exec();
+    pi=QSharedPointer<personalinfo>(new personalinfo);
+    pi.data()->setWindowTitle("Thông tin người dùng");
+    connect(pi.data(),SIGNAL(accepted()),this,SLOT(createUser()));
+    pi.data()->exec();
 }
 
 void MainWindow::createUser()
 {
-    temp_users.append(pi->getUser());
-    delete pi;
+    temp_accounts.append(su.data()->getAccount());
+    temp_users.append(pi.data()->getUser());
+    temp_accounts.last().setID(temp_users.last().getID());
+    su.clear();
+    pi.clear();
 }
 
 
 void MainWindow::closeEvent (QCloseEvent *event)
 {
     saveBooksFile();
-    saveAccountFile();
-    saveUserFile();
-    saveTempAccountFile();
-    saveTempUserFile();
+    saveAccountsFile();
+    saveUsersFile();
+    saveTempAccountsFile();
+    saveTempUsersFile();
+    saveCartInfosFile();
+    delete numberOfLentBooks;
     event->accept();
 }
-void MainWindow::saveUserFile()
+void MainWindow::saveUsersFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Users.xml");
+    QFile* xmlFile = new QFile("Data/Users.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open Users.xml to write data",
@@ -516,7 +641,7 @@ void MainWindow::saveUserFile()
         xmlWriter->writeTextElement("sex", (*it).getSex());
         xmlWriter->writeTextElement("address", (*it).getAddress());
         xmlWriter->writeTextElement("email", (*it).getEmail());
-        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getDoP());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -525,9 +650,9 @@ void MainWindow::saveUserFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveAccountFile()
+void MainWindow::saveAccountsFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Accounts.xml");
+    QFile* xmlFile = new QFile("Data/Accounts.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -548,9 +673,7 @@ void MainWindow::saveAccountFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getActive())
-            xmlWriter->writeTextElement("active", "T");
-        else xmlWriter->writeTextElement("active", "F");
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -561,7 +684,7 @@ void MainWindow::saveAccountFile()
 }
 void MainWindow::saveBooksFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/Books.xml");
+    QFile* xmlFile = new QFile("Data/Books.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -582,6 +705,8 @@ void MainWindow::saveBooksFile()
         xmlWriter->writeTextElement("author", (*it).getAuthor());
         xmlWriter->writeTextElement("quantity", QString::number((*it).getQuantity()));
         xmlWriter->writeTextElement("intro", (*it).getIntro());
+        xmlWriter->writeTextElement("publisher", (*it).getPublisher());
+        xmlWriter->writeTextElement("id", (*it).getID());
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -590,9 +715,9 @@ void MainWindow::saveBooksFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveTempAccountFile()
+void MainWindow::saveTempAccountsFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempAccounts.xml");
+    QFile* xmlFile = new QFile("Data/TempAccounts.xml");
 
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
@@ -613,9 +738,7 @@ void MainWindow::saveTempAccountFile()
         xmlWriter->writeTextElement("password", (*it).getPsw());
         xmlWriter->writeTextElement("role", (*it).getRole());
         xmlWriter->writeTextElement("id", (*it).getID());
-        if((*it).getActive())
-            xmlWriter->writeTextElement("active", "T");
-        else xmlWriter->writeTextElement("active", "F");
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -624,9 +747,9 @@ void MainWindow::saveTempAccountFile()
     xmlFile->close();
     delete xmlFile;
 }
-void MainWindow::saveTempUserFile()
+void MainWindow::saveTempUsersFile()
 {
-    QFile* xmlFile = new QFile(QDir::currentPath() + "/Data/TempUsers.xml");
+    QFile* xmlFile = new QFile("Data/TempUsers.xml");
     if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
         QMessageBox::critical(this,"Load XML File Problem",
         "Couldn't open TempUsers.xml to write data",
@@ -648,7 +771,42 @@ void MainWindow::saveTempUserFile()
         xmlWriter->writeTextElement("sex", (*it).getSex());
         xmlWriter->writeTextElement("address", (*it).getAddress());
         xmlWriter->writeTextElement("email", (*it).getEmail());
-        xmlWriter->writeTextElement("DoP", (*it).getEmail());
+        xmlWriter->writeTextElement("DoP", (*it).getDoP());
+        xmlWriter->writeEndElement();
+    }
+    xmlWriter->writeEndElement();
+
+    delete xmlWriter;
+    xmlFile->close();
+    delete xmlFile;
+}
+void MainWindow::saveCartInfosFile()
+{
+    QFile* xmlFile = new QFile("Data/CartInfos.xml");
+    if (!xmlFile->open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QMessageBox::critical(this,"Load XML File Problem",
+        "Couldn't open CartInfos.xml to write data",
+        QMessageBox::Ok);
+        return;
+    }
+    QXmlStreamWriter* xmlWriter = new QXmlStreamWriter(xmlFile);
+    xmlWriter->setAutoFormatting(true);
+    xmlWriter->writeStartDocument();
+    xmlWriter->writeStartElement("CartInfos");
+
+    QLinkedList<cartinfo>::iterator it=cartInfos.begin();
+    for(;it!=cartInfos.end();it++)
+    {
+        xmlWriter->writeStartElement("cartInfo");
+        xmlWriter->writeTextElement("id", (*it).getID());
+        xmlWriter->writeTextElement("readername", (*it).getReaderName());
+        xmlWriter->writeTextElement("readerid", (*it).getReaderID());
+        xmlWriter->writeTextElement("bookname", (*it).getBookName());
+        xmlWriter->writeTextElement("bookid", (*it).getBookID());
+        xmlWriter->writeTextElement("recipient", (*it).getRecipient());
+        xmlWriter->writeTextElement("brtime", (*it).getBrrowTime());
+        xmlWriter->writeTextElement("duration", QString::number((*it).getDuration()));
+        xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
         xmlWriter->writeEndElement();
     }
     xmlWriter->writeEndElement();
@@ -658,11 +816,10 @@ void MainWindow::saveTempUserFile()
     delete xmlFile;
 }
 
-
 void MainWindow::on_BooksTable_cellClicked(int row, int column)
 {
     column++;
-    QString s = ui->BooksTable->item(row,1)->text();
+    QString s = ui->BooksTable->item(row,0)->text();
     QLinkedList<Book>::iterator it=books.begin();
     for(;it!=books.end();it++)
     {
@@ -670,7 +827,54 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
         if(s==(*it).getName())
         {
             ui->intro->setText((*it).getIntro());
-            ui->quantity->setText(QString::number((*it).getQuantity()));
+            ui->bookName->setText(s);
+            QImage image("Images/Books/"+(*it).getID()+".jpg");
+            if(!this->ptr_scene.isNull())
+                this->ptr_scene.clear();
+            this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
+            ui->bookView->setScene(ptr_scene.data());
+            QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
+            ptr_scene.data()->addItem(item);
+            ui->bookView->fitInView(ptr_scene.data()->itemsBoundingRect(),Qt::KeepAspectRatio);
+            ui->bookView->show();
+            break;
         }
     }
+}
+
+void MainWindow::on_Search_clicked()
+{
+    ui->MainBar->show();
+    ui->BooksTable->show();
+    ui->frame_3->show();
+    ui->frame_2->hide();
+    ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
+    ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
+    ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
+}
+
+void MainWindow::on_Back_clicked()
+{
+    ui->MainBar->hide();
+    ui->BooksTable->hide();
+    ui->frame_3->hide();
+    ui->frame_2->show();
+}
+
+void MainWindow::on_Help_clicked()
+{
+    if(!he.isNull())
+        he.clear();
+    he=QSharedPointer<Help>(new Help);
+    he.data()->exec();
+}
+
+void MainWindow::on_About_clicked()
+{
+    if(!ab.isNull())
+        ab.clear();
+    ab=QSharedPointer<About>(new About);
+    ab.data()->exec();
 }

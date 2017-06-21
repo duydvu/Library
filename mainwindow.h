@@ -4,7 +4,12 @@
 #include <QMainWindow>
 #include "signin.h"
 #include "signup.h"
+#include "help.h"
+#include "about.h"
 #include "PersonalInfo.h"
+#include "admin.h"
+#include "librarian.h"
+#include "reader.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,15 +23,19 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private slots:
+protected:
 
     void resizeEvent(QResizeEvent* event);
+
+private slots:
 
     void on_FindBooksButton_clicked();
 
     void on_SignInButton_clicked();
 
-    void getAccount();
+    void logIn();
+
+    void logOut();
 
     void createAccount();
 
@@ -36,26 +45,45 @@ private slots:
 
     void on_BooksTable_cellClicked(int row, int column);
 
+    void on_Search_clicked();
+
+    void on_Back_clicked();
+
+    void on_Help_clicked();
+
+    void on_About_clicked();
+
+signals:
+
+    void sigShowEvent();
+
 private:
     Ui::MainWindow *ui;
-    SignIn* s;
-    SignUp* su;
-    personalinfo* pi;
-
+    QSharedPointer<SignIn> s;
+    QSharedPointer<SignUp> su;
+    QSharedPointer<Help> he;
+    QSharedPointer<About> ab;
+    QSharedPointer<personalinfo> pi;
+    QSharedPointer<Admin> ad;
+    QSharedPointer<librarian> li;
+    QSharedPointer<reader> re;
+    QSharedPointer<QGraphicsScene> ptr_scene;
 
 
     void loadBooksFile();
-    void loadAccountFile();
-    void loadUserFile();
-    void loadTempAccountFile();
-    void loadTempUserFile();
+    void loadAccountsFile();
+    void loadUsersFile();
+    void loadTempAccountsFile();
+    void loadTempUsersFile();
+    void loadCartInfosFile();
 
     void closeEvent (QCloseEvent *event);
     void saveBooksFile();
-    void saveAccountFile();
-    void saveUserFile();
-    void saveTempAccountFile();
-    void saveTempUserFile();
+    void saveAccountsFile();
+    void saveUsersFile();
+    void saveTempAccountsFile();
+    void saveTempUsersFile();
+    void saveCartInfosFile();
 };
 
 #endif // MAINWINDOW_H

@@ -52,14 +52,14 @@ QString Account::getID()
     return this->id;
 }
 
-void Account::setActive(bool TF)
+void Account::setStatus(int stt)
 {
-    this->active=TF;
+    this->status=stt;
 }
 
-bool Account::getActive()
+int Account::getStatus()
 {
-    return this->active;
+    return this->status;
 }
 
 void Account::clear()
@@ -68,7 +68,7 @@ void Account::clear()
     this->psw="";
     this->role="";
     this->id="";
-    this->active=false;
+    this->status=-1;
 }
 
 QString Account::encrypt(QString psw)

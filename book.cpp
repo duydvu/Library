@@ -41,14 +41,34 @@ void Book::setQuantity(int quantity)
     this->quantity=quantity;
 }
 
+QString Book::getIntro()
+{
+    return intro;
+}
+
 void Book::setIntro(QString intro)
 {
     this->intro=intro;
 }
 
-QString Book::getIntro()
+QString Book::getPublisher()
 {
-    return intro;
+    return publisher;
+}
+
+void Book::setPublisher(QString publisher)
+{
+    this->publisher=publisher;
+}
+
+QString Book::getID()
+{
+    return id;
+}
+
+void Book::setID(QString id)
+{
+    this->id=id;
 }
 
 void Book::clear()
@@ -57,4 +77,6 @@ void Book::clear()
     this->name="";
     this->quantity=0;
     this->intro="";
+    this->publisher="";
+    this->id="";
 }
