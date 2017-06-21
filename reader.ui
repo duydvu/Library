@@ -13,61 +13,273 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #fff;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="10,1">
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Đăng xuất</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item row="0" column="0">
        <widget class="QTabWidget" name="readerTab">
+        <property name="styleSheet">
+         <string notr="true">QTabWidget::pane { /* The tab widget frame */
+    position: absolute;
+}
+
+QTabWidget::tab-bar {
+    alignment: center;
+}
+
+/* Style the tab using the tab sub-control. Note that
+    it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background: #999;
+	color: #fff;
+    min-width: 8ex;
+	width: 130px;
+	height: 5ex;
+	font-size: 15pt;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: #777;
+}
+
+QTabBar::tab:selected {
+    background-color: #333;
+	top: 0.05em;
+}</string>
+        </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
           <string>Trang chủ</string>
          </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="styleSheet">
+             <string notr="true">font: 30pt &quot;Lobster&quot;;
+
+background: none;</string>
+            </property>
+            <property name="text">
+             <string>Chào mừng đến với</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">font: 45pt &quot;Lobster&quot;;
+color: #0277BD;
+background: none;</string>
+            </property>
+            <property name="text">
+             <string>LIBRO</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignHCenter|Qt::AlignTop</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_20">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="styleSheet">
+                 <string notr="true">font-weight: bold;</string>
+                </property>
+                <property name="text">
+                 <string>Tin tức từ thư viện</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextBrowser" name="textBrowser_4">
+                <property name="html">
+                 <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Myriad Pro Cond'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Thông báo: &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Từ ngày 19-6, mức phạt cho việc trả sách trễ hạn hoặc làm hư hỏng sách sẽ tăng 15% so với trước đây. Mong quý độc giả hãy chú ý để tránh bị vi phạm. Xin cám ơn!&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;			Admin.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sách được đọc nhiều trong tuần:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;	&lt;span style=&quot; font-style:italic;&quot;&gt;1. A brief history of time&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;	2. The Alchemist&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;	3. The Hobbit&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sách mới nhập:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;	&lt;span style=&quot; font-style:italic;&quot;&gt;1. Oxford School Dictionary&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;	2. A Dictionary of Biology 7/e&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_7">
+                <property name="styleSheet">
+                 <string notr="true">font-weight: bold;</string>
+                </property>
+                <property name="text">
+                 <string>Thông báo dành cho bạn</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextBrowser" name="myAnnouncement"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
           <string>Thư viện sách</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_4">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="0">
            <widget class="QGroupBox" name="groupBox">
+            <property name="styleSheet">
+             <string notr="true">background: #1DE9B6;</string>
+            </property>
             <property name="title">
              <string/>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout">
              <item>
               <widget class="QToolButton" name="bookBorrow">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#bookBorrow{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #F44336;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+#bookBorrow:hover{
+	background-color: #EF5350;
+}</string>
+               </property>
                <property name="text">
                 <string>Mượn sách  </string>
                </property>
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="bookSearch"/>
+              <widget class="QLineEdit" name="bookSearch">
+               <property name="styleSheet">
+                <string notr="true">height: 40px;
+	border: none;
+	border-radius: 5px;
+	padding-left: 10px;
+	background: white;</string>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QComboBox" name="category">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#category{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #448AFF;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QComboBox:editable {
+    background: white;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    width: 0px;
+
+    border: none
+}</string>
+               </property>
                <item>
                 <property name="text">
                  <string>Tất cả</string>
@@ -207,6 +419,24 @@
              </item>
              <item>
               <widget class="QToolButton" name="searchButton">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">#searchButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background: #6A1B9A;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+#searchButton:hover 
+{
+	background: #8E24AA;
+}</string>
+               </property>
                <property name="text">
                 <string>Tìm kiếm</string>
                </property>
@@ -216,9 +446,34 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QTableWidget" name="bookTable">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+    background-color: #6A1B9A;
+	padding: 4px;
+    border: 1px solid #fff;
+	color: #fff;
+    font-size: 15pt;
+	font-family: &quot;Myriad Pro Cond&quot;;
+}
+
+QTableWidget {
+	background-color: #eee;
+    gridline-color: #fffff8;
+    font-size: 15pt;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #646464;
+    border: 1px solid #fffff8;
+}
+</string>
+              </property>
               <property name="editTriggers">
                <set>QAbstractItemView::NoEditTriggers</set>
               </property>
@@ -271,10 +526,16 @@
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout">
+              <property name="spacing">
+               <number>0</number>
+              </property>
               <item>
                <widget class="QLabel" name="label_17">
+                <property name="styleSheet">
+                 <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+                </property>
                 <property name="text">
-                 <string>Giởi thiệu</string>
+                 <string>Giới thiệu</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
@@ -283,19 +544,34 @@
               </item>
               <item>
                <widget class="QLabel" name="bookName">
+                <property name="styleSheet">
+                 <string notr="true">font: 25pt &quot;Myriad Pro Cond&quot;;</string>
+                </property>
                 <property name="text">
                  <string/>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
                </widget>
               </item>
               <item>
-               <widget class="QGraphicsView" name="bookView"/>
+               <widget class="QGraphicsView" name="bookView">
+                <property name="styleSheet">
+                 <string notr="true">border: none;</string>
+                </property>
+               </widget>
               </item>
               <item>
-               <widget class="QTextBrowser" name="intro"/>
+               <widget class="QTextBrowser" name="intro">
+                <property name="styleSheet">
+                 <string notr="true">border: none;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </item>
@@ -307,17 +583,60 @@
          <attribute name="title">
           <string>Đăng ký mượn</string>
          </attribute>
-         <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="3,2">
+          <property name="spacing">
+           <number>0</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,1">
+            <property name="spacing">
+             <number>10</number>
+            </property>
             <item>
              <widget class="QTableWidget" name="borInfo">
+              <property name="styleSheet">
+               <string notr="true">QHeaderView::section {
+    background-color: #6A1B9A;
+	padding: 4px;
+    border: 1px solid #fff;
+	color: #fff;
+    font-size: 15pt;
+	font-family: &quot;Myriad Pro Cond&quot;;
+}
+
+QTableWidget {
+	background-color: #eee;
+    gridline-color: #fffff8;
+    font-size: 12pt;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #646464;
+    border: 1px solid #fffff8;
+}
+</string>
+              </property>
               <property name="editTriggers">
                <set>QAbstractItemView::NoEditTriggers</set>
               </property>
               <property name="selectionBehavior">
                <enum>QAbstractItemView::SelectRows</enum>
               </property>
+              <attribute name="horizontalHeaderHighlightSections">
+               <bool>false</bool>
+              </attribute>
               <attribute name="horizontalHeaderStretchLastSection">
                <bool>true</bool>
               </attribute>
@@ -325,7 +644,7 @@
                <bool>false</bool>
               </attribute>
               <attribute name="verticalHeaderStretchLastSection">
-               <bool>true</bool>
+               <bool>false</bool>
               </attribute>
               <column>
                <property name="text">
@@ -346,23 +665,43 @@
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout_2">
+              <property name="spacing">
+               <number>10</number>
+              </property>
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_3">
                 <property name="rightMargin">
-                 <number>80</number>
+                 <number>0</number>
                 </property>
                 <item>
                  <widget class="QLabel" name="label">
+                  <property name="styleSheet">
+                   <string notr="true"> font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+                  </property>
                   <property name="text">
                    <string>Thời gian mượn</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="duration"/>
+                 <widget class="QSpinBox" name="duration">
+                  <property name="styleSheet">
+                   <string notr="true">QSpinBox{
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	border: 1px solid #555;
+	border-radius: 5px;
+	padding-left: 10px;
+}
+</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="label_2">
+                  <property name="styleSheet">
+                   <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;
+padding-left: 10px;</string>
+                  </property>
                   <property name="text">
                    <string>Ngày</string>
                   </property>
@@ -374,6 +713,23 @@
                <layout class="QHBoxLayout" name="horizontalLayout_4">
                 <item>
                  <widget class="QPushButton" name="send">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #448AFF;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover{
+	background-color: #82B1FF;
+}</string>
+                  </property>
                   <property name="text">
                    <string>Gửi phiếu mượn</string>
                   </property>
@@ -381,8 +737,25 @@
                 </item>
                 <item>
                  <widget class="QPushButton" name="cancel">
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #F44336;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover{
+	background-color: #EF5350;
+}</string>
+                  </property>
                   <property name="text">
-                   <string>Hùy</string>
+                   <string>Hủy</string>
                   </property>
                  </widget>
                 </item>
@@ -394,16 +767,32 @@
           </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_6">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>20</number>
+            </property>
             <item>
-             <widget class="QGraphicsView" name="borBookView"/>
+             <widget class="QGraphicsView" name="borBookView">
+              <property name="styleSheet">
+               <string notr="true">border: none;</string>
+              </property>
+             </widget>
             </item>
             <item>
              <widget class="QLabel" name="borBookName">
+              <property name="styleSheet">
+               <string notr="true">font: 30pt &quot;Myriad Pro Cond&quot;;</string>
+              </property>
               <property name="text">
                <string/>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -416,6 +805,21 @@
           <string>Thông tin cá nhân</string>
          </attribute>
          <layout class="QGridLayout" name="gridLayout_3">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <property name="spacing">
+           <number>0</number>
+          </property>
           <item row="0" column="1">
            <widget class="QGroupBox" name="cartInfo">
             <property name="minimumSize">
@@ -424,99 +828,238 @@
               <height>341</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true"> 
+QGroupBox {
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin-top: 1ex;
+	
+	
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* position at the top center */
+    padding: 0 3px;
+}</string>
+            </property>
             <property name="title">
              <string>Chi tiết phiếu mượn</string>
             </property>
-            <layout class="QGridLayout" name="gridLayout_2">
+            <layout class="QGridLayout" name="gridLayout_2" rowstretch="1,1,1,1,1,1,0">
+             <item row="4" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,3">
+               <item>
+                <widget class="QLabel" name="label_15">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Thời gian mượn:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="cartduration">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="6" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_23">
+               <item>
+                <widget class="QPushButton" name="pushButton_2">
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background: #F44336;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover 
+{
+	background: #EF5350;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Trước</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="pushButton_3">
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background: #2196F3;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover 
+{
+	background: #42A5F5;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Sau</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="1" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,3">
+               <item>
+                <widget class="QLabel" name="label_12">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Mã phiếu:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="cartid">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="2" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,3">
+               <item>
+                <widget class="QLabel" name="label_13">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Tên sách:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="cartname">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="3" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="1,3">
+               <item>
+                <widget class="QLabel" name="label_14">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Ngày mượn:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="cartdate">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item row="5" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_22" stretch="1,3">
+               <item>
+                <widget class="QLabel" name="label_16">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string>Tình trạng:</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="cartstatus">
+                 <property name="styleSheet">
+                  <string notr="true">background: none;</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
              <item row="0" column="0">
-              <widget class="QStackedWidget" name="stackedWidget">
-               <property name="currentIndex">
-                <number>0</number>
+              <widget class="QFrame" name="frame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
                </property>
-               <widget class="QWidget" name="page">
-                <layout class="QVBoxLayout" name="verticalLayout_4">
-                 <item>
-                  <widget class="QLabel" name="label_11">
-                   <property name="text">
-                    <string>1. Lần 1</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_6">
-                   <item>
-                    <widget class="QLabel" name="label_12">
-                     <property name="text">
-                      <string>Mã phiếu</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_4">
-                     <property name="text">
-                      <string>TextLabel</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_7">
-                   <item>
-                    <widget class="QLabel" name="label_13">
-                     <property name="text">
-                      <string>Tên sách</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_5">
-                     <property name="text">
-                      <string>TextLabel</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_8">
-                   <item>
-                    <widget class="QLabel" name="label_14">
-                     <property name="text">
-                      <string>Ngày mượn</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_6">
-                     <property name="text">
-                      <string>TextLabel</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_9">
-                   <item>
-                    <widget class="QLabel" name="label_15">
-                     <property name="text">
-                      <string>Hạn trả</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_7">
-                     <property name="text">
-                      <string>TextLabel</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QWidget" name="page_2"/>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_5" columnstretch="1,1">
+                <item row="0" column="0">
+                 <widget class="QLabel" name="label_8">
+                  <property name="text">
+                   <string>Tổng số sách đã mượn:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QLabel" name="allbor">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="label_5">
+                  <property name="text">
+                   <string>Tổng số sách đã trả:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QLabel" name="allreturn">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -530,16 +1073,36 @@
               <height>341</height>
              </size>
             </property>
+            <property name="styleSheet">
+             <string notr="true"> 
+QGroupBox {
+    border: 2px solid gray;
+	border-right-width: 0px;
+    border-radius: 5px;
+    margin-top: 1ex;
+	
+	
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* position at the top center */
+    padding: 0 3px;
+}</string>
+            </property>
             <property name="title">
              <string>Thông tin của bạn</string>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_7" stretch="2,1,0">
+            <layout class="QVBoxLayout" name="verticalLayout_7" stretch="5,2,0,1">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_9">
+              <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,1,1,1,1,1">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="id_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
                     <string>Mã độc giả</string>
                    </property>
@@ -547,6 +1110,9 @@
                  </item>
                  <item>
                   <widget class="QLabel" name="id">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
                     <string/>
                    </property>
@@ -558,13 +1124,23 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="name_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Họ và tên</string>
+                    <string>Họ và tên:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="name">
+                   <property name="styleSheet">
+                    <string notr="true">height: 30px;
+border: 1px solid #aaa;
+border-radius: 5px;
+padding-left: 10px;
+background: white;</string>
+                   </property>
                    <property name="echoMode">
                     <enum>QLineEdit::Normal</enum>
                    </property>
@@ -579,13 +1155,23 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="dob_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Ngày sinh</string>
+                    <string>Ngày sinh:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="dob">
+                   <property name="styleSheet">
+                    <string notr="true">height: 30px;
+border: 1px solid #aaa;
+border-radius: 5px;
+padding-left: 10px;
+background: white;</string>
+                   </property>
                    <property name="readOnly">
                     <bool>true</bool>
                    </property>
@@ -597,13 +1183,23 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="sex_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Giới tính</string>
+                    <string>Giới tính:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="sex">
+                   <property name="styleSheet">
+                    <string notr="true">height: 30px;
+border: 1px solid #aaa;
+border-radius: 5px;
+padding-left: 10px;
+background: white;</string>
+                   </property>
                    <property name="readOnly">
                     <bool>true</bool>
                    </property>
@@ -615,13 +1211,23 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_21" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="address_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Địa chỉ</string>
+                    <string>Địa chỉ:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="address">
+                   <property name="styleSheet">
+                    <string notr="true">height: 30px;
+border: 1px solid #aaa;
+border-radius: 5px;
+padding-left: 10px;
+background: white;</string>
+                   </property>
                    <property name="readOnly">
                     <bool>true</bool>
                    </property>
@@ -633,13 +1239,23 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_15" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="email_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Email</string>
+                    <string>Email:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLineEdit" name="email">
+                   <property name="styleSheet">
+                    <string notr="true">height: 30px;
+border: 1px solid #aaa;
+border-radius: 5px;
+padding-left: 10px;
+background: white;</string>
+                   </property>
                    <property name="readOnly">
                     <bool>true</bool>
                    </property>
@@ -650,36 +1266,24 @@
               </layout>
              </item>
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_11">
+              <layout class="QVBoxLayout" name="verticalLayout_11" stretch="1,1">
                <item>
                 <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="dop_2">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Ngày tham gia</string>
+                    <string>Ngày tham gia:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
                   <widget class="QLabel" name="dop">
-                   <property name="text">
-                    <string/>
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
                    </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,3">
-                 <item>
-                  <widget class="QLabel" name="label_8">
-                   <property name="text">
-                    <string>Tổng sách mượn</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="allbor">
                    <property name="text">
                     <string/>
                    </property>
@@ -691,31 +1295,19 @@
                 <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="1,3">
                  <item>
                   <widget class="QLabel" name="label_9">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
+                   </property>
                    <property name="text">
-                    <string>Tổng sách trả</string>
+                    <string>Tình trạng:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QLabel" name="allreturn">
-                   <property name="text">
-                    <string/>
+                  <widget class="QLabel" name="status">
+                   <property name="styleSheet">
+                    <string notr="true">background: none;</string>
                    </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_20" stretch="1,3">
-                 <item>
-                  <widget class="QLabel" name="label_10">
-                   <property name="text">
-                    <string>Vi phạm</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLabel" name="infringe">
                    <property name="text">
                     <string/>
                    </property>
@@ -726,9 +1318,40 @@
               </layout>
              </item>
              <item>
+              <spacer name="verticalSpacer">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
               <layout class="QHBoxLayout" name="horizontalLayout_16">
                <item>
                 <widget class="QPushButton" name="changePass">
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background: #6A1B9A;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover 
+{
+	background: #8E24AA;
+}</string>
+                 </property>
                  <property name="text">
                   <string>Đổi mật khẩu</string>
                  </property>
@@ -736,6 +1359,25 @@
                </item>
                <item>
                 <widget class="QPushButton" name="changeButton">
+                 <property name="cursor">
+                  <cursorShape>PointingHandCursor</cursorShape>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton 
+{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: #00BFA5;
+	color: #eee;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background-color: #1DE9B6;
+}</string>
+                 </property>
                  <property name="text">
                   <string>Cập nhật</string>
                  </property>
@@ -744,32 +1386,9 @@
               </layout>
              </item>
             </layout>
-            <zorder>name_2</zorder>
-            <zorder>id_2</zorder>
-            <zorder>dob_2</zorder>
-            <zorder>sex_2</zorder>
-            <zorder>email_2</zorder>
-            <zorder>address_2</zorder>
-            <zorder>dop_2</zorder>
-            <zorder>label_8</zorder>
-            <zorder>label_9</zorder>
-            <zorder>label_10</zorder>
-            <zorder>changeButton</zorder>
-            <zorder>name</zorder>
-            <zorder>dob</zorder>
-            <zorder>sex</zorder>
-            <zorder>email</zorder>
-            <zorder>address</zorder>
-            <zorder>dop</zorder>
-            <zorder>changePass</zorder>
-            <zorder>id</zorder>
-            <zorder>allbor</zorder>
-            <zorder>allreturn</zorder>
-            <zorder>infringe</zorder>
             <zorder></zorder>
             <zorder></zorder>
-            <zorder>address</zorder>
-            <zorder>address_2</zorder>
+            <zorder>verticalSpacer</zorder>
            </widget>
           </item>
          </layout>
@@ -778,79 +1397,103 @@
          <attribute name="title">
           <string>Trợ giúp</string>
          </attribute>
-         <widget class="QTextBrowser" name="textBrowser_3">
-          <property name="geometry">
-           <rect>
-            <x>80</x>
-            <y>30</y>
-            <width>291</width>
-            <height>192</height>
-           </rect>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <property name="spacing">
+           <number>20</number>
           </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser_3">
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Nội quy&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-         <widget class="QTextBrowser" name="textBrowser_5">
-          <property name="geometry">
-           <rect>
-            <x>365</x>
-            <y>30</y>
-            <width>291</width>
-            <height>192</height>
-           </rect>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Myriad Pro Cond'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600; font-style:italic;&quot;&gt;Nội quy thư viện&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;1- Những quy định chung&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 1&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Không cho người khác mượn tài khoản và không sử dụng tài khoản của người khác; Khi bị mất tài khoản phải báo ngay cho phòng DVTT để khóa tài khoản. Chủ tài khoản hoàn toàn chịu trách nhiệm nếu đểngười khác sử dụng tài khoản của mình mượn tài liệu.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 2&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;.Xuất trình thẻ tại quầy thủthưhoặc CMND/Hộ chiếu.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều  3&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Trang  phục  nghiêm  túc;  giữ  gìn  vệ  sinh,  không mang  theo đồăn  uống;  giữtrật  tự và tuyệt đối không hút thuốc, không sử dụng các vật dễ cháy nổ trong khu vực thưviện. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;2- Quy định tại phòng đọc&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 4.&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt; Bạn đọc để tư trang và tài liệu cá nhân tại tủ gửi đồ, tự bảo quản tiền và tài sản. Dùng xong tủphải khóa tủtrước khi trả chìa khóa.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 5&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Bạn đọc tìm hiểu các nội dung hướng dẫn sử dụng thưviện tại quầyhoặc nhờ cán bộthưviện trợgiúp để tra cứu và tự tìm tài liệu trên giá theo bảng chỉ dẫn; không tráo đổi vịtrí tài liệu; được lấy không quá 03 cuốn sách hoặc 1 loại báo/tạp chí cho 1 lần sử dụng. Đọc xong, đểsách vào nơi quy định, để báo/tạp chí lên giá. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 6&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Tuyệt đối không mang tài liệu ra khỏi phòng đọc khi chưa được phép của cán bộthưviện. Nếu có nhu cầu mượn tài liệu về, bạn đọc làm thủ tục mượn tại quầy thủthư. 3- Quy định tại phòng mượn.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 7&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;.  Kiểm tra thông tin phiếu mượn, báo cho cán bộthưviện tình trạng tài liệu (bị rách, bẩn) trước khi ra khỏi phòng mượn. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;4- Những quy định về bảo quản tài liệu, tài sản, khen thưởng, kỷluật&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 8&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Hết hời hạn mượn, nếu muốn mượn tiếp tài liệu cần làm thủ tục gia hạn. Bạn đọc trảtài liệu chậm bịphạt theo quy định hiện hành.&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt; Điều 9&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Không tráo đổi, cắt xén, đánh dấu làm rách nát, hư hỏng tài liệu; không viết nháp hoặc ghi chép vào các trang tài liệu; không sao chụp trái phép tài liệu. Có nghĩa vụ cho kiểm tra tài liệu cũng như các vật dụng mang ra khỏi thưviện khi có yêu cầu của người có trách nhiệm.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt; Điều 10&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Nghiêm cấm mọi hành vi gây thiệt hại đến tài sản, thiết bị và cơ sở vật chất của thưviện.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 11&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Nếu bạn đọc vi phạm các quy định trong Nội quy này, tùy theo tính chất, mức độ sẽphải chịu xử lý theo Quy định về xử lý vi phạm nội quy thư viện của Trung tâm với các hình thức sau: Nhắc nhở, cảnh cáo; Đình chỉ quyền sử dụng thưviện; Bồi thường thiệt hại; Thông báo vềcơ sởquản lý, đào tạo; Đề nghị truy tốtrước pháp luật.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;   &lt;/span&gt;&lt;span style=&quot; font-weight:600; background-color:#ffffff;&quot;&gt;Điều 12&lt;/span&gt;&lt;span style=&quot; background-color:#ffffff;&quot;&gt;. Thưviện sẵn sàng tiếp nhận ý kiến đóng góp và giải đáp thắc mắc.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser_5">
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;HDSD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Myriad Pro Cond'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;HDSD&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="tabsecond">
          <attribute name="title">
           <string>Liên hệ</string>
          </attribute>
-         <widget class="QTextBrowser" name="textBrowser">
-          <property name="geometry">
-           <rect>
-            <x>50</x>
-            <y>80</y>
-            <width>256</width>
-            <height>192</height>
-           </rect>
+         <layout class="QHBoxLayout" name="horizontalLayout_18">
+          <property name="spacing">
+           <number>20</number>
           </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser">
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;Giới thiệu thư viện&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
-         <widget class="QTextBrowser" name="textBrowser_2">
-          <property name="geometry">
-           <rect>
-            <x>400</x>
-            <y>80</y>
-            <width>256</width>
-            <height>192</height>
-           </rect>
-          </property>
-          <property name="html">
-           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Myriad Pro Cond'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;Giới thiệu thư viện&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="textBrowser_2">
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:7.8pt;&quot;&gt;HỘP THƯ GÓP Ý&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-          </property>
-         </widget>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Myriad Pro Cond'; font-size:15pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt;HỘP THƯ GÓP Ý&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </widget>
       </item>
@@ -858,7 +1501,6 @@ p, li { white-space: pre-wrap; }
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections>
@@ -869,12 +1511,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>212</x>
-     <y>159</y>
+     <x>737</x>
+     <y>70</y>
     </hint>
     <hint type="destinationlabel">
-     <x>380</x>
-     <y>110</y>
+     <x>796</x>
+     <y>69</y>
     </hint>
    </hints>
   </connection>
@@ -885,12 +1527,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>318</x>
-     <y>74</y>
+     <x>417</x>
+     <y>70</y>
     </hint>
     <hint type="destinationlabel">
-     <x>434</x>
-     <y>96</y>
+     <x>796</x>
+     <y>69</y>
     </hint>
    </hints>
   </connection>
@@ -901,12 +1543,12 @@ p, li { white-space: pre-wrap; }
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>414</x>
-     <y>71</y>
+     <x>513</x>
+     <y>70</y>
     </hint>
     <hint type="destinationlabel">
-     <x>414</x>
-     <y>98</y>
+     <x>796</x>
+     <y>69</y>
     </hint>
    </hints>
   </connection>

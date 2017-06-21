@@ -2,6 +2,7 @@
 
 QLinkedList<Account> accounts;
 QLinkedList<Book> books;
+int *numberOfLentBooks;
 QLinkedList<User> users;
 QLinkedList<Account> temp_accounts;
 QLinkedList<User> temp_users;

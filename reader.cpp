@@ -9,6 +9,8 @@ reader::reader(QWidget *parent) :
     setWindowTitle("Libpro");
     reader::setWindowState(Qt::WindowMaximized);
     ui->borInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->readerTab->setTabEnabled(2,false);
+
     ui->send->hide();
     ui->cancel->hide();
     ui->name->setText((*LogInUser).getName());
@@ -18,30 +20,85 @@ reader::reader(QWidget *parent) :
     ui->email->setText((*LogInUser).getEmail());
     ui->address->setText((*LogInUser).getAddress());
     ui->dop->setText((*LogInUser).getDoP());
-    int allbor=0, allreturn=0, infringe=0;
+    if((*LogInAcc).getStatus())
+        ui->status->setText("Bạn đã bị khóa");
+    else ui->status->setText("Tích cực");
+
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     for(;it!=cartInfos.end();it++)
     {
         if((*it).getReaderID()==(*LogInUser).getID())
         {
-            switch((*it).getStatus())
-            {
-            case 2:
-                allbor++;
-                break;
-            case 3:
-                allbor++;
-                allreturn++;
-                break;
-            case 4:
-                allbor++;
-                infringe++;
-            }
+            myCartInfos.append((*it));
         }
     }
-    ui->allbor->setText(QString::number(allbor));
-    ui->allreturn->setText(QString::number(allreturn));
-    ui->infringe->setText(QString::number(infringe));
+
+    ui->allbor->setText(QString::number(myCartInfos.size()));
+    int done=0, lending=0, waiting=0, infringe=0, duration=9999;
+    it=myCartInfos.begin();
+    for(;it!=myCartInfos.end();it++)
+    {
+        if((*it).getStatus()==4)
+        {
+            done++;
+        }
+        else if((*it).getStatus()==2)
+        {
+            lending++;
+            if((*it).getDuration()-QDate::fromString((*it).getBrrowTime(),"dd.MM.yyyy").daysTo(QDate::currentDate())<duration)
+                duration=(*it).getDuration()-QDate::fromString((*it).getBrrowTime(),"dd.MM.yyyy").daysTo(QDate::currentDate());
+        }
+        else if((*it).getStatus()==1)
+        {
+            waiting++;
+        }
+        else if((*it).getStatus()==3)
+        {
+            infringe++;
+        }
+    }
+    ui->allreturn->setText(QString::number(done));
+
+    if(myCartInfos.size()>0)
+    {
+        currentCart=myCartInfos.begin();
+        ui->cartid->setText((*currentCart).getID());
+        ui->cartname->setText((*currentCart).getBookName());
+        ui->cartdate->setText((*currentCart).getBrrowTime());
+        ui->cartduration->setText(QString::number((*currentCart).getDuration())+" ngày");
+        QString s;
+        switch((*currentCart).getStatus())
+        {
+        case 0:
+            s="Chưa phản hồi";
+            break;
+        case 1:
+            s="Đã chấp nhận";
+            break;
+        case 2:
+            s="Đang mượn";
+            break;
+        case 3:
+            s="Vi phạm";
+            break;
+        case 4:
+            s="Hoàn tất";
+        }
+        ui->cartstatus->setText(s);
+    }
+
+    QString s="<i>Xin chào bạn!  :)</i><br><br>";
+    if(lending>0)
+    {
+        s+="<p style='background-color:green; color: white; margin: 0;'>Hiện tại bạn đang mượn "+QString::number(lending)+" cuốn sách từ thư viện.<br>";
+        s+="Bạn còn "+QString::number(duration)+" ngày nữa để trả số sách mà bạn đang mượn.</p><br>";
+    }
+    if(waiting>0)
+        s+="<p style='background-color:blue; color: white; margin: 0;'>Bạn có "+QString::number(waiting)+" phiếu mượn đã được chấp nhận đang chờ bạn đến lấy sách.</p><br>";
+    if(infringe>0)
+        s+="<p style='background-color:red; color: white; margin: 0;'>***Bạn đã vi phạm "+QString::number(infringe)+" phiếu mượn sách và chúng tôi đã khóa tài khoản của bạn, bạn hãy đến thư viện để đóng phạt và trả lại sách để được mở lại tài khoản. Chúng tôi mong bạn sẽ không vi phạm thêm nữa. Thân!</p><br>";
+    s+="<center><i>Chúc bạn một ngày tốt lành!</i></center><br><center>- Hết -</center>";
+    ui->myAnnouncement->setHtml(s);
 }
 
 reader::~reader()
@@ -53,6 +110,15 @@ void reader::closeEvent (QCloseEvent *event)
 {
     emit closed();
     event->accept();
+}
+
+void reader::resizeEvent(QResizeEvent* event)
+{
+    ui->bookTable->setColumnWidth(0,ui->bookTable->width()*40/100);
+    ui->bookTable->setColumnWidth(1,ui->bookTable->width()*15/100);
+    ui->bookTable->setColumnWidth(2,ui->bookTable->width()*15/100);
+    ui->bookTable->setColumnWidth(3,ui->bookTable->width()*15/100);
+    ui->bookTable->setColumnWidth(4,ui->bookTable->width()*10/100);
 }
 
 void reader::on_searchButton_clicked()
@@ -91,7 +157,7 @@ void reader::on_searchButton_clicked()
     QString category=ui->category->currentText();
     ui->bookTable->setRowCount(0);
     ui->bookTable->setSortingEnabled(false);
-    for(;it!=books.end();it++)
+    for(int k=0;it!=books.end();it++)
     {
         QString cat=(*it).getID().left(3);
         cat=findCategory(cat);
@@ -113,7 +179,7 @@ void reader::on_searchButton_clicked()
                         ui->bookTable->setItem(cnt, 1, new QTableWidgetItem(cat));
                         ui->bookTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAuthor()));
                         ui->bookTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
-                        if((*it).getQuantity()>0)
+                        if((*it).getQuantity()-numberOfLentBooks[k]>0)
                             ui->bookTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
                         else ui->bookTable->setItem(cnt, 4, new QTableWidgetItem("hết sách"));
                         QTableWidgetItem *item = new QTableWidgetItem("");
@@ -140,6 +206,7 @@ void reader::on_searchButton_clicked()
             if(pre!=cnt) break;
             m=0, i=0;
         }
+        k++;
     }
     ui->bookTable->setSortingEnabled(true);
     delete table;
@@ -184,6 +251,8 @@ void reader::on_bookTable_cellClicked(int row, int column)
             ui->intro->setText((*it).getIntro());
             ui->bookName->setText(s);
             QImage image("Images/Books/"+(*it).getID()+".jpg");
+            if(!this->ptr_scene.isNull())
+                this->ptr_scene.clear();
             this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
             ui->bookView->setScene(ptr_scene.data());
             QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
@@ -197,6 +266,7 @@ void reader::on_bookTable_cellClicked(int row, int column)
 
 void reader::on_bookBorrow_clicked()
 {
+    if((*LogInAcc).getStatus()) return;
     int row=ui->bookTable->rowCount(), cnt=0;
     for(int i=0; i<row; i++)
     {
@@ -216,6 +286,7 @@ void reader::on_bookBorrow_clicked()
         }
     }
     if(cnt==0) return;
+    ui->readerTab->setTabEnabled(2,true);
     ui->readerTab->setCurrentIndex(2);
     ui->send->show();
     ui->cancel->show();
@@ -223,6 +294,13 @@ void reader::on_bookBorrow_clicked()
 
 void reader::on_send_clicked()
 {
+    if(ui->duration->value()==0)
+    {
+        QMessageBox::warning(this,"Thời hạn không hợp lệ",
+        "Bạn hãy chọn 1 thời hạn thích hợp để mượn sách.",
+        QMessageBox::Ok);
+        return;
+    }
     cartinfo c;
     for(int i=0;i<ui->borInfo->rowCount();i++)
     {
@@ -239,6 +317,7 @@ void reader::on_send_clicked()
     }
     ui->send->hide();
     ui->cancel->hide();
+    ui->readerTab->setTabEnabled(2,false);
 }
 
 void reader::on_cancel_clicked()
@@ -246,6 +325,7 @@ void reader::on_cancel_clicked()
     ui->borInfo->setRowCount(0);
     ui->send->hide();
     ui->cancel->hide();
+    ui->readerTab->setTabEnabled(2,false);
 }
 
 void reader::on_borInfo_cellClicked(int row, int column)
@@ -257,8 +337,10 @@ void reader::on_borInfo_cellClicked(int row, int column)
 
         if(s==(*it).getID())
         {
-            ui->borBookName->setText(s);
+            ui->borBookName->setText((*it).getName());
             QImage image("Images/Books/"+(*it).getID()+".jpg");
+            if(!this->ptr_scene.isNull())
+                this->ptr_scene.clear();
             this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
             ui->borBookView->setScene(ptr_scene.data());
             QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
@@ -280,4 +362,79 @@ void reader::on_changePass_clicked()
 void reader::ChangePass()
 {
     (*LogInAcc).setPsw(Account::encrypt(pa.data()->getPass()));
+    pa.clear();
+}
+
+void reader::on_pushButton_2_clicked()
+{
+    if(myCartInfos.size()==0) return;
+    if(currentCart==myCartInfos.begin())
+        currentCart=myCartInfos.end()-1;
+    else currentCart--;
+    ui->cartid->setText((*currentCart).getID());
+    ui->cartname->setText((*currentCart).getBookName());
+    ui->cartdate->setText((*currentCart).getBrrowTime());
+    ui->cartduration->setText(QString::number((*currentCart).getDuration())+" ngày");
+    QString s;
+    switch((*currentCart).getStatus())
+    {
+    case 0:
+        s="Chưa phản hồi";
+        break;
+    case 1:
+        s="Đã chấp nhận";
+        break;
+    case 2:
+        s="Đang mượn";
+        break;
+    case 3:
+        s="Vi phạm";
+        break;
+    case 4:
+        s="Hoàn tất";
+    }
+    ui->cartstatus->setText(s);
+}
+
+void reader::on_pushButton_3_clicked()
+{
+    if(myCartInfos.size()==0) return;
+    if(currentCart==myCartInfos.end()-1)
+        currentCart=myCartInfos.begin();
+    else currentCart++;
+    ui->cartid->setText((*currentCart).getID());
+    ui->cartname->setText((*currentCart).getBookName());
+    ui->cartdate->setText((*currentCart).getBrrowTime());
+    ui->cartduration->setText(QString::number((*currentCart).getDuration())+" ngày");
+    QString s;
+    switch((*currentCart).getStatus())
+    {
+    case 0:
+        s="Chưa phản hồi";
+        break;
+    case 1:
+        s="Đã chấp nhận";
+        break;
+    case 2:
+        s="Đang mượn";
+        break;
+    case 3:
+        s="Vi phạm";
+        break;
+    case 4:
+        s="Hoàn tất";
+    }
+    ui->cartstatus->setText(s);
+}
+
+void reader::on_readerTab_currentChanged(int index)
+{
+    if(index==1)
+    {
+        ui->bookTable->setColumnWidth(0,ui->bookTable->width()*40/100);
+        ui->bookTable->setColumnWidth(1,ui->bookTable->width()*15/100);
+        ui->bookTable->setColumnWidth(2,ui->bookTable->width()*15/100);
+        ui->bookTable->setColumnWidth(3,ui->bookTable->width()*15/100);
+        ui->bookTable->setColumnWidth(4,ui->bookTable->width()*10/100);
+    }
 }

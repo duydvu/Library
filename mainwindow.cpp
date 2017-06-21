@@ -399,7 +399,7 @@ void MainWindow::loadCartInfosFile()
             {
                 a.setBookID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "recipientID")
+            if(xmlReader->name() == "recipient")
             {
                 a.setRecipient(xmlReader->readElementText());
             }
@@ -427,6 +427,19 @@ void MainWindow::loadCartInfosFile()
         return;
     }
 
+    // initialize numberOfLentBooks
+    numberOfLentBooks = new int[books.size()];
+    for(int i=0;i<books.size();i++)
+    {
+        numberOfLentBooks[i]=0;
+        QLinkedList<Book>::iterator it=books.begin()+i;
+        QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
+        for(;it1!=cartInfos.end();it1++)
+            if((*it1).getBookID()==(*it).getID())
+                if((*it1).getStatus()==2||(*it1).getStatus()==3)
+                    numberOfLentBooks[i]++;
+    }
+
     xmlReader->clear();
     delete xmlReader;
     xmlFile->close();
@@ -440,8 +453,6 @@ void MainWindow::on_FindBooksButton_clicked()
 
     // Get word
     QString word=ui->FindBooksEdit->text();
-    if(word.length()==0)
-        return;
     // Create table
     int* table=new int[word.length()+1];
     int pos=1, cnd=0;
@@ -471,7 +482,7 @@ void MainWindow::on_FindBooksButton_clicked()
     QString category=ui->Category->currentText();
     ui->BooksTable->setRowCount(0);
     ui->BooksTable->setSortingEnabled(false);
-    for(;it!=books.end();it++)
+    for(int k=0;it!=books.end();it++)
     {
         QString cat=(*it).getID().left(3);
         cat=findCategory(cat);
@@ -493,7 +504,7 @@ void MainWindow::on_FindBooksButton_clicked()
                         ui->BooksTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAuthor()));
                         ui->BooksTable->setItem(cnt, 2, new QTableWidgetItem(findCategory((*it).getID().left(3))));
                         ui->BooksTable->setItem(cnt, 3, new QTableWidgetItem((*it).getPublisher()));
-                        if((*it).getQuantity()>0)
+                        if((*it).getQuantity()-numberOfLentBooks[k]>0)
                             ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("còn"));
                         else ui->BooksTable->setItem(cnt, 4, new QTableWidgetItem("hết sách"));
                         cnt++;
@@ -517,6 +528,7 @@ void MainWindow::on_FindBooksButton_clicked()
             if(pre!=cnt) break;
             m=0, i=0;
         }
+        k++;
     }
     ui->BooksTable->setSortingEnabled(true);
     delete table;
@@ -535,7 +547,7 @@ void MainWindow::logIn()
     QString role=(*LogInAcc).getRole();
     if(role=="A")
     {
-        ad= QSharedPointer<Admin>(new Admin);
+        ad = QSharedPointer<Admin>(new Admin);
         connect(ad.data(),SIGNAL(closed()),this,SLOT(logOut()));
         ad.data()->show();
     }
@@ -545,18 +557,26 @@ void MainWindow::logIn()
         connect(li.data(),SIGNAL(closed()),this,SLOT(logOut()));
         li.data()->show();
     }
-    else if(role=="R")
+    else
     {
         re = QSharedPointer<reader>(new reader);
         connect(re.data(),SIGNAL(closed()),this,SLOT(logOut()));
         re.data()->show();
     }
+    s.clear();
 }
 
 void MainWindow::logOut()
 {
+    QString role=(*LogInAcc).getRole();
     LogInAcc=NULL;
+    LogInUser=NULL;
     this->show();
+    if(role=="A")
+        ad.clear();
+    else if(role=="L")
+        li.clear();
+    else re.clear();
 }
 
 void MainWindow::on_SignUpButton_clicked()
@@ -581,6 +601,8 @@ void MainWindow::createUser()
     temp_accounts.append(su.data()->getAccount());
     temp_users.append(pi.data()->getUser());
     temp_accounts.last().setID(temp_users.last().getID());
+    su.clear();
+    pi.clear();
 }
 
 
@@ -592,6 +614,7 @@ void MainWindow::closeEvent (QCloseEvent *event)
     saveTempAccountsFile();
     saveTempUsersFile();
     saveCartInfosFile();
+    delete numberOfLentBooks;
     event->accept();
 }
 void MainWindow::saveUsersFile()
@@ -780,7 +803,7 @@ void MainWindow::saveCartInfosFile()
         xmlWriter->writeTextElement("readerid", (*it).getReaderID());
         xmlWriter->writeTextElement("bookname", (*it).getBookName());
         xmlWriter->writeTextElement("bookid", (*it).getBookID());
-        xmlWriter->writeTextElement("recipientID", (*it).getRecipient());
+        xmlWriter->writeTextElement("recipient", (*it).getRecipient());
         xmlWriter->writeTextElement("brtime", (*it).getBrrowTime());
         xmlWriter->writeTextElement("duration", QString::number((*it).getDuration()));
         xmlWriter->writeTextElement("status", QString::number((*it).getStatus()));
@@ -806,6 +829,8 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
             ui->intro->setText((*it).getIntro());
             ui->bookName->setText(s);
             QImage image("Images/Books/"+(*it).getID()+".jpg");
+            if(!this->ptr_scene.isNull())
+                this->ptr_scene.clear();
             this->ptr_scene=QSharedPointer<QGraphicsScene>(new QGraphicsScene());
             ui->bookView->setScene(ptr_scene.data());
             QGraphicsPixmapItem* item = new QGraphicsPixmapItem(QPixmap::fromImage(image));
@@ -840,12 +865,16 @@ void MainWindow::on_Back_clicked()
 
 void MainWindow::on_Help_clicked()
 {
+    if(!he.isNull())
+        he.clear();
     he=QSharedPointer<Help>(new Help);
     he.data()->exec();
 }
 
 void MainWindow::on_About_clicked()
 {
+    if(!ab.isNull())
+        ab.clear();
     ab=QSharedPointer<About>(new About);
     ab.data()->exec();
 }

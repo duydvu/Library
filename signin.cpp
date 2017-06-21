@@ -24,13 +24,22 @@ void SignIn::on_LogInButton_clicked()
     for(;it!=accounts.end();it++)
     {
         if((*it).getAcc() == acc)
+        {
             if(Account::encrypt(psw) == (*it).getPsw())
             {
+                if((*it).getStatus())
+                {
+                    QMessageBox::information(0,"Tài khoản của bạn đang bị khóa",
+                    "Hiện tại, bạn sẽ không thể sử dụng 1 số chức năng của thư viện.\nNếu bạn muốn khôi phục tài khoản hãy liên hệ với người quản lý để được giải quyết.\nThân!",
+                    QMessageBox::Ok);
+                }
                 LogInAcc=it;
                 LogInUser=users.begin()+(*LogInAcc).getID().toInt();
                 this->accept();
                 return;
             }
+            break;
+        }
     }
     ui->ResultLabel->clear();
     ui->ResultLabel->setText("Tài khoản hoặc mật khẩu không chính xác");

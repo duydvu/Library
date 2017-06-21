@@ -46,8 +46,35 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_usersTable_cellClicked(int row, int column);
+
+    void on_pushButton_4_clicked();
+
+    void ReaderPassChange();
+
+    void on_pushButton_2_clicked();
+
+    void on_r_done_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_6_clicked();
+
+    void ChangePass();
+
+    void on_pushButton_5_clicked();
+
+    void on_pushButton_7_clicked();
+
+    void on_searchBook_returnPressed();
+
+    void on_category_currentIndexChanged(int index);
+
+    void on_bookTable_cellClicked(int row, int column);
+
 private:
     Ui::librarian *ui;
+    QSharedPointer<Password> pa;
 
     void closeEvent (QCloseEvent *event);
 

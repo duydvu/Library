@@ -28,22 +28,22 @@
         <DoP>12.06.2017</DoP>
     </user>
     <user>
-        <name>anhnhat</name>
+        <name>Nguyễn Thị Chanh</name>
         <id>3</id>
         <DoB>01.01.1998</DoB>
-        <sex>nam</sex>
-        <address>Bảo Lộc, Lâm Đồng</address>
-        <email>nhokheo@gmail.com</email>
-        <DoP>12.06.2017</DoP>
+        <sex>nữ</sex>
+        <address>6A Ngô Đức Kế, Phường 7, Quận 3,  Quận 3, TP. HCM</address>
+        <email>thichanh@gmail.com</email>
+        <DoP>18.06.2017</DoP>
     </user>
     <user>
-        <name>User2</name>
+        <name>Ngô Nguyên Long</name>
         <id>4</id>
-        <DoB>01.01.1998</DoB>
+        <DoB>01.05.1996</DoB>
         <sex>nam</sex>
-        <address>Moon</address>
-        <email>king@gmail.com</email>
-        <DoP>13.06.2017</DoP>
+        <address>Hẻm 241 Nguyễn Văn Luông,  Quận 6, TP. HCM</address>
+        <email>nguyenlong@gmail.com</email>
+        <DoP>18.06.2017</DoP>
     </user>
     <user>
         <name>Lê Tiến Ninh</name>
@@ -241,24 +241,6 @@
         <sex>nữ</sex>
         <address>6A Trần Hưng Đạo, P. Phạm Ngũ Lão,  Quận 1, TP. HCM</address>
         <email>thihoa@gmail.com</email>
-        <DoP>18.06.2017</DoP>
-    </user>
-    <user>
-        <name>Nguyễn Thị Chanh</name>
-        <id>27</id>
-        <DoB>01.01.1998</DoB>
-        <sex>nữ</sex>
-        <address>6A Ngô Đức Kế, Phường 7, Quận 3,  Quận 3, TP. HCM</address>
-        <email>thichanh@gmail.com</email>
-        <DoP>18.06.2017</DoP>
-    </user>
-    <user>
-        <name>Ngô Nguyên Long</name>
-        <id>28</id>
-        <DoB>01.05.1996</DoB>
-        <sex>nam</sex>
-        <address>Hẻm 241 Nguyễn Văn Luông,  Quận 6, TP. HCM</address>
-        <email>nguyenlong@gmail.com</email>
         <DoP>18.06.2017</DoP>
     </user>
 </Users>

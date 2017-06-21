@@ -22,18 +22,18 @@
         <status>1</status>
     </account>
     <account>
-        <name>user</name>
-        <password>75736572</password>
-        <role>R</role>
+        <name>thichanh</name>
+        <password>7468696368616e68</password>
+        <role>L</role>
         <id>3</id>
-        <status>0</status>
+        <status>1</status>
     </account>
     <account>
-        <name>user2</name>
-        <password>7573657232</password>
+        <name>nguyenlong</name>
+        <password>6e677579656e6c6f6e67</password>
         <role>L</role>
         <id>4</id>
-        <status>0</status>
+        <status>1</status>
     </account>
     <account>
         <name>leninh</name>
@@ -54,7 +54,7 @@
         <password>6e676f63686169</password>
         <role>R</role>
         <id>7</id>
-        <status>0</status>
+        <status>1</status>
     </account>
     <account>
         <name>vanyen</name>
@@ -180,27 +180,13 @@
         <password>7468696e67616e</password>
         <role>L</role>
         <id>25</id>
-        <status>0</status>
+        <status>1</status>
     </account>
     <account>
         <name>thihoa</name>
         <password>746869686f61</password>
         <role>L</role>
         <id>26</id>
-        <status>0</status>
-    </account>
-    <account>
-        <name>thichanh</name>
-        <password>7468696368616e68</password>
-        <role>L</role>
-        <id>27</id>
-        <status>0</status>
-    </account>
-    <account>
-        <name>nguyenlong</name>
-        <password>6e677579656e6c6f6e67</password>
-        <role>L</role>
-        <id>28</id>
-        <status>0</status>
+        <status>1</status>
     </account>
 </Accounts>

@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_librarian_t {
-    QByteArrayData data[18];
-    char stringdata0[291];
+    QByteArrayData data[32];
+    char stringdata0[598];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,7 +46,21 @@ QT_MOC_LITERAL(13, 197, 17), // "on_accept_clicked"
 QT_MOC_LITERAL(14, 215, 15), // "on_send_clicked"
 QT_MOC_LITERAL(15, 231, 15), // "on_done_clicked"
 QT_MOC_LITERAL(16, 247, 19), // "on_infringe_clicked"
-QT_MOC_LITERAL(17, 267, 23) // "on_searchButton_clicked"
+QT_MOC_LITERAL(17, 267, 23), // "on_searchButton_clicked"
+QT_MOC_LITERAL(18, 291, 25), // "on_usersTable_cellClicked"
+QT_MOC_LITERAL(19, 317, 23), // "on_pushButton_4_clicked"
+QT_MOC_LITERAL(20, 341, 16), // "ReaderPassChange"
+QT_MOC_LITERAL(21, 358, 23), // "on_pushButton_2_clicked"
+QT_MOC_LITERAL(22, 382, 17), // "on_r_done_clicked"
+QT_MOC_LITERAL(23, 400, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(24, 424, 23), // "on_pushButton_6_clicked"
+QT_MOC_LITERAL(25, 448, 10), // "ChangePass"
+QT_MOC_LITERAL(26, 459, 23), // "on_pushButton_5_clicked"
+QT_MOC_LITERAL(27, 483, 23), // "on_pushButton_7_clicked"
+QT_MOC_LITERAL(28, 507, 27), // "on_searchBook_returnPressed"
+QT_MOC_LITERAL(29, 535, 31), // "on_category_currentIndexChanged"
+QT_MOC_LITERAL(30, 567, 5), // "index"
+QT_MOC_LITERAL(31, 573, 24) // "on_bookTable_cellClicked"
 
     },
     "librarian\0closed\0\0on_Agree_clicked\0"
@@ -56,7 +70,16 @@ QT_MOC_LITERAL(17, 267, 23) // "on_searchButton_clicked"
     "on_CartInfos_cellClicked\0row\0column\0"
     "on_accept_clicked\0on_send_clicked\0"
     "on_done_clicked\0on_infringe_clicked\0"
-    "on_searchButton_clicked"
+    "on_searchButton_clicked\0"
+    "on_usersTable_cellClicked\0"
+    "on_pushButton_4_clicked\0ReaderPassChange\0"
+    "on_pushButton_2_clicked\0on_r_done_clicked\0"
+    "on_pushButton_3_clicked\0on_pushButton_6_clicked\0"
+    "ChangePass\0on_pushButton_5_clicked\0"
+    "on_pushButton_7_clicked\0"
+    "on_searchBook_returnPressed\0"
+    "on_category_currentIndexChanged\0index\0"
+    "on_bookTable_cellClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,7 +89,7 @@ static const uint qt_meta_data_librarian[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
+      27,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -74,22 +97,35 @@ static const uint qt_meta_data_librarian[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   84,    2, 0x06 /* Public */,
+       1,    0,  149,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   85,    2, 0x08 /* Private */,
-       4,    0,   86,    2, 0x08 /* Private */,
-       5,    0,   87,    2, 0x08 /* Private */,
-       6,    0,   88,    2, 0x08 /* Private */,
-       7,    0,   89,    2, 0x08 /* Private */,
-       8,    0,   90,    2, 0x08 /* Private */,
-       9,    0,   91,    2, 0x08 /* Private */,
-      10,    2,   92,    2, 0x08 /* Private */,
-      13,    0,   97,    2, 0x08 /* Private */,
-      14,    0,   98,    2, 0x08 /* Private */,
-      15,    0,   99,    2, 0x08 /* Private */,
-      16,    0,  100,    2, 0x08 /* Private */,
-      17,    0,  101,    2, 0x08 /* Private */,
+       3,    0,  150,    2, 0x08 /* Private */,
+       4,    0,  151,    2, 0x08 /* Private */,
+       5,    0,  152,    2, 0x08 /* Private */,
+       6,    0,  153,    2, 0x08 /* Private */,
+       7,    0,  154,    2, 0x08 /* Private */,
+       8,    0,  155,    2, 0x08 /* Private */,
+       9,    0,  156,    2, 0x08 /* Private */,
+      10,    2,  157,    2, 0x08 /* Private */,
+      13,    0,  162,    2, 0x08 /* Private */,
+      14,    0,  163,    2, 0x08 /* Private */,
+      15,    0,  164,    2, 0x08 /* Private */,
+      16,    0,  165,    2, 0x08 /* Private */,
+      17,    0,  166,    2, 0x08 /* Private */,
+      18,    2,  167,    2, 0x08 /* Private */,
+      19,    0,  172,    2, 0x08 /* Private */,
+      20,    0,  173,    2, 0x08 /* Private */,
+      21,    0,  174,    2, 0x08 /* Private */,
+      22,    0,  175,    2, 0x08 /* Private */,
+      23,    0,  176,    2, 0x08 /* Private */,
+      24,    0,  177,    2, 0x08 /* Private */,
+      25,    0,  178,    2, 0x08 /* Private */,
+      26,    0,  179,    2, 0x08 /* Private */,
+      27,    0,  180,    2, 0x08 /* Private */,
+      28,    0,  181,    2, 0x08 /* Private */,
+      29,    1,  182,    2, 0x08 /* Private */,
+      31,    2,  185,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -108,6 +144,19 @@ static const uint qt_meta_data_librarian[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   11,   12,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   30,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,   11,   12,
 
        0        // eod
 };
@@ -132,6 +181,19 @@ void librarian::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 11: _t->on_done_clicked(); break;
         case 12: _t->on_infringe_clicked(); break;
         case 13: _t->on_searchButton_clicked(); break;
+        case 14: _t->on_usersTable_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 15: _t->on_pushButton_4_clicked(); break;
+        case 16: _t->ReaderPassChange(); break;
+        case 17: _t->on_pushButton_2_clicked(); break;
+        case 18: _t->on_r_done_clicked(); break;
+        case 19: _t->on_pushButton_3_clicked(); break;
+        case 20: _t->on_pushButton_6_clicked(); break;
+        case 21: _t->ChangePass(); break;
+        case 22: _t->on_pushButton_5_clicked(); break;
+        case 23: _t->on_pushButton_7_clicked(); break;
+        case 24: _t->on_searchBook_returnPressed(); break;
+        case 25: _t->on_category_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 26: _t->on_bookTable_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -172,13 +234,13 @@ int librarian::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 27)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 27;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 27)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 27;
     }
     return _id;
 }

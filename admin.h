@@ -72,6 +72,14 @@ private slots:
 
     void on_r_done_clicked();
 
+    void on_searchBook_returnPressed();
+
+    void on_category_currentIndexChanged(int index);
+
+    void on_bookTable_cellClicked(int row, int column);
+
+    void on_bookChange_clicked();
+
 private:
     Ui::Admin *ui;
     QSharedPointer<Password> pa;

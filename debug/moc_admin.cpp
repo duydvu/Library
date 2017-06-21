@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Admin_t {
-    QByteArrayData data[31];
-    char stringdata0[566];
+    QByteArrayData data[36];
+    char stringdata0[679];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -59,7 +59,12 @@ QT_MOC_LITERAL(26, 459, 23), // "on_pushButton_4_clicked"
 QT_MOC_LITERAL(27, 483, 16), // "ReaderPassChange"
 QT_MOC_LITERAL(28, 500, 23), // "on_pushButton_3_clicked"
 QT_MOC_LITERAL(29, 524, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(30, 548, 17) // "on_r_done_clicked"
+QT_MOC_LITERAL(30, 548, 17), // "on_r_done_clicked"
+QT_MOC_LITERAL(31, 566, 27), // "on_searchBook_returnPressed"
+QT_MOC_LITERAL(32, 594, 31), // "on_category_currentIndexChanged"
+QT_MOC_LITERAL(33, 626, 5), // "index"
+QT_MOC_LITERAL(34, 632, 24), // "on_bookTable_cellClicked"
+QT_MOC_LITERAL(35, 657, 21) // "on_bookChange_clicked"
 
     },
     "Admin\0closed\0\0on_searchButton_clicked\0"
@@ -76,7 +81,9 @@ QT_MOC_LITERAL(30, 548, 17) // "on_r_done_clicked"
     "on_usersTable_cellClicked\0"
     "on_pushButton_4_clicked\0ReaderPassChange\0"
     "on_pushButton_3_clicked\0on_pushButton_2_clicked\0"
-    "on_r_done_clicked"
+    "on_r_done_clicked\0on_searchBook_returnPressed\0"
+    "on_category_currentIndexChanged\0index\0"
+    "on_bookTable_cellClicked\0on_bookChange_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -86,7 +93,7 @@ static const uint qt_meta_data_Admin[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      27,   14, // methods
+      31,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -94,35 +101,39 @@ static const uint qt_meta_data_Admin[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  149,    2, 0x06 /* Public */,
+       1,    0,  169,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  150,    2, 0x08 /* Private */,
-       4,    0,  151,    2, 0x08 /* Private */,
-       5,    0,  152,    2, 0x08 /* Private */,
-       6,    2,  153,    2, 0x08 /* Private */,
-       9,    0,  158,    2, 0x08 /* Private */,
-      10,    0,  159,    2, 0x08 /* Private */,
-      11,    0,  160,    2, 0x08 /* Private */,
-      12,    0,  161,    2, 0x08 /* Private */,
-      13,    0,  162,    2, 0x08 /* Private */,
-      14,    0,  163,    2, 0x08 /* Private */,
-      15,    0,  164,    2, 0x08 /* Private */,
-      16,    0,  165,    2, 0x08 /* Private */,
-      17,    0,  166,    2, 0x08 /* Private */,
-      18,    0,  167,    2, 0x08 /* Private */,
-      19,    0,  168,    2, 0x08 /* Private */,
-      20,    2,  169,    2, 0x08 /* Private */,
-      21,    0,  174,    2, 0x08 /* Private */,
-      22,    0,  175,    2, 0x08 /* Private */,
-      23,    0,  176,    2, 0x08 /* Private */,
-      24,    0,  177,    2, 0x08 /* Private */,
-      25,    2,  178,    2, 0x08 /* Private */,
-      26,    0,  183,    2, 0x08 /* Private */,
-      27,    0,  184,    2, 0x08 /* Private */,
-      28,    0,  185,    2, 0x08 /* Private */,
-      29,    0,  186,    2, 0x08 /* Private */,
-      30,    0,  187,    2, 0x08 /* Private */,
+       3,    0,  170,    2, 0x08 /* Private */,
+       4,    0,  171,    2, 0x08 /* Private */,
+       5,    0,  172,    2, 0x08 /* Private */,
+       6,    2,  173,    2, 0x08 /* Private */,
+       9,    0,  178,    2, 0x08 /* Private */,
+      10,    0,  179,    2, 0x08 /* Private */,
+      11,    0,  180,    2, 0x08 /* Private */,
+      12,    0,  181,    2, 0x08 /* Private */,
+      13,    0,  182,    2, 0x08 /* Private */,
+      14,    0,  183,    2, 0x08 /* Private */,
+      15,    0,  184,    2, 0x08 /* Private */,
+      16,    0,  185,    2, 0x08 /* Private */,
+      17,    0,  186,    2, 0x08 /* Private */,
+      18,    0,  187,    2, 0x08 /* Private */,
+      19,    0,  188,    2, 0x08 /* Private */,
+      20,    2,  189,    2, 0x08 /* Private */,
+      21,    0,  194,    2, 0x08 /* Private */,
+      22,    0,  195,    2, 0x08 /* Private */,
+      23,    0,  196,    2, 0x08 /* Private */,
+      24,    0,  197,    2, 0x08 /* Private */,
+      25,    2,  198,    2, 0x08 /* Private */,
+      26,    0,  203,    2, 0x08 /* Private */,
+      27,    0,  204,    2, 0x08 /* Private */,
+      28,    0,  205,    2, 0x08 /* Private */,
+      29,    0,  206,    2, 0x08 /* Private */,
+      30,    0,  207,    2, 0x08 /* Private */,
+      31,    0,  208,    2, 0x08 /* Private */,
+      32,    1,  209,    2, 0x08 /* Private */,
+      34,    2,  212,    2, 0x08 /* Private */,
+      35,    0,  217,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -153,6 +164,10 @@ static const uint qt_meta_data_Admin[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   33,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int,    7,    8,
     QMetaType::Void,
 
        0        // eod
@@ -191,6 +206,10 @@ void Admin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 24: _t->on_pushButton_3_clicked(); break;
         case 25: _t->on_pushButton_2_clicked(); break;
         case 26: _t->on_r_done_clicked(); break;
+        case 27: _t->on_searchBook_returnPressed(); break;
+        case 28: _t->on_category_currentIndexChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->on_bookTable_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 30: _t->on_bookChange_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -231,13 +250,13 @@ int Admin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 31)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 31;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 27)
+        if (_id < 31)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 27;
+        _id -= 31;
     }
     return _id;
 }

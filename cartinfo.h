@@ -14,7 +14,7 @@ private:
     QString bookname;
     QString bookid;
     QString brrowtime;
-    QString recipientID;
+    QString recipient;
     int duration;
 //    int fee;
     int status;
@@ -31,7 +31,7 @@ public:
     QString getBookID();
     void setBrrowTime(QString time);
     QString getBrrowTime();
-    void setRecipient(QString id);
+    void setRecipient(QString name);
     QString getRecipient();
     void setDuration(int time);
     int getDuration();

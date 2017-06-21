@@ -19,6 +19,10 @@ public:
 signals:
     void closed();
 
+protected:
+
+    void resizeEvent(QResizeEvent* event);
+
 private slots:
     void on_searchButton_clicked();
 
@@ -38,10 +42,18 @@ private slots:
 
     void ChangePass();
 
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
+    void on_readerTab_currentChanged(int index);
+
 private:
     Ui::reader *ui;
     QSharedPointer<Password> pa;
     QSharedPointer<QGraphicsScene> ptr_scene;
+    QLinkedList<cartinfo> myCartInfos;
+    QLinkedList<cartinfo>::iterator currentCart;
 
     void closeEvent (QCloseEvent *event);
 

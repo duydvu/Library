@@ -50,7 +50,7 @@
       <widget class="QWidget" name="scrollAreaWidgetContents">
        <property name="geometry">
         <rect>
-         <x>-155</x>
+         <x>-316</x>
          <y>0</y>
          <width>1099</width>
          <height>771</height>
@@ -106,7 +106,7 @@
             <widget class="QFrame" name="frame_2">
              <property name="styleSheet">
               <string notr="true">background: url(Images/Background.png) no-repeat center center;
-background-color: #1DE9B6;</string>
+background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 64, 46, 255), stop:1 rgba(0, 118, 191, 255));</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -126,19 +126,19 @@ background-color: #1DE9B6;</string>
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#Search 
+                   <string notr="true">QPushButton 
 {
 	height: 30px;
 	border-radius: 4px;
 	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #6A1B9A;
+	background: #D32F2F;
 	color: #fff;
 	outline: none;
 }
-#Search:hover 
+QPushButton:hover 
 {
-	background: #8E24AA;
+	background: #F44336;
 }
 #Search:pressed 
 {
@@ -156,21 +156,21 @@ background-color: #1DE9B6;</string>
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#SignInButton 
+                   <string notr="true">QPushButton 
 {
 	height: 30px;
 	border-radius: 4px;
 	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #6A1B9A;
+	background: #D32F2F;
 	color: #fff;
 	outline: none;
 }
-#SignInButton:hover 
+QPushButton:hover 
 {
-	background: #8E24AA;
+	background: #F44336;
 }
-#SignInButton:pressed 
+#Search:pressed 
 {
 	padding-top: 2px;
 }</string>
@@ -186,21 +186,21 @@ background-color: #1DE9B6;</string>
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#SignUpButton 
+                   <string notr="true">QPushButton 
 {
 	height: 30px;
 	border-radius: 4px;
 	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #6A1B9A;
+	background: #D32F2F;
 	color: #fff;
 	outline: none;
 }
-#SignUpButton:hover 
+QPushButton:hover 
 {
-	background: #8E24AA;
+	background: #F44336;
 }
-#SignUpButton:pressed 
+#Search:pressed 
 {
 	padding-top: 2px;
 }</string>
@@ -216,21 +216,21 @@ background-color: #1DE9B6;</string>
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#About 
+                   <string notr="true">QPushButton 
 {
 	height: 30px;
 	border-radius: 4px;
 	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #6A1B9A;
+	background: #D32F2F;
 	color: #fff;
 	outline: none;
 }
-#About:hover 
+QPushButton:hover 
 {
-	background: #8E24AA;
+	background: #F44336;
 }
-#About:pressed 
+#Search:pressed 
 {
 	padding-top: 2px;
 }</string>
@@ -246,21 +246,21 @@ background-color: #1DE9B6;</string>
                    <cursorShape>PointingHandCursor</cursorShape>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">#Help 
+                   <string notr="true">QPushButton 
 {
 	height: 30px;
 	border-radius: 4px;
 	border: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #6A1B9A;
+	background: #D32F2F;
 	color: #fff;
 	outline: none;
 }
-#Help:hover 
+QPushButton:hover 
 {
-	background: #8E24AA;
+	background: #F44336;
 }
-#Help:pressed 
+#Search:pressed 
 {
 	padding-top: 2px;
 }</string>
@@ -749,7 +749,6 @@ QTableWidget QTableCornerButton::section {
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
@@ -767,12 +766,12 @@ QTableWidget QTableCornerButton::section {
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>154</x>
-     <y>115</y>
+     <x>227</x>
+     <y>332</y>
     </hint>
     <hint type="destinationlabel">
-     <x>773</x>
-     <y>115</y>
+     <x>1089</x>
+     <y>332</y>
     </hint>
    </hints>
   </connection>
@@ -783,12 +782,12 @@ QTableWidget QTableCornerButton::section {
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>359</x>
-     <y>115</y>
+     <x>432</x>
+     <y>332</y>
     </hint>
     <hint type="destinationlabel">
-     <x>773</x>
-     <y>115</y>
+     <x>1089</x>
+     <y>332</y>
     </hint>
    </hints>
   </connection>
@@ -799,12 +798,12 @@ QTableWidget QTableCornerButton::section {
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>529</x>
-     <y>103</y>
+     <x>965</x>
+     <y>332</y>
     </hint>
     <hint type="destinationlabel">
-     <x>687</x>
-     <y>94</y>
+     <x>1089</x>
+     <y>332</y>
     </hint>
    </hints>
   </connection>

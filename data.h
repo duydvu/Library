@@ -20,6 +20,7 @@
 #include <QDebug>
 
 extern QLinkedList<Book> books;
+extern int *numberOfLentBooks;
 extern QLinkedList<Account> accounts;
 extern QLinkedList<User> users;
 extern QLinkedList<Account> temp_accounts;

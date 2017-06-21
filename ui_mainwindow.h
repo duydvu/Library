@@ -24,7 +24,6 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
@@ -67,7 +66,6 @@ public:
     QLabel *bookName;
     QGraphicsView *bookView;
     QTextBrowser *intro;
-    QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -90,7 +88,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QStringLiteral("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(-155, 0, 1099, 771));
+        scrollAreaWidgetContents->setGeometry(QRect(-316, 0, 1099, 771));
         scrollAreaWidgetContents->setStyleSheet(QStringLiteral("border: none;"));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout->setSpacing(0);
@@ -110,7 +108,7 @@ public:
         frame_2 = new QFrame(frame);
         frame_2->setObjectName(QStringLiteral("frame_2"));
         frame_2->setStyleSheet(QLatin1String("background: url(Images/Background.png) no-repeat center center;\n"
-"background-color: #1DE9B6;"));
+"background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 64, 46, 255), stop:1 rgba(0, 118, 191, 255));"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         verticalLayout_3 = new QVBoxLayout(frame_2);
@@ -124,19 +122,19 @@ public:
         Search = new QPushButton(frame_2);
         Search->setObjectName(QStringLiteral("Search"));
         Search->setCursor(QCursor(Qt::PointingHandCursor));
-        Search->setStyleSheet(QLatin1String("#Search \n"
+        Search->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
 "	border-radius: 4px;\n"
 "	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #6A1B9A;\n"
+"	background: #D32F2F;\n"
 "	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
-"#Search:hover \n"
+"QPushButton:hover \n"
 "{\n"
-"	background: #8E24AA;\n"
+"	background: #F44336;\n"
 "}\n"
 "#Search:pressed \n"
 "{\n"
@@ -148,21 +146,21 @@ public:
         SignInButton = new QPushButton(frame_2);
         SignInButton->setObjectName(QStringLiteral("SignInButton"));
         SignInButton->setCursor(QCursor(Qt::PointingHandCursor));
-        SignInButton->setStyleSheet(QLatin1String("#SignInButton \n"
+        SignInButton->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
 "	border-radius: 4px;\n"
 "	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #6A1B9A;\n"
+"	background: #D32F2F;\n"
 "	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
-"#SignInButton:hover \n"
+"QPushButton:hover \n"
 "{\n"
-"	background: #8E24AA;\n"
+"	background: #F44336;\n"
 "}\n"
-"#SignInButton:pressed \n"
+"#Search:pressed \n"
 "{\n"
 "	padding-top: 2px;\n"
 "}"));
@@ -172,21 +170,21 @@ public:
         SignUpButton = new QPushButton(frame_2);
         SignUpButton->setObjectName(QStringLiteral("SignUpButton"));
         SignUpButton->setCursor(QCursor(Qt::PointingHandCursor));
-        SignUpButton->setStyleSheet(QLatin1String("#SignUpButton \n"
+        SignUpButton->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
 "	border-radius: 4px;\n"
 "	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #6A1B9A;\n"
+"	background: #D32F2F;\n"
 "	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
-"#SignUpButton:hover \n"
+"QPushButton:hover \n"
 "{\n"
-"	background: #8E24AA;\n"
+"	background: #F44336;\n"
 "}\n"
-"#SignUpButton:pressed \n"
+"#Search:pressed \n"
 "{\n"
 "	padding-top: 2px;\n"
 "}"));
@@ -196,21 +194,21 @@ public:
         About = new QPushButton(frame_2);
         About->setObjectName(QStringLiteral("About"));
         About->setCursor(QCursor(Qt::PointingHandCursor));
-        About->setStyleSheet(QLatin1String("#About \n"
+        About->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
 "	border-radius: 4px;\n"
 "	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #6A1B9A;\n"
+"	background: #D32F2F;\n"
 "	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
-"#About:hover \n"
+"QPushButton:hover \n"
 "{\n"
-"	background: #8E24AA;\n"
+"	background: #F44336;\n"
 "}\n"
-"#About:pressed \n"
+"#Search:pressed \n"
 "{\n"
 "	padding-top: 2px;\n"
 "}"));
@@ -220,21 +218,21 @@ public:
         Help = new QPushButton(frame_2);
         Help->setObjectName(QStringLiteral("Help"));
         Help->setCursor(QCursor(Qt::PointingHandCursor));
-        Help->setStyleSheet(QLatin1String("#Help \n"
+        Help->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
 "	border-radius: 4px;\n"
 "	border: none;\n"
 "	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: #6A1B9A;\n"
+"	background: #D32F2F;\n"
 "	color: #fff;\n"
 "	outline: none;\n"
 "}\n"
-"#Help:hover \n"
+"QPushButton:hover \n"
 "{\n"
-"	background: #8E24AA;\n"
+"	background: #F44336;\n"
 "}\n"
-"#Help:pressed \n"
+"#Search:pressed \n"
 "{\n"
 "	padding-top: 2px;\n"
 "}"));
@@ -494,9 +492,6 @@ public:
         gridLayout->addWidget(scrollArea, 0, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
-        statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QStringLiteral("statusBar"));
-        MainWindow->setStatusBar(statusBar);
         QWidget::setTabOrder(FindBooksEdit, FindBooksButton);
         QWidget::setTabOrder(FindBooksButton, BooksTable);
         QWidget::setTabOrder(BooksTable, scrollArea);

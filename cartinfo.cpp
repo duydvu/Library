@@ -67,14 +67,14 @@ QString cartinfo::getBrrowTime()
     return this->brrowtime;
 }
 
-void cartinfo::setRecipient(QString id)
+void cartinfo::setRecipient(QString name)
 {
-    this->recipientID=id;
+    this->recipient=name;
 }
 
 QString cartinfo::getRecipient()
 {
-    return this->recipientID;
+    return this->recipient;
 }
 
 void cartinfo::setDuration(int time)
