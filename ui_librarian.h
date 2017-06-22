@@ -184,17 +184,20 @@ public:
     QPushButton *done;
     QPushButton *infringe;
     QFrame *frame_3;
+    QVBoxLayout *verticalLayout_10;
     QLabel *label;
+    QHBoxLayout *horizontalLayout_35;
     QLabel *label_2;
     QLabel *bookName;
+    QHBoxLayout *horizontalLayout_36;
     QLabel *label_3;
     QLabel *readerName;
+    QHBoxLayout *horizontalLayout_37;
+    QLabel *label_6;
+    QLabel *recipient;
+    QHBoxLayout *horizontalLayout_38;
     QLabel *label_4;
     QLabel *status;
-    QLabel *label_5;
-    QLabel *recipient;
-    QLabel *label_6;
-    QLabel *capacity;
     QTableWidget *CartInfos;
     QWidget *newRegistration;
     QGridLayout *gridLayout_8;
@@ -891,6 +894,7 @@ public:
         horizontalLayout_24->setObjectName(QStringLiteral("horizontalLayout_24"));
         pushButton_4 = new QPushButton(frame_6);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_4->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
@@ -910,6 +914,7 @@ public:
 
         pushButton_2 = new QPushButton(frame_6);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_2->setStyleSheet(QLatin1String("QPushButton \n"
 "{\n"
 "	height: 30px;\n"
@@ -929,6 +934,7 @@ public:
 
         pushButton_3 = new QPushButton(frame_6);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setCursor(QCursor(Qt::PointingHandCursor));
         pushButton_3->setStyleSheet(QLatin1String("QPushButton{\n"
 "	height: 30px;\n"
 "	border-width: 0px;\n"
@@ -1107,6 +1113,19 @@ public:
         horizontalLayout_32->setContentsMargins(-1, -1, 200, -1);
         r_done = new QPushButton(frame_8);
         r_done->setObjectName(QStringLiteral("r_done"));
+        r_done->setCursor(QCursor(Qt::PointingHandCursor));
+        r_done->setStyleSheet(QLatin1String("QPushButton{\n"
+"	height: 40px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background-color: #448AFF;\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: #82B1FF;\n"
+"}"));
 
         horizontalLayout_32->addWidget(r_done);
 
@@ -1163,24 +1182,32 @@ public:
         frame->setFrameShadow(QFrame::Raised);
         gridLayout_3 = new QGridLayout(frame);
         gridLayout_3->setObjectName(QStringLiteral("gridLayout_3"));
-        gridLayout_3->setContentsMargins(-1, -1, 300, -1);
+        gridLayout_3->setContentsMargins(-1, -1, 150, -1);
         accept = new QPushButton(frame);
         accept->setObjectName(QStringLiteral("accept"));
+        accept->setEnabled(false);
+        accept->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_3->addWidget(accept, 0, 0, 1, 1);
 
         send = new QPushButton(frame);
         send->setObjectName(QStringLiteral("send"));
+        send->setEnabled(false);
+        send->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_3->addWidget(send, 1, 0, 1, 1);
 
         done = new QPushButton(frame);
         done->setObjectName(QStringLiteral("done"));
+        done->setEnabled(false);
+        done->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_3->addWidget(done, 1, 1, 1, 1);
 
         infringe = new QPushButton(frame);
         infringe->setObjectName(QStringLiteral("infringe"));
+        infringe->setEnabled(false);
+        infringe->setCursor(QCursor(Qt::PointingHandCursor));
 
         gridLayout_3->addWidget(infringe, 0, 1, 1, 1);
 
@@ -1192,45 +1219,81 @@ public:
         frame_3->setStyleSheet(QStringLiteral("background: none;"));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
+        verticalLayout_10 = new QVBoxLayout(frame_3);
+        verticalLayout_10->setObjectName(QStringLiteral("verticalLayout_10"));
         label = new QLabel(frame_3);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(90, 20, 91, 31));
+        label->setStyleSheet(QStringLiteral("font: italic;"));
+        label->setAlignment(Qt::AlignCenter);
+
+        verticalLayout_10->addWidget(label);
+
+        horizontalLayout_35 = new QHBoxLayout();
+        horizontalLayout_35->setObjectName(QStringLiteral("horizontalLayout_35"));
         label_2 = new QLabel(frame_3);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 60, 51, 16));
+
+        horizontalLayout_35->addWidget(label_2);
+
         bookName = new QLabel(frame_3);
         bookName->setObjectName(QStringLiteral("bookName"));
-        bookName->setGeometry(QRect(30, 90, 191, 21));
+
+        horizontalLayout_35->addWidget(bookName);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_35);
+
+        horizontalLayout_36 = new QHBoxLayout();
+        horizontalLayout_36->setObjectName(QStringLiteral("horizontalLayout_36"));
         label_3 = new QLabel(frame_3);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(20, 150, 91, 16));
+
+        horizontalLayout_36->addWidget(label_3);
+
         readerName = new QLabel(frame_3);
         readerName->setObjectName(QStringLiteral("readerName"));
-        readerName->setGeometry(QRect(30, 180, 191, 21));
-        label_4 = new QLabel(frame_3);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(20, 280, 71, 21));
-        status = new QLabel(frame_3);
-        status->setObjectName(QStringLiteral("status"));
-        status->setGeometry(QRect(30, 310, 131, 21));
-        label_5 = new QLabel(frame_3);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(20, 120, 91, 16));
-        recipient = new QLabel(frame_3);
-        recipient->setObjectName(QStringLiteral("recipient"));
-        recipient->setGeometry(QRect(30, 240, 131, 21));
+
+        horizontalLayout_36->addWidget(readerName);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_36);
+
+        horizontalLayout_37 = new QHBoxLayout();
+        horizontalLayout_37->setObjectName(QStringLiteral("horizontalLayout_37"));
         label_6 = new QLabel(frame_3);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(20, 210, 121, 21));
-        capacity = new QLabel(frame_3);
-        capacity->setObjectName(QStringLiteral("capacity"));
-        capacity->setGeometry(QRect(110, 120, 61, 21));
+
+        horizontalLayout_37->addWidget(label_6);
+
+        recipient = new QLabel(frame_3);
+        recipient->setObjectName(QStringLiteral("recipient"));
+
+        horizontalLayout_37->addWidget(recipient);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_37);
+
+        horizontalLayout_38 = new QHBoxLayout();
+        horizontalLayout_38->setObjectName(QStringLiteral("horizontalLayout_38"));
+        label_4 = new QLabel(frame_3);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        horizontalLayout_38->addWidget(label_4);
+
+        status = new QLabel(frame_3);
+        status->setObjectName(QStringLiteral("status"));
+
+        horizontalLayout_38->addWidget(status);
+
+
+        verticalLayout_10->addLayout(horizontalLayout_38);
+
 
         gridLayout_5->addWidget(frame_3, 1, 0, 1, 1);
 
         CartInfos = new QTableWidget(tabsecond);
-        if (CartInfos->columnCount() < 5)
-            CartInfos->setColumnCount(5);
+        if (CartInfos->columnCount() < 6)
+            CartInfos->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         CartInfos->setHorizontalHeaderItem(0, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
@@ -1241,6 +1304,8 @@ public:
         CartInfos->setHorizontalHeaderItem(3, __qtablewidgetitem8);
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
         CartInfos->setHorizontalHeaderItem(4, __qtablewidgetitem9);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        CartInfos->setHorizontalHeaderItem(5, __qtablewidgetitem10);
         CartInfos->setObjectName(QStringLiteral("CartInfos"));
         CartInfos->setStyleSheet(QLatin1String("QHeaderView::section {\n"
 "    background-color: #6A1B9A;\n"
@@ -1286,6 +1351,7 @@ public:
         horizontalLayout_22->setContentsMargins(100, 9, 100, 9);
         Agree = new QPushButton(newRegistration);
         Agree->setObjectName(QStringLiteral("Agree"));
+        Agree->setCursor(QCursor(Qt::PointingHandCursor));
         Agree->setStyleSheet(QLatin1String("QPushButton{\n"
 "	height: 40px;\n"
 "	border-width: 0px;\n"
@@ -1303,6 +1369,7 @@ public:
 
         Deny = new QPushButton(newRegistration);
         Deny->setObjectName(QStringLiteral("Deny"));
+        Deny->setCursor(QCursor(Qt::PointingHandCursor));
         Deny->setStyleSheet(QLatin1String("QPushButton{\n"
 "	height: 40px;\n"
 "	border-width: 0px;\n"
@@ -1326,24 +1393,24 @@ public:
         registrationTable = new QTableWidget(newRegistration);
         if (registrationTable->columnCount() < 9)
             registrationTable->setColumnCount(9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem10);
         QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(1, __qtablewidgetitem11);
+        registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem11);
         QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(2, __qtablewidgetitem12);
+        registrationTable->setHorizontalHeaderItem(1, __qtablewidgetitem12);
         QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(3, __qtablewidgetitem13);
+        registrationTable->setHorizontalHeaderItem(2, __qtablewidgetitem13);
         QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem14);
+        registrationTable->setHorizontalHeaderItem(3, __qtablewidgetitem14);
         QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(5, __qtablewidgetitem15);
+        registrationTable->setHorizontalHeaderItem(4, __qtablewidgetitem15);
         QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(6, __qtablewidgetitem16);
+        registrationTable->setHorizontalHeaderItem(5, __qtablewidgetitem16);
         QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(7, __qtablewidgetitem17);
+        registrationTable->setHorizontalHeaderItem(6, __qtablewidgetitem17);
         QTableWidgetItem *__qtablewidgetitem18 = new QTableWidgetItem();
-        registrationTable->setHorizontalHeaderItem(8, __qtablewidgetitem18);
+        registrationTable->setHorizontalHeaderItem(7, __qtablewidgetitem18);
+        QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(8, __qtablewidgetitem19);
         registrationTable->setObjectName(QStringLiteral("registrationTable"));
         registrationTable->setStyleSheet(QLatin1String("QHeaderView::section {\n"
 "    background-color: #6A1B9A;\n"
@@ -1379,7 +1446,7 @@ public:
         retranslateUi(librarian);
         QObject::connect(searchUsers, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        libra->setCurrentIndex(0);
+        libra->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(librarian);
@@ -1498,12 +1565,10 @@ public:
         bookName->setText(QString());
         label_3->setText(QApplication::translate("librarian", "T\303\252n ng\306\260\341\273\235i m\306\260\341\273\243n:", 0));
         readerName->setText(QString());
+        label_6->setText(QApplication::translate("librarian", "X\303\241c nh\341\272\255n l\341\272\247n cu\341\273\221i b\341\273\237i", 0));
+        recipient->setText(QString());
         label_4->setText(QApplication::translate("librarian", "T\303\254nh tr\341\272\241ng:", 0));
         status->setText(QString());
-        label_5->setText(QApplication::translate("librarian", "S\341\273\221 l\306\260\341\273\243ng t\341\273\223n kho", 0));
-        recipient->setText(QString());
-        label_6->setText(QApplication::translate("librarian", "X\303\241c nh\341\272\255n l\341\272\247n cu\341\273\221i b\341\273\237i", 0));
-        capacity->setText(QString());
         QTableWidgetItem *___qtablewidgetitem5 = CartInfos->horizontalHeaderItem(1);
         ___qtablewidgetitem5->setText(QApplication::translate("librarian", "M\303\243 phi\341\272\277u", 0));
         QTableWidgetItem *___qtablewidgetitem6 = CartInfos->horizontalHeaderItem(2);
@@ -1512,25 +1577,27 @@ public:
         ___qtablewidgetitem7->setText(QApplication::translate("librarian", "M\303\243 ng\306\260\341\273\235i d\303\271ng", 0));
         QTableWidgetItem *___qtablewidgetitem8 = CartInfos->horizontalHeaderItem(4);
         ___qtablewidgetitem8->setText(QApplication::translate("librarian", "Th\341\273\235i h\341\272\241n", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = CartInfos->horizontalHeaderItem(5);
+        ___qtablewidgetitem9->setText(QApplication::translate("librarian", "S\341\273\221 s\303\241ch c\303\262n", 0));
         libra->setTabText(libra->indexOf(tabsecond), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 m\306\260\341\273\243n tr\341\272\243", 0));
         Agree->setText(QApplication::translate("librarian", "Ch\341\272\245p nh\341\272\255n", 0));
         Deny->setText(QApplication::translate("librarian", "T\341\273\253 ch\341\273\221i", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = registrationTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem9->setText(QApplication::translate("librarian", "T\303\240i kho\341\272\243n", 0));
-        QTableWidgetItem *___qtablewidgetitem10 = registrationTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem10->setText(QApplication::translate("librarian", "Vai tr\303\262", 0));
-        QTableWidgetItem *___qtablewidgetitem11 = registrationTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem11->setText(QApplication::translate("librarian", "H\341\273\215 v\303\240 t\303\252n", 0));
-        QTableWidgetItem *___qtablewidgetitem12 = registrationTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem12->setText(QApplication::translate("librarian", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
-        QTableWidgetItem *___qtablewidgetitem13 = registrationTable->horizontalHeaderItem(5);
-        ___qtablewidgetitem13->setText(QApplication::translate("librarian", "Gi\341\273\233i t\303\255nh", 0));
-        QTableWidgetItem *___qtablewidgetitem14 = registrationTable->horizontalHeaderItem(6);
-        ___qtablewidgetitem14->setText(QApplication::translate("librarian", "Ng\303\240y sinh", 0));
-        QTableWidgetItem *___qtablewidgetitem15 = registrationTable->horizontalHeaderItem(7);
-        ___qtablewidgetitem15->setText(QApplication::translate("librarian", "Email", 0));
-        QTableWidgetItem *___qtablewidgetitem16 = registrationTable->horizontalHeaderItem(8);
-        ___qtablewidgetitem16->setText(QApplication::translate("librarian", "\304\220\341\273\213a ch\341\273\211", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = registrationTable->horizontalHeaderItem(1);
+        ___qtablewidgetitem10->setText(QApplication::translate("librarian", "T\303\240i kho\341\272\243n", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = registrationTable->horizontalHeaderItem(2);
+        ___qtablewidgetitem11->setText(QApplication::translate("librarian", "Vai tr\303\262", 0));
+        QTableWidgetItem *___qtablewidgetitem12 = registrationTable->horizontalHeaderItem(3);
+        ___qtablewidgetitem12->setText(QApplication::translate("librarian", "H\341\273\215 v\303\240 t\303\252n", 0));
+        QTableWidgetItem *___qtablewidgetitem13 = registrationTable->horizontalHeaderItem(4);
+        ___qtablewidgetitem13->setText(QApplication::translate("librarian", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
+        QTableWidgetItem *___qtablewidgetitem14 = registrationTable->horizontalHeaderItem(5);
+        ___qtablewidgetitem14->setText(QApplication::translate("librarian", "Gi\341\273\233i t\303\255nh", 0));
+        QTableWidgetItem *___qtablewidgetitem15 = registrationTable->horizontalHeaderItem(6);
+        ___qtablewidgetitem15->setText(QApplication::translate("librarian", "Ng\303\240y sinh", 0));
+        QTableWidgetItem *___qtablewidgetitem16 = registrationTable->horizontalHeaderItem(7);
+        ___qtablewidgetitem16->setText(QApplication::translate("librarian", "Email", 0));
+        QTableWidgetItem *___qtablewidgetitem17 = registrationTable->horizontalHeaderItem(8);
+        ___qtablewidgetitem17->setText(QApplication::translate("librarian", "\304\220\341\273\213a ch\341\273\211", 0));
         libra->setTabText(libra->indexOf(newRegistration), QApplication::translate("librarian", "Qu\341\272\243n l\303\275 \304\221\304\203ng k\303\275 m\341\273\233i", 0));
     } // retranslateUi
 

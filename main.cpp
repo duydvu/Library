@@ -4,9 +4,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MainWindow w;
-    w.setWindowTitle("Libpro");
-    w.show();
+    MainWindow w;               // Declare main window
+    w.setWindowTitle("Libpro"); // Set title for the main window
+    w.show();                   // Show the main window
 
     return a.exec();
 }

@@ -5,6 +5,12 @@
 
 class Account
 {
+private:
+    QString acc;
+    QString psw;
+    QString role;
+    QString id;
+    int status;
 public:
     Account();
     Account(QString acc, QString psw);
@@ -20,12 +26,6 @@ public:
     int getStatus();
     void clear();
     static QString encrypt(QString psw);
-private:
-    QString acc;
-    QString psw;
-    QString role;
-    QString id;
-    int status;
 };
 
 #endif // ACCOUNT_H

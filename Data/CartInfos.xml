@@ -51,9 +51,9 @@
         <bookname>Memoirs of a Geisha</bookname>
         <bookid>Fic_MoG</bookid>
         <recipient>admin</recipient>
-        <brtime>20.06.2017</brtime>
+        <brtime>22.06.2017</brtime>
         <duration>4</duration>
-        <status>1</status>
+        <status>4</status>
     </cartInfo>
     <cartInfo>
         <id>5</id>
@@ -64,7 +64,7 @@
         <recipient>admin</recipient>
         <brtime>20.06.2017</brtime>
         <duration>5</duration>
-        <status>2</status>
+        <status>4</status>
     </cartInfo>
     <cartInfo>
         <id>6</id>
@@ -75,7 +75,7 @@
         <recipient>admin</recipient>
         <brtime>20.06.2017</brtime>
         <duration>5</duration>
-        <status>2</status>
+        <status>4</status>
     </cartInfo>
     <cartInfo>
         <id>7</id>
@@ -83,10 +83,10 @@
         <readerid>9</readerid>
         <bookname>The Ghost Files</bookname>
         <bookid>Hor_TGF</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>5</duration>
-        <status>0</status>
+        <status>4</status>
     </cartInfo>
     <cartInfo>
         <id>8</id>
@@ -94,10 +94,10 @@
         <readerid>9</readerid>
         <bookname>Art That Changed the World</bookname>
         <bookid>Art_ACW</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>5</duration>
-        <status>0</status>
+        <status>4</status>
     </cartInfo>
     <cartInfo>
         <id>9</id>
@@ -105,10 +105,10 @@
         <readerid>10</readerid>
         <bookname>Wonder Woman Vol. 1: The Lies</bookname>
         <bookid>Cmc_WWV1</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>Lê Tiến Ninh</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>10</id>
@@ -116,10 +116,10 @@
         <readerid>10</readerid>
         <bookname>The Legend of Wonder Woman Vol. 1: Origins</bookname>
         <bookid>Cmc_TLWWV1</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>11</id>
@@ -127,10 +127,10 @@
         <readerid>10</readerid>
         <bookname>Batman Vol. 1: I Am Gotham</bookname>
         <bookid>Cmc_Bat1</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>12</id>
@@ -138,10 +138,10 @@
         <readerid>10</readerid>
         <bookname>Wolverine: Old Man Logan Vol. 3: The Last Ronin</bookname>
         <bookid>Cmc_Wolv3</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>13</id>
@@ -149,10 +149,10 @@
         <readerid>10</readerid>
         <bookname>Oxford School Dictionary</bookname>
         <bookid>Dic_OSD</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>14</id>
@@ -160,10 +160,10 @@
         <readerid>10</readerid>
         <bookname>A Dictionary of Biology 7/e</bookname>
         <bookid>Dic_DoB</bookid>
-        <recipient></recipient>
-        <brtime>20.06.2017</brtime>
+        <recipient>admin</recipient>
+        <brtime>22.06.2017</brtime>
         <duration>6</duration>
-        <status>0</status>
+        <status>2</status>
     </cartInfo>
     <cartInfo>
         <id>15</id>
@@ -284,6 +284,28 @@
         <recipient></recipient>
         <brtime>20.06.2017</brtime>
         <duration>6</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>26</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>The Ghost Files</bookname>
+        <bookid>Hor_TGF</bookid>
+        <recipient></recipient>
+        <brtime>22.06.2017</brtime>
+        <duration>12</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>27</id>
+        <readername>Reader</readername>
+        <readerid>1</readerid>
+        <bookname>Wonder Woman Vol. 1: The Lies</bookname>
+        <bookid>Cmc_WWV1</bookid>
+        <recipient></recipient>
+        <brtime>22.06.2017</brtime>
+        <duration>12</duration>
         <status>0</status>
     </cartInfo>
 </CartInfos>

@@ -520,6 +520,7 @@ public:
 "	padding-left: 10px;\n"
 "}\n"
 ""));
+        duration->setMaximum(30);
 
         horizontalLayout_3->addWidget(duration);
 
@@ -1127,7 +1128,7 @@ public:
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        readerTab->setCurrentIndex(0);
+        readerTab->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(reader);

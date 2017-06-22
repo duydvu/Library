@@ -71,7 +71,7 @@ QTabBar::tab:selected {
 }</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -693,6 +693,9 @@ QTableWidget QTableCornerButton::section {
 	padding-left: 10px;
 }
 </string>
+                  </property>
+                  <property name="maximum">
+                   <number>30</number>
                   </property>
                  </widget>
                 </item>

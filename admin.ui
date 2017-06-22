@@ -70,7 +70,7 @@ QTabBar::tab:selected {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="staffs">
        <attribute name="title">
@@ -488,6 +488,9 @@ border-radius: 5px;</string>
              </item>
              <item row="9" column="0" colspan="2">
               <widget class="QPushButton" name="s_done">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	height: 40px;
@@ -1137,6 +1140,9 @@ QTableWidget QTableCornerButton::section {
             <layout class="QHBoxLayout" name="horizontalLayout_16">
              <item>
               <widget class="QPushButton" name="pushButton_4">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
 {
@@ -1160,6 +1166,9 @@ QPushButton:hover
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_2">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
 {
@@ -1183,6 +1192,9 @@ QPushButton:hover
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_3">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	height: 30px;
@@ -1382,6 +1394,9 @@ border-radius: 5px;</string>
               </property>
               <item>
                <widget class="QPushButton" name="r_done">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
                 <property name="styleSheet">
                  <string notr="true">QPushButton{
 	height: 40px;
@@ -1694,6 +1709,12 @@ text-align:center;</string>
            </property>
            <item row="0" column="0">
             <widget class="QPushButton" name="accept">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="styleSheet">
               <string notr="true">height: 25px;
 width: 50px;</string>
@@ -1705,6 +1726,12 @@ width: 50px;</string>
            </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="send">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="styleSheet">
               <string notr="true">height: 25px;
 width: 50px;</string>
@@ -1716,6 +1743,12 @@ width: 50px;</string>
            </item>
            <item row="1" column="1">
             <widget class="QPushButton" name="done">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="styleSheet">
               <string notr="true">height: 25px;
 width: 50px;</string>
@@ -1727,6 +1760,12 @@ width: 50px;</string>
            </item>
            <item row="0" column="1">
             <widget class="QPushButton" name="infringe">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="styleSheet">
               <string notr="true">height: 25px;
 width: 50px;</string>

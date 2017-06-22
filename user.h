@@ -4,6 +4,14 @@
 #include <QDate>
 class User
 {
+private:
+    QString Name;
+    QString ID;
+    QString DateofBirth;
+    QString sex;
+    QString address;
+    QString email;
+    QString DateofParticipation;
 public:
     User();
     void setName(QString);
@@ -21,15 +29,6 @@ public:
     void setDoP(QString);
     QString getDoP();
     void clear();
-
-private:
-    QString Name;
-    QString ID;
-    QString DateofBirth;
-    QString sex;
-    QString address;
-    QString email;
-    QString DateofParticipation;
 };
 
 #endif // USER_H

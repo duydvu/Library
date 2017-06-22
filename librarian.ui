@@ -70,7 +70,7 @@ QTabBar::tab:selected {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -1025,6 +1025,9 @@ text-align:center;</string>
             <layout class="QHBoxLayout" name="horizontalLayout_24">
              <item>
               <widget class="QPushButton" name="pushButton_4">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
 {
@@ -1048,6 +1051,9 @@ QPushButton:hover
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_2">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton 
 {
@@ -1071,6 +1077,9 @@ QPushButton:hover
              </item>
              <item>
               <widget class="QPushButton" name="pushButton_3">
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	height: 30px;
@@ -1270,6 +1279,23 @@ border-radius: 5px;</string>
               </property>
               <item>
                <widget class="QPushButton" name="r_done">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	height: 40px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #448AFF;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover{
+	background-color: #82B1FF;
+}</string>
+                </property>
                 <property name="text">
                  <string>Xong</string>
                 </property>
@@ -1351,10 +1377,16 @@ border-radius: 5px;</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
            <property name="rightMargin">
-            <number>300</number>
+            <number>150</number>
            </property>
            <item row="0" column="0">
             <widget class="QPushButton" name="accept">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="text">
               <string>Chấp nhận</string>
              </property>
@@ -1362,6 +1394,12 @@ border-radius: 5px;</string>
            </item>
            <item row="1" column="0">
             <widget class="QPushButton" name="send">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="text">
               <string>Cho mượn</string>
              </property>
@@ -1369,6 +1407,12 @@ border-radius: 5px;</string>
            </item>
            <item row="1" column="1">
             <widget class="QPushButton" name="done">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="text">
               <string>Hoàn tất</string>
              </property>
@@ -1376,6 +1420,12 @@ border-radius: 5px;</string>
            </item>
            <item row="0" column="1">
             <widget class="QPushButton" name="infringe">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="text">
               <string>Vi phạm</string>
              </property>
@@ -1395,149 +1445,93 @@ border-radius: 5px;</string>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
-          <widget class="QLabel" name="label">
-           <property name="geometry">
-            <rect>
-             <x>90</x>
-             <y>20</y>
-             <width>91</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Thông tin chi tiết</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_2">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>60</y>
-             <width>51</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Tựa sách:</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="bookName">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>90</y>
-             <width>191</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_3">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>150</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Tên người mượn:</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="readerName">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>180</y>
-             <width>191</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_4">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>280</y>
-             <width>71</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Tình trạng:</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="status">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>310</y>
-             <width>131</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_5">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>120</y>
-             <width>91</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Số lượng tồn kho</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="recipient">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>240</y>
-             <width>131</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_6">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>210</y>
-             <width>121</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Xác nhận lần cuối bởi</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="capacity">
-           <property name="geometry">
-            <rect>
-             <x>110</x>
-             <y>120</y>
-             <width>61</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_10">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true">font: italic;</string>
+             </property>
+             <property name="text">
+              <string>Thông tin chi tiết</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_35">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Tựa sách:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="bookName">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_36">
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Tên người mượn:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="readerName">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_37">
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Xác nhận lần cuối bởi</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="recipient">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_38">
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Tình trạng:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="status">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
         </item>
         <item row="1" column="1">
@@ -1607,6 +1601,11 @@ text-align:center;</string>
             <string>Thời hạn</string>
            </property>
           </column>
+          <column>
+           <property name="text">
+            <string>Số sách còn</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
@@ -1635,6 +1634,9 @@ text-align:center;</string>
           </property>
           <item>
            <widget class="QPushButton" name="Agree">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	height: 40px;
@@ -1656,6 +1658,9 @@ QPushButton:hover{
           </item>
           <item>
            <widget class="QPushButton" name="Deny">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton{
 	height: 40px;

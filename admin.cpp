@@ -224,6 +224,10 @@ void Admin::on_CartInfos_cellClicked(int row, int column)
 
 void Admin::on_newCart_clicked()
 {
+    ui->accept->setEnabled(true);
+    ui->done->setEnabled(false);
+    ui->send->setEnabled(false);
+    ui->infringe->setEnabled(false);
     ui->CartInfos->setRowCount(0);
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     int cnt=0;
@@ -240,21 +244,14 @@ void Admin::on_newCart_clicked()
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
             QLinkedList<Book>::iterator b=books.begin();
-            for(;b!=books.end();b++)
+            for(int i=0;b!=books.end();b++)
             {
                 if((*b).getID()==(*it).getBookID())
                 {
-                    int n=0;
-                    QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
-                    for(;it1!=cartInfos.end();it1++)
-                    {
-                        if((*it1).getStatus()==2 || (*it1).getStatus()==3)
-                            if((*it1).getBookID()==(*it).getBookID())
-                                n++;
-                    }
-                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-n)));
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-numberOfLentBooks[i])));
                     break;
                 }
+                i++;
             }
             cnt++;
         }
@@ -263,6 +260,10 @@ void Admin::on_newCart_clicked()
 
 void Admin::on_acceptedCart_clicked()
 {
+    ui->accept->setEnabled(false);
+    ui->done->setEnabled(false);
+    ui->send->setEnabled(true);
+    ui->infringe->setEnabled(false);
     ui->CartInfos->setRowCount(0);
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     int cnt=0;
@@ -279,21 +280,14 @@ void Admin::on_acceptedCart_clicked()
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
             QLinkedList<Book>::iterator b=books.begin();
-            for(;b!=books.end();b++)
+            for(int i=0;b!=books.end();b++)
             {
                 if((*b).getID()==(*it).getBookID())
                 {
-                    int n=0;
-                    QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
-                    for(;it1!=cartInfos.end();it1++)
-                    {
-                        if((*it1).getStatus()==2 || (*it1).getStatus()==3)
-                            if((*it1).getBookID()==(*it).getBookID())
-                                n++;
-                    }
-                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-n)));
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-numberOfLentBooks[i])));
                     break;
                 }
+                i++;
             }
             cnt++;
         }
@@ -302,6 +296,10 @@ void Admin::on_acceptedCart_clicked()
 
 void Admin::on_lendingCart_clicked()
 {
+    ui->accept->setEnabled(false);
+    ui->done->setEnabled(true);
+    ui->send->setEnabled(false);
+    ui->infringe->setEnabled(true);
     ui->CartInfos->setRowCount(0);
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     int cnt=0;
@@ -318,21 +316,14 @@ void Admin::on_lendingCart_clicked()
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
             QLinkedList<Book>::iterator b=books.begin();
-            for(;b!=books.end();b++)
+            for(int i=0;b!=books.end();b++)
             {
                 if((*b).getID()==(*it).getBookID())
                 {
-                    int n=0;
-                    QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
-                    for(;it1!=cartInfos.end();it1++)
-                    {
-                        if((*it1).getStatus()==2 || (*it1).getStatus()==3)
-                            if((*it1).getBookID()==(*it).getBookID())
-                                n++;
-                    }
-                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-n)));
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-numberOfLentBooks[i])));
                     break;
                 }
+                i++;
             }
             cnt++;
         }
@@ -341,6 +332,10 @@ void Admin::on_lendingCart_clicked()
 
 void Admin::on_infringeCart_clicked()
 {
+    ui->accept->setEnabled(false);
+    ui->done->setEnabled(true);
+    ui->send->setEnabled(false);
+    ui->infringe->setEnabled(false);
     ui->CartInfos->setRowCount(0);
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     int cnt=0;
@@ -357,21 +352,14 @@ void Admin::on_infringeCart_clicked()
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
             QLinkedList<Book>::iterator b=books.begin();
-            for(;b!=books.end();b++)
+            for(int i=0;b!=books.end();b++)
             {
                 if((*b).getID()==(*it).getBookID())
                 {
-                    int n=0;
-                    QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
-                    for(;it1!=cartInfos.end();it1++)
-                    {
-                        if((*it1).getStatus()==2 || (*it1).getStatus()==3)
-                            if((*it1).getBookID()==(*it).getBookID())
-                                n++;
-                    }
-                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-n)));
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-numberOfLentBooks[i])));
                     break;
                 }
+                i++;
             }
             cnt++;
         }
@@ -380,6 +368,10 @@ void Admin::on_infringeCart_clicked()
 
 void Admin::on_doneCart_clicked()
 {
+    ui->accept->setEnabled(false);
+    ui->done->setEnabled(false);
+    ui->send->setEnabled(false);
+    ui->infringe->setEnabled(false);
     ui->CartInfos->setRowCount(0);
     QLinkedList<cartinfo>::iterator it=cartInfos.begin();
     int cnt=0;
@@ -396,21 +388,14 @@ void Admin::on_doneCart_clicked()
             ui->CartInfos->setItem(cnt, 3, new QTableWidgetItem((*it).getReaderID()));
             ui->CartInfos->setItem(cnt, 4, new QTableWidgetItem(QString::number((*it).getDuration())+" ngày"));
             QLinkedList<Book>::iterator b=books.begin();
-            for(;b!=books.end();b++)
+            for(int i=0;b!=books.end();b++)
             {
                 if((*b).getID()==(*it).getBookID())
                 {
-                    int n=0;
-                    QLinkedList<cartinfo>::iterator it1=cartInfos.begin();
-                    for(;it1!=cartInfos.end();it1++)
-                    {
-                        if((*it1).getStatus()==2 || (*it1).getStatus()==3)
-                            if((*it1).getBookID()==(*it).getBookID())
-                                n++;
-                    }
-                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-n)));
+                    ui->CartInfos->setItem(cnt, 5, new QTableWidgetItem(QString::number((*b).getQuantity()-numberOfLentBooks[i])));
                     break;
                 }
+                i++;
             }
             cnt++;
         }
@@ -423,8 +408,36 @@ void Admin::on_accept_clicked()
     {
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(1);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
+            int n=ui->CartInfos->item(i,1)->text().toInt();
+            QLinkedList<Book>::iterator b=books.begin();
+            bool check=true;
+            for(int i=0;b!=books.end();b++)
+            {
+                if((*b).getID()==(*(cartInfos.begin()+n)).getBookID())
+                {
+                    int m=0;
+                    QLinkedList<cartinfo>::iterator c=cartInfos.begin();
+                    for(;c!=cartInfos.end();c++)
+                    {
+                        if((*c).getBookID()==(*b).getID())
+                            if((*c).getStatus()==1)
+                                m++;
+                    }
+                    if((*b).getQuantity()-numberOfLentBooks[i]-m<=0)
+                        check=false;
+                    break;
+                }
+                i++;
+            }
+            if(!check)
+            {
+                QMessageBox::warning(0,"Không còn sách để cho mượn",
+                (*(cartInfos.begin()+n)).getReaderName() + " chưa thể mượn sách.",
+                QMessageBox::Ok);
+                continue;
+            }
+            (*(cartInfos.begin()+n)).setStatus(1);
+            (*(cartInfos.begin()+n)).setRecipient((*LogInUser).getName());
         }
     }
     on_newCart_clicked();
@@ -437,6 +450,26 @@ void Admin::on_send_clicked()
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
             int n=ui->CartInfos->item(i,1)->text().toInt();
+            QLinkedList<Book>::iterator b=books.begin();
+            bool check=true;
+            for(int i=0;b!=books.end();b++)
+            {
+                if((*b).getID()==(*(cartInfos.begin()+n)).getBookID())
+                {
+                    if((*b).getQuantity()-numberOfLentBooks[i]>0)
+                        numberOfLentBooks[i]++;
+                    else check=false;
+                    break;
+                }
+                i++;
+            }
+            if(!check)
+            {
+                QMessageBox::information(0,"Không còn sách để cho mượn",
+                (*(cartInfos.begin()+n)).getReaderName() + " chưa thể mượn sách.",
+                QMessageBox::Ok);
+                continue;
+            }
             (*(cartInfos.begin()+n)).setStatus(2);
             (*(cartInfos.begin()+n)).setBrrowTime(ToString(QDate::currentDate()));
             (*(cartInfos.begin()+n)).setRecipient((*LogInUser).getName());
@@ -474,9 +507,20 @@ void Admin::on_done_clicked()
     {
         if(ui->CartInfos->item(i,0)->checkState()==Qt::Checked)
         {
-            if((*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).getStatus()==3)
+            int n=ui->CartInfos->item(i,1)->text().toInt();
+            QLinkedList<Book>::iterator b=books.begin();
+            for(int i=0;b!=books.end();b++)
             {
-                QString s=(*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).getReaderID();
+                if((*b).getID()==(*(cartInfos.begin()+n)).getBookID())
+                {
+                    numberOfLentBooks[i]--;
+                    break;
+                }
+                i++;
+            }
+            if((*(cartInfos.begin()+n)).getStatus()==3)
+            {
+                QString s=(*(cartInfos.begin()+n)).getReaderID();
                 QLinkedList<Account>::iterator it=accounts.begin();
                 for(;it!=accounts.end();it++)
                 {
@@ -487,8 +531,8 @@ void Admin::on_done_clicked()
                     }
                 }
             }
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setStatus(4);
-            (*(cartInfos.begin()+ui->CartInfos->item(i,1)->text().toInt())).setRecipient((*LogInUser).getName());
+            (*(cartInfos.begin()+n)).setStatus(4);
+            (*(cartInfos.begin()+n)).setRecipient((*LogInUser).getName());
         }
     }
     on_infringeCart_clicked();
