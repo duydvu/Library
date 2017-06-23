@@ -10,13 +10,13 @@
         <DoP>01.01.2010</DoP>
     </user>
     <user>
-        <name>Nguyễn Nhật Ánh</name>
+        <name>Reader</name>
         <id>1</id>
-        <DoB>01.01.1990</DoB>
+        <DoB>01.01.1998</DoB>
         <sex>nam</sex>
-        <address>168 Lê Thúc Hoạch, Q.Tân Phú, TP.HCM</address>
-        <email>nhatanh@gmail.com</email>
-        <DoP>23.06.2017</DoP>
+        <address>Earth</address>
+        <email>reader@yahoo.com</email>
+        <DoP>12.06.2017</DoP>
     </user>
     <user>
         <name>Librarian</name>
@@ -242,5 +242,14 @@
         <address>6A Trần Hưng Đạo, P. Phạm Ngũ Lão,  Quận 1, TP. HCM</address>
         <email>thihoa@gmail.com</email>
         <DoP>18.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Tấn Dũng</name>
+        <id>27</id>
+        <DoB>01.01.1980</DoB>
+        <sex>nam</sex>
+        <address>14 CMT8, Q.10, TP.HCM</address>
+        <email>tandung@gmail.com</email>
+        <DoP>23.06.2017</DoP>
     </user>
 </Users>

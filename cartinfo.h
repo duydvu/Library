@@ -5,6 +5,8 @@
 
 class cartinfo
 {
+public:
+    cartinfo();
 private:
     QString id;
     QString readername;
@@ -14,9 +16,9 @@ private:
     QString brrowtime;
     QString recipient;
     int duration;
+//    int fee;
     int status;
 public:
-    cartinfo();
     void setID(QString id);
     QString getID();
     void setReaderName(QString name);
@@ -33,6 +35,9 @@ public:
     QString getRecipient();
     void setDuration(int time);
     int getDuration();
+//    void setFee(int fee);
+//    int getFee();
+
     void setStatus(int stt);
     int getStatus();
     void clear();

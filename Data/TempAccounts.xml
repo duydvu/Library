@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TempAccounts>
     <account>
-        <name>tandung</name>
-        <password>74616e64756e67</password>
+        <name>nhatanh</name>
+        <password>6e686174616e68</password>
+        <role>R</role>
+        <id>0</id>
+        <status>0</status>
+    </account>
+    <account>
+        <name>theloc</name>
+        <password>7468656c6f63</password>
         <role>R</role>
         <id>1</id>
         <status>0</status>

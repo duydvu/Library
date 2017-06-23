@@ -8,8 +8,8 @@
         <status>0</status>
     </account>
     <account>
-        <name>nhatanh</name>
-        <password>6e686174616e68</password>
+        <name>reader</name>
+        <password>726561646572</password>
         <role>R</role>
         <id>1</id>
         <status>0</status>
@@ -188,5 +188,12 @@
         <role>L</role>
         <id>26</id>
         <status>1</status>
+    </account>
+    <account>
+        <name>tandung</name>
+        <password>74616e64756e67</password>
+        <role>R</role>
+        <id>27</id>
+        <status>0</status>
     </account>
 </Accounts>

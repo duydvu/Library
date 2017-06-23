@@ -76,15 +76,13 @@ void librarian::regisTable()
     ui->registrationTable->setRowCount(0);
     QLinkedList<Account>::iterator it=temp_accounts.begin();
     int cnt=0;
-    for(;it!=temp_accounts.end();it++)
+    for(int i=0;it!=temp_accounts.end();it++,i++)
     {
         ui->registrationTable->insertRow(cnt);
         QTableWidgetItem *item = new QTableWidgetItem("");
         item->setCheckState(Qt::Unchecked);
         ui->registrationTable->setItem(cnt, 0, item);
-        QLinkedList<User>::iterator it1;
-        int id=(*it).getID().toInt();
-        it1=temp_users.begin()+id;
+        QLinkedList<User>::iterator it1=temp_users.begin()+i;
         ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
         ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAcc()));
         if((*it).getRole()=="L")

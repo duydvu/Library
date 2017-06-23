@@ -533,7 +533,6 @@ public:
 
         s_done = new QPushButton(staffInfo);
         s_done->setObjectName(QStringLiteral("s_done"));
-        s_done->setCursor(QCursor(Qt::PointingHandCursor));
         s_done->setStyleSheet(QLatin1String("QPushButton{\n"
 "	height: 40px;\n"
 "	border-width: 0px;\n"
@@ -1170,7 +1169,6 @@ public:
         horizontalLayout_18->setContentsMargins(-1, -1, 200, -1);
         r_done = new QPushButton(frame_7);
         r_done->setObjectName(QStringLiteral("r_done"));
-        r_done->setCursor(QCursor(Qt::PointingHandCursor));
         r_done->setStyleSheet(QLatin1String("QPushButton{\n"
 "	height: 40px;\n"
 "	border-width: 0px;\n"
@@ -1386,8 +1384,6 @@ public:
         gridLayout_3->setContentsMargins(40, -1, 150, -1);
         accept = new QPushButton(frame);
         accept->setObjectName(QStringLiteral("accept"));
-        accept->setEnabled(false);
-        accept->setCursor(QCursor(Qt::PointingHandCursor));
         accept->setStyleSheet(QLatin1String("height: 25px;\n"
 "width: 50px;"));
 
@@ -1395,8 +1391,6 @@ public:
 
         send = new QPushButton(frame);
         send->setObjectName(QStringLiteral("send"));
-        send->setEnabled(false);
-        send->setCursor(QCursor(Qt::PointingHandCursor));
         send->setStyleSheet(QLatin1String("height: 25px;\n"
 "width: 50px;"));
 
@@ -1404,8 +1398,6 @@ public:
 
         done = new QPushButton(frame);
         done->setObjectName(QStringLiteral("done"));
-        done->setEnabled(false);
-        done->setCursor(QCursor(Qt::PointingHandCursor));
         done->setStyleSheet(QLatin1String("height: 25px;\n"
 "width: 50px;"));
 
@@ -1413,8 +1405,6 @@ public:
 
         infringe = new QPushButton(frame);
         infringe->setObjectName(QStringLiteral("infringe"));
-        infringe->setEnabled(false);
-        infringe->setCursor(QCursor(Qt::PointingHandCursor));
         infringe->setStyleSheet(QLatin1String("height: 25px;\n"
 "width: 50px;"));
 
