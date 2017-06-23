@@ -70,7 +70,7 @@ QTabBar::tab:selected {
 }</string>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -1099,6 +1099,27 @@ QPushButton:hover{
                </property>
               </widget>
              </item>
+             <item>
+              <widget class="QPushButton" name="removeUser">
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	height: 30px;
+	border-width: 0px;
+	border-radius: 5px;
+	background-color: #F44336;
+	color: #fff;
+	outline: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+}
+QPushButton:hover{
+	background-color: #EF5350;
+}</string>
+               </property>
+               <property name="text">
+                <string>Xóa</string>
+               </property>
+              </widget>
+             </item>
             </layout>
            </item>
            <item>
@@ -1706,6 +1727,18 @@ QTableWidget QTableCornerButton::section {
 }
 text-align:center;</string>
           </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <property name="sortingEnabled">
+           <bool>true</bool>
+          </property>
+          <attribute name="horizontalHeaderHighlightSections">
+           <bool>false</bool>
+          </attribute>
           <attribute name="horizontalHeaderStretchLastSection">
            <bool>true</bool>
           </attribute>
@@ -1715,6 +1748,11 @@ text-align:center;</string>
           <column>
            <property name="text">
             <string/>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>ID</string>
            </property>
           </column>
           <column>

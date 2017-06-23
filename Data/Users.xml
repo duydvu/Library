@@ -10,13 +10,13 @@
         <DoP>01.01.2010</DoP>
     </user>
     <user>
-        <name>Reader</name>
+        <name>Nguyễn Nhật Ánh</name>
         <id>1</id>
-        <DoB>01.01.1998</DoB>
+        <DoB>01.01.1990</DoB>
         <sex>nam</sex>
-        <address>Earth</address>
-        <email>reader@yahoo.com</email>
-        <DoP>12.06.2017</DoP>
+        <address>168 Lê Thúc Hoạch, Q.Tân Phú, TP.HCM</address>
+        <email>nhatanh@gmail.com</email>
+        <DoP>23.06.2017</DoP>
     </user>
     <user>
         <name>Librarian</name>

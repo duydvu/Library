@@ -62,6 +62,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *changePass;
     QPushButton *changeInfo;
+    QPushButton *removeStaff;
     QLabel *s_id;
     QLabel *label_25;
     QFrame *s_stt;
@@ -132,6 +133,7 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
+    QPushButton *removeUser;
     QHBoxLayout *horizontalLayout_15;
     QLabel *label_26;
     QLabel *r_id;
@@ -374,7 +376,7 @@ public:
         customize = new QWidget(staffInfo);
         customize->setObjectName(QStringLiteral("customize"));
         horizontalLayout_2 = new QHBoxLayout(customize);
-        horizontalLayout_2->setSpacing(50);
+        horizontalLayout_2->setSpacing(20);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
         changePass = new QPushButton(customize);
@@ -416,6 +418,24 @@ public:
 "}"));
 
         horizontalLayout_2->addWidget(changeInfo);
+
+        removeStaff = new QPushButton(customize);
+        removeStaff->setObjectName(QStringLiteral("removeStaff"));
+        removeStaff->setCursor(QCursor(Qt::PointingHandCursor));
+        removeStaff->setStyleSheet(QLatin1String("QPushButton{\n"
+"	height: 30px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background-color: #F44336;\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: #EF5350;\n"
+"}"));
+
+        horizontalLayout_2->addWidget(removeStaff);
 
 
         formLayout->setWidget(0, QFormLayout::FieldRole, customize);
@@ -969,6 +989,24 @@ public:
 
         horizontalLayout_16->addWidget(pushButton_3);
 
+        removeUser = new QPushButton(frame_6);
+        removeUser->setObjectName(QStringLiteral("removeUser"));
+        removeUser->setCursor(QCursor(Qt::PointingHandCursor));
+        removeUser->setStyleSheet(QLatin1String("QPushButton{\n"
+"	height: 30px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background-color: #F44336;\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"}\n"
+"QPushButton:hover{\n"
+"	background-color: #EF5350;\n"
+"}"));
+
+        horizontalLayout_16->addWidget(removeUser);
+
 
         verticalLayout_11->addLayout(horizontalLayout_16);
 
@@ -1440,8 +1478,8 @@ public:
         gridLayout_4->addLayout(horizontalLayout_3, 0, 0, 1, 1);
 
         registrationTable = new QTableWidget(NewRegistrations);
-        if (registrationTable->columnCount() < 9)
-            registrationTable->setColumnCount(9);
+        if (registrationTable->columnCount() < 10)
+            registrationTable->setColumnCount(10);
         QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
         registrationTable->setHorizontalHeaderItem(0, __qtablewidgetitem14);
         QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
@@ -1460,6 +1498,8 @@ public:
         registrationTable->setHorizontalHeaderItem(7, __qtablewidgetitem21);
         QTableWidgetItem *__qtablewidgetitem22 = new QTableWidgetItem();
         registrationTable->setHorizontalHeaderItem(8, __qtablewidgetitem22);
+        QTableWidgetItem *__qtablewidgetitem23 = new QTableWidgetItem();
+        registrationTable->setHorizontalHeaderItem(9, __qtablewidgetitem23);
         registrationTable->setObjectName(QStringLiteral("registrationTable"));
         registrationTable->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
         registrationTable->setStyleSheet(QLatin1String("QHeaderView::section {\n"
@@ -1483,6 +1523,9 @@ public:
 "}\n"
 ""));
         registrationTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        registrationTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+        registrationTable->setSortingEnabled(true);
+        registrationTable->horizontalHeader()->setHighlightSections(false);
         registrationTable->horizontalHeader()->setStretchLastSection(true);
         registrationTable->verticalHeader()->setVisible(false);
 
@@ -1497,7 +1540,7 @@ public:
         retranslateUi(Admin);
         QObject::connect(searchUsers, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        admin->setCurrentIndex(3);
+        admin->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Admin);
@@ -1521,6 +1564,7 @@ public:
         label_9->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211:", 0));
         changePass->setText(QApplication::translate("Admin", "\304\220\341\273\225i m\341\272\255t kh\341\272\251u", 0));
         changeInfo->setText(QApplication::translate("Admin", "S\341\273\255a th\303\264ng tin", 0));
+        removeStaff->setText(QApplication::translate("Admin", "X\303\263a", 0));
         s_id->setText(QString());
         label_25->setText(QApplication::translate("Admin", "T\303\254nh tr\341\272\241ng:", 0));
         s_active->setText(QApplication::translate("Admin", "\304\220ang l\303\240m vi\341\273\207c", 0));
@@ -1592,6 +1636,7 @@ public:
         pushButton_4->setText(QApplication::translate("Admin", "\304\220\341\273\225i m\341\272\255t kh\341\272\251u", 0));
         pushButton_2->setText(QApplication::translate("Admin", "S\341\273\255a", 0));
         pushButton_3->setText(QApplication::translate("Admin", "Kh\303\263a / M\341\273\237 kh\303\263a", 0));
+        removeUser->setText(QApplication::translate("Admin", "X\303\263a", 0));
         label_26->setText(QApplication::translate("Admin", "M\303\243 s\341\273\221:", 0));
         r_id->setText(QString());
         label_22->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n:", 0));
@@ -1637,21 +1682,23 @@ public:
         Agree->setText(QApplication::translate("Admin", "Ch\341\272\245p nh\341\272\255n", 0));
         Deny->setText(QApplication::translate("Admin", "T\341\273\253 ch\341\273\221i", 0));
         QTableWidgetItem *___qtablewidgetitem13 = registrationTable->horizontalHeaderItem(1);
-        ___qtablewidgetitem13->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
+        ___qtablewidgetitem13->setText(QApplication::translate("Admin", "ID", 0));
         QTableWidgetItem *___qtablewidgetitem14 = registrationTable->horizontalHeaderItem(2);
-        ___qtablewidgetitem14->setText(QApplication::translate("Admin", "Vai tr\303\262", 0));
+        ___qtablewidgetitem14->setText(QApplication::translate("Admin", "T\303\240i kho\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem15 = registrationTable->horizontalHeaderItem(3);
-        ___qtablewidgetitem15->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
+        ___qtablewidgetitem15->setText(QApplication::translate("Admin", "Vai tr\303\262", 0));
         QTableWidgetItem *___qtablewidgetitem16 = registrationTable->horizontalHeaderItem(4);
-        ___qtablewidgetitem16->setText(QApplication::translate("Admin", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
+        ___qtablewidgetitem16->setText(QApplication::translate("Admin", "H\341\273\215 v\303\240 t\303\252n", 0));
         QTableWidgetItem *___qtablewidgetitem17 = registrationTable->horizontalHeaderItem(5);
-        ___qtablewidgetitem17->setText(QApplication::translate("Admin", "Gi\341\273\233i t\303\255nh", 0));
+        ___qtablewidgetitem17->setText(QApplication::translate("Admin", "Ng\303\240y \304\221\304\203ng k\303\275", 0));
         QTableWidgetItem *___qtablewidgetitem18 = registrationTable->horizontalHeaderItem(6);
-        ___qtablewidgetitem18->setText(QApplication::translate("Admin", "Ng\303\240y sinh", 0));
+        ___qtablewidgetitem18->setText(QApplication::translate("Admin", "Gi\341\273\233i t\303\255nh", 0));
         QTableWidgetItem *___qtablewidgetitem19 = registrationTable->horizontalHeaderItem(7);
-        ___qtablewidgetitem19->setText(QApplication::translate("Admin", "Email", 0));
+        ___qtablewidgetitem19->setText(QApplication::translate("Admin", "Ng\303\240y sinh", 0));
         QTableWidgetItem *___qtablewidgetitem20 = registrationTable->horizontalHeaderItem(8);
-        ___qtablewidgetitem20->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211", 0));
+        ___qtablewidgetitem20->setText(QApplication::translate("Admin", "Email", 0));
+        QTableWidgetItem *___qtablewidgetitem21 = registrationTable->horizontalHeaderItem(9);
+        ___qtablewidgetitem21->setText(QApplication::translate("Admin", "\304\220\341\273\213a ch\341\273\211", 0));
         admin->setTabText(admin->indexOf(NewRegistrations), QApplication::translate("Admin", "Qu\341\272\243n l\303\275 \304\221\304\203ng k\303\275 m\341\273\233i", 0));
     } // retranslateUi
 

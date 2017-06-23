@@ -72,6 +72,8 @@ private slots:
 
     void on_bookTable_cellClicked(int row, int column);
 
+    void on_removeUser_clicked();
+
 private:
     Ui::librarian *ui;
     QSharedPointer<Password> pa;

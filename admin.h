@@ -80,6 +80,10 @@ private slots:
 
     void on_bookChange_clicked();
 
+    void on_removeStaff_clicked();
+
+    void on_removeUser_clicked();
+
 private:
     Ui::Admin *ui;
     QSharedPointer<Password> pa;

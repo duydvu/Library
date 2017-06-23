@@ -211,10 +211,10 @@ void MainWindow::loadTempAccountsFile()
             {
                 a.setID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "active")
+            if(xmlReader->name() == "status")
             {
                 a.setStatus(xmlReader->readElementText().toInt());
-                accounts.append(a);
+                temp_accounts.append(a);
                 a.clear();
             }
         }
@@ -563,7 +563,7 @@ void MainWindow::logIn()
         connect(re.data(),SIGNAL(closed()),this,SLOT(logOut()));
         re.data()->show();
     }
-    s.clear();
+    //s.clear();
 }
 
 void MainWindow::logOut()
@@ -572,11 +572,11 @@ void MainWindow::logOut()
     LogInAcc=NULL;
     LogInUser=NULL;
     this->show();
-    if(role=="A")
+    /*if(role=="A")
         ad.clear();
     else if(role=="L")
         li.clear();
-    else re.clear();
+    else re.clear();*/
 }
 
 void MainWindow::on_SignUpButton_clicked()
@@ -598,9 +598,37 @@ void MainWindow::createAccount()
 
 void MainWindow::createUser()
 {
-    temp_accounts.append(su.data()->getAccount());
-    temp_users.append(pi.data()->getUser());
-    temp_accounts.last().setID(temp_users.last().getID());
+    // Find ID for new register account and user
+    QLinkedList<Account>::iterator a=temp_accounts.begin();
+    QLinkedList<User>::iterator u=temp_users.begin();
+    if((*a).getID()!=0)
+    {
+        temp_accounts.insert(a,su.data()->getAccount());
+        temp_users.insert(u,pi.data()->getUser());
+        (*a).setID(QString::number(0));
+        (*u).setID(QString::number(0));
+    }
+    else
+    {
+        for(a+=1,u+=1;a!=temp_accounts.end();a++,u++)
+        {
+            if((*a).getID().toInt()-(*(a-1)).getID().toInt()!=1)
+            {
+                temp_accounts.insert(a,su.data()->getAccount());
+                temp_users.insert(u,pi.data()->getUser());
+                (*a).setID(QString::number((*(a-1)).getID().toInt()+1));
+                (*u).setID(QString::number((*(u-1)).getID().toInt()+1));
+                break;
+            }
+        }
+        if(a==temp_accounts.end())
+        {
+            temp_accounts.append(su.data()->getAccount());
+            temp_users.append(pi.data()->getUser());
+            temp_accounts.last().setID(QString::number(temp_accounts.size()-1));
+            temp_users.last().setID(QString::number(temp_users.size()-1));
+        }
+    }
     su.clear();
     pi.clear();
 }
@@ -853,6 +881,7 @@ void MainWindow::on_Search_clicked()
     ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
+    on_FindBooksButton_clicked();
 }
 
 void MainWindow::on_Back_clicked()

@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempUsers/>
+<TempUsers>
+    <user>
+        <name>Nguyễn Tấn Dũng</name>
+        <id>1</id>
+        <DoB>01.01.1995</DoB>
+        <sex>nam</sex>
+        <address>14 Cách Mạng Tháng Tám, Q.10, TP.HCM</address>
+        <email>tandung@gmail.com</email>
+        <DoP>22.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Khắc Quang Huy</name>
+        <id>2</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nam</sex>
+        <address>14 Kênh Nước Đen, Q.Bình Tân, TP.HCM</address>
+        <email>quanghuy@gmail.com</email>
+        <DoP>22.06.2017</DoP>
+    </user>
+</TempUsers>

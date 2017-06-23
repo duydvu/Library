@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempAccounts/>
+<TempAccounts>
+    <account>
+        <name>tandung</name>
+        <password>74616e64756e67</password>
+        <role>R</role>
+        <id>1</id>
+        <status>0</status>
+    </account>
+    <account>
+        <name>quanghuy</name>
+        <password>7175616e67687579</password>
+        <role>R</role>
+        <id>2</id>
+        <status>0</status>
+    </account>
+</TempAccounts>

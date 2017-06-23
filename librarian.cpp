@@ -72,6 +72,7 @@ void librarian::closeEvent (QCloseEvent *event)
 
 void librarian::regisTable()
 {
+    ui->registrationTable->setSortingEnabled(false);
     ui->registrationTable->setRowCount(0);
     QLinkedList<Account>::iterator it=temp_accounts.begin();
     int cnt=0;
@@ -84,18 +85,20 @@ void librarian::regisTable()
         QLinkedList<User>::iterator it1;
         int id=(*it).getID().toInt();
         it1=temp_users.begin()+id;
-        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getAcc()));
+        ui->registrationTable->setItem(cnt, 1, new QTableWidgetItem((*it).getID()));
+        ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem((*it).getAcc()));
         if((*it).getRole()=="L")
-            ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Thủ thư"));
-        else ui->registrationTable->setItem(cnt, 2, new QTableWidgetItem("Độc giả"));
-        ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem((*it1).getName()));
-        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getDoP()));
-        ui->registrationTable->setItem(cnt, 5, new QTableWidgetItem((*it1).getDateofBirth()));
-        ui->registrationTable->setItem(cnt, 6, new QTableWidgetItem((*it1).getSex()));
-        ui->registrationTable->setItem(cnt, 7, new QTableWidgetItem((*it1).getEmail()));
-        ui->registrationTable->setItem(cnt, 8, new QTableWidgetItem((*it1).getAddress()));
+            ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem("Thủ thư"));
+        else ui->registrationTable->setItem(cnt, 3, new QTableWidgetItem("Độc giả"));
+        ui->registrationTable->setItem(cnt, 4, new QTableWidgetItem((*it1).getName()));
+        ui->registrationTable->setItem(cnt, 5, new QTableWidgetItem((*it1).getDoP()));
+        ui->registrationTable->setItem(cnt, 6, new QTableWidgetItem((*it1).getDateofBirth()));
+        ui->registrationTable->setItem(cnt, 7, new QTableWidgetItem((*it1).getSex()));
+        ui->registrationTable->setItem(cnt, 8, new QTableWidgetItem((*it1).getEmail()));
+        ui->registrationTable->setItem(cnt, 9, new QTableWidgetItem((*it1).getAddress()));
         cnt++;
     }
+    ui->registrationTable->setSortingEnabled(true);
 }
 
 void librarian::on_Agree_clicked()
@@ -103,17 +106,38 @@ void librarian::on_Agree_clicked()
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {
-            QLinkedList<Account>::iterator a=temp_accounts.begin()+i;
-            accounts.append(*a);
-            if((*a).getID().toInt()>=users.size())
+            QLinkedList<Account>::iterator a=temp_accounts.begin();
+            QLinkedList<User>::iterator u=temp_users.begin();
+            for(;a!=temp_accounts.end();a++,u++)
             {
-                QLinkedList<User>::iterator u=temp_users.begin()+(*a).getID().toInt()-users.size();
-                users.append(*u);
-                users.last().setDoP(ToString(QDate::currentDate()));
-                users.last().setID(QString::number(users.size()-1));
-                accounts.last().setID(users.last().getID());
-                temp_users.erase(u);
+                if((*a).getID()==ui->registrationTable->item(i,1)->text())
+                    break;
             }
+            int j=0;
+            QLinkedList<Account>::iterator it=accounts.begin();
+            QLinkedList<User>::iterator it1=users.begin();
+            for(;it!=accounts.end();it++,it1++,j++)
+            {
+                if((*it).getStatus()==-1)
+                    break;
+            }
+            if(it!=accounts.end())
+            {
+                *it=*a;
+                *it1=*u;
+                (*it).setID(QString::number(j));
+                (*it1).setID(QString::number(j));
+                (*it1).setDoP(ToString(QDate::currentDate()));
+            }
+            else
+            {
+                accounts.append(*a);
+                users.append(*u);
+                accounts.last().setID(QString::number(j));
+                users.last().setID(QString::number(j));
+                users.last().setDoP(ToString(QDate::currentDate()));
+            }
+            temp_users.erase(u);
             temp_accounts.erase(a);
         }
     regisTable();
@@ -124,12 +148,14 @@ void librarian::on_Deny_clicked()
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {
-            QLinkedList<Account>::iterator a=temp_accounts.begin()+i;
-            if((*a).getID().toInt()>=users.size())
+            QLinkedList<Account>::iterator a=temp_accounts.begin();
+            QLinkedList<User>::iterator u=temp_users.begin();
+            for(;a!=temp_accounts.end();a++,u++)
             {
-                QLinkedList<User>::iterator u=temp_users.begin()+(*a).getID().toInt()-users.size();
-                temp_users.erase(u);
+                if((*a).getID()==ui->registrationTable->item(i,1)->text())
+                    break;
             }
+            temp_users.erase(u);
             temp_accounts.erase(a);
         }
     regisTable();
@@ -822,4 +848,21 @@ void librarian::on_bookTable_cellClicked(int row, int column)
         }
         i++;
     }
+}
+
+void librarian::on_removeUser_clicked()
+{
+    QString s=ui->r_id->text();
+    QLinkedList<Account>::iterator it=accounts.begin();
+    QLinkedList<User>::iterator it1=users.begin();
+    for(;it!=accounts.end();it++,it1++)
+    {
+        if((*it).getID()==s)
+        {
+            (*it).clear();
+            (*it1).clear();
+            break;
+        }
+    }
+    on_searchButton_clicked();
 }
