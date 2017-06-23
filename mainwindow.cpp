@@ -9,6 +9,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
 
+    QTabBar *tabBar = ui->tabWidget->findChild<QTabBar *>();
+    tabBar->hide();
+    QPalette pal = ui->Category->view()->palette();
+    pal.setBrush(QPalette::Base, Qt::transparent);
+    ui->Category->view()->setPalette(pal);
+
     QPixmap pixmap("Images/back.png");
     QIcon ButtonIcon(pixmap);
     ui->Back->setIcon(ButtonIcon);
@@ -36,9 +42,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->FindBooksButton->setIcon(ButtonIcon2);
     ui->FindBooksButton->setIconSize(pixmap2.rect().size());
-    ui->MainBar->hide();
-    ui->BooksTable->hide();
-    ui->frame_3->hide();
 
     loadBooksFile();
     loadAccountsFile();
@@ -882,10 +885,7 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
 
 void MainWindow::on_Search_clicked()
 {
-    ui->MainBar->show();
-    ui->BooksTable->show();
-    ui->frame_3->show();
-    ui->frame_2->hide();
+    ui->tabWidget->setCurrentIndex(1);
     ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
     ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
@@ -896,10 +896,7 @@ void MainWindow::on_Search_clicked()
 
 void MainWindow::on_Back_clicked()
 {
-    ui->MainBar->hide();
-    ui->BooksTable->hide();
-    ui->frame_3->hide();
-    ui->frame_2->show();
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_Help_clicked()
@@ -916,4 +913,10 @@ void MainWindow::on_About_clicked()
         ab.clear();
     ab=QSharedPointer<About>(new About);
     ab.data()->exec();
+}
+
+void MainWindow::on_mainSearch_returnPressed()
+{
+    ui->FindBooksEdit->setText(ui->mainSearch->text());
+    on_Search_clicked();
 }

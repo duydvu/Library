@@ -52,7 +52,8 @@ public:
             Help->setObjectName(QStringLiteral("Help"));
         Help->resize(617, 426);
         Help->setStyleSheet(QLatin1String("font: 15pt \"Myriad Pro Cond\";\n"
-"background-color: #1DE9B6;"));
+"background: url(Images/Background.jpg) no-repeat center center;\n"
+"color: #fff;"));
         gridLayout = new QGridLayout(Help);
         gridLayout->setObjectName(QStringLiteral("gridLayout"));
         label = new QLabel(Help);
@@ -65,7 +66,8 @@ public:
         font.setUnderline(true);
         font.setWeight(50);
         label->setFont(font);
-        label->setStyleSheet(QStringLiteral("font: 25pt \"Myriad Pro Cond\";"));
+        label->setStyleSheet(QLatin1String("font: 25pt \"Myriad Pro Cond\";\n"
+"background: none;"));
         label->setScaledContents(true);
         label->setAlignment(Qt::AlignCenter);
 
@@ -73,6 +75,7 @@ public:
 
         label_2 = new QLabel(Help);
         label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setStyleSheet(QStringLiteral("background: none;"));
 
         gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
@@ -85,9 +88,9 @@ public:
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setMinimumSize(QSize(93, 75));
         label_3->setStyleSheet(QLatin1String("border-width: 0px;\n"
-"border-right: 5px solid #6A1B9A;\n"
+"border-right: 5px solid rgba(0,0,0,160);\n"
 "border-top-left-radius: 20px;\n"
-"background-color: #AB47BC;\n"
+"background-color: rgba(0,0,0,80);\n"
 "color: #fff;"));
         label_3->setAlignment(Qt::AlignCenter);
 
@@ -105,7 +108,7 @@ public:
         font1.setItalic(false);
         font1.setWeight(50);
         textBrowser->setFont(font1);
-        textBrowser->setStyleSheet(QLatin1String("background: #fff;\n"
+        textBrowser->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;\n"
 "border-top-right-radius: 20px;"));
 
@@ -125,8 +128,8 @@ public:
         label_4->setObjectName(QStringLiteral("label_4"));
         label_4->setMinimumSize(QSize(92, 74));
         label_4->setStyleSheet(QLatin1String("border-width: 0px;\n"
-"border-right: 5px solid #6A1B9A;\n"
-"background-color: #AB47BC;\n"
+"border-right: 5px solid rgba(0,0,0,160);\n"
+"background-color: rgba(0,0,0,80);\n"
 "color: #fff;"));
         label_4->setAlignment(Qt::AlignCenter);
 
@@ -137,7 +140,7 @@ public:
 
         textBrowser_2 = new QTextBrowser(Help);
         textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
-        textBrowser_2->setStyleSheet(QLatin1String("background: #fff;\n"
+        textBrowser_2->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;"));
 
         horizontalLayout_2->addWidget(textBrowser_2);
@@ -156,8 +159,8 @@ public:
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setMinimumSize(QSize(92, 75));
         label_7->setStyleSheet(QLatin1String("border-width: 0px;\n"
-"border-right: 5px solid #6A1B9A;\n"
-"background-color: #AB47BC;\n"
+"border-right: 5px solid rgba(0,0,0,160);\n"
+"background-color: rgba(0,0,0,80);\n"
 "color: #fff;"));
         label_7->setAlignment(Qt::AlignCenter);
 
@@ -168,7 +171,7 @@ public:
 
         textBrowser_3 = new QTextBrowser(Help);
         textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
-        textBrowser_3->setStyleSheet(QLatin1String("background: #fff;\n"
+        textBrowser_3->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;"));
 
         horizontalLayout_3->addWidget(textBrowser_3);
@@ -187,9 +190,9 @@ public:
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setMinimumSize(QSize(92, 75));
         label_9->setStyleSheet(QLatin1String("border-width: 0px;\n"
-"border-right: 5px solid #6A1B9A;\n"
+"border-right: 5px solid rgba(0,0,0,160);\n"
 "border-bottom-left-radius: 20px;\n"
-"background-color: #AB47BC;\n"
+"background-color: rgba(0,0,0,80);\n"
 "color: #fff;"));
         label_9->setAlignment(Qt::AlignCenter);
 
@@ -201,7 +204,7 @@ public:
         textBrowser_4 = new QTextBrowser(Help);
         textBrowser_4->setObjectName(QStringLiteral("textBrowser_4"));
         textBrowser_4->setFont(font1);
-        textBrowser_4->setStyleSheet(QLatin1String("background: #fff;\n"
+        textBrowser_4->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;\n"
 "border-bottom-right-radius: 20px;"));
 

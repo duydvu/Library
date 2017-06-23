@@ -97,7 +97,7 @@ OBJECTS       = debug/main.o \
 		debug/moc_about.o \
 		debug/moc_password.o
 
-DIST          =  mainwindow.h \
+DIST          = Transition.qml mainwindow.h \
 		account.h \
 		signin.h \
 		book.h \

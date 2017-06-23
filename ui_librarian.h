@@ -1416,7 +1416,7 @@ public:
         retranslateUi(librarian);
         QObject::connect(searchUsers, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        libra->setCurrentIndex(4);
+        libra->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(librarian);
