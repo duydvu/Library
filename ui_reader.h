@@ -57,12 +57,16 @@ public:
     QGridLayout *gridLayout_4;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout;
-    QToolButton *bookBorrow;
     QLineEdit *bookSearch;
     QComboBox *category;
     QToolButton *searchButton;
-    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *horizontalLayout_24;
+    QVBoxLayout *verticalLayout_12;
     QTableWidget *bookTable;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer;
+    QToolButton *bookBorrow;
+    QSpacerItem *horizontalSpacer_2;
     QVBoxLayout *verticalLayout;
     QLabel *label_17;
     QLabel *bookName;
@@ -231,7 +235,9 @@ public:
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setStyleSheet(QLatin1String("font-weight: bold;\n"
 "background: rgba(0,0,0,100);\n"
-"color: #fff;"));
+"color: #fff;\n"
+"font: 25px;\n"
+"padding: 5px;"));
         label_6->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(label_6);
@@ -252,7 +258,9 @@ public:
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setStyleSheet(QLatin1String("font-weight: bold;\n"
 "background: rgba(0,0,0,100);\n"
-"color: #fff"));
+"color: #fff;\n"
+"font: 25px;\n"
+"padding: 5px;"));
         label_7->setAlignment(Qt::AlignCenter);
 
         verticalLayout_8->addWidget(label_7);
@@ -274,32 +282,12 @@ public:
         tab_4->setObjectName(QStringLiteral("tab_4"));
         tab_4->setStyleSheet(QStringLiteral("background: none;"));
         gridLayout_4 = new QGridLayout(tab_4);
-        gridLayout_4->setSpacing(0);
         gridLayout_4->setObjectName(QStringLiteral("gridLayout_4"));
-        gridLayout_4->setContentsMargins(0, 0, 0, 0);
         groupBox = new QGroupBox(tab_4);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setStyleSheet(QStringLiteral("background: rgba(0,0,0,80);"));
         horizontalLayout = new QHBoxLayout(groupBox);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        bookBorrow = new QToolButton(groupBox);
-        bookBorrow->setObjectName(QStringLiteral("bookBorrow"));
-        bookBorrow->setCursor(QCursor(Qt::PointingHandCursor));
-        bookBorrow->setStyleSheet(QLatin1String("#bookBorrow{\n"
-"	height: 40px;\n"
-"	border-width: 0px;\n"
-"	border-radius: 5px;\n"
-"	background: rgba(244,67,54,150);\n"
-"	color: #fff;\n"
-"	outline: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";\n"
-"}\n"
-"#bookBorrow:hover{\n"
-"	background-color: rgba(239,83,80,150);\n"
-"}"));
-
-        horizontalLayout->addWidget(bookBorrow);
-
         bookSearch = new QLineEdit(groupBox);
         bookSearch->setObjectName(QStringLiteral("bookSearch"));
         bookSearch->setStyleSheet(QLatin1String("height: 40px;\n"
@@ -368,9 +356,10 @@ public:
 
         gridLayout_4->addWidget(groupBox, 0, 0, 1, 1);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_24 = new QHBoxLayout();
+        horizontalLayout_24->setObjectName(QStringLiteral("horizontalLayout_24"));
+        verticalLayout_12 = new QVBoxLayout();
+        verticalLayout_12->setObjectName(QStringLiteral("verticalLayout_12"));
         bookTable = new QTableWidget(tab_4);
         if (bookTable->columnCount() < 6)
             bookTable->setColumnCount(6);
@@ -414,7 +403,46 @@ public:
         bookTable->horizontalHeader()->setStretchLastSection(true);
         bookTable->verticalHeader()->setVisible(false);
 
-        horizontalLayout_2->addWidget(bookTable);
+        verticalLayout_12->addWidget(bookTable);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer);
+
+        bookBorrow = new QToolButton(tab_4);
+        bookBorrow->setObjectName(QStringLiteral("bookBorrow"));
+        bookBorrow->setCursor(QCursor(Qt::PointingHandCursor));
+        bookBorrow->setStyleSheet(QLatin1String("QToolButton{\n"
+"	height: 40px;\n"
+"	width: 400px;\n"
+"	border-width: 0px;\n"
+"	border-radius: 5px;\n"
+"	background: rgba(244,67,54,200);\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"	image: url(Images/cart.png);\n"
+"}\n"
+"QToolButton:hover{\n"
+"	background: rgba(244,67,54,255);\n"
+"}"));
+
+        horizontalLayout_2->addWidget(bookBorrow);
+
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        horizontalLayout_2->setStretch(0, 1);
+        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_2->setStretch(2, 1);
+
+        verticalLayout_12->addLayout(horizontalLayout_2);
+
+
+        horizontalLayout_24->addLayout(verticalLayout_12);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(0);
@@ -453,12 +481,12 @@ public:
         verticalLayout->addWidget(intro);
 
 
-        horizontalLayout_2->addLayout(verticalLayout);
+        horizontalLayout_24->addLayout(verticalLayout);
 
-        horizontalLayout_2->setStretch(0, 2);
-        horizontalLayout_2->setStretch(1, 1);
+        horizontalLayout_24->setStretch(0, 2);
+        horizontalLayout_24->setStretch(1, 1);
 
-        gridLayout_4->addLayout(horizontalLayout_2, 1, 0, 1, 1);
+        gridLayout_4->addLayout(horizontalLayout_24, 1, 0, 1, 1);
 
         readerTab->addTab(tab_4, QString());
         borrow = new QWidget();
@@ -546,7 +574,9 @@ public:
         verticalLayout_2->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(18);
         horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalLayout_4->setContentsMargins(9, 9, 9, 9);
         send = new QPushButton(borrow);
         send->setObjectName(QStringLiteral("send"));
         send->setCursor(QCursor(Qt::PointingHandCursor));
@@ -680,7 +710,9 @@ public:
         gridLayout_2->addLayout(horizontalLayout_9, 4, 0, 1, 1);
 
         horizontalLayout_23 = new QHBoxLayout();
+        horizontalLayout_23->setSpacing(18);
         horizontalLayout_23->setObjectName(QStringLiteral("horizontalLayout_23"));
+        horizontalLayout_23->setContentsMargins(9, 9, 9, 9);
         pushButton_2 = new QPushButton(cartInfo);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
         pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
@@ -821,6 +853,8 @@ public:
 
         allbor = new QLabel(frame);
         allbor->setObjectName(QStringLiteral("allbor"));
+        allbor->setStyleSheet(QLatin1String("background: none;\n"
+"color: #fff;"));
 
         gridLayout_5->addWidget(allbor, 0, 1, 1, 1);
 
@@ -833,6 +867,8 @@ public:
 
         allreturn = new QLabel(frame);
         allreturn->setObjectName(QStringLiteral("allreturn"));
+        allreturn->setStyleSheet(QLatin1String("background: none;\n"
+"color: #fff;"));
 
         gridLayout_5->addWidget(allreturn, 1, 1, 1, 1);
 
@@ -883,7 +919,8 @@ public:
 
         id = new QLabel(personalInfo);
         id->setObjectName(QStringLiteral("id"));
-        id->setStyleSheet(QStringLiteral("background: none;"));
+        id->setStyleSheet(QLatin1String("background: none;\n"
+"color: #fff;"));
 
         horizontalLayout_11->addWidget(id);
 
@@ -1081,7 +1118,9 @@ public:
         verticalLayout_7->addItem(verticalSpacer);
 
         horizontalLayout_16 = new QHBoxLayout();
+        horizontalLayout_16->setSpacing(18);
         horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
+        horizontalLayout_16->setContentsMargins(9, 0, 9, -1);
         changePass = new QPushButton(personalInfo);
         changePass->setObjectName(QStringLiteral("changePass"));
         changePass->setCursor(QCursor(Qt::PointingHandCursor));
@@ -1182,7 +1221,7 @@ public:
         QObject::connect(bookSearch, SIGNAL(textChanged(QString)), searchButton, SLOT(click()));
         QObject::connect(bookSearch, SIGNAL(returnPressed()), searchButton, SLOT(click()));
 
-        readerTab->setCurrentIndex(0);
+        readerTab->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(reader);
@@ -1216,7 +1255,6 @@ public:
         label_7->setText(QApplication::translate("reader", "Th\303\264ng b\303\241o d\303\240nh cho b\341\272\241n", 0));
         readerTab->setTabText(readerTab->indexOf(tab), QApplication::translate("reader", "Trang ch\341\273\247", 0));
         groupBox->setTitle(QString());
-        bookBorrow->setText(QApplication::translate("reader", "M\306\260\341\273\243n s\303\241ch  ", 0));
         category->clear();
         category->insertItems(0, QStringList()
          << QApplication::translate("reader", "T\341\272\245t c\341\272\243", 0)
@@ -1258,6 +1296,7 @@ public:
         ___qtablewidgetitem3->setText(QApplication::translate("reader", "Nh\303\240 xu\341\272\245t b\341\272\243n", 0));
         QTableWidgetItem *___qtablewidgetitem4 = bookTable->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QApplication::translate("reader", "T\303\254nh tr\341\272\241ng", 0));
+        bookBorrow->setText(QString());
         label_17->setText(QApplication::translate("reader", "Gi\341\273\233i thi\341\273\207u", 0));
         bookName->setText(QString());
         readerTab->setTabText(readerTab->indexOf(tab_4), QApplication::translate("reader", "Th\306\260 vi\341\273\207n s\303\241ch", 0));

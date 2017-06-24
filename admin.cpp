@@ -163,6 +163,8 @@ void Admin::on_searchButton_clicked()
 
 void Admin::on_Agree_clicked()
 {
+    // Admin accept the new account
+    // Start finding a new ID for the account
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {
@@ -207,6 +209,8 @@ void Admin::on_Agree_clicked()
 
 void Admin::on_Deny_clicked()
 {
+    // Admin deny new account
+    // All data will be removed
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {

@@ -110,7 +110,8 @@ public:
         textBrowser->setFont(font1);
         textBrowser->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;\n"
-"border-top-right-radius: 20px;"));
+"border-top-right-radius: 20px;\n"
+"color: #000;"));
 
         horizontalLayout->addWidget(textBrowser);
 
@@ -141,7 +142,8 @@ public:
         textBrowser_2 = new QTextBrowser(Help);
         textBrowser_2->setObjectName(QStringLiteral("textBrowser_2"));
         textBrowser_2->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
-"border: none;"));
+"border: none;\n"
+"color: #000;"));
 
         horizontalLayout_2->addWidget(textBrowser_2);
 
@@ -172,7 +174,8 @@ public:
         textBrowser_3 = new QTextBrowser(Help);
         textBrowser_3->setObjectName(QStringLiteral("textBrowser_3"));
         textBrowser_3->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
-"border: none;"));
+"border: none;\n"
+"color: #000;"));
 
         horizontalLayout_3->addWidget(textBrowser_3);
 
@@ -206,7 +209,8 @@ public:
         textBrowser_4->setFont(font1);
         textBrowser_4->setStyleSheet(QLatin1String("background: rgba(255,255,255,150);\n"
 "border: none;\n"
-"border-bottom-right-radius: 20px;"));
+"border-bottom-right-radius: 20px;\n"
+"color: #000;"));
 
         horizontalLayout_4->addWidget(textBrowser_4);
 

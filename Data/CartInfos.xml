@@ -286,4 +286,26 @@
         <duration>6</duration>
         <status>0</status>
     </cartInfo>
+    <cartInfo>
+        <id>26</id>
+        <readername>Vũ Hưng</readername>
+        <readerid>20</readerid>
+        <bookname>The Legend of Wonder Woman Vol. 1: Origins</bookname>
+        <bookid>Cmc_TLWWV1</bookid>
+        <recipient></recipient>
+        <brtime>24.06.2017</brtime>
+        <duration>25</duration>
+        <status>0</status>
+    </cartInfo>
+    <cartInfo>
+        <id>27</id>
+        <readername>Vũ Hưng</readername>
+        <readerid>20</readerid>
+        <bookname>Batman Vol. 1: I Am Gotham</bookname>
+        <bookid>Cmc_Bat1</bookid>
+        <recipient></recipient>
+        <brtime>24.06.2017</brtime>
+        <duration>25</duration>
+        <status>0</status>
+    </cartInfo>
 </CartInfos>

@@ -82,7 +82,7 @@ border-radius: 3px;
        <attribute name="title">
         <string>Tab 1</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,4,4,4">
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,4,2">
         <property name="spacing">
          <number>0</number>
         </property>
@@ -99,7 +99,7 @@ border-radius: 3px;
          <number>0</number>
         </property>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,1,1">
           <property name="spacing">
            <number>18</number>
           </property>
@@ -116,35 +116,17 @@ border-radius: 3px;
            <number>9</number>
           </property>
           <item>
-           <widget class="QPushButton" name="Search">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton 
-{
-	height: 40px;
-	width: 120px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: rgba(255,255,255,80);
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: rgba(227,242,253,80);
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
             </property>
-            <property name="text">
-             <string>Tìm sách</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="SignInButton">
@@ -205,68 +187,6 @@ QPushButton:hover
             </property>
             <property name="text">
              <string>Đăng ký</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="About">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton 
-{
-	height: 40px;
-	width: 120px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: rgba(255,255,255,80);
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: rgba(227,242,253,80);
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-            </property>
-            <property name="text">
-             <string>About</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="Help">
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton 
-{
-	height: 40px;
-	width: 120px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: rgba(255,255,255,80);
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: rgba(227,242,253,80);
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-            </property>
-            <property name="text">
-             <string>Trợ giúp</string>
             </property>
            </widget>
           </item>
@@ -342,7 +262,7 @@ margin-bottom: 20px;</string>
              <property name="styleSheet">
               <string notr="true">background: none;</string>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,2,1">
+             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,4,1,1">
               <item>
                <spacer name="horizontalSpacer">
                 <property name="orientation">
@@ -387,6 +307,37 @@ font: 20pt &quot;Myriad Pro Cond&quot;;
                </widget>
               </item>
               <item>
+               <widget class="QPushButton" name="Search">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Tìm sách</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <spacer name="horizontalSpacer_2">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
@@ -424,13 +375,93 @@ The further we get into it,
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_6">
+         <widget class="QWidget" name="widget_3" native="true">
           <property name="styleSheet">
            <string notr="true">background: none;</string>
           </property>
-          <property name="text">
-           <string/>
-          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3,1,1">
+           <property name="spacing">
+            <number>18</number>
+           </property>
+           <property name="leftMargin">
+            <number>9</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="About">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>About</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Help">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Trợ giúp</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>

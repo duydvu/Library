@@ -41,11 +41,9 @@ public:
     QWidget *tab_3;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_3;
-    QPushButton *Search;
+    QSpacerItem *horizontalSpacer_4;
     QPushButton *SignInButton;
     QPushButton *SignUpButton;
-    QPushButton *About;
-    QPushButton *Help;
     QLabel *label_5;
     QWidget *widget_2;
     QVBoxLayout *verticalLayout_2;
@@ -55,9 +53,14 @@ public:
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer;
     QLineEdit *mainSearch;
+    QPushButton *Search;
     QSpacerItem *horizontalSpacer_2;
     QLabel *label_4;
-    QLabel *label_6;
+    QWidget *widget_3;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *About;
+    QPushButton *Help;
     QWidget *tab_4;
     QGridLayout *gridLayout_2;
     QFrame *MainBar;
@@ -131,30 +134,9 @@ public:
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         horizontalLayout_3->setSizeConstraint(QLayout::SetFixedSize);
         horizontalLayout_3->setContentsMargins(9, 18, 9, -1);
-        Search = new QPushButton(tab_3);
-        Search->setObjectName(QStringLiteral("Search"));
-        Search->setCursor(QCursor(Qt::PointingHandCursor));
-        Search->setStyleSheet(QLatin1String("QPushButton \n"
-"{\n"
-"	height: 40px;\n"
-"	width: 120px;\n"
-"	border-radius: 4px;\n"
-"	border: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: rgba(255,255,255,80);\n"
-"	color: #fff;\n"
-"	outline: none;\n"
-"}\n"
-"QPushButton:hover \n"
-"{\n"
-"	background: rgba(227,242,253,80);\n"
-"}\n"
-"#Search:pressed \n"
-"{\n"
-"	padding-top: 2px;\n"
-"}"));
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_3->addWidget(Search);
+        horizontalLayout_3->addItem(horizontalSpacer_4);
 
         SignInButton = new QPushButton(tab_3);
         SignInButton->setObjectName(QStringLiteral("SignInButton"));
@@ -206,56 +188,9 @@ public:
 
         horizontalLayout_3->addWidget(SignUpButton);
 
-        About = new QPushButton(tab_3);
-        About->setObjectName(QStringLiteral("About"));
-        About->setCursor(QCursor(Qt::PointingHandCursor));
-        About->setStyleSheet(QLatin1String("QPushButton \n"
-"{\n"
-"	height: 40px;\n"
-"	width: 120px;\n"
-"	border-radius: 4px;\n"
-"	border: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: rgba(255,255,255,80);\n"
-"	color: #fff;\n"
-"	outline: none;\n"
-"}\n"
-"QPushButton:hover \n"
-"{\n"
-"	background: rgba(227,242,253,80);\n"
-"}\n"
-"#Search:pressed \n"
-"{\n"
-"	padding-top: 2px;\n"
-"}"));
-
-        horizontalLayout_3->addWidget(About);
-
-        Help = new QPushButton(tab_3);
-        Help->setObjectName(QStringLiteral("Help"));
-        Help->setCursor(QCursor(Qt::PointingHandCursor));
-        Help->setStyleSheet(QLatin1String("QPushButton \n"
-"{\n"
-"	height: 40px;\n"
-"	width: 120px;\n"
-"	border-radius: 4px;\n"
-"	border: none;\n"
-"	font: 15pt \"Myriad Pro Cond\";\n"
-"	background: rgba(255,255,255,80);\n"
-"	color: #fff;\n"
-"	outline: none;\n"
-"}\n"
-"QPushButton:hover \n"
-"{\n"
-"	background: rgba(227,242,253,80);\n"
-"}\n"
-"#Search:pressed \n"
-"{\n"
-"	padding-top: 2px;\n"
-"}"));
-
-        horizontalLayout_3->addWidget(Help);
-
+        horizontalLayout_3->setStretch(0, 3);
+        horizontalLayout_3->setStretch(1, 1);
+        horizontalLayout_3->setStretch(2, 1);
 
         verticalLayout_3->addLayout(horizontalLayout_3);
 
@@ -320,13 +255,39 @@ public:
 
         horizontalLayout_4->addWidget(mainSearch);
 
+        Search = new QPushButton(widget);
+        Search->setObjectName(QStringLiteral("Search"));
+        Search->setCursor(QCursor(Qt::PointingHandCursor));
+        Search->setStyleSheet(QLatin1String("QPushButton \n"
+"{\n"
+"	height: 40px;\n"
+"	width: 120px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"	background: rgba(255,255,255,80);\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"}\n"
+"QPushButton:hover \n"
+"{\n"
+"	background: rgba(227,242,253,80);\n"
+"}\n"
+"#Search:pressed \n"
+"{\n"
+"	padding-top: 2px;\n"
+"}"));
+
+        horizontalLayout_4->addWidget(Search);
+
         horizontalSpacer_2 = new QSpacerItem(188, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_4->addItem(horizontalSpacer_2);
 
-        horizontalLayout_4->setStretch(0, 1);
-        horizontalLayout_4->setStretch(1, 2);
+        horizontalLayout_4->setStretch(0, 2);
+        horizontalLayout_4->setStretch(1, 4);
         horizontalLayout_4->setStretch(2, 1);
+        horizontalLayout_4->setStretch(3, 1);
 
         verticalLayout_2->addWidget(widget);
 
@@ -343,16 +304,78 @@ public:
 
         verticalLayout_3->addWidget(widget_2);
 
-        label_6 = new QLabel(tab_3);
-        label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setStyleSheet(QStringLiteral("background: none;"));
+        widget_3 = new QWidget(tab_3);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+        widget_3->setStyleSheet(QStringLiteral("background: none;"));
+        horizontalLayout_5 = new QHBoxLayout(widget_3);
+        horizontalLayout_5->setSpacing(18);
+        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(9, -1, -1, -1);
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        verticalLayout_3->addWidget(label_6);
+        horizontalLayout_5->addItem(horizontalSpacer_3);
+
+        About = new QPushButton(widget_3);
+        About->setObjectName(QStringLiteral("About"));
+        About->setCursor(QCursor(Qt::PointingHandCursor));
+        About->setStyleSheet(QLatin1String("QPushButton \n"
+"{\n"
+"	height: 40px;\n"
+"	width: 120px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"	background: rgba(255,255,255,80);\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"}\n"
+"QPushButton:hover \n"
+"{\n"
+"	background: rgba(227,242,253,80);\n"
+"}\n"
+"#Search:pressed \n"
+"{\n"
+"	padding-top: 2px;\n"
+"}"));
+
+        horizontalLayout_5->addWidget(About);
+
+        Help = new QPushButton(widget_3);
+        Help->setObjectName(QStringLiteral("Help"));
+        Help->setCursor(QCursor(Qt::PointingHandCursor));
+        Help->setStyleSheet(QLatin1String("QPushButton \n"
+"{\n"
+"	height: 40px;\n"
+"	width: 120px;\n"
+"	border-radius: 4px;\n"
+"	border: none;\n"
+"	font: 15pt \"Myriad Pro Cond\";\n"
+"	background: rgba(255,255,255,80);\n"
+"	color: #fff;\n"
+"	outline: none;\n"
+"}\n"
+"QPushButton:hover \n"
+"{\n"
+"	background: rgba(227,242,253,80);\n"
+"}\n"
+"#Search:pressed \n"
+"{\n"
+"	padding-top: 2px;\n"
+"}"));
+
+        horizontalLayout_5->addWidget(Help);
+
+        horizontalLayout_5->setStretch(0, 3);
+        horizontalLayout_5->setStretch(1, 1);
+        horizontalLayout_5->setStretch(2, 1);
+
+        verticalLayout_3->addWidget(widget_3);
 
         verticalLayout_3->setStretch(0, 1);
-        verticalLayout_3->setStretch(1, 4);
+        verticalLayout_3->setStretch(1, 2);
         verticalLayout_3->setStretch(2, 4);
-        verticalLayout_3->setStretch(3, 4);
+        verticalLayout_3->setStretch(3, 2);
         tabWidget->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName(QStringLiteral("tab_4"));
@@ -590,19 +613,18 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        Search->setText(QApplication::translate("MainWindow", "T\303\254m s\303\241ch", 0));
         SignInButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng nh\341\272\255p", 0));
         SignUpButton->setText(QApplication::translate("MainWindow", "\304\220\304\203ng k\303\275", 0));
-        About->setText(QApplication::translate("MainWindow", "About", 0));
-        Help->setText(QApplication::translate("MainWindow", "Tr\341\273\243 gi\303\272p", 0));
         label_5->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "Ch\303\240o m\341\273\253ng \304\221\341\272\277n v\341\273\233i", 0));
         label_3->setText(QApplication::translate("MainWindow", "LIBRO", 0));
         mainSearch->setPlaceholderText(QApplication::translate("MainWindow", "B\341\272\241n mu\341\273\221n t\303\254m s\303\241ch g\303\254...", 0));
+        Search->setText(QApplication::translate("MainWindow", "T\303\254m s\303\241ch", 0));
         label_4->setText(QApplication::translate("MainWindow", "Think of life as a good book.\n"
 "The further we get into it,\n"
 " the more it begins to come together and makes sense.", 0));
-        label_6->setText(QString());
+        About->setText(QApplication::translate("MainWindow", "About", 0));
+        Help->setText(QApplication::translate("MainWindow", "Tr\341\273\243 gi\303\272p", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Tab 1", 0));
         Back->setText(QString());
         Category->clear();

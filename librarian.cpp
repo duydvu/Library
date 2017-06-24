@@ -101,6 +101,8 @@ void librarian::regisTable()
 
 void librarian::on_Agree_clicked()
 {
+    // Librarian accept the new account
+    // Start finding a new ID for the account
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {
@@ -143,6 +145,8 @@ void librarian::on_Agree_clicked()
 
 void librarian::on_Deny_clicked()
 {
+    // Admin deny new account
+    // All data will be removed
     for(int i=0; i<ui->registrationTable->rowCount(); i++)
         if(ui->registrationTable->item(i,0)->checkState()==Qt::Checked)
         {
