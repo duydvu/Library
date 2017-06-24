@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempUsers/>
+<TempUsers>
+    <user>
+        <name>Nguyễn Nhật Ánh</name>
+        <id>0</id>
+        <DoB>01.01.1990</DoB>
+        <sex>nam</sex>
+        <address>168 Lê Thúc Hoạch, Q.Tân Phú, TP.HCM</address>
+        <email>nhatanh@gmail.com</email>
+        <DoP>23.06.2017</DoP>
+    </user>
+    <user>
+        <name>Trần Thế Lộc</name>
+        <id>1</id>
+        <DoB>01.11.1998</DoB>
+        <sex>nam</sex>
+        <address>60 Tân Hương, Q.Tân Phú, TP.HCM</address>
+        <email>theloc@gmail.com</email>
+        <DoP>23.06.2017</DoP>
+    </user>
+    <user>
+        <name>Nguyễn Khắc Quang Huy</name>
+        <id>2</id>
+        <DoB>01.01.1998</DoB>
+        <sex>nam</sex>
+        <address>14 Kênh Nước Đen, Q.Bình Tân, TP.HCM</address>
+        <email>quanghuy@gmail.com</email>
+        <DoP>23.06.2017</DoP>
+    </user>
+</TempUsers>

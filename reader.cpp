@@ -296,7 +296,7 @@ void reader::on_send_clicked()
 {
     if(ui->duration->value()==0)
     {
-        QMessageBox::warning(this,"Thời hạn không hợp lệ",
+        QMessageBox::warning(0,"Thời hạn không hợp lệ",
         "Bạn hãy chọn 1 thời hạn thích hợp để mượn sách.",
         QMessageBox::Ok);
         return;
@@ -315,6 +315,9 @@ void reader::on_send_clicked()
         c.setStatus(0);
         cartInfos.append(c);
     }
+    QMessageBox::information(0,"Phiếu mượn được gửi thành công",
+                             "Bạn vui lòng chờ nhân viên phản hồi để lấy sách.",
+                             QMessageBox::Ok);
     ui->send->hide();
     ui->cancel->hide();
     ui->readerTab->setTabEnabled(2,false);
@@ -436,5 +439,6 @@ void reader::on_readerTab_currentChanged(int index)
         ui->bookTable->setColumnWidth(2,ui->bookTable->width()*15/100);
         ui->bookTable->setColumnWidth(3,ui->bookTable->width()*15/100);
         ui->bookTable->setColumnWidth(4,ui->bookTable->width()*10/100);
+        on_searchButton_clicked();
     }
 }

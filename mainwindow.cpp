@@ -9,6 +9,12 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     MainWindow::setWindowState(Qt::WindowMaximized);
 
+    QTabBar *tabBar = ui->tabWidget->findChild<QTabBar *>();
+    tabBar->hide();
+    QPalette pal = ui->Category->view()->palette();
+    pal.setBrush(QPalette::Base, Qt::transparent);
+    ui->Category->view()->setPalette(pal);
+
     QPixmap pixmap("Images/back.png");
     QIcon ButtonIcon(pixmap);
     ui->Back->setIcon(ButtonIcon);
@@ -36,9 +42,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->FindBooksButton->setIcon(ButtonIcon2);
     ui->FindBooksButton->setIconSize(pixmap2.rect().size());
-    ui->MainBar->hide();
-    ui->BooksTable->hide();
-    ui->frame_3->hide();
 
     loadBooksFile();
     loadAccountsFile();
@@ -211,10 +214,10 @@ void MainWindow::loadTempAccountsFile()
             {
                 a.setID(xmlReader->readElementText());
             }
-            if(xmlReader->name() == "active")
+            if(xmlReader->name() == "status")
             {
                 a.setStatus(xmlReader->readElementText().toInt());
-                accounts.append(a);
+                temp_accounts.append(a);
                 a.clear();
             }
         }
@@ -598,9 +601,47 @@ void MainWindow::createAccount()
 
 void MainWindow::createUser()
 {
-    temp_accounts.append(su.data()->getAccount());
-    temp_users.append(pi.data()->getUser());
-    temp_accounts.last().setID(temp_users.last().getID());
+    // Find ID for new register account and user
+    if(temp_accounts.size()==0)
+    {
+        temp_accounts.append(su.data()->getAccount());
+        temp_users.append(pi.data()->getUser());
+        temp_accounts.last().setID("0");
+        temp_users.last().setID("0");
+    }
+    else
+    {
+        QLinkedList<Account>::iterator a=temp_accounts.begin();
+        QLinkedList<User>::iterator u=temp_users.begin();
+        if((*a).getID().toInt()!=0)
+        {
+            temp_accounts.insert(a,su.data()->getAccount());
+            temp_users.insert(u,pi.data()->getUser());
+            (*a).setID("0");
+            (*u).setID("0");
+        }
+        else
+        {
+            for(a+=1,u+=1;a!=temp_accounts.end();a++,u++)
+            {
+                if((*a).getID().toInt()-(*(a-1)).getID().toInt()!=1)
+                {
+                    temp_accounts.insert(a,su.data()->getAccount());
+                    temp_users.insert(u,pi.data()->getUser());
+                    (*(a-1)).setID(QString::number((*(a-2)).getID().toInt()+1));
+                    (*(u-1)).setID(QString::number((*(u-2)).getID().toInt()+1));
+                    break;
+                }
+            }
+            if(a==temp_accounts.end())
+            {
+                temp_accounts.append(su.data()->getAccount());
+                temp_users.append(pi.data()->getUser());
+                temp_accounts.last().setID(QString::number(temp_accounts.size()-1));
+                temp_users.last().setID(QString::number(temp_users.size()-1));
+            }
+        }
+    }
     su.clear();
     pi.clear();
 }
@@ -844,23 +885,18 @@ void MainWindow::on_BooksTable_cellClicked(int row, int column)
 
 void MainWindow::on_Search_clicked()
 {
-    ui->MainBar->show();
-    ui->BooksTable->show();
-    ui->frame_3->show();
-    ui->frame_2->hide();
+    ui->tabWidget->setCurrentIndex(1);
     ui->BooksTable->setColumnWidth(0,ui->BooksTable->width()*45/100);
     ui->BooksTable->setColumnWidth(1,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(2,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(3,ui->BooksTable->width()*15/100);
     ui->BooksTable->setColumnWidth(4,ui->BooksTable->width()*10/100);
+    on_FindBooksButton_clicked();
 }
 
 void MainWindow::on_Back_clicked()
 {
-    ui->MainBar->hide();
-    ui->BooksTable->hide();
-    ui->frame_3->hide();
-    ui->frame_2->show();
+    ui->tabWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_Help_clicked()
@@ -877,4 +913,10 @@ void MainWindow::on_About_clicked()
         ab.clear();
     ab=QSharedPointer<About>(new About);
     ab.data()->exec();
+}
+
+void MainWindow::on_mainSearch_returnPressed()
+{
+    ui->FindBooksEdit->setText(ui->mainSearch->text());
+    on_Search_clicked();
 }

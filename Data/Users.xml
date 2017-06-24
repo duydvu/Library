@@ -243,4 +243,13 @@
         <email>thihoa@gmail.com</email>
         <DoP>18.06.2017</DoP>
     </user>
+    <user>
+        <name>Nguyễn Tấn Dũng</name>
+        <id>27</id>
+        <DoB>01.01.1980</DoB>
+        <sex>nam</sex>
+        <address>14 CMT8, Q.10, TP.HCM</address>
+        <email>tandung@gmail.com</email>
+        <DoP>23.06.2017</DoP>
+    </user>
 </Users>

@@ -63,5 +63,6 @@ RESOURCES += \
 
 RC_ICONS = Libpro.ico
 
-DISTFILES +=
+DISTFILES += \
+    Transition.qml
 

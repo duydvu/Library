@@ -56,7 +56,7 @@ public:
             personalinfo->setObjectName(QStringLiteral("personalinfo"));
         personalinfo->resize(418, 518);
         personalinfo->setStyleSheet(QLatin1String("background: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 64, 46, 255), stop:1 rgba(0, 118, 191, 255));\n"
-"font: 15pt \"Myriad Pro Cond\";\n"
+"font: 63 15pt \"Myriad Pro Cond\";\n"
 "color: #fff;"));
         verticalLayout_4 = new QVBoxLayout(personalinfo);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
@@ -86,7 +86,7 @@ public:
 "padding-left: 10px;\n"
 "background: white;\n"
 "font: 15pt \"Myriad Pro Cond\";\n"
-"color: #333;"));
+"color: #000;"));
         name->setReadOnly(false);
 
         verticalLayout_3->addWidget(name);
@@ -128,7 +128,7 @@ public:
         dateOfBirth->setObjectName(QStringLiteral("dateOfBirth"));
         dateOfBirth->setStyleSheet(QLatin1String("background: none;\n"
 "height: 35px;\n"
-"color: #333;"));
+"color: #000;"));
         dateOfBirth->setDate(QDate(1998, 1, 1));
 
         horizontalLayout->addWidget(dateOfBirth);
@@ -152,7 +152,7 @@ public:
 "padding-left: 10px;\n"
 "background: white;\n"
 "font: 15pt \"Myriad Pro Cond\";\n"
-"color: #333;"));
+"color: #000;"));
 
         verticalLayout->addWidget(address);
 
@@ -175,7 +175,7 @@ public:
 "padding-left: 10px;\n"
 "background: white;\n"
 "font: 15pt \"Myriad Pro Cond\";\n"
-"color: #333;"));
+"color: #000;"));
 
         verticalLayout_2->addWidget(email);
 
@@ -216,7 +216,7 @@ public:
     void retranslateUi(QDialog *personalinfo)
     {
         personalinfo->setWindowTitle(QApplication::translate("personalinfo", "Dialog", 0));
-        PersonalInfo->setText(QApplication::translate("personalinfo", "Th\303\264ng Tin c\303\241 nh\303\242n", 0));
+        PersonalInfo->setText(QApplication::translate("personalinfo", "TH\303\224NG TIN C\303\201 NH\303\202N", 0));
         name_2->setText(QApplication::translate("personalinfo", "H\341\273\215 v\303\240 t\303\252n :", 0));
         name->setText(QString());
         name->setPlaceholderText(QString());

@@ -13,15 +13,46 @@
     <height>591</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>560</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background: url(Images/Background.jpg) no-repeat center center;</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">QScrollBar:vertical {
+      	border: 1px solid #999999;
+       	background: rgba(0,0,0,80);
+       	width: 10px;    
+        margin: 0px 0px 0px 0px;
+		border:none;
+}
+QScrollBar::handle:vertical {
+        background: rgba(0,0,0,80);
+        min-height: 0px;
+border-radius: 3px;
+}
+QScrollBar::add-line:vertical {
+       background: rgba(0,0,0,80);
+        height: 0px;
+        subcontrol-position: bottom;
+        subcontrol-origin: margin;
+border-radius: 3px;
+}
+QScrollBar::sub-line:vertical {
+        background: rgba(0,0,0,80);
+       height: 0 px;
+       subcontrol-position: top;
+       subcontrol-origin: margin;
+border-radius: 3px;
+}</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <property name="leftMargin">
@@ -39,27 +70,19 @@
     <property name="spacing">
      <number>0</number>
     </property>
-    <item row="0" column="1">
-     <widget class="QScrollArea" name="scrollArea">
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabWidget">
       <property name="styleSheet">
-       <string notr="true">border: none;</string>
+       <string notr="true"/>
       </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
+      <property name="currentIndex">
+       <number>0</number>
       </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>-316</x>
-         <y>0</y>
-         <width>1099</width>
-         <height>771</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: none;</string>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,4,2">
         <property name="spacing">
          <number>0</number>
         </property>
@@ -76,17 +99,115 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QFrame" name="frame">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,1,1">
+          <property name="spacing">
+           <number>18</number>
+          </property>
+          <property name="sizeConstraint">
+           <enum>QLayout::SetFixedSize</enum>
+          </property>
+          <property name="leftMargin">
+           <number>9</number>
+          </property>
+          <property name="topMargin">
+           <number>18</number>
+          </property>
+          <property name="rightMargin">
+           <number>9</number>
+          </property>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="SignInButton">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Đăng nhập</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="SignUpButton">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+            </property>
+            <property name="text">
+             <string>Đăng ký</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_5">
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">background: none;</string>
           </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
+          <property name="text">
+           <string/>
           </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_2" native="true">
+          <property name="styleSheet">
+           <string notr="true">background: rgba(0,0,0,100);</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,0">
+          <layout class="QVBoxLayout" name="verticalLayout_2">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -103,507 +224,549 @@
             <number>0</number>
            </property>
            <item>
-            <widget class="QFrame" name="frame_2">
+            <widget class="QLabel" name="label_2">
              <property name="styleSheet">
-              <string notr="true">background: url(Images/Background.png) no-repeat center center;
-background-color: qlineargradient(spread:reflect, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 64, 46, 255), stop:1 rgba(0, 118, 191, 255));</string>
+              <string notr="true">font: 30pt &quot;Lobster&quot;;
+color: rgba(255,255,255,255);
+background: none;
+margin: 0;
+margin-top: 20px;</string>
              </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+             <property name="text">
+              <string>Chào mừng đến với</string>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+             <property name="alignment">
+              <set>Qt::AlignBottom|Qt::AlignHCenter</set>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,2,2,1">
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <property name="leftMargin">
-                 <number>800</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="Search">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton 
-{
-	height: 30px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #D32F2F;
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: #F44336;
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Tìm sách</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="SignInButton">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton 
-{
-	height: 30px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #D32F2F;
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: #F44336;
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Đăng nhập</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="SignUpButton">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton 
-{
-	height: 30px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #D32F2F;
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: #F44336;
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Đăng ký</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="About">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton 
-{
-	height: 30px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #D32F2F;
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: #F44336;
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>About</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="Help">
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton 
-{
-	height: 30px;
-	border-radius: 4px;
-	border: none;
-	font: 15pt &quot;Myriad Pro Cond&quot;;
-	background: #D32F2F;
-	color: #fff;
-	outline: none;
-}
-QPushButton:hover 
-{
-	background: #F44336;
-}
-#Search:pressed 
-{
-	padding-top: 2px;
-}</string>
-                  </property>
-                  <property name="text">
-                   <string>Trợ giúp</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_2">
-                <property name="styleSheet">
-                 <string notr="true">font: 40pt &quot;Lobster&quot;;
-
-background: none;</string>
-                </property>
-                <property name="text">
-                 <string>Chào mừng đến với</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignBottom|Qt::AlignHCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_3">
-                <property name="styleSheet">
-                 <string notr="true">font: 60pt &quot;Lobster&quot;;
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="styleSheet">
+              <string notr="true">font: 45pt &quot;Lobster&quot;;
 color: #0277BD;
-background: none;</string>
+background: none;
+margin: 0;
+margin-bottom: 20px;</string>
+             </property>
+             <property name="text">
+              <string>LIBRO</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignHCenter|Qt::AlignTop</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QWidget" name="widget" native="true">
+             <property name="styleSheet">
+              <string notr="true">background: none;</string>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="2,4,1,1">
+              <item>
+               <spacer name="horizontalSpacer">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
                 </property>
-                <property name="text">
-                 <string>LIBRO</string>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>188</width>
+                  <height>20</height>
+                 </size>
                 </property>
-                <property name="alignment">
-                 <set>Qt::AlignHCenter|Qt::AlignTop</set>
-                </property>
-               </widget>
+               </spacer>
               </item>
               <item>
-               <widget class="QLabel" name="label_4">
-                <property name="styleSheet">
-                 <string notr="true">font: 30pt &quot;Lobster&quot;;
-color: #fff;
-background: none;</string>
+               <widget class="QLineEdit" name="mainSearch">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>40</height>
+                 </size>
                 </property>
-                <property name="text">
-                 <string>Thư viện Khoa KH &amp; KT Máy tính</string>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">height: 40px;
+border-radius: 10px;
+padding-left: 10px;
+background: rgba(255,255,255,255);
+font: 20pt &quot;Myriad Pro Cond&quot;;
+/*margin: 0 100px 0 100px;/*</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
+                <property name="placeholderText">
+                 <string>Bạn muốn tìm sách gì...</string>
+                </property>
                </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="Search">
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Tìm sách</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>188</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
               </item>
              </layout>
             </widget>
            </item>
            <item>
-            <widget class="QFrame" name="MainBar">
+            <widget class="QLabel" name="label_4">
              <property name="styleSheet">
-              <string notr="true">background: #1DE9B6;</string>
+              <string notr="true">font: 15pt &quot;Lobster&quot;;
+color: #fff;
+background: none;
+margin: 20px 0 20px 0;</string>
              </property>
-             <property name="frameShape">
-              <enum>QFrame::StyledPanel</enum>
+             <property name="text">
+              <string>Think of life as a good book.
+The further we get into it,
+ the more it begins to come together and makes sense.</string>
              </property>
-             <property name="frameShadow">
-              <enum>QFrame::Raised</enum>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
-             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,12,3,2">
-              <item>
-               <widget class="QPushButton" name="Back">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">#Back{
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QWidget" name="widget_3" native="true">
+          <property name="styleSheet">
+           <string notr="true">background: none;</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="3,1,1">
+           <property name="spacing">
+            <number>18</number>
+           </property>
+           <property name="leftMargin">
+            <number>9</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="About">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>About</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="Help">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton 
+{
+	height: 40px;
+	width: 120px;
+	border-radius: 4px;
+	border: none;
+	font: 15pt &quot;Myriad Pro Cond&quot;;
+	background: rgba(255,255,255,80);
+	color: #fff;
+	outline: none;
+}
+QPushButton:hover 
+{
+	background: rgba(227,242,253,80);
+}
+#Search:pressed 
+{
+	padding-top: 2px;
+}</string>
+             </property>
+             <property name="text">
+              <string>Trợ giúp</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <property name="styleSheet">
+        <string notr="true">background: none;</string>
+       </property>
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="leftMargin">
+         <number>10</number>
+        </property>
+        <property name="topMargin">
+         <number>10</number>
+        </property>
+        <property name="rightMargin">
+         <number>10</number>
+        </property>
+        <property name="bottomMargin">
+         <number>10</number>
+        </property>
+        <property name="horizontalSpacing">
+         <number>10</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QFrame" name="MainBar">
+          <property name="styleSheet">
+           <string notr="true">background: rgba(0,0,0,80);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,10,3,2">
+           <item>
+            <widget class="QPushButton" name="Back">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#Back{
 	height: 40px;
 	border-width: 0px;
 	border-radius: 5px;
-	background-color: #F44336;
+	background: rgba(244,67,54,150);
 	color: #222;
 	outline: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
 }
 #Back:hover{
-	background-color: #EF5350;
+	background-color: rgba(239,83,80,150);
 }</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="FindBooksEdit">
-                <property name="minimumSize">
-                 <size>
-                  <width>242</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">#FindBooksEdit {
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="FindBooksEdit">
+             <property name="minimumSize">
+              <size>
+               <width>242</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#FindBooksEdit {
 	height: 40px;
 	border: none;
 	border-radius: 5px;
 	padding-left: 10px;
 	background: white;
 }</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QComboBox" name="Category">
-                <property name="styleSheet">
-                 <string notr="true">#Category{
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="Category">
+             <property name="styleSheet">
+              <string notr="true">QComboBox{	
 	height: 40px;
 	border-width: 0px;
 	border-radius: 5px;
-	background-color: #448AFF;
+	background: rgba(68,138,255,200);
 	color: #fff;
 	outline: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
 }
-QComboBox:editable {
-    background: white;
+
+QComboBox QAbstractItemView
+{
+    border: 2px solid darkgray;
+    color: #fff;
+	background: rgba(68,138,255,200);
+    selection-background-color:qlineargradient(spread:reflect, x1:0, y1:0.614, x2:1, y2:0.585, stop:0 rgba(0, 109, 255, 205), stop:1 rgba(48, 212, 155, 227));
+	outline: none;
 }
 
-QComboBox:!editable, QComboBox::drop-down:editable {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-}
-
-/* QComboBox gets the &quot;on&quot; state when the popup is open */
-QComboBox:!editable:on, QComboBox::drop-down:editable:on {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
-                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
-}
 
 QComboBox:on { /* shift the text when the popup opens */
     padding-top: 3px;
     padding-left: 4px;
 }
 
+
 QComboBox::drop-down {
     width: 0px;
-
     border: none
 }</string>
-                </property>
-                <property name="maxVisibleItems">
-                 <number>20</number>
-                </property>
-                <item>
-                 <property name="text">
-                  <string>Tất cả</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Bách khoa toàn thư</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Châm biếm</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Du lịch</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Địa lý</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Hành động và phiêu lưu</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Huyền bí</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Khoa học</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Khoa học viễn tưởng</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Kịch</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Kinh dị</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Kinh tế</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Lãng mạn</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Lịch sử</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Nghệ thuật</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Nhật ký</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Sách nấu ăn</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Sức khỏe</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Tạp chí</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Thơ</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Tiểu sử</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Toán</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Tôn giáo và chính trị</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Trẻ em</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Truyện tranh</string>
-                 </property>
-                </item>
-                <item>
-                 <property name="text">
-                  <string>Từ điển</string>
-                 </property>
-                </item>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="FindBooksButton">
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="whatsThis">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">#FindBooksButton{
+             </property>
+             <property name="maxVisibleItems">
+              <number>20</number>
+             </property>
+             <item>
+              <property name="text">
+               <string>Tất cả</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Bách khoa toàn thư</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Châm biếm</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Du lịch</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Địa lý</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Hành động và phiêu lưu</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Huyền bí</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Khoa học</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Khoa học viễn tưởng</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Kịch</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Kinh dị</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Kinh tế</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lãng mạn</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Lịch sử</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Nghệ thuật</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Nhật ký</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Sách nấu ăn</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Sức khỏe</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Tạp chí</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Thơ</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Tiểu sử</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Toán</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Tôn giáo và chính trị</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Trẻ em</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Truyện tranh</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Từ điển</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="FindBooksButton">
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="whatsThis">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tìm sách&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">#FindBooksButton{
 	height: 40px;
 	border-width: 0px;
 	border-radius: 5px;
-	background: #6A1B9A;
+	background: rgba(106,27,154,150);
 	color: #fff;
 	outline: none;
 	font: 15pt &quot;Myriad Pro Cond&quot;;
 }
 #FindBooksButton:hover 
 {
-	background: #8E24AA;
+	background: rgba(142,36,170,150);
 }</string>
-                </property>
-                <property name="text">
-                 <string>Tìm</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-             <zorder>FindBooksButton</zorder>
-             <zorder>FindBooksEdit</zorder>
-             <zorder>Back</zorder>
-             <zorder>Category</zorder>
+             </property>
+             <property name="text">
+              <string>Tìm</string>
+             </property>
             </widget>
            </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QTableWidget" name="BooksTable">
-               <property name="minimumSize">
-                <size>
-                 <width>493</width>
-                 <height>427</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QHeaderView::section {
-    background-color: #6A1B9A;
+          </layout>
+          <zorder>FindBooksButton</zorder>
+          <zorder>FindBooksEdit</zorder>
+          <zorder>Back</zorder>
+          <zorder>Category</zorder>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,2">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QTableWidget" name="BooksTable">
+            <property name="minimumSize">
+             <size>
+              <width>493</width>
+              <height>427</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section {
+    background: rgba(106,27,154,200);
 	padding: 4px;
     border: 1px solid #fff;
 	color: #fff;
@@ -612,136 +775,139 @@ QComboBox::drop-down {
 }
 
 QTableWidget {
-	background-color: #eee;
+	background: rgba(238,238,238,200);
     gridline-color: #fffff8;
     font-size: 12pt;
 }
 
 QTableWidget QTableCornerButton::section {
-    background-color: #646464;
+    background: #646464;
     border: 1px solid #fffff8;
 }
 </string>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <property name="sortingEnabled">
+             <bool>true</bool>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <attribute name="horizontalHeaderHighlightSections">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Tựa sách</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tác giả</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Thể loại</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nhà xuất bản</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tình trạng</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_3">
+            <property name="styleSheet">
+             <string notr="true">background: rgba(0,0,0,150);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
                </property>
-               <property name="editTriggers">
-                <set>QAbstractItemView::NoEditTriggers</set>
+               <property name="styleSheet">
+                <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;
+background: none;
+color: #fff;</string>
                </property>
-               <property name="selectionBehavior">
-                <enum>QAbstractItemView::SelectRows</enum>
+               <property name="text">
+                <string>Giới thiệu</string>
                </property>
-               <property name="sortingEnabled">
-                <bool>true</bool>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
-               <property name="wordWrap">
-                <bool>false</bool>
-               </property>
-               <attribute name="horizontalHeaderHighlightSections">
-                <bool>false</bool>
-               </attribute>
-               <attribute name="horizontalHeaderStretchLastSection">
-                <bool>true</bool>
-               </attribute>
-               <attribute name="verticalHeaderVisible">
-                <bool>false</bool>
-               </attribute>
-               <column>
-                <property name="text">
-                 <string>Tựa sách</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Tác giả</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Thể loại</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Nhà xuất bản</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Tình trạng</string>
-                </property>
-               </column>
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_3">
+              <widget class="QLabel" name="bookName">
                <property name="styleSheet">
-                <string notr="true">background: #fff;</string>
+                <string notr="true">background: none;font: 25pt &quot;Myriad Pro Cond&quot;;
+color: #fff;</string>
                </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
+               <property name="text">
+                <string/>
                </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_4">
-                <item>
-                 <widget class="QLabel" name="label">
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
-                  </property>
-                  <property name="text">
-                   <string>Giới thiệu</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="bookName">
-                  <property name="styleSheet">
-                   <string notr="true">font: 25pt &quot;Myriad Pro Cond&quot;;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QGraphicsView" name="bookView">
-                  <property name="styleSheet">
-                   <string notr="true">border: none;</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QTextBrowser" name="intro">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
+               <property name="wordWrap">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGraphicsView" name="bookView">
+               <property name="styleSheet">
+                <string notr="true">border: none;
+background: rgba(0,0,0,0);</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="intro">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background: rgba(0,0,0,0);
+color: #fff;
+font: 15pt &quot;Myriad Pro Cond&quot;;</string>
+               </property>
               </widget>
              </item>
             </layout>
-           </item>
-          </layout>
-         </widget>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </widget>
@@ -754,8 +920,6 @@ QTableWidget QTableCornerButton::section {
  <tabstops>
   <tabstop>FindBooksEdit</tabstop>
   <tabstop>FindBooksButton</tabstop>
-  <tabstop>BooksTable</tabstop>
-  <tabstop>scrollArea</tabstop>
  </tabstops>
  <resources/>
  <connections>

@@ -53,6 +53,8 @@ private slots:
 
     void on_About_clicked();
 
+    void on_mainSearch_returnPressed();
+
 signals:
 
     void sigShowEvent();

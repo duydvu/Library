@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TempAccounts/>
+<TempAccounts>
+    <account>
+        <name>nhatanh</name>
+        <password>6e686174616e68</password>
+        <role>R</role>
+        <id>0</id>
+        <status>0</status>
+    </account>
+    <account>
+        <name>theloc</name>
+        <password>7468656c6f63</password>
+        <role>R</role>
+        <id>1</id>
+        <status>0</status>
+    </account>
+    <account>
+        <name>quanghuy</name>
+        <password>7175616e67687579</password>
+        <role>R</role>
+        <id>2</id>
+        <status>0</status>
+    </account>
+</TempAccounts>

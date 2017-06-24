@@ -15,7 +15,8 @@
   </property>
   <property name="styleSheet">
    <string notr="true">font: 15pt &quot;Myriad Pro Cond&quot;;
-background-color: #1DE9B6;</string>
+background: url(Images/Background.jpg) no-repeat center center;
+color: #fff;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
@@ -31,7 +32,8 @@ background-color: #1DE9B6;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 25pt &quot;Myriad Pro Cond&quot;;</string>
+      <string notr="true">font: 25pt &quot;Myriad Pro Cond&quot;;
+background: none;</string>
      </property>
      <property name="text">
       <string>TRỢ GIÚP</string>
@@ -46,6 +48,9 @@ background-color: #1DE9B6;</string>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_2">
+     <property name="styleSheet">
+      <string notr="true">background: none;</string>
+     </property>
      <property name="text">
       <string>Với LIBPRO, bạn có thể: </string>
      </property>
@@ -68,9 +73,9 @@ background-color: #1DE9B6;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">border-width: 0px;
-border-right: 5px solid #6A1B9A;
+border-right: 5px solid rgba(0,0,0,160);
 border-top-left-radius: 20px;
-background-color: #AB47BC;
+background-color: rgba(0,0,0,80);
 color: #fff;</string>
          </property>
          <property name="text">
@@ -95,9 +100,10 @@ color: #fff;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: #fff;
+        <string notr="true">background: rgba(255,255,255,150);
 border: none;
-border-top-right-radius: 20px;</string>
+border-top-right-radius: 20px;
+color: #000;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -127,8 +133,8 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="styleSheet">
           <string notr="true">border-width: 0px;
-border-right: 5px solid #6A1B9A;
-background-color: #AB47BC;
+border-right: 5px solid rgba(0,0,0,160);
+background-color: rgba(0,0,0,80);
 color: #fff;</string>
          </property>
          <property name="text">
@@ -144,8 +150,9 @@ color: #fff;</string>
      <item>
       <widget class="QTextBrowser" name="textBrowser_2">
        <property name="styleSheet">
-        <string notr="true">background: #fff;
-border: none;</string>
+        <string notr="true">background: rgba(255,255,255,150);
+border: none;
+color: #000;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -175,8 +182,8 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="styleSheet">
           <string notr="true">border-width: 0px;
-border-right: 5px solid #6A1B9A;
-background-color: #AB47BC;
+border-right: 5px solid rgba(0,0,0,160);
+background-color: rgba(0,0,0,80);
 color: #fff;</string>
          </property>
          <property name="text">
@@ -192,8 +199,9 @@ color: #fff;</string>
      <item>
       <widget class="QTextBrowser" name="textBrowser_3">
        <property name="styleSheet">
-        <string notr="true">background: #fff;
-border: none;</string>
+        <string notr="true">background: rgba(255,255,255,150);
+border: none;
+color: #000;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -223,9 +231,9 @@ p, li { white-space: pre-wrap; }
          </property>
          <property name="styleSheet">
           <string notr="true">border-width: 0px;
-border-right: 5px solid #6A1B9A;
+border-right: 5px solid rgba(0,0,0,160);
 border-bottom-left-radius: 20px;
-background-color: #AB47BC;
+background-color: rgba(0,0,0,80);
 color: #fff;</string>
          </property>
          <property name="text">
@@ -250,9 +258,10 @@ color: #fff;</string>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: #fff;
+        <string notr="true">background: rgba(255,255,255,150);
 border: none;
-border-bottom-right-radius: 20px;</string>
+border-bottom-right-radius: 20px;
+color: #000;</string>
        </property>
        <property name="html">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
