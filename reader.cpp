@@ -7,7 +7,7 @@ reader::reader(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Libpro");
-    reader::setWindowState(Qt::WindowMaximized);
+
     ui->borInfo->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->readerTab->setTabEnabled(2,false);
 

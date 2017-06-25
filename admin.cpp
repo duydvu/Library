@@ -7,7 +7,7 @@ Admin::Admin(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Libpro");
-    Admin::setWindowState(Qt::WindowMaximized);
+
     ui->staffTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->usersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->registrationTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);

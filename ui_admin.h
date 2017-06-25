@@ -203,7 +203,9 @@ public:
     {
         if (Admin->objectName().isEmpty())
             Admin->setObjectName(QStringLiteral("Admin"));
-        Admin->resize(807, 563);
+        Admin->resize(1248, 700);
+        Admin->setMinimumSize(QSize(1248, 700));
+        Admin->setMaximumSize(QSize(1248, 700));
         Admin->setStyleSheet(QLatin1String("background-color: #f9f9f9;\n"
 "font: 15pt \"Myriad Pro Cond\";"));
         centralwidget = new QWidget(Admin);

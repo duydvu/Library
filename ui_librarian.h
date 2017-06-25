@@ -27,6 +27,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
@@ -85,6 +86,7 @@ public:
     QLabel *label_16;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_27;
+    QTableView *tableView;
     QTextBrowser *remind;
     QWidget *tab_6;
     QGridLayout *gridLayout_11;
@@ -208,7 +210,9 @@ public:
     {
         if (librarian->objectName().isEmpty())
             librarian->setObjectName(QStringLiteral("librarian"));
-        librarian->resize(857, 572);
+        librarian->resize(1248, 700);
+        librarian->setMinimumSize(QSize(1248, 700));
+        librarian->setMaximumSize(QSize(1248, 700));
         librarian->setStyleSheet(QLatin1String("background-color: #f9f9f9;\n"
 "font: 15pt \"Myriad Pro Cond\";"));
         centralwidget = new QWidget(librarian);
@@ -513,6 +517,11 @@ public:
         label_27->setStyleSheet(QStringLiteral("background: none;"));
 
         verticalLayout_2->addWidget(label_27);
+
+        tableView = new QTableView(tab_5);
+        tableView->setObjectName(QStringLiteral("tableView"));
+
+        verticalLayout_2->addWidget(tableView);
 
         remind = new QTextBrowser(tab_5);
         remind->setObjectName(QStringLiteral("remind"));

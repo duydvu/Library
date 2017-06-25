@@ -83,8 +83,9 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->setEnabled(true);
-        MainWindow->resize(800, 591);
-        MainWindow->setMinimumSize(QSize(720, 560));
+        MainWindow->resize(1248, 700);
+        MainWindow->setMinimumSize(QSize(1248, 700));
+        MainWindow->setMaximumSize(QSize(1248, 700));
         MainWindow->setStyleSheet(QStringLiteral("background: url(Images/Background.jpg) no-repeat center center;"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));

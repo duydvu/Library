@@ -308,4 +308,15 @@
         <duration>25</duration>
         <status>0</status>
     </cartInfo>
+    <cartInfo>
+        <id>28</id>
+        <readername>Nguyễn Tấn Dũng</readername>
+        <readerid>27</readerid>
+        <bookname>The Lord of the Rings</bookname>
+        <bookid>Adv_LoTR</bookid>
+        <recipient></recipient>
+        <brtime>25.06.2017</brtime>
+        <duration>30</duration>
+        <status>0</status>
+    </cartInfo>
 </CartInfos>

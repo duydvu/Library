@@ -50,7 +50,9 @@ public:
     {
         if (Help->objectName().isEmpty())
             Help->setObjectName(QStringLiteral("Help"));
-        Help->resize(617, 426);
+        Help->resize(757, 456);
+        Help->setMinimumSize(QSize(757, 456));
+        Help->setMaximumSize(QSize(757, 456));
         Help->setStyleSheet(QLatin1String("font: 15pt \"Myriad Pro Cond\";\n"
 "background: url(Images/Background.jpg) no-repeat center center;\n"
 "color: #fff;"));

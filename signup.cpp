@@ -32,6 +32,29 @@ void SignUp::on_SignUpButton_clicked()
         QMessageBox::Ok);
         return;
     }
+
+    for(int i=0;i<ui->NameEdit->text().length();i++)
+    {
+        if(ui->NameEdit->text()[i]==' ')
+        {
+            QMessageBox::information(0,"Tài khoản không được có dấu cách",
+            "Bạn hãy điền vào tài khoản hợp lệ!",
+            QMessageBox::Ok);
+            return;
+        }
+    }
+    for(int i=0;i<ui->PasswordEdit->text().length();i++)
+    {
+        if(ui->PasswordEdit->text()[i]==' ')
+        {
+            QMessageBox::information(0,"Mật khẩu không được có dấu cách",
+            "Bạn hãy điền vào mật khẩu hợp lệ!",
+            QMessageBox::Ok);
+            return;
+        }
+    }
+
+
     if( !(ui->librarian->isChecked()) && !(ui->reader->isChecked()) )
     {
         QMessageBox::information(0,"Bạn chưa chọn vai trò của tài khoản",
