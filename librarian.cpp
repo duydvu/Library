@@ -7,7 +7,7 @@ librarian::librarian(QWidget *parent) :
 {
     ui->setupUi(this);
     setWindowTitle("Libpro");
-    librarian::setWindowState(Qt::WindowMaximized);
+
     ui->usersTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->registrationTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->CartInfos->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);

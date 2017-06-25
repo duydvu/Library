@@ -162,7 +162,9 @@ public:
     {
         if (reader->objectName().isEmpty())
             reader->setObjectName(QStringLiteral("reader"));
-        reader->resize(830, 577);
+        reader->resize(1248, 700);
+        reader->setMinimumSize(QSize(1248, 700));
+        reader->setMaximumSize(QSize(1248, 700));
         reader->setStyleSheet(QLatin1String("background: url(Images/Background.jpg) no-repeat center center;\n"
 "font: 15pt \"Myriad Pro Cond\";"));
         centralwidget = new QWidget(reader);
